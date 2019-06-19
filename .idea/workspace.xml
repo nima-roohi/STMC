@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="846f6b2c-a6fb-4a48-9b7d-a1527616ac99" name="Default Changelist" comment="Revert &quot;Trigger Notification&quot;&#10;&#10;This reverts commit d2f495b95e0293b674031a0dfc92d9efedcde365.">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prism-mod/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prism-mod/src/prism/PrismCL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-org/src/prism/PrismCL.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-org/src/prism/PrismCL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stmc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/stmc.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prism-mod/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/prism-mod/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,7 +27,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="135">
-                <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+                <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
               </first_editor>
               <second_editor />
             </state>
@@ -236,7 +231,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="135">
-            <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+            <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
           </first_editor>
           <second_editor />
         </state>
