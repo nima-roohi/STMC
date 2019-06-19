@@ -26,33 +26,19 @@
 
 package prism;
 
+import common.StackTraceHelper;
+import parser.Values;
+import parser.ast.*;
+import prism.Prism.StrategyExportType;
+import simulator.GenerateSimulationPath;
+import simulator.method.*;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
-
-import common.StackTraceHelper;
-import parser.Values;
-import parser.ast.Expression;
-import parser.ast.ExpressionReward;
-import parser.ast.ModulesFile;
-import parser.ast.PropertiesFile;
-import parser.ast.Property;
-import prism.Prism.StrategyExportType;
-import simulator.GenerateSimulationPath;
-import simulator.method.ACIconfidence;
-import simulator.method.ACIiterations;
-import simulator.method.ACIwidth;
-import simulator.method.APMCapproximation;
-import simulator.method.APMCconfidence;
-import simulator.method.APMCiterations;
-import simulator.method.CIconfidence;
-import simulator.method.CIiterations;
-import simulator.method.CIwidth;
-import simulator.method.SPRTMethod;
-import simulator.method.SimulationMethod;
 
 // prism - command line version
 
@@ -193,7 +179,7 @@ public class PrismCL implements PrismModelListener
 	private SimulationMethod simMethod = null;
 
 	// strategy export info
-	private Prism.StrategyExportType exportStratType = StrategyExportType.ACTIONS;
+	private StrategyExportType exportStratType = StrategyExportType.ACTIONS;
 	
 	// parametric analysis info
 	private String[] paramLowerBounds = null;
