@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="846f6b2c-a6fb-4a48-9b7d-a1527616ac99" name="Default Changelist" comment="" />
+    <list default="true" id="846f6b2c-a6fb-4a48-9b7d-a1527616ac99" name="Default Changelist" comment="Revert &quot;Trigger Notification&quot;&#10;&#10;This reverts commit d2f495b95e0293b674031a0dfc92d9efedcde365.">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/colt.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stmc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/stmc.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,16 +13,52 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prism-org/src/prism/PrismCL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="800">
-              <caret line="2587" column="30" selection-start-line="2587" selection-end-line="2588" />
+            <state relative-caret-position="416">
+              <caret line="2587" column="28" selection-start-line="2587" selection-end-line="2588" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/edu/stmc/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="e#110#111#0" expanded="true" />
+                <element signature="e#144#145#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>main(</find>
+      <find>main</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/edu/stmc/Main.java" />
+      </list>
+    </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="547" />
@@ -47,62 +87,7 @@
             <path>
               <item name="stmc" type="b2602c69:ProjectViewProjectNode" />
               <item name="stmc" type="462c0819:PsiDirectoryNode" />
-              <item name="prism-org" type="462c0819:PsiDirectoryNode" />
-              <item name="ext" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stmc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stmc" type="462c0819:PsiDirectoryNode" />
-              <item name="prism-org" type="462c0819:PsiDirectoryNode" />
-              <item name="ext" type="462c0819:PsiDirectoryNode" />
-              <item name="lp_solve_5.5_java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stmc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stmc" type="462c0819:PsiDirectoryNode" />
-              <item name="prism-org" type="462c0819:PsiDirectoryNode" />
-              <item name="ext" type="462c0819:PsiDirectoryNode" />
-              <item name="lp_solve_5.5_java" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stmc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stmc" type="462c0819:PsiDirectoryNode" />
-              <item name="prism-org" type="462c0819:PsiDirectoryNode" />
-              <item name="ext" type="462c0819:PsiDirectoryNode" />
-              <item name="lp_solve_5.5_java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stmc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stmc" type="462c0819:PsiDirectoryNode" />
-              <item name="prism-org" type="462c0819:PsiDirectoryNode" />
-              <item name="ext" type="462c0819:PsiDirectoryNode" />
-              <item name="lp_solve_5.5_java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="lpsolve" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stmc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stmc" type="462c0819:PsiDirectoryNode" />
-              <item name="prism-org" type="462c0819:PsiDirectoryNode" />
-              <item name="ext" type="462c0819:PsiDirectoryNode" />
-              <item name="lpsolve55" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stmc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stmc" type="462c0819:PsiDirectoryNode" />
-              <item name="prism-org" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="stmc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stmc" type="462c0819:PsiDirectoryNode" />
-              <item name="prism-org" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="prism" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -113,9 +98,15 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/edu" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -129,6 +120,30 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="DYLD_LIBRARY_PATH" value="/opt/prism-4.5/lib" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="edu.stmc.Main" />
+      <module name="stmc" />
+      <option name="VM_PARAMETERS" value="-Djava.library.path=/opt/prism-4.5/lib" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.stmc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -139,7 +154,7 @@
     <frame x="547" y="23" width="2013" height="1342" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14658634" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14658634" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -147,7 +162,7 @@
       <window_info anchor="bottom" id="Messages" weight="0.3296" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3296" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3296" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -161,6 +176,26 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
     </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/prism-org/src/prism/PrismCL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="2587" column="28" selection-start-line="2587" selection-end-line="2588" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#110#111#0" expanded="true" />
+            <element signature="e#144#145#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
