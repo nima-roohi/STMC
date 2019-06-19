@@ -5,7 +5,7 @@ import prism.PrismCL;
 public class Main {
 
     public static void main(String[] args) {
-        PrismCL.main(new String[]{"-help","cconst"});
+        PrismCL.main(new String[]{"-help","const"});
     }
 
 }

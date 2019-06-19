@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="846f6b2c-a6fb-4a48-9b7d-a1527616ac99" name="Default Changelist" comment="Revert &quot;Trigger Notification&quot;&#10;&#10;This reverts commit d2f495b95e0293b674031a0dfc92d9efedcde365.">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prism-mod/src/prism/Prism.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-mod/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/prism-mod/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-mod/src/prism/PrismCL.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-mod/src/prism/PrismCL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="846f6b2c-a6fb-4a48-9b7d-a1527616ac99" name="Default Changelist" comment="Revert &quot;Trigger Notification&quot;&#10;&#10;This reverts commit d2f495b95e0293b674031a0dfc92d9efedcde365." />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +14,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prism-mod/src/prism/PrismCL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-75">
+            <state relative-caret-position="-679">
               <caret line="2501" column="35" selection-start-line="2501" selection-start-column="35" selection-end-line="2501" selection-end-column="35" />
               <folding>
                 <element signature="e#99218#99219#0" expanded="true" />
@@ -36,8 +27,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prism-org/src/prism/PrismSettings.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2110">
-              <caret line="1870" column="24" selection-start-line="1870" selection-start-column="24" selection-end-line="1870" selection-end-column="24" />
+            <state relative-caret-position="-24649">
+              <caret line="224" column="37" selection-start-line="224" selection-start-column="37" selection-end-line="224" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -45,7 +36,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prism-mod/src/prism/Prism.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
+            <state relative-caret-position="-50344">
               <caret line="612" selection-start-line="612" selection-end-line="613" />
               <folding>
                 <element signature="e#10963#10964#0" expanded="true" />
@@ -204,7 +195,7 @@
         <entry file="file://$PROJECT_DIR$/src/edu/stmc/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+              <caret line="7" column="43" lean-forward="true" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
               <folding>
                 <element signature="e#106#107#0" expanded="true" />
                 <element signature="e#165#166#0" expanded="true" />
@@ -246,6 +237,7 @@
         <option value="$PROJECT_DIR$/prism-mod/README.md" />
         <option value="$PROJECT_DIR$/prism-mod/src/prism/Prism.java" />
         <option value="$PROJECT_DIR$/prism-mod/src/prism/PrismCL.java" />
+        <option value="$PROJECT_DIR$/prism-org/src/prism/PrismSettings.java" />
         <option value="$PROJECT_DIR$/src/edu/stmc/Main.java" />
       </list>
     </option>
@@ -375,14 +367,14 @@
     <frame x="547" y="23" width="2013" height="1342" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14658634" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14658634" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3296" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3296" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -434,7 +426,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/prism-mod/src/prism/Prism.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
+        <state relative-caret-position="-50344">
           <caret line="612" selection-start-line="612" selection-end-line="613" />
           <folding>
             <element signature="e#10963#10964#0" expanded="true" />
@@ -590,7 +582,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/prism-mod/src/prism/PrismCL.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
+        <state relative-caret-position="-679">
           <caret line="2501" column="35" selection-start-line="2501" selection-start-column="35" selection-end-line="2501" selection-end-column="35" />
           <folding>
             <element signature="e#99218#99219#0" expanded="true" />
@@ -601,15 +593,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/prism-org/src/prism/PrismSettings.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2110">
-          <caret line="1870" column="24" selection-start-line="1870" selection-start-column="24" selection-end-line="1870" selection-end-column="24" />
+        <state relative-caret-position="-24649">
+          <caret line="224" column="37" selection-start-line="224" selection-start-column="37" selection-end-line="224" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/stmc/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+          <caret line="7" column="43" lean-forward="true" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
           <folding>
             <element signature="e#106#107#0" expanded="true" />
             <element signature="e#165#166#0" expanded="true" />
