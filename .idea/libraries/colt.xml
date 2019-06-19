@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="colt">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/prism-org/lib/colt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/prism-org/lib/epsgraphics.jar!/" />
+      <root url="jar://$PROJECT_DIR$/prism-org/lib/jas.jar!/" />
+      <root url="jar://$PROJECT_DIR$/prism-org/lib/jcommon.jar!/" />
+      <root url="jar://$PROJECT_DIR$/prism-org/lib/jfreechart.jar!/" />
+      <root url="jar://$PROJECT_DIR$/prism-org/lib/log4j.jar!/" />
+      <root url="jar://$PROJECT_DIR$/prism-org/lib/nailgun-server.jar!/" />
+      <root url="jar://$PROJECT_DIR$/prism-org/lib/jhoafparser.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/prism-org/lib/jhoafparser.jar!/src" />
+    </SOURCES>
+  </library>
+</component>
