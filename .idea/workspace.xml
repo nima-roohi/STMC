@@ -1,23 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AnalysisUIOptions">
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
     <option name="SCOPE_TYPE" value="8" />
     <option name="CUSTOM_SCOPE_NAME" value="stmc-src" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="846f6b2c-a6fb-4a48-9b7d-a1527616ac99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/nima.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/scalactic_2_12_3_0_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/scalatest_2_12_3_0_5_sources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/edu/stmc/GSPRT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/edu/stmc/GSPRTTest.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/edu/stmc/SPRTTest.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/SPRT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/SPRT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stmc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/stmc.iml" afterDir="false" />
-    </list>
+    <list default="true" id="846f6b2c-a6fb-4a48-9b7d-a1527616ac99" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,20 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/edu/stmc/SPRTTest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="641">
-              <caret line="73" selection-start-line="73" selection-end-line="73" />
-              <folding>
-                <element signature="e#18#63#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/edu/stmc/GSPRTTest.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+            <state relative-caret-position="495">
+              <caret line="33" lean-forward="true" selection-start-line="9" selection-end-line="33" />
               <folding>
                 <element signature="e#18#63#0" expanded="true" />
               </folding>
@@ -61,6 +38,18 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/edu/stmc/GSPRTTest.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" column="45" lean-forward="true" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
+              <folding>
+                <element signature="e#18#63#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/stmc/GSPRT.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="581">
@@ -107,6 +96,7 @@
       <find>::</find>
       <find>@pre</find>
       <find>q1</find>
+      <find>SPRT</find>
     </findStrings>
     <replaceStrings>
       <replace>java.lang.Math</replace>
@@ -114,6 +104,7 @@
       <replace>.</replace>
       <replace>@requires</replace>
       <replace>logP1</replace>
+      <replace>GSPRT</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -134,8 +125,8 @@
         <option value="$PROJECT_DIR$/src/edu/stmc/GTResult.java" />
         <option value="$PROJECT_DIR$/src/edu/stmc/SPRT.java" />
         <option value="$PROJECT_DIR$/test/edu/stmc/SPRTTest.scala" />
-        <option value="$PROJECT_DIR$/test/edu/stmc/GSPRTTest.scala" />
         <option value="$PROJECT_DIR$/src/edu/stmc/GSPRT.java" />
+        <option value="$PROJECT_DIR$/test/edu/stmc/GSPRTTest.scala" />
       </list>
     </option>
   </component>
@@ -197,7 +188,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
@@ -287,9 +278,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ScalaTests_in_'test' - 2019.06.20 at 00h 34m 18s.xml">
-      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
     <history-entry file="ScalaTests_in_'test' - 2019.06.20 at 00h 34m 33s.xml">
       <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
@@ -315,6 +303,9 @@
       <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
     <history-entry file="ScalaTests_in_'test' - 2019.06.20 at 00h 43m 22s.xml">
+      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="ScalaTests_in_'test' - 2019.06.20 at 00h 45m 44s.xml">
       <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
   </component>
@@ -608,20 +599,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/edu/stmc/SPRTTest.scala">
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc/GSPRT.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="641">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
-          <folding>
-            <element signature="e#18#63#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="581">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/edu/stmc/GSPRTTest.scala">
+    <entry file="file://$PROJECT_DIR$/test/edu/stmc/SPRTTest.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        <state relative-caret-position="495">
+          <caret line="33" lean-forward="true" selection-start-line="9" selection-end-line="33" />
           <folding>
             <element signature="e#18#63#0" expanded="true" />
           </folding>
@@ -635,10 +623,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/stmc/GSPRT.java">
+    <entry file="file://$PROJECT_DIR$/test/edu/stmc/GSPRTTest.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        <state relative-caret-position="390">
+          <caret line="26" column="45" lean-forward="true" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
+          <folding>
+            <element signature="e#18#63#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
