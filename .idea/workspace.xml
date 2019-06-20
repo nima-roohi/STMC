@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="846f6b2c-a6fb-4a48-9b7d-a1527616ac99" name="Default Changelist" comment="Revert &quot;Trigger Notification&quot;&#10;&#10;This reverts commit d2f495b95e0293b674031a0dfc92d9efedcde365.">
-      <change afterPath="$PROJECT_DIR$/src/edu/stmc/ThresholdResult.java" afterDir="false" />
+    <list default="true" id="846f6b2c-a6fb-4a48-9b7d-a1527616ac99" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/stmc/GTResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/stmc/SPRT.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/stmc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/stmc/ThresholdResult.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,7 +17,51 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/stmc/SPRT.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="87" selection-start-line="5" selection-start-column="82" selection-end-line="5" selection-end-column="87" />
+              <folding>
+                <element signature="e#3835#3836#0" expanded="true" />
+                <element signature="e#3906#3907#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/stmc/GTResult.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="2" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$USER_HOME$/Dropbox/Research/Yu/codes/prism-4.4/src/simulator/method/SPRTMethod.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="443">
+              <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="60" />
+              <folding>
+                <element signature="e#0#7008#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/stmc/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="500">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -35,7 +82,18 @@
       <find>stmc</find>
       <find>-mt</find>
       <find>javamaxmem</find>
+      <find>sprt</find>
+      <find>cmn::math::nlog</find>
+      <find>ub</find>
+      <find>java.lang.</find>
+      <find>QCResult</find>
+      <find>::</find>
     </findStrings>
+    <replaceStrings>
+      <replace>java.lang.Math</replace>
+      <replace>CompResult.Binary</replace>
+      <replace>.</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -48,8 +106,12 @@
         <option value="$PROJECT_DIR$/prism-mod/src/prism/Prism.java" />
         <option value="$PROJECT_DIR$/prism-mod/src/prism/PrismCL.java" />
         <option value="$PROJECT_DIR$/prism-org/src/prism/PrismSettings.java" />
-        <option value="$PROJECT_DIR$/src/edu/stmc/Main.java" />
         <option value="$PROJECT_DIR$/src/edu/stmc/Result.java" />
+        <option value="$PROJECT_DIR$/src/edu/stmc/CompResult.java" />
+        <option value="$PROJECT_DIR$/src/edu/stmc/Main.java" />
+        <option value="$PROJECT_DIR$/src/edu/stmc/SPRT.java" />
+        <option value="$PROJECT_DIR$/src/edu/stmc/LessResult.java" />
+        <option value="$PROJECT_DIR$/src/edu/stmc/GTResult.java" />
       </list>
     </option>
   </component>
@@ -87,6 +149,13 @@
               <item name="stmc" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="stmc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stmc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stmc" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="stmc" type="462c0819:PsiDirectoryNode" />
+              <item name="Main.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </path>
           </expand>
           <select />
@@ -164,6 +233,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="547" y="23" width="2013" height="1342" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14658634" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -187,6 +257,9 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
     </layout>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/prism-org/src/prism/PrismCL.java">
@@ -219,24 +292,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="42" selection-start-line="1" selection-start-column="42" selection-end-line="1" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/stmc/ThresholdResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/stmc/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="e#74#75#0" expanded="true" />
-            <element signature="e#99#100#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -410,6 +465,69 @@
           <folding>
             <element signature="e#99218#99219#0" expanded="true" />
             <element signature="e#99299#99300#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Dropbox/Research/Yu/codes/prism-4.4/src/prism/NimaExtra.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prism-org/src/simulator/method/SPRTMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Dropbox/Research/Yu/codes/prism-4.4/src/simulator/StratifiedSimulatorEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1929">
+          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///opt/java/jdk-8.0.202/src.zip!/java/lang/Math.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="291" column="25" selection-start-line="291" selection-start-column="25" selection-end-line="291" selection-end-column="25" />
+          <folding>
+            <element signature="e#11119#11120#0" expanded="true" />
+            <element signature="e#11200#11201#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc/GTResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="2" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc/SPRT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="87" selection-start-line="5" selection-start-column="82" selection-end-line="5" selection-end-column="87" />
+          <folding>
+            <element signature="e#3835#3836#0" expanded="true" />
+            <element signature="e#3906#3907#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Dropbox/Research/Yu/codes/prism-4.4/src/simulator/method/SPRTMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#7008#0" expanded="true" />
           </folding>
         </state>
       </provider>
