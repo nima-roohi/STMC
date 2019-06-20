@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="8" />
+    <option name="CUSTOM_SCOPE_NAME" value="stmc-src" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="846f6b2c-a6fb-4a48-9b7d-a1527616ac99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/edu/stmc/GTResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/edu/stmc/SPRT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/nima.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/scalactic_2_12_3_0_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/scalatest_2_12_3_0_5_sources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/edu/stmc/GSPRT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/edu/stmc/GSPRTTest.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/edu/stmc/SPRTTest.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/ThresholdResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/stmc/SPRT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/SPRT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stmc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/stmc.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,33 +30,41 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/stmc/SPRT.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="87" selection-start-line="5" selection-start-column="82" selection-end-line="5" selection-end-column="87" />
+            <state relative-caret-position="447">
+              <caret line="67" column="103" lean-forward="true" selection-start-line="67" selection-start-column="103" selection-end-line="67" selection-end-column="103" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/edu/stmc/SPRTTest.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="641">
+              <caret line="73" selection-start-line="73" selection-end-line="73" />
               <folding>
-                <element signature="e#3835#3836#0" expanded="true" />
-                <element signature="e#3906#3907#0" expanded="true" />
+                <element signature="e#18#63#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/stmc/GTResult.java">
+        <entry file="file://$PROJECT_DIR$/test/edu/stmc/GSPRTTest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="2" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+            <state relative-caret-position="150">
+              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+              <folding>
+                <element signature="e#18#63#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$USER_HOME$/Dropbox/Research/Yu/codes/prism-4.4/src/simulator/method/SPRTMethod.java">
+        <entry file="file://$PROJECT_DIR$/src/edu/stmc/GSPRT.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="60" />
-              <folding>
-                <element signature="e#0#7008#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="581">
+              <caret line="51" selection-start-line="51" selection-end-line="51" />
             </state>
           </provider>
         </entry>
@@ -88,11 +105,15 @@
       <find>java.lang.</find>
       <find>QCResult</find>
       <find>::</find>
+      <find>@pre</find>
+      <find>q1</find>
     </findStrings>
     <replaceStrings>
       <replace>java.lang.Math</replace>
       <replace>CompResult.Binary</replace>
       <replace>.</replace>
+      <replace>@requires</replace>
+      <replace>logP1</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -109,11 +130,17 @@
         <option value="$PROJECT_DIR$/src/edu/stmc/Result.java" />
         <option value="$PROJECT_DIR$/src/edu/stmc/CompResult.java" />
         <option value="$PROJECT_DIR$/src/edu/stmc/Main.java" />
-        <option value="$PROJECT_DIR$/src/edu/stmc/SPRT.java" />
         <option value="$PROJECT_DIR$/src/edu/stmc/LessResult.java" />
         <option value="$PROJECT_DIR$/src/edu/stmc/GTResult.java" />
+        <option value="$PROJECT_DIR$/src/edu/stmc/SPRT.java" />
+        <option value="$PROJECT_DIR$/test/edu/stmc/SPRTTest.scala" />
+        <option value="$PROJECT_DIR$/test/edu/stmc/GSPRTTest.scala" />
+        <option value="$PROJECT_DIR$/src/edu/stmc/GSPRT.java" />
       </list>
     </option>
+  </component>
+  <component name="NamedScopeManager">
+    <scope name="stmc-src" pattern="src:edu.stmc.*" />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="547" />
@@ -126,7 +153,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -153,26 +179,32 @@
             <path>
               <item name="stmc" type="b2602c69:ProjectViewProjectNode" />
               <item name="stmc" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stmc" type="b2602c69:ProjectViewProjectNode" />
               <item name="stmc" type="462c0819:PsiDirectoryNode" />
-              <item name="Main.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="stmc" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="edu.stmc" />
       <recent name="prism" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -194,7 +226,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="ScalaTest.ScalaTests in 'test'">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <envs>
         <env name="DYLD_LIBRARY_PATH" value="/opt/prism-4.5/lib" />
@@ -212,8 +244,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ScalaTests in 'test'" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true">
+      <module name="stmc" />
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="showProgressMessages" value="true" />
+      <setting name="useSbt" value="false" />
+      <setting name="useUiWithSbt" value="false" />
+      <setting name="jrePath" value="" />
+      <envs />
+      <setting name="testKind" value="All in package" />
+      <setting name="package" value="" />
+      <buffered bufClass="edu.stmc.GSPRTTest" />
+      <buffered bufClass="edu.stmc.GSPRTTest" />
+      <buffered bufClass="edu.stmc.SPRTTest" />
+      <buffered bufClass="edu.stmc.SPRTTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="ScalaTest.ScalaTests in 'test'" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -231,18 +286,50 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="ScalaTests_in_'test' - 2019.06.20 at 00h 34m 18s.xml">
+      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="ScalaTests_in_'test' - 2019.06.20 at 00h 34m 33s.xml">
+      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="ScalaTests_in_'test' - 2019.06.20 at 00h 37m 49s.xml">
+      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="ScalaTests_in_'test' - 2019.06.20 at 00h 38m 13s.xml">
+      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="ScalaTests_in_'test' - 2019.06.20 at 00h 39m 52s.xml">
+      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="ScalaTests_in_'test' - 2019.06.20 at 00h 40m 10s.xml">
+      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="ScalaTests_in_'test' - 2019.06.20 at 00h 42m 01s.xml">
+      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="ScalaTests_in_'test' - 2019.06.20 at 00h 42m 21s.xml">
+      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="ScalaTests_in_'test' - 2019.06.20 at 00h 42m 43s.xml">
+      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="ScalaTests_in_'test' - 2019.06.20 at 00h 43m 22s.xml">
+      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+  </component>
   <component name="ToolWindowManager">
     <frame x="547" y="23" width="2013" height="1342" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14658634" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14658634" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3296" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3296" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -506,29 +593,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/stmc/GTResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="2" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/stmc/SPRT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="87" selection-start-line="5" selection-start-column="82" selection-end-line="5" selection-end-column="87" />
-          <folding>
-            <element signature="e#3835#3836#0" expanded="true" />
-            <element signature="e#3906#3907#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Dropbox/Research/Yu/codes/prism-4.4/src/simulator/method/SPRTMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="60" />
+        <state relative-caret-position="735">
+          <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
           <folding>
             <element signature="e#0#7008#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/edu/stmc/SPRTTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="641">
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
+          <folding>
+            <element signature="e#18#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/edu/stmc/GSPRTTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+          <folding>
+            <element signature="e#18#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc/SPRT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="67" column="103" lean-forward="true" selection-start-line="67" selection-start-column="103" selection-end-line="67" selection-end-column="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc/GSPRT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="581">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
         </state>
       </provider>
     </entry>
@@ -607,7 +717,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>colt</last-edited>
+          <last-edited>scalactic_2.12-3.0.5</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -615,6 +725,21 @@
               </list>
             </option>
           </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <last-edited>stmc-src</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+          <order>
+            <scope name="stmc-src" />
+          </order>
         </settings>
       </state>
     </states>
