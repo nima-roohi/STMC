@@ -27,14 +27,13 @@
 package prism;
 
 import common.StackTraceHelper;
-import edu.stmc.HypTestingMethod;
-import edu.stmc.STMCConfig;
-import edu.stmc.SamplingMethod;
+import edu.stmc.*;
 import parser.Values;
 import parser.ast.*;
 import prism.Prism.StrategyExportType;
 import simulator.GenerateSimulationPath;
 import simulator.method.*;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -2298,6 +2297,18 @@ public class PrismCL implements PrismModelListener {
    */
   private SimulationMethod processSimulationOptions(Expression expr) throws PrismException {
     SimulationMethod aSimMethod = null;
+
+    // === DOWN ========================================================================================================
+    if(STMCConfig.enabled) {
+      ExpressionProb expr2 = (ExpressionProb) expr;
+      return new StratificationMethod(expr,new GSPRT(
+      expr2.getBound().evaluateDouble(),
+      STMCConfig.alpha,
+      STMCConfig.beta,
+      STMCConfig.minIters
+      ));
+    }
+    // ===  UP  ========================================================================================================
 
     // See if property to be checked is a reward (R) operator
     boolean isReward = (expr instanceof ExpressionReward);

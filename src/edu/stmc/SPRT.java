@@ -1,5 +1,7 @@
 package edu.stmc;
 
+import com.sun.javaws.exceptions.ErrorCodeResponseException;
+
 /** Sequential Probability Ratio Test */
 public class SPRT {
   private SPRT() { }
@@ -13,7 +15,7 @@ public class SPRT {
    * not a simple hypothesis.</li>
    * </ul>
    */
-  public static final class Binary {
+  public static final class Binary implements HypTest {
 
     /**
      * Construct an instance of the binary version of SPRT
@@ -77,27 +79,59 @@ public class SPRT {
     /**
      * Update the test by adding an observation
      * @param passed Whether or not the sample satisfied the test or not.
-     * @return {@link #status()}
      */
-    public GTResult.Binary check(final boolean passed) {
+    @Override
+    public void update(final boolean passed) {
       if (passed) logT += q1;
       else logT += q0;
-      return status();
     }
 
     /**
      * Update the test by adding the input number of observations
      * @param passed Number of samples that are passed
      * @param failed Number of samples that are failed
-     * @return {@link #status()}
      * @requires {@code passed >= 0}
      * @requires {@code failed >= 0}
      */
-    public GTResult.Binary check(final int passed, final int failed) {
+    @Override
+    public void update(final int passed, final int failed) {
       assert passed >= 0 : "Invalid number of passed tests " + passed;
       assert failed >= 0 : "Invalid number of failed tests " + failed;
       logT += passed * q1 + failed * q0;
-      return status();
+    }
+
+    /** Reset the state (can be used to restart the test) */
+    @Override
+    public void reset() { logT = 0; }
+
+    @Override
+    public boolean shouldStopNow() { return status() != GTResult.Binary.UNDECIDED; }
+
+    @Override
+    public boolean hasAnswer() { return true; }
+
+    @Override
+    public boolean isNullRejected() { return status() == GTResult.Binary.YES; }
+
+    @Override
+    public String getParametersString() {
+      return "threshold: " + threshold + ", " +
+             "alpha: " + alpha + ", " +
+             "beta: " + beta + ", " +
+             "delta: " + delta +
+             "logL: " + logL + ", " +
+             "logU: " + logU + ", " +
+             "q0: " + q0 + ", " +
+             "q1: " + q1;
+    }
+
+    @Override
+    public Binary cloneCopy() {
+      try {
+        return (Binary) super.clone();
+      } catch (CloneNotSupportedException e) {
+        throw new Error(e);
+      }
     }
 
     /** Input Threshold */
@@ -137,7 +171,18 @@ public class SPRT {
    * not a simple hypothesis.</li>
    * </ul>
    */
-  public static final class Ternary {
+  public static final class Ternary implements HypTest {
+
+    /** Constructor used to cloning */
+    private Ternary(Binary lbBinary, Binary ubBinary, double threshold, double alpha, double beta, double gamma, double delta) {
+      this.lbBinary = lbBinary.cloneCopy();
+      this.ubBinary = ubBinary.cloneCopy();
+      this.threshold = threshold;
+      this.alpha = alpha;
+      this.beta = beta;
+      this.gamma = gamma;
+      this.delta = delta;
+    }
 
     /**
      * Construct an instance of the ternary version of SPRT
@@ -196,28 +241,62 @@ public class SPRT {
              GTResult.Ternary.UNKNOWN;
     }
 
-    /** Same as {@link #status(GTResult.Binary, GTResult.Binary)}, but input parameters are taken from the current state
-     * @return Current status of the test */
+    /**
+     * Same as {@link #status(GTResult.Binary, GTResult.Binary)}, but input parameters are taken from the current state
+     * @return Current status of the test
+     */
     public GTResult.Ternary status() { return status(lbBinary.status(), ubBinary.status()); }
 
     /**
      * Update the test by adding an observation
      * @param passed Whether or not the sample satisfied the test or not.
-     * @return {@link #status()}
      */
-    public GTResult.Ternary check(final boolean passed) {
-      return status(lbBinary.check(passed), ubBinary.check(passed));
+    @Override
+    public void update(final boolean passed) {
+      lbBinary.update(passed);
+      ubBinary.update(passed);
     }
 
     /**
      * Update the test by adding an observation
      * @param passed Number of samples that are passed
      * @param failed Number of samples that are failed
-     * @return {@link #status()}
      */
-    public GTResult.Ternary check(final int passed, final int failed) {
-      return status(lbBinary.check(passed, failed), ubBinary.check(passed, failed));
+    @Override
+    public void update(final int passed, final int failed) {
+      lbBinary.update(passed, failed);
+      ubBinary.update(passed, failed);
     }
+
+    /** Reset the state (can be used to restart the test) */
+    @Override
+    public void reset() {
+      lbBinary.reset();
+      ubBinary.reset();
+    }
+
+    @Override
+    public boolean shouldStopNow() { return status() != GTResult.Ternary.UNDECIDED; }
+
+    @Override
+    public boolean hasAnswer() { return status() != GTResult.Ternary.UNKNOWN; }
+
+    @Override
+    public boolean isNullRejected() { return status() == GTResult.Ternary.YES; }
+
+    @Override
+    public String getParametersString() {
+      return "threshold: " + threshold + ", " +
+             "alpha: " + alpha + ", " +
+             "beta: " + beta + ", " +
+             "gamma: " + gamma + ", " +
+             "delta: " + delta + ", " +
+             "lbBinary: " + lbBinary.getParametersString() + ", " +
+             "ubBinary: " + ubBinary.getParametersString();
+    }
+
+    @Override
+    public Ternary cloneCopy() { return new Ternary(lbBinary, ubBinary, threshold, alpha, beta, gamma, delta); }
 
     /** Input Threshold */
     public final double threshold;

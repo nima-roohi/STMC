@@ -1,7 +1,7 @@
 package edu.stmc;
 
 /** Generalized Sequential Probability Ratio Test */
-public class GSPRT {
+public class GSPRT implements HypTest {
 
   public GSPRT(final double threshold, final double alpha, final double beta, final int minSamples) {
     assert 0 < threshold && threshold < 1 : "Wrong threshold " + threshold;
@@ -27,9 +27,9 @@ public class GSPRT {
   }
 
   public GTResult.Binary status() {
-    if (N < 100)
+    if (N < STMCConfig.minIters)
       return GTResult.Binary.UNDECIDED;
-    final double mu = n / N;
+    final double mu = n / (double) N;
     if (1 <= mu || mu <= 0)
       return GTResult.Binary.UNDECIDED;
     final double logMu0 = Math.log(mu);
@@ -46,16 +46,53 @@ public class GSPRT {
            GTResult.Binary.UNDECIDED;
   }
 
-  public GTResult.Binary check(final boolean passed) {
+  @Override
+  public void update(final boolean passed) {
     N++;
     if (passed) n++;
-    return status();
   }
 
-  public GTResult.Binary check(final int passed, final int failed) {
+  @Override
+  public void update(final int passed, final int failed) {
     N += passed + failed;
     n += passed;
-    return status();
+  }
+
+  /** Reset the state (can be used to restart the test) */
+  @Override
+  public void reset() {
+    N = 0;
+    n = 0;
+  }
+
+  @Override
+  public boolean shouldStopNow() { return status() != GTResult.Binary.UNDECIDED; }
+
+  @Override
+  public boolean hasAnswer() { return true; }
+
+  @Override
+  public boolean isNullRejected() { return status() == GTResult.Binary.YES; }
+
+  @Override
+  public String getParametersString() {
+    return "threshold: " + threshold + ", " +
+           "alpha: " + alpha + ", " +
+           "beta: " + beta + ", " +
+           "logL: " + logL + ", " +
+           "logU: " + logU + ", " +
+           "logP0: " + logP0 + ", " +
+           "logP1: " + logP1 + ", " +
+           "minSamples: " + minSamples;
+  }
+
+  @Override
+  public GSPRT cloneCopy() {
+    try {
+      return (GSPRT) super.clone();
+    } catch (CloneNotSupportedException e) {
+      throw new Error(e);
+    }
   }
 
   /** Input Threshold */
@@ -83,8 +120,8 @@ public class GSPRT {
   public final int minSamples;
 
   /** Total number of samples */
-  private double N = 0;
+  private long N = 0;
 
   /** Number of positive samples */
-  private double n = 0;
+  private long n = 0;
 }

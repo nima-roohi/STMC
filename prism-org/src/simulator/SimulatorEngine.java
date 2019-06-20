@@ -1544,9 +1544,8 @@ public class SimulatorEngine extends PrismComponent
 		}
 
 		// As long as there are at least some valid props, do sampling
-		if (validPropsCount > 0) {
+		if (validPropsCount > 0)
 			doSampling(initialState, maxPathLength);
-		}
 
 		// Process the results
 		for (int i = 0; i < results.length; i++) {
