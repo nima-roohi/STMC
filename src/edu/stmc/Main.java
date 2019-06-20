@@ -11,7 +11,7 @@ class C1 {
     step = value;
   }
   Res a() {
-    d+=step;
+    d += step;
     return d == 0 ? Res.ZERO :
            d > 0 ? Res.POS :
            Res.NEG;
@@ -32,25 +32,10 @@ class C2 {
 public class Main {
 
   public static void main(String[] args) {
-    // PrismCL.main(new String[]{"-help","cconst"});
-    C1 c1 = new C1((args.length + 1) / 10.0);
-    double d = 0;
-    int a = 0;
-
-    long t1 = System.currentTimeMillis();
-      for (int i = 0; i < 2000000000; i++)
-      if(c1.a() != Res.ZERO) a++;
-    long t2 = System.currentTimeMillis();
-    for (int i = 0; i < 2000000000; i++) {
-      d+=0.1;
-      if(0==(d == 0 ? 0 :
-         d >  0 ? 1 :
-             -1))a++;
-    }
-    long t3 = System.currentTimeMillis();
-
-    System.out.println("time: " + (t2 - t1) / 1000.0 + "\t\tignore: " + ((C1) c1).d);
-    System.out.println("time: " + (t3 - t2) / 1000.0 + "\t\tignore: " + d);
+    // PrismCL.main(new String[]{"-help"});
+    PrismCL.main(new String[]{
+    "/opt/prism-4.5/prism-examples/dice/dice.pm",
+    "-pf", "P>0.1 [ F s=7 & d=1 ]"});
   }
 
 }
