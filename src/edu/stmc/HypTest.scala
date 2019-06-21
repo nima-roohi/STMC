@@ -22,19 +22,24 @@ trait HypTest extends Cloneable {
   def completed: Boolean
 
   /** After [[completed]] returned true, this method is used to see if a decision is made (it is possible that a
-    * test terminates without choosing between reject or not-reject).
+    * test terminates without choosing between the null and alternative hypotheses).
     *
     * @note [[completed]] should return `true`*/
   def decided: Boolean
 
-  /** After [[completed]] and [[decided]] both returned true, this is used to see if the null hypothesis is rejected.
+  /** After [[completed]] returned true, this is used to see whether the null hypothesis is not rejected.
     *
-    * @note [[completed]] and [[decided]] methods should both return `true`. */
-  def nullHypRejected: Boolean
+    * @note [[completed]] method should return `true`. */
+  def rejected: Boolean
 
-  /** Get the parameters of the simulation (including the computed one) as a string. */
+  /** After [[completed]] returned true, this is used to see whether the null hypothesis is rejected.
+    *
+    * @note [[completed]] method should return `true`. */
+  def failed_to_reject: Boolean
+
+  /** Get the parameters of the test (including the computed ones) as a string. */
   def parametersStr: String
 
-  /** Create a copy of this instance, so change in one does not affect change in the other. */
+  /** Create a copy of this instance, so changes in one does not affect changes in the other. */
   def cloneCopy(): HypTest
 }

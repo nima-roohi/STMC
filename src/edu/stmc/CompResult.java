@@ -1,6 +1,6 @@
 package edu.stmc;
 
-/** Greater than threshold result */
+/** Result of comparing a probability with a constant (often called threshold) */
 public class CompResult {
 
   public enum Binary {

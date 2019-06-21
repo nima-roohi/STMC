@@ -14,7 +14,7 @@ class GSPRTTest extends FlatSpec {
       var res = CompResult.Binary.UNDECIDED
       while (res == CompResult.Binary.UNDECIDED) {
         test.update(rnd.nextBoolean())
-        res = test.status()
+        res = test.status
       }
       res == CompResult.Binary.LARGER
     })
@@ -28,7 +28,7 @@ class GSPRTTest extends FlatSpec {
       var res = CompResult.Binary.UNDECIDED
       while (res == CompResult.Binary.UNDECIDED) {
         test.update(rnd.nextBoolean())
-        res = test.status()
+        res = test.status
       }
       res == CompResult.Binary.LARGER
     })

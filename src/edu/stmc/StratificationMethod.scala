@@ -110,7 +110,7 @@ class StratificationMethod(private[this] var expr: Expression,
     * @param sampler The Sampler object for this simulation
     * @throws PrismException if we can't get a result for some reason.
     */
-  override def getResult(sampler: Sampler): AnyRef = Boolean.box(test.nullHypRejected)
+  override def getResult(sampler: Sampler): AnyRef = Boolean.box(test.rejected)
 
   /**
     * Get an explanation for the result of the simulation as a string.

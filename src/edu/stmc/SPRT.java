@@ -109,7 +109,9 @@ public class SPRT {
     public boolean decided() { return true; }
 
     @Override
-    public boolean nullHypRejected() { return status() == CompResult.Binary.LARGER; }
+    public boolean rejected() { return status() == CompResult.Binary.LARGER; }
+    @Override
+    public boolean failed_to_reject() { return status() == CompResult.Binary.LARGER; }
 
     @Override
     public String parametersStr() {
@@ -280,7 +282,9 @@ public class SPRT {
     public boolean decided() { return status() != CompResult.Ternary.TOO_CLOSE; }
 
     @Override
-    public boolean nullHypRejected() { return status() == CompResult.Ternary.LARGER; }
+    public boolean rejected() { return status() == CompResult.Ternary.LARGER; }
+    @Override
+    public boolean failed_to_reject() { return status() == CompResult.Ternary.LARGER; }
 
     @Override
     public String parametersStr() {
