@@ -1,19 +1,19 @@
 package edu.stmc;
 
 /** Greater than threshold result */
-public class GTResult {
+public class CompResult {
 
   public enum Binary {
     UNDECIDED,
-    YES,
-    NO
+    SMALLER,
+    LARGER
   }
 
   public enum Ternary {
-    UNKNOWN,
     UNDECIDED,
-    YES,
-    NO
+    TOO_CLOSE,
+    SMALLER,
+    LARGER,
   }
 
 }

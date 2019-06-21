@@ -33,7 +33,6 @@ import parser.ast.*;
 import prism.Prism.StrategyExportType;
 import simulator.GenerateSimulationPath;
 import simulator.method.*;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -41,6 +40,7 @@ import java.io.IOException;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 // prism - command line version
 
@@ -1078,22 +1078,22 @@ public class PrismCL implements PrismModelListener {
     }
     return res;
   }
-  private SamplingMethod parseSamplingMethod(final String[] args, final int i, final String sw) {
+  private SmplMethodName parseSamplingMethod(final String[] args, final int i, final String sw) {
     if (i >= args.length)
       errorAndExit("Missing value for -" + sw + " switch");
     try {
-      return SamplingMethod.valueOf(args[i].toUpperCase());
+      return SmplMethodName.valueOf(args[i].toUpperCase());
     } catch (NumberFormatException e) {
       errorAndExit("Invalid integer value for -" + sw + " switch");
       throw e;
     }
   }
-  private HypTestingMethod parseHypTestMethod(final String[] args, final int i, final String sw) {
+  private HypTestName parseHypTestMethod(final String[] args, final int i, final String sw) {
     if (i >= args.length)
       errorAndExit("Missing value for -" + sw + " switch");
     try {
-      return HypTestingMethod.valueOf(args[i].toUpperCase());
-    } catch (NumberFormatException e) {
+      return null;//HypTestName.withName(args[i].toUpperCase());//TODO
+    } catch (NoSuchElementException e) {
       errorAndExit("Invalid integer value for -" + sw + " switch");
       throw e;
     }
@@ -2449,8 +2449,8 @@ public class PrismCL implements PrismModelListener {
                     "                                 most n processors to repeat the experiments. n must be positive (1 is OK). If n is not\n" +
                     "                                 set,number of processors available to the Java virtual machine will be used as n. If\n" +
                     "                                 option 'repeat' is not set (and option 'stmc' is set) then this option will be ignored.");
-    mainLog.println("-sampmethod (or -sm) <name> .... Simulation method (" + SamplingMethod.valuesToString() + ").");
-    mainLog.println("-hyptestmethod (or -htm) <name>  Hypothesis testing method to use (" + HypTestingMethod.valuesToString() + ").");
+    mainLog.println("-sampmethod (or -sm) <name> .... Simulation method (" + SmplMethodName.valuesToString() + ").");
+    mainLog.println("-hyptestmethod (or -htm) <name>  Hypothesis testing method to use (" + HypTestName.valuesToString() + ").");
     mainLog.println("-miniter <n> ................... Minimum number of iterations (when GSPRT is used).");
     mainLog.println("-stratasize (or -ss) <list> .... Size of strata. Comma separated non-empty list of positive integers. Length specifies how\n" +
                     "                                 many steps each strata determines. Multiplication of values specify number of strata. \n" +

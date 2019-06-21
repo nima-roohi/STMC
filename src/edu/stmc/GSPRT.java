@@ -26,12 +26,12 @@ public class GSPRT implements HypTest {
     this.minSamples = minSamples;
   }
 
-  public GTResult.Binary status() {
+  public CompResult.Binary status() {
     if (N < STMCConfig.minIters)
-      return GTResult.Binary.UNDECIDED;
+      return CompResult.Binary.UNDECIDED;
     final double mu = n / (double) N;
     if (1 <= mu || mu <= 0)
-      return GTResult.Binary.UNDECIDED;
+      return CompResult.Binary.UNDECIDED;
     final double logMu0 = Math.log(mu);
     final double logMu1 = Math.log(1 - mu);
     assert logMu0 == logMu0 : "logMu0 is not a number " + logMu0;
@@ -41,9 +41,9 @@ public class GSPRT implements HypTest {
     final double logT = mu >= threshold ?
                         (n * logMu0 + (N - n) * logMu1) - (n * logP0 + (N - n) * logP1) :
                         (n * logP0 + (N - n) * logP1) - (n * logMu0 + (N - n) * logMu1);
-    return logT >= logU ? GTResult.Binary.YES :
-           logT <= logL ? GTResult.Binary.NO :
-           GTResult.Binary.UNDECIDED;
+    return logT >= logU ? CompResult.Binary.LARGER :
+           logT <= logL ? CompResult.Binary.SMALLER :
+           CompResult.Binary.UNDECIDED;
   }
 
   @Override
@@ -66,16 +66,16 @@ public class GSPRT implements HypTest {
   }
 
   @Override
-  public boolean shouldStopNow() { return status() != GTResult.Binary.UNDECIDED; }
+  public boolean completed() { return status() != CompResult.Binary.UNDECIDED; }
 
   @Override
-  public boolean hasAnswer() { return true; }
+  public boolean decided() { return true; }
 
   @Override
-  public boolean isNullRejected() { return status() == GTResult.Binary.YES; }
+  public boolean nullHypRejected() { return status() == CompResult.Binary.LARGER; }
 
   @Override
-  public String getParametersString() {
+  public String parametersStr() {
     return "threshold: " + threshold + ", " +
            "alpha: " + alpha + ", " +
            "beta: " + beta + ", " +

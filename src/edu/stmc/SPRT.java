@@ -1,7 +1,5 @@
 package edu.stmc;
 
-import com.sun.javaws.exceptions.ErrorCodeResponseException;
-
 /** Sequential Probability Ratio Test */
 public class SPRT {
   private SPRT() { }
@@ -57,23 +55,23 @@ public class SPRT {
     }
 
     /**
-     * @return {@link GTResult.Binary#YES}, {@link GTResult.Binary#NO}, or {@link GTResult.Binary#UNDECIDED}.
+     * @return {@link CompResult.Binary#LARGER}, {@link CompResult.Binary#SMALLER}, or {@link CompResult.Binary#UNDECIDED}.
      * <ul>
-     * <li>{@link GTResult.Binary#YES} means that the test rejected the null hypothesis (the actual probability is not
+     * <li>{@link CompResult.Binary#LARGER} means that the test rejected the null hypothesis (the actual probability is not
      * smaller than the threshold in H0).</li>
-     * <li>{@link GTResult.Binary#NO} means that the test did not reject the null hypothesis.</li>
-     * <li>{@link GTResult.Binary#UNDECIDED} means that the test is not done yet.</li>
+     * <li>{@link CompResult.Binary#SMALLER} means that the test did not reject the null hypothesis.</li>
+     * <li>{@link CompResult.Binary#UNDECIDED} means that the test is not done yet.</li>
      * </ul>
      * @ensures Let {@literal p} be the actual probability. There are two two probabilistic guarantees:
      * <ul>
-     * <li>If {@code p <= threshold - delta} then the probability of returning {@link GTResult.Binary#YES} is at most {@link #alpha}.</li>
-     * <li>If {@code p >= threshold + delta} then the probability of returning {@link GTResult.Binary#NO} is at most {@link #beta}.</li>
+     * <li>If {@code p <= threshold - delta} then the probability of returning {@link CompResult.Binary#LARGER} is at most {@link #alpha}.</li>
+     * <li>If {@code p >= threshold + delta} then the probability of returning {@link CompResult.Binary#SMALLER} is at most {@link #beta}.</li>
      * </ul>
      */
-    public GTResult.Binary status() {
-      return logT <= logL ? GTResult.Binary.NO :
-             logT >= logU ? GTResult.Binary.YES :
-             GTResult.Binary.UNDECIDED;
+    public CompResult.Binary status() {
+      return logT <= logL ? CompResult.Binary.SMALLER :
+             logT >= logU ? CompResult.Binary.LARGER :
+             CompResult.Binary.UNDECIDED;
     }
 
     /**
@@ -105,16 +103,16 @@ public class SPRT {
     public void reset() { logT = 0; }
 
     @Override
-    public boolean shouldStopNow() { return status() != GTResult.Binary.UNDECIDED; }
+    public boolean completed() { return status() != CompResult.Binary.UNDECIDED; }
 
     @Override
-    public boolean hasAnswer() { return true; }
+    public boolean decided() { return true; }
 
     @Override
-    public boolean isNullRejected() { return status() == GTResult.Binary.YES; }
+    public boolean nullHypRejected() { return status() == CompResult.Binary.LARGER; }
 
     @Override
-    public String getParametersString() {
+    public String parametersStr() {
       return "threshold: " + threshold + ", " +
              "alpha: " + alpha + ", " +
              "beta: " + beta + ", " +
@@ -218,34 +216,34 @@ public class SPRT {
     /**
      * @param lb Result of lower-bound binary test
      * @param ub Result of upper-bound binary test
-     * @return {@link GTResult.Ternary#YES}, {@link GTResult.Ternary#NO}, {@link GTResult.Ternary#UNKNOWN}, or {@link GTResult.Ternary#UNDECIDED}.
+     * @return {@link CompResult.Ternary#LARGER}, {@link CompResult.Ternary#SMALLER}, {@link CompResult.Ternary#TOO_CLOSE}, or {@link CompResult.Ternary#UNDECIDED}.
      * <ul>
-     * <li>{@link GTResult.Ternary#YES} means that the test rejected the null hypothesis (the actual probability is not
+     * <li>{@link CompResult.Ternary#LARGER} means that the test rejected the null hypothesis (the actual probability is not
      * smaller than the threshold in H0).</li>
-     * <li>{@link GTResult.Ternary#NO} means that the test did not reject the null hypothesis.</li>
-     * <li>{@link GTResult.Ternary#UNKNOWN} means that the test is finished, but could not determine an answer.</li>
-     * <li>{@link GTResult.Ternary#UNDECIDED} means that the test is not done yet.</li>
+     * <li>{@link CompResult.Ternary#SMALLER} means that the test did not reject the null hypothesis.</li>
+     * <li>{@link CompResult.Ternary#TOO_CLOSE} means that the test is finished, but could not determine an answer.</li>
+     * <li>{@link CompResult.Ternary#UNDECIDED} means that the test is not done yet.</li>
      * </ul>
      * @ensures Let {@literal p} be the actual probability. There are two two probabilistic guarantees:
      * <ul>
-     * <li>If {@code p <= threshold - delta} then the probability of returning {@link GTResult.Ternary#YES} is at most {@link #alpha}.</li>
-     * <li>If {@code p >= threshold + delta} then the probability of returning {@link GTResult.Ternary#NO} is at most {@link #beta}.</li>
-     * <li>If {@code threshold - delta < p < threshold + delta} then the probability of returning {@link GTResult.Ternary#UNKNOWN} is at
+     * <li>If {@code p <= threshold - delta} then the probability of returning {@link CompResult.Ternary#LARGER} is at most {@link #alpha}.</li>
+     * <li>If {@code p >= threshold + delta} then the probability of returning {@link CompResult.Ternary#SMALLER} is at most {@link #beta}.</li>
+     * <li>If {@code threshold - delta < p < threshold + delta} then the probability of returning {@link CompResult.Ternary#TOO_CLOSE} is at
      * most {@link #beta}.</li>
      * </ul>
      */
-    public static GTResult.Ternary status(final GTResult.Binary lb, final GTResult.Binary ub) {
-      return lb == GTResult.Binary.NO ? GTResult.Ternary.NO :
-             ub == GTResult.Binary.YES ? GTResult.Ternary.YES :
-             lb == GTResult.Binary.UNDECIDED || ub == GTResult.Binary.UNDECIDED ? GTResult.Ternary.UNDECIDED :
-             GTResult.Ternary.UNKNOWN;
+    public static CompResult.Ternary status(final CompResult.Binary lb, final CompResult.Binary ub) {
+      return lb == CompResult.Binary.SMALLER ? CompResult.Ternary.SMALLER :
+             ub == CompResult.Binary.LARGER ? CompResult.Ternary.LARGER :
+             lb == CompResult.Binary.UNDECIDED || ub == CompResult.Binary.UNDECIDED ? CompResult.Ternary.UNDECIDED :
+             CompResult.Ternary.TOO_CLOSE;
     }
 
     /**
-     * Same as {@link #status(GTResult.Binary, GTResult.Binary)}, but input parameters are taken from the current state
+     * Same as {@link #status(CompResult.Binary, CompResult.Binary)}, but input parameters are taken from the current state
      * @return Current status of the test
      */
-    public GTResult.Ternary status() { return status(lbBinary.status(), ubBinary.status()); }
+    public CompResult.Ternary status() { return status(lbBinary.status(), ubBinary.status()); }
 
     /**
      * Update the test by adding an observation
@@ -276,23 +274,23 @@ public class SPRT {
     }
 
     @Override
-    public boolean shouldStopNow() { return status() != GTResult.Ternary.UNDECIDED; }
+    public boolean completed() { return status() != CompResult.Ternary.UNDECIDED; }
 
     @Override
-    public boolean hasAnswer() { return status() != GTResult.Ternary.UNKNOWN; }
+    public boolean decided() { return status() != CompResult.Ternary.TOO_CLOSE; }
 
     @Override
-    public boolean isNullRejected() { return status() == GTResult.Ternary.YES; }
+    public boolean nullHypRejected() { return status() == CompResult.Ternary.LARGER; }
 
     @Override
-    public String getParametersString() {
+    public String parametersStr() {
       return "threshold: " + threshold + ", " +
              "alpha: " + alpha + ", " +
              "beta: " + beta + ", " +
              "gamma: " + gamma + ", " +
              "delta: " + delta + ", " +
-             "lbBinary: " + lbBinary.getParametersString() + ", " +
-             "ubBinary: " + ubBinary.getParametersString();
+             "lbBinary: " + lbBinary.parametersStr() + ", " +
+             "ubBinary: " + ubBinary.parametersStr();
     }
 
     @Override
@@ -307,7 +305,7 @@ public class SPRT {
     /** Type II Error Probability */
     public final double beta;
 
-    /** The probability of incorrectly returning {@link GTResult.Ternary#UNKNOWN} */
+    /** The probability of incorrectly returning {@link CompResult.Ternary#TOO_CLOSE} */
     public final double gamma;
 
     /** Half of the size of indifference region */

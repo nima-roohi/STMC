@@ -16,6 +16,6 @@ public class STMCConfig {
   public static int[] strataSizes;
   public static int minIters;
 
-  public static SamplingMethod samplingMethod = null;
-  public static HypTestingMethod hypTestMethod = null;
+  public static SmplMethodName samplingMethod = null;
+  public static HypTestName    hypTestMethod  = null;
 }

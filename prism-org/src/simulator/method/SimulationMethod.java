@@ -109,7 +109,7 @@ public abstract class SimulationMethod implements Cloneable
 	 * Get an indication of progress so far for simulation, i.e. an approximate value
 	 * for the percentage of work (samples) done. The value is a multiple of 10 in the range [0,100].
 	 * This estimate may not be linear (e.g. for CI/ACI where 'iterations' is computed).
-	 * It is assumed that this method is called *after* the call to shouldStopNow(...).
+	 * It is assumed that this method is called *after* the call to isCompleted(...).
 	 * Note: The iteration count may exceed that dictated by this method,
 	 * e.g. if multiple properties are being simulated simultaneously.
 	 * TODO: check methods for this

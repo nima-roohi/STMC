@@ -71,7 +71,7 @@ class StratificationMethod(private[this] var expr: Expression,
   /**
     * Get the parameters of the simulation (including the computed one) as a string.
     */
-  override def getParametersString: String = test.getParametersString
+  override def getParametersString: String = test.parametersStr
 
   /**
     * Determine whether or not simulation should stop now, based on the stopping
@@ -86,14 +86,14 @@ class StratificationMethod(private[this] var expr: Expression,
     */
   override def shouldStopNow(iters: Int, sampler: Sampler): Boolean = {
     test.update(sampler.getCurrentValue.asInstanceOf[Boolean])
-    test.shouldStopNow
+    test.completed
   }
 
   /**
     * Get an indication of progress so far for simulation, i.e. an approximate value
     * for the percentage of work (samples) done. The value is a multiple of 10 in the range [0,100].
     * This estimate may not be linear (e.g. for CI/ACI where 'iterations' is computed).
-    * It is assumed that this method is called *after* the call to shouldStopNow(...).
+    * It is assumed that this method is called *after* the call to isCompleted(...).
     * Note: The iteration count may exceed that dictated by this method,
     * e.g. if multiple properties are being simulated simultaneously.
     * TODO: check methods for this
@@ -110,7 +110,7 @@ class StratificationMethod(private[this] var expr: Expression,
     * @param sampler The Sampler object for this simulation
     * @throws PrismException if we can't get a result for some reason.
     */
-  override def getResult(sampler: Sampler): AnyRef = Boolean.box(test.isNullRejected)
+  override def getResult(sampler: Sampler): AnyRef = Boolean.box(test.nullHypRejected)
 
   /**
     * Get an explanation for the result of the simulation as a string.
