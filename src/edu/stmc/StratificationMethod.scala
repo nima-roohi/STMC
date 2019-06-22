@@ -66,7 +66,8 @@ class StratificationMethod(private[this] var expr: ExpressionProb,
     *
     * @param sampler The Sampler object for this simulation
     * @throws PrismException if we can't get a result for some reason. */
-  override def getResult(sampler: Sampler): lang.Boolean = Boolean.box(test.rejected)
+  override def getResult(sampler: Sampler): lang.Boolean =
+    Boolean.box(if (expr.getRelOp.isLowerBound) test.rejected else !test.rejected)
 
   /** Get an explanation for the result of the simulation as a string.
     *

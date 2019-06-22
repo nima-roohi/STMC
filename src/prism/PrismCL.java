@@ -1138,9 +1138,9 @@ public class PrismCL implements PrismModelListener {
         // Any "hidden" options, i.e. not in -help text/manual, are indicated as such.
 
         // === DOWN ====================================================================================================
-        if (STMCConfig.enabled && "stmc".equals(sw)) ; /* no-op */
-        else if (STMCConfig.enabled && ("mt".equals(sw) || "multithread".equals(sw))) STMCConfig.multithread = true;
-        else if (STMCConfig.enabled && "repeat".equals(sw)) STMCConfig.repeat = parseInt(args, ++i, sw, 1, null);
+        if ("repeat".equals(sw)) i++; /* handled by edu.stmc.Main class */
+        else if ("multithread".equals(sw) || "mt".equals(sw)) /* handled by edu.stmc.Main class */ ;
+        else if (STMCConfig.enabled && "stmc".equals(sw)) /* handled right before this loop */ ;
         else if (STMCConfig.enabled && "miniter".equals(sw)) STMCConfig.minIters = parseInt(args, ++i, sw, 1, null);
         else if (STMCConfig.enabled && "alpha".equals(sw)) STMCConfig.alpha = parseDouble(args, ++i, sw, 0.0, 0.5);
         else if (STMCConfig.enabled && "beta".equals(sw)) STMCConfig.beta = parseDouble(args, ++i, sw, 0.0, 0.5);
@@ -2338,33 +2338,42 @@ public class PrismCL implements PrismModelListener {
         throw new PrismException("Parameter hyptestmethod (htm) is not specified");
       final double threshold = expr2.getBound().evaluateDouble();
       HypTest      test      = null;
+      final RelOp  op        = expr2.getRelOp();
+      switch (op) {
+        case LT:
+        case LEQ:
+        case GT:
+        case GEQ:
+          break;
+        default:
+          throw new PrismException("Unsupported relation (" + op + ") in the input expression " + expr);
+      }
+      final boolean isLb = op.isLowerBound();
+      if (STMCConfig.alpha == null) throw new PrismException("Parameter alpha is not specified for SPRT");
+      if (STMCConfig.beta == null) throw new PrismException("Parameter beta is not specified for SPRT");
+      final double alpha = isLb ? STMCConfig.alpha : STMCConfig.beta;
+      final double beta  = isLb ? STMCConfig.beta : STMCConfig.alpha;
       switch (STMCConfig.hypTestMethod) {
         case SPRT:
-          if (STMCConfig.alpha == null) throw new PrismException("Parameter alpha is not specified for SPRT");
-          if (STMCConfig.beta == null) throw new PrismException("Parameter beta is not specified for SPRT");
           if (STMCConfig.delta == null) throw new PrismException("Parameter delta is not specified for SPRT");
-          test = new SPRT(threshold, STMCConfig.alpha, STMCConfig.beta, STMCConfig.delta);
+          test = new SPRT(threshold, alpha, beta, STMCConfig.delta);
           if (STMCConfig.gamma != null)
             mainLog.printWarning("Option -gamma is not used for the SPRT method and is being ignored");
           if (STMCConfig.minIters != null)
             mainLog.printWarning("Option -miniter is not used for the SPRT method and is being ignored");
           break;
         case GSPRT:
-          if (STMCConfig.alpha == null) throw new PrismException("Parameter alpha is not specified for GSPRT");
-          if (STMCConfig.beta == null) throw new PrismException("Parameter beta is not specified for GSPRT");
           if (STMCConfig.minIters == null) throw new PrismException("Parameter minIters is not specified for GSPRT");
-          test = new GSPRT(threshold, STMCConfig.alpha, STMCConfig.beta, STMCConfig.minIters);
+          test = new GSPRT(threshold, alpha, beta, STMCConfig.minIters);
           if (STMCConfig.gamma != null)
             mainLog.printWarning("Option -gamma is not used for the GSPRT method and is being ignored");
           if (STMCConfig.delta != null)
             mainLog.printWarning("Option -delta is not used for the GSPRT method and is being ignored");
           break;
         case TSPRT:
-          if (STMCConfig.alpha == null) throw new PrismException("Parameter alpha is not specified for TSPRT");
-          if (STMCConfig.beta == null) throw new PrismException("Parameter beta is not specified for TSPRT");
           if (STMCConfig.gamma == null) throw new PrismException("Parameter gamma is not specified for TSPRT");
           if (STMCConfig.delta == null) throw new PrismException("Parameter delta is not specified for TSPRT");
-          test = new TSPRT(threshold, STMCConfig.alpha, STMCConfig.beta, STMCConfig.gamma, STMCConfig.delta);
+          test = new TSPRT(threshold, alpha, beta, STMCConfig.gamma, STMCConfig.delta);
           if (STMCConfig.minIters != null)
             mainLog.printWarning("Option -minIters is not used for the TSPRT method and is being ignored");
           break;
@@ -2475,14 +2484,6 @@ public class PrismCL implements PrismModelListener {
                     "                                 setting this option implies that all options will be passed directly to PRISM. Therefore,\n" +
                     "                                 whenever this option is not set, no option specific to " + Prism.getToolName() + " must be set either\n" +
                     "                                 (otherwise, PRISM will complain and terminate immediately).");
-    mainLog.println("-repeat <n> .................... " + Prism.getToolName() + " is a statistical model checker, which means different runs might take different time\n" +
-                    "                                 and number of samples/simulations. Setting this option instructs " + Prism.getToolName() + " to repeat the same\n" +
-                    "                                 test n times and report the average and standard deviation of each metric (n must be\n" +
-                    "                                 positive and individual values of metrics will always get reported).");
-    mainLog.println("-multithread (or -mt) <n> ...... If option 'repeat' is set to at least two then setting this option allows " + Prism.getToolName() + " to use at\n" +
-                    "                                 most n processors to repeat the experiments. n must be positive (1 is OK). If n is not\n" +
-                    "                                 set, number of processors available to the Java virtual machine will be used as n. If\n" +
-                    "                                 option 'repeat' is not set (and option 'stmc' is set) then this option will be ignored.");
     mainLog.println("-sampmethod (or -sm) <name> .... Simulation method. One of " + SmplMethodName.valuesToString() + ".");
     mainLog.println("-hyptestmethod (or -htm) <name>  Hypothesis testing method to use. One of " + HypTestName.valuesToString() + ".");
     mainLog.println("-miniter <n> ................... Minimum number of iterations (when GSPRT is used).");

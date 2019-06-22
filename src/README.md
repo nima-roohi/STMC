@@ -1,7 +1,7 @@
 Direct Modifications to PRISM's Source Code
 -------------------------------------------
 
-Everything in this folder (and its sub-folders) is taken from `prism-org` folder, where original files 
+Everything in the `prism` folder is taken from `prism-src` folder, where original files 
 of PRISM are located. We made our best to mark the changes in the following way:
 - At the beginning of every change there is a single-line comment starting with `=== DOWN ===`
 - At the end       of every change there is a single-line comment starting with `===  UP  ===`

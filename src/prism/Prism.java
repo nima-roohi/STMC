@@ -2919,11 +2919,7 @@ public class Prism extends PrismComponent implements PrismSettingsListener {
 
     // Do simulation
     // === DOWN ========================================================================================================
-    // res = getSimulator().modelCheckSingleProperty(currentModulesFile, propertiesFile, expr, initialState, maxPathLength, simMethod);
-    if (!STMCConfig.enabled || STMCConfig.repeat == 1)
-      res = getSimulator().modelCheckSingleProperty(currentModulesFile, propertiesFile, expr, initialState, maxPathLength, simMethod);
-    else
-      res = PrismHelper$.MODULE$.repeatedSimulation(this, currentModulesFile, propertiesFile, expr, initialState, maxPathLength, simMethod);
+    res = getSimulator().modelCheckSingleProperty(currentModulesFile, propertiesFile, expr, initialState, maxPathLength, simMethod);
     // ===  UP  ========================================================================================================
 
     return new Result(res);
