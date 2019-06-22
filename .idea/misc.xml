@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavadocGenerationManager">
-    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/docs" />
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/docs-java" />
     <option name="OPTION_SCOPE" value="private" />
     <option name="OPTION_DOCUMENT_TAG_USE" value="true" />
     <option name="OPTION_DOCUMENT_TAG_AUTHOR" value="true" />
     <option name="OPTION_DOCUMENT_TAG_VERSION" value="true" />
     <option name="OTHER_OPTIONS" value="-tag requires:a:&quot;Requires:&quot; -tag ensures:a:&quot;Ensures:&quot;" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="8.0.202" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8.0.191" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="ScaladocSettings">
+    <option name="outputDir" value="$PROJECT_DIR$/docs-scala" />
+    <option name="additionalFlags" value="-doc-external-doc:/home/nima/Git/codes/stmc/out/production/edu/stmc/HypTestName.class#www.google.com" />
+    <option name="maxHeapSize" value="" />
+    <option name="docTitle" value="stmc documentation" />
+    <option name="verbose" value="false" />
+    <option name="openInBrowser" value="false" />
   </component>
 </project>

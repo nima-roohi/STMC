@@ -122,7 +122,7 @@ class StratificationMethod(private[this] var expr: Expression,
 
 
   override def clone: SimulationMethod = {
-    new StratificationMethod(expr,test.cloneCopy())
+    new StratificationMethod(expr,test.copy())
   }
 
 }

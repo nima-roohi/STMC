@@ -3,43 +3,45 @@ package edu.stmc
 /** Hypothesis Testing */
 trait HypTest extends Cloneable {
 
-  /** Reset the state (can be used to restart the test) */
+  /** Reset the test (can be used to restart the test). */
   def reset(): Unit
 
-  /** Update the test by adding an observation
+  /** Update the test by adding an observation.
     *
-    * @param passed Whether or not the sample satisfied the test. */
-  def update(passed: Boolean)
+    * @param positive Whether or not the new sample is positive.
+    * @note Implementations might add a constraint on the total number of samples. */
+  def update(positive: Boolean)
 
-  /** Update the test by adding multiple observations
+  /** Update the test by adding multiple observations.
     *
-    * @param passed Number of samples that are passed
-    * @param failed Number of samples that are failed
-    * @note Requires `passed >= 0` and `failed >= 0`*/
-  def update(passed: Int, failed: Int)
+    * @param positive Number of samples that are positive.
+    * @param negative Number of samples that are negative.
+    * @note Requires `positive >= 0` and `negative >= 0`.
+    * @note Implementations might add a constraint on the total number of samples. */
+  def update(positive: Int, negative: Int)
 
   /** Whether or not the test is completed. */
   def completed: Boolean
 
-  /** After [[completed]] returned true, this method is used to see if a decision is made (it is possible that a
-    * test terminates without choosing between the null and alternative hypotheses).
+  /** Whether or not a decision is made (it is possible that a test terminates without choosing between the null and
+    * alternative hypotheses).
     *
-    * @note [[completed]] should return `true`*/
+    * @note Requires [[completed]] to be `true`. */
   def decided: Boolean
 
-  /** After [[completed]] returned true, this is used to see whether the null hypothesis is not rejected.
+  /** Whether the test rejects the null hypothesis in favor of the alternative hypothesis.
     *
-    * @note [[completed]] method should return `true`. */
+    * @note Requires [[completed]] to be `true`. */
   def rejected: Boolean
 
-  /** After [[completed]] returned true, this is used to see whether the null hypothesis is rejected.
+  /** Whether the test is failed to reject the null hypothesis in favor of the alternative hypothesis.
     *
-    * @note [[completed]] method should return `true`. */
+    * @note Requires [[completed]] to be `true`. */
   def failed_to_reject: Boolean
 
-  /** Get the parameters of the test (including the computed ones) as a string. */
+  /** Get parameters of the test (including the computed ones) as a string. */
   def parametersStr: String
 
   /** Create a copy of this instance, so changes in one does not affect changes in the other. */
-  def cloneCopy(): HypTest
+  def copy(): HypTest
 }
