@@ -4,6 +4,7 @@ import edu.stmc.STMCConfig
 import parser.State
 import parser.ast.{Expression, ModulesFile, PropertiesFile}
 import simulator.method.SimulationMethod
+import simulator.sampler.SamplerBoolean
 
 object PrismHelper {
 
@@ -21,7 +22,12 @@ object PrismHelper {
       val simMethodCopy : SimulationMethod = null //simMethod.clone()
       val res = prism.getSimulator.modelCheckSingleProperty(
         currentModulesFile, propertiesFile, expr, initialState, maxPathLength, simMethodCopy)
-      val ss = prism.getSimulator.propertySamplers
+      val samplers = prism.getSimulator.propertySamplers
+      val size = samplers.size()
+      for(i <- 0 until size) yield {
+        val sampler = samplers.get(i).asInstanceOf[SamplerBoolean]
+        (sampler.getNumSamples, sampler.getNumTrue, res)
+      }
       true
     })
 

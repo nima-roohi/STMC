@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="prism-4.5">
+    <CLASSES>
+      <root url="jar:///opt/prism-4.5/lib/prism.jar!/" />
+      <root url="jar:///opt/prism-4.5/lib/colt.jar!/" />
+      <root url="jar:///opt/prism-4.5/lib/epsgraphics.jar!/" />
+      <root url="jar:///opt/prism-4.5/lib/jas.jar!/" />
+      <root url="jar:///opt/prism-4.5/lib/jcommon.jar!/" />
+      <root url="jar:///opt/prism-4.5/lib/jfreechart.jar!/" />
+      <root url="jar:///opt/prism-4.5/lib/log4j.jar!/" />
+      <root url="jar:///opt/prism-4.5/lib/lpsolve55j.jar!/" />
+      <root url="jar:///opt/prism-4.5/lib/nailgun-server.jar!/" />
+      <root url="jar:///opt/prism-4.5/lib/jhoafparser.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar:///opt/prism-4.5/lib/jhoafparser.jar!/src" />
+      <root url="file://$PROJECT_DIR$/prism-src/src" />
+    </SOURCES>
+  </library>
+</component>

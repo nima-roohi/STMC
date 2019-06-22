@@ -3,16 +3,14 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/prism-org/ext/lp_solve_5.5_java/src/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/prism-mod/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
       <excludePattern pattern="/prism-org/src/prism/PrismCL.java" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="scala-sdk-2.12.8" level="application" />
-    <orderEntry type="library" name="colt" level="project" />
+    <orderEntry type="library" name="prism-4.5" level="project" />
     <orderEntry type="library" name="scalatest_2.12-3.0.5-sources" level="project" />
     <orderEntry type="library" name="scalactic_2.12-3.0.5" level="project" />
   </component>
