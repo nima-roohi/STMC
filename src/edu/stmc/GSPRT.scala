@@ -113,6 +113,8 @@ class GSPRT(private[this] val threshold: Double,
   override def parametersStr: String =
     s"threshold: $threshold, alpha: $alpha, beta: $beta, logL: $logL, logU: $logU, logP0: $logP0, logP1: $logP1, minSamples: $minSamples"
 
+  override def toString: String = s"$parametersStr, N: $N, n: $n"
+
   override def copy(): GSPRT = clone().asInstanceOf[GSPRT]
 }
 

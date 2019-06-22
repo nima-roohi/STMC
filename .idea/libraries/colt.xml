@@ -9,6 +9,7 @@
       <root url="jar://$PROJECT_DIR$/prism-org/lib/log4j.jar!/" />
       <root url="jar://$PROJECT_DIR$/prism-org/lib/nailgun-server.jar!/" />
       <root url="jar://$PROJECT_DIR$/prism-org/lib/jhoafparser.jar!/" />
+      <root url="jar:///opt/prism-4.5/lib/prism.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

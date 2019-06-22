@@ -88,6 +88,9 @@ class TSPRT private(private[this] val lb: SPRT,
   override def failed_to_reject: Boolean = status eq CompResult.Ternary.LARGER
 
   override def parametersStr: String = s"lower-bound(${lb.parametersStr}), upper-bound(${ub.parametersStr})"
+
+  override def toString: String = s"lower-bound($lb), upper-bound($ub)"
+
   override def copy() = new TSPRT(lb.copy(), ub.copy())
 }
 

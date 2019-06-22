@@ -2,6 +2,7 @@ package edu.stmc;
 
 import java.util.Arrays;
 
+/** Supported sampling methods (not all of them might be supported in every scenario) */
 public enum SmplMethodName {
   INDEPENDENT,
   ANTITHETIC,

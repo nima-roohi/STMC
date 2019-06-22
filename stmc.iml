@@ -4,7 +4,6 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/prism-org/ext/lp_solve_5.5_java/src/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/prism-org/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/prism-mod/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />

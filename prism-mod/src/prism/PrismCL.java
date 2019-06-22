@@ -1092,7 +1092,7 @@ public class PrismCL implements PrismModelListener {
     if (i >= args.length)
       errorAndExit("Missing value for -" + sw + " switch");
     try {
-      return null;//HypTestName.withName(args[i].toUpperCase());//TODO
+      return HypTestName.valueOf(args[i].toUpperCase());
     } catch (NoSuchElementException e) {
       errorAndExit("Invalid integer value for -" + sw + " switch");
       throw e;
@@ -1138,8 +1138,6 @@ public class PrismCL implements PrismModelListener {
         // Any "hidden" options, i.e. not in -help text/manual, are indicated as such.
 
         // === DOWN ====================================================================================================
-        // mainLog.println("-sampmethod (or -sm) <name> .... Simulation method (independent, antithetic, stratified).");
-        // mainLog.println("-hyptestmethod (or -htm) <name>  Hypothesis testing method to use (SPRT, GSPRT).");
         if (STMCConfig.enabled && "stmc".equals(sw)) ; /* no-op */
         else if (STMCConfig.enabled && ("mt".equals(sw) || "multithread".equals(sw))) STMCConfig.multithread = true;
         else if (STMCConfig.enabled && "repeat".equals(sw)) STMCConfig.repeat = parseInt(args, ++i, sw, 1, null);
@@ -2298,18 +2296,6 @@ public class PrismCL implements PrismModelListener {
   private SimulationMethod processSimulationOptions(Expression expr) throws PrismException {
     SimulationMethod aSimMethod = null;
 
-    // === DOWN ========================================================================================================
-    if(STMCConfig.enabled) {
-      ExpressionProb expr2 = (ExpressionProb) expr;
-      return new StratificationMethod(expr,new GSPRT(
-      expr2.getBound().evaluateDouble(),
-      STMCConfig.alpha,
-      STMCConfig.beta,
-      STMCConfig.minIters
-      ));
-    }
-    // ===  UP  ========================================================================================================
-
     // See if property to be checked is a reward (R) operator
     boolean isReward = (expr instanceof ExpressionReward);
 
@@ -2338,6 +2324,54 @@ public class PrismCL implements PrismModelListener {
     if (simMethodName == null) {
       simMethodName = isQuant ? "ci" : "sprt";
     }
+
+    // === DOWN ========================================================================================================
+    if (STMCConfig.enabled) {
+      if (!(expr instanceof ExpressionProb))
+        throw new PrismException(
+        Prism.getToolName() + " only supports probability expressions. However, type of the input expression '" +
+        expr + "' is " + expr.getClass().getName());
+      final ExpressionProb expr2 = (ExpressionProb) expr;
+      if (!expr2.getBound().isConstant())
+        throw new PrismException("Threshold in the input expression '" + expr + "' is not a constant.");
+      if (STMCConfig.hypTestMethod == null)
+        throw new PrismException("Parameter hyptestmethod (htm) is not specified");
+      final double threshold = expr2.getBound().evaluateDouble();
+      HypTest      test      = null;
+      switch (STMCConfig.hypTestMethod) {
+        case SPRT:
+          if (STMCConfig.alpha == null) throw new PrismException("Parameter alpha is not specified for SPRT");
+          if (STMCConfig.beta == null) throw new PrismException("Parameter beta is not specified for SPRT");
+          if (STMCConfig.delta == null) throw new PrismException("Parameter delta is not specified for SPRT");
+          test = new SPRT(threshold, STMCConfig.alpha, STMCConfig.beta, STMCConfig.delta);
+          if (STMCConfig.gamma != null)
+            mainLog.printWarning("Option -gamma is not used for the SPRT method and is being ignored");
+          if (STMCConfig.minIters != null)
+            mainLog.printWarning("Option -miniter is not used for the SPRT method and is being ignored");
+          break;
+        case GSPRT:
+          if (STMCConfig.alpha == null) throw new PrismException("Parameter alpha is not specified for GSPRT");
+          if (STMCConfig.beta == null) throw new PrismException("Parameter beta is not specified for GSPRT");
+          if (STMCConfig.minIters == null) throw new PrismException("Parameter minIters is not specified for GSPRT");
+          test = new GSPRT(threshold, STMCConfig.alpha, STMCConfig.beta, STMCConfig.minIters);
+          if (STMCConfig.gamma != null)
+            mainLog.printWarning("Option -gamma is not used for the GSPRT method and is being ignored");
+          if (STMCConfig.delta != null)
+            mainLog.printWarning("Option -delta is not used for the GSPRT method and is being ignored");
+          break;
+        case TSPRT:
+          if (STMCConfig.alpha == null) throw new PrismException("Parameter alpha is not specified for TSPRT");
+          if (STMCConfig.beta == null) throw new PrismException("Parameter beta is not specified for TSPRT");
+          if (STMCConfig.gamma == null) throw new PrismException("Parameter gamma is not specified for TSPRT");
+          if (STMCConfig.delta == null) throw new PrismException("Parameter delta is not specified for TSPRT");
+          test = new TSPRT(threshold, STMCConfig.alpha, STMCConfig.beta, STMCConfig.gamma, STMCConfig.delta);
+          if (STMCConfig.minIters != null)
+            mainLog.printWarning("Option -minIters is not used for the TSPRT method and is being ignored");
+          break;
+      }
+      return new StratificationMethod(expr2, test);
+    }
+    // ===  UP  ========================================================================================================
 
     // CI
     if (simMethodName.equals("ci")) {
@@ -2433,33 +2467,33 @@ public class PrismCL implements PrismModelListener {
     mainLog.println("========");
     mainLog.println();
     // === DOWN ========================================================================================================
-    mainLog.println("This is a modification of PRISM. So we first print all the options that this modification uses.");
+    mainLog.println("This is a modification of PRISM. So we first print all the options that are introduced by this modification.");
     mainLog.println("Some of these options are already available in PRISM, so there will be two versions of them below.");
     mainLog.println("-stmc .......................... Use algorithms in " + Prism.getToolName() + " instead of those in PRISM. This option simply activates our tool.\n" +
-                    "                                 Requiring to set this option " + Prism.getToolName() + ", makes it possible to use PRISM exactly as before if\n" +
-                    "                                 one wants to (for example, to compare different algorithms). Note that not using this\n" +
-                    "                                 option implies that all the options will be passed directly to PRISM. Thus, whenever this\n" +
-                    "                                 option is not set, no option specific to " + Prism.getToolName() + " must be set either\n" +
+                    "                                 Requiring to set this option to use new algorithms, makes it possible to use PRISM exactly\n" +
+                    "                                 as before if one wants to (for example, to compare different algorithms). Note that not\n" +
+                    "                                 setting this option implies that all options will be passed directly to PRISM. Therefore,\n" +
+                    "                                 whenever this option is not set, no option specific to " + Prism.getToolName() + " must be set either\n" +
                     "                                 (otherwise, PRISM will complain and terminate immediately).");
     mainLog.println("-repeat <n> .................... " + Prism.getToolName() + " is a statistical model checker, which means different runs might take different time\n" +
                     "                                 and number of samples/simulations. Setting this option instructs " + Prism.getToolName() + " to repeat the same\n" +
                     "                                 test n times and report the average and standard deviation of each metric (n must be\n" +
-                    "                                 positive and individual values of metrics won't get reported).");
+                    "                                 positive and individual values of metrics will always get reported).");
     mainLog.println("-multithread (or -mt) <n> ...... If option 'repeat' is set to at least two then setting this option allows " + Prism.getToolName() + " to use at\n" +
                     "                                 most n processors to repeat the experiments. n must be positive (1 is OK). If n is not\n" +
-                    "                                 set,number of processors available to the Java virtual machine will be used as n. If\n" +
+                    "                                 set, number of processors available to the Java virtual machine will be used as n. If\n" +
                     "                                 option 'repeat' is not set (and option 'stmc' is set) then this option will be ignored.");
-    mainLog.println("-sampmethod (or -sm) <name> .... Simulation method (" + SmplMethodName.valuesToString() + ").");
-    mainLog.println("-hyptestmethod (or -htm) <name>  Hypothesis testing method to use (" + HypTestName.valuesToString() + ").");
+    mainLog.println("-sampmethod (or -sm) <name> .... Simulation method. One of " + SmplMethodName.valuesToString() + ".");
+    mainLog.println("-hyptestmethod (or -htm) <name>  Hypothesis testing method to use. One of " + HypTestName.valuesToString() + ".");
     mainLog.println("-miniter <n> ................... Minimum number of iterations (when GSPRT is used).");
-    mainLog.println("-stratasize (or -ss) <list> .... Size of strata. Comma separated non-empty list of positive integers. Length specifies how\n" +
-                    "                                 many steps each strata determines. Multiplication of values specify number of strata. \n" +
-                    "                                 Individual values define number of strata at each steps. For example, 2,3 defines 6 as the\n" +
-                    "                                 number of strata, 2 for the first step, and 3 for each of the alternatives in the second\n" +
-                    "                                 step.");
-    mainLog.println("-alpha <number> ................ alpha parameter; a double value between 0 and 1 (both exclusive).");
-    mainLog.println("-beta <number> ................. beta  parameter; a double value between 0 and 1 (both exclusive).");
-    mainLog.println("-gamma <number> ................ gamma parameter; a double value between 0 and 1 (both exclusive).");
+    mainLog.println("-stratasize (or -ss) <list> .... Size of strata (when stratification is used). Comma separated non-empty list of positive\n" +
+                    "                                 integers. Length specifies how many steps each stratum determines. Multiplication of values\n" +
+                    "                                 specifies number of strata. Individual values define number of strata at each steps. As an\n" +
+                    "                                 example, 2,3 defines 6 as the number of strata, 2 for the number of strata for first step,\n" +
+                    "                                 and 3 as the number of strata for each of the alternatives in the second step.");
+    mainLog.println("-alpha <number> ................ Type I   error probability; a double value between 0 and 0.5 (both exclusive).");
+    mainLog.println("-beta <number> ................. Type II  error probability; a double value between 0 and 0.5 (both exclusive).");
+    mainLog.println("-gamma <number> ................ Type III error probability; a double value between 0 and 0.5 (both exclusive).");
     mainLog.println("-delta <number> ................ delta parameter; a double value between 0 and 1 (both exclusive).");
     mainLog.println();
     mainLog.println("Note that other options might be still used by " + Prism.getToolName() + " or affect its behavior. However, they affect PRISM and " + Prism.getToolName() + " the same\n" +

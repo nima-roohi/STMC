@@ -88,6 +88,8 @@ class SPRT(private[this] val threshold: Double,
   override def parametersStr: String =
     s"threshold: $threshold, alpha: $alpha, beta: $beta, delta: $delta, logL: $logL, logU: $logU, q0: $q0, q1: $q1"
 
+  override def toString: String = s"$parametersStr, logT: $logT"
+
   override def copy(): SPRT = clone.asInstanceOf[SPRT]
 }
 

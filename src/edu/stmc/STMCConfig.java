@@ -13,8 +13,8 @@ public class STMCConfig {
   public static Double gamma = null;
   public static Double delta = null;
 
-  public static int[] strataSizes;
-  public static int minIters;
+  public static int[] strataSizes = null;
+  public static Integer minIters = null;
 
   public static SmplMethodName samplingMethod = null;
   public static HypTestName    hypTestMethod  = null;

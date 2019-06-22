@@ -8,7 +8,7 @@
     <option name="OPTION_DOCUMENT_TAG_VERSION" value="true" />
     <option name="OTHER_OPTIONS" value="-tag requires:a:&quot;Requires:&quot; -tag ensures:a:&quot;Ensures:&quot;" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="8.0.202" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11.0.2" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="ScaladocSettings">
