@@ -103,21 +103,17 @@ class StratificationMethod(private[this] var expr: Expression,
     */
   override def getProgress(iters: Int, sampler: Sampler): Int = 1000
 
-  /**
-    * Get the (approximate) result for the property that simulation is being used to approximate.
+  /** Get the (approximate) result for the property that simulation is being used to approximate.
     * This should be a Boolean/Double for bounded/quantitative properties, respectively.
     *
     * @param sampler The Sampler object for this simulation
-    * @throws PrismException if we can't get a result for some reason.
-    */
+    * @throws PrismException if we can't get a result for some reason.    */
   override def getResult(sampler: Sampler): AnyRef = Boolean.box(test.rejected)
 
-  /**
-    * Get an explanation for the result of the simulation as a string.
+  /** Get an explanation for the result of the simulation as a string.
     *
     * @param sampler The Sampler object for this simulation (e.g. to get mean)
-    * @throws PrismException if we can't get a result for some reason.
-    */
+    * @throws ''PrismException'' if we can't get a result for some reason. */
   override def getResultExplanation(sampler: Sampler): String = "No explanation"
 
 

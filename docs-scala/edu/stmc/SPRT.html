@@ -19,7 +19,7 @@
       <script type="text/javascript" src="../../lib/scheduler.js"></script>
       <script type="text/javascript" src="../../lib/template.js"></script>
       <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
-      
+      <script type="text/javascript" src="../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../lib/diagrams.js" id="diagrams-js"></script>
       <script type="text/javascript">
         /* this variable can be used by the JS to determine the path to the root document */
         var toRoot = '../../';
@@ -152,12 +152,22 @@
 
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Sequential Probability Ratio Test
-</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>Probabilistic guarantees in this class ignore numerical errors caused by floating point arithmetic.</p></span>, <span class="cmt"><p>The following requirements must be met by the main constructor:</p><ul><li>0 &lt; threshold &lt; 1</li><li>0 &lt; alpha &lt; 0.5</li><li>0 &lt; beta &lt; 0.5</li><li>0 &lt; delta &lt; 0.5</li><li>delta &lt; threshold</li><li>delta &lt; 1 - threshold</li></ul></span></dd></dl><div class="toggleContainer block">
+</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>Probabilistic guarantees in this class ignore numerical errors caused by floating point arithmetic.</p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
           <div class="superTypes hiddenContent"><a href="HypTest.html" class="extype" name="edu.stmc.HypTest">HypTest</a>, <span class="extype" name="scala.Cloneable">Cloneable</span>, <span class="extype" name="java.lang.Cloneable">Cloneable</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
-        </div></div>
+        </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
+                <span class="toggle diagram-link">
+                  Type Hierarchy
+                </span>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 120.00 118.00" height="118pt" width="120pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 114)" class="graph" id="page0,1_graph0"><polygon points="-4,4 -4,-114 116,-114 116,4 -4,4" stroke="transparent" fill="#ffffff"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this class" id="graph1_0"><g id="a_this class|graph1_0"><a xlink:title="edu.stmc.SPRT (this class)" xlink:href="#inheritance-diagram"><path d="M79.6667,-49C79.6667,-49 32.3333,-49 32.3333,-49 28.1667,-49 24,-44.8333 24,-40.6667 24,-40.6667 24,-32.3333 24,-32.3333 24,-28.1667 28.1667,-24 32.3333,-24 32.3333,-24 79.6667,-24 79.6667,-24 83.8333,-24 88,-28.1667 88,-32.3333 88,-32.3333 88,-40.6667 88,-40.6667 88,-44.8333 83.8333,-49 79.6667,-49" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-43.5" x="34" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-33.6" x="54.8613" text-anchor="start">SPRT</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="edu.stmc.HypTest" xlink:href="HypTest.html#inheritance-diagram"><path d="M83.6667,-110C83.6667,-110 28.3333,-110 28.3333,-110 24.1667,-110 20,-105.8333 20,-101.6667 20,-101.6667 20,-93.3333 20,-93.3333 20,-89.1667 24.1667,-85 28.3333,-85 28.3333,-85 83.6667,-85 83.6667,-85 87.8333,-85 92,-89.1667 92,-93.3333 92,-93.3333 92,-101.6667 92,-101.6667 92,-105.8333 87.8333,-110 83.6667,-110" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-104.5" x="30" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-94.6" x="50.9395" text-anchor="start">HypTest</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="SPRT is a subtype of HypTest"><path d="M56,-77.7386C56,-68.3393 56,-57.3803 56,-49.123" stroke="#d4d4d4" fill="none"></path><polygon points="53.5501,-77.8607 56,-84.8608 58.4501,-77.8608 53.5501,-77.8607" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div id="diagram-controls" class="hiddenContent">
+                  <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
+                  <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
+                  <button title="Toggle full-screen" id="diagram-fs" class="diagram-btn to-full"><i class="material-icons"></i></button>
+                </div>
+              </div></div>
         
 
       <div id="mbrsel">
@@ -218,12 +228,19 @@
       </span>
       
       <p class="shortcomment cmt">Construct a hypothesis test in which the null hypothesis is <code>p = t-δ</code> and the alternative hypothesis
-             is <code>p = t+δ</code>, where <code>p</code> is the actual probability, <code>t</code> is the input threshold, and <code>δ</code> is the input
-             indifference region.</p><div class="fullcomment"><div class="comment cmt"><p>Construct a hypothesis test in which the null hypothesis is <code>p = t-δ</code> and the alternative hypothesis
-             is <code>p = t+δ</code>, where <code>p</code> is the actual probability, <code>t</code> is the input threshold, and <code>δ</code> is the input
-             indifference region.</p></div><dl class="paramcmts block"><dt class="param">threshold</dt><dd class="cmt"><p>Input Threshold</p></dd><dt class="param">alpha</dt><dd class="cmt"><p>Type I Error Probability (also known as 'false positive' probability) is the probability of
-                 incorrectly rejecting the null hypothesis.</p></dd><dt class="param">beta</dt><dd class="cmt"><p>Type II Error Probability (also known as 'false negative' probability) is the probability of
-                 incorrectly not rejecting the null hypothesis.</p></dd><dt class="param">delta</dt><dd class="cmt"><p>Half of the size of indifference region.</p></dd></dl></div>
+             is <code>p = t+δ</code>, where <code>p</code> is the actual probability, <code>t</code> is the input threshold, and <code>δ</code> is the half of
+             the size of indifference region.</p><div class="fullcomment"><div class="comment cmt"><p>Construct a hypothesis test in which the null hypothesis is <code>p = t-δ</code> and the alternative hypothesis
+             is <code>p = t+δ</code>, where <code>p</code> is the actual probability, <code>t</code> is the input threshold, and <code>δ</code> is the half of
+             the size of indifference region.</p></div><dl class="paramcmts block"><dt class="param">threshold</dt><dd class="cmt"><p>Input Threshold</p></dd><dt class="param">alpha</dt><dd class="cmt"><p>Type I  Error Probability (also known as 'false positive' probability).</p></dd><dt class="param">beta</dt><dd class="cmt"><p>Type II Error Probability (also known as 'false negative' probability).</p></dd><dt class="param">delta</dt><dd class="cmt"><p>Half of the size of indifference region.
+<pre>
+The following requirements must be met by the main constructor:
+  - 0 < threshold < 1
+  - 0 < alpha < 0.5
+  - 0 < beta < 0.5
+  - 0 < delta < 0.5
+  - delta < threshold
+  - delta < 1 - threshold
+</pre></p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -417,7 +434,7 @@
         <span class="name">failed_to_reject</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.SPRT">SPRT</a> → <a href="HypTest.html" class="extype" name="edu.stmc.HypTest">HypTest</a></dd><dt>Note</dt><dd><span class="cmt"><p><a href="#completed:Boolean" class="extmbr" name="edu.stmc.SPRT#completed">completed</a> should be <code>true</code></p></span>, <span class="cmt"><p>If the actual probability is <code>threshold + delta</code> then the probability of returning <code>true</code> would be at most
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.SPRT">SPRT</a> → <a href="HypTest.html" class="extype" name="edu.stmc.HypTest">HypTest</a></dd><dt>Note</dt><dd><span class="cmt"><p>Requires <a href="#completed:Boolean" class="extmbr" name="edu.stmc.SPRT#completed">completed</a> to be <code>true</code>.</p></span>, <span class="cmt"><p>If the actual probability is at least <code>threshold+delta</code> then the probability of returning <code>true</code> is at most
       <code>beta</code>.</p></span></dd></dl></div>
     </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
@@ -580,7 +597,7 @@
         <span class="name">rejected</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.SPRT">SPRT</a> → <a href="HypTest.html" class="extype" name="edu.stmc.HypTest">HypTest</a></dd><dt>Note</dt><dd><span class="cmt"><p><a href="#completed:Boolean" class="extmbr" name="edu.stmc.SPRT#completed">completed</a> should be <code>true</code></p></span>, <span class="cmt"><p>If the actual probability is <code>threshold - delta</code> then the probability of returning <code>true</code> would be at most
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.SPRT">SPRT</a> → <a href="HypTest.html" class="extype" name="edu.stmc.HypTest">HypTest</a></dd><dt>Note</dt><dd><span class="cmt"><p>Requires <a href="#completed:Boolean" class="extmbr" name="edu.stmc.SPRT#completed">completed</a> to be <code>true</code>.</p></span>, <span class="cmt"><p>If the actual probability is at most <code>threshold-delta</code> then the probability of returning <code>true</code> is at most
       <code>alpha</code>.</p></span></dd></dl></div>
     </li><li name="edu.stmc.SPRT#reset" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="reset():Unit"></a>
@@ -613,7 +630,7 @@
         <span class="name">status</span><span class="result">: <span class="extype" name="edu.stmc.CompResult.Binary">Binary</span></span>
       </span>
       
-      <p class="shortcomment cmt">Same as <a href="#status:edu.stmc.CompResult.Binary" class="extmbr" name="edu.stmc.SPRT#status">status</a>, but input parameters are taken from the current instance</p><div class="fullcomment"><div class="comment cmt"><p>Same as <a href="#status:edu.stmc.CompResult.Binary" class="extmbr" name="edu.stmc.SPRT#status">status</a>, but input parameters are taken from the current instance</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+      <p class="shortcomment cmt">Same as <a href="#status(logT:Double):edu.stmc.CompResult.Binary" class="extmbr" name="edu.stmc.SPRT#status">status(logT*</a>, but input parameter is taken from the current instance</p><div class="fullcomment"><div class="comment cmt"><p>Same as <a href="#status(logT:Double):edu.stmc.CompResult.Binary" class="extmbr" name="edu.stmc.SPRT#status">status(logT*</a>, but input parameter is taken from the current instance</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@inline</span><span class="args">()</span>
               
         </dd></dl></div>
@@ -632,8 +649,8 @@
         <span class="name">status</span><span class="params">(<span name="logT">logT: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result">: <span class="extype" name="edu.stmc.CompResult.Binary">Binary</span></span>
       </span>
       
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The following probabilistic gurantees are made:</p><ol class="decimal"><li>If the actual probability is <code>threshold-delta</code> then the probability of returning
-      <span class="extype" name="CompResult.Binary.LARGER">CompResult.Binary.LARGER</span> is at most <code>alpha</code>.</li><li>If the actual probability is <code>threshold+delta</code> then the probability of returning
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>The following probabilistic guarantees are made:</p><ol class="decimal"><li>If the actual probability is at most <code>threshold-delta</code> then the probability of returning
+      <span class="extype" name="CompResult.Binary.LARGER">CompResult.Binary.LARGER</span> is at most <code>alpha</code>.</li><li>If the actual probability is at least <code>threshold+delta</code> then the probability of returning
       <span class="extype" name="CompResult.Binary.SMALLER">CompResult.Binary.SMALLER</span> is at most <code>beta</code>.</li></ol></span></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>

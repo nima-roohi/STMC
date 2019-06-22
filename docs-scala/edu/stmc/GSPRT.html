@@ -19,7 +19,7 @@
       <script type="text/javascript" src="../../lib/scheduler.js"></script>
       <script type="text/javascript" src="../../lib/template.js"></script>
       <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
-      
+      <script type="text/javascript" src="../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../lib/diagrams.js" id="diagrams-js"></script>
       <script type="text/javascript">
         /* this variable can be used by the JS to determine the path to the root document */
         var toRoot = '../../';
@@ -157,7 +157,17 @@
             Linear Supertypes
           </span>
           <div class="superTypes hiddenContent"><a href="HypTest.html" class="extype" name="edu.stmc.HypTest">HypTest</a>, <span class="extype" name="scala.Cloneable">Cloneable</span>, <span class="extype" name="java.lang.Cloneable">Cloneable</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
-        </div></div>
+        </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
+                <span class="toggle diagram-link">
+                  Type Hierarchy
+                </span>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 126.00 118.00" height="118pt" width="126pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 114)" class="graph" id="page0,1_graph0"><polygon points="-4,4 -4,-114 122,-114 122,4 -4,4" stroke="transparent" fill="#ffffff"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this class" id="graph1_0"><g id="a_this class|graph1_0"><a xlink:title="edu.stmc.GSPRT (this class)" xlink:href="#inheritance-diagram"><path d="M85.6667,-49C85.6667,-49 32.3333,-49 32.3333,-49 28.1667,-49 24,-44.8333 24,-40.6667 24,-40.6667 24,-32.3333 24,-32.3333 24,-28.1667 28.1667,-24 32.3333,-24 32.3333,-24 85.6667,-24 85.6667,-24 89.8333,-24 94,-28.1667 94,-32.3333 94,-32.3333 94,-40.6667 94,-40.6667 94,-44.8333 89.8333,-49 85.6667,-49" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-43.5" x="34" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-33.6" x="54.75" text-anchor="start">GSPRT</text></a></g></g><!-- node1 --><g class="node trait" id="graph1_1"><g id="a_trait|graph1_1"><a xlink:title="edu.stmc.HypTest" xlink:href="HypTest.html#inheritance-diagram"><path d="M86.6667,-110C86.6667,-110 31.3333,-110 31.3333,-110 27.1667,-110 23,-105.8333 23,-101.6667 23,-101.6667 23,-93.3333 23,-93.3333 23,-89.1667 27.1667,-85 31.3333,-85 31.3333,-85 86.6667,-85 86.6667,-85 90.8333,-85 95,-89.1667 95,-93.3333 95,-93.3333 95,-101.6667 95,-101.6667 95,-105.8333 90.8333,-110 86.6667,-110" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-104.5" x="33" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-94.6" x="53.9395" text-anchor="start">HypTest</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="GSPRT is a subtype of HypTest"><path d="M59,-77.7386C59,-68.3393 59,-57.3803 59,-49.123" stroke="#d4d4d4" fill="none"></path><polygon points="56.5501,-77.8607 59,-84.8608 61.4501,-77.8608 56.5501,-77.8607" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div id="diagram-controls" class="hiddenContent">
+                  <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
+                  <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
+                  <button title="Toggle full-screen" id="diagram-fs" class="diagram-btn to-full"><i class="material-icons"></i></button>
+                </div>
+              </div></div>
         
 
       <div id="mbrsel">
@@ -219,9 +229,9 @@
       
       <p class="shortcomment cmt">Construct a hypothesis test in which the null hypothesis is <code>p &lt; t</code> and the alternative hypothesis is
              <code>p &gt; t</code>, where <code>p</code> is the actual probability and <code>t</code> is the input threshold.</p><div class="fullcomment"><div class="comment cmt"><p>Construct a hypothesis test in which the null hypothesis is <code>p &lt; t</code> and the alternative hypothesis is
-             <code>p &gt; t</code>, where <code>p</code> is the actual probability and <code>t</code> is the input threshold.</p></div><dl class="paramcmts block"><dt class="param">threshold</dt><dd class="cmt"><p>Input Threshold</p></dd><dt class="param">alpha</dt><dd class="cmt"><p>Type I Error Probability</p></dd><dt class="param">beta</dt><dd class="cmt"><p>Type II Error Probability</p></dd><dt class="param">minSamples</dt><dd class="cmt"><p>Minimum number of samples before making any decision
+             <code>p &gt; t</code>, where <code>p</code> is the actual probability and <code>t</code> is the input threshold.</p></div><dl class="paramcmts block"><dt class="param">threshold</dt><dd class="cmt"><p>Input Threshold</p></dd><dt class="param">alpha</dt><dd class="cmt"><p>Type I  Error Probability (also known as 'false positive' probability).</p></dd><dt class="param">beta</dt><dd class="cmt"><p>Type II Error Probability (also known as 'false negative' probability).</p></dd><dt class="param">minSamples</dt><dd class="cmt"><p>Minimum number of samples before making any decision
 <pre>
-  The following requirements must be met:
+The following requirements must be met by the main constructor:
   0 < threshold < 1
   0 < alpha < 0.5
   0 < beta < 0.5
@@ -421,7 +431,7 @@
       </span>
       
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.GSPRT">GSPRT</a> → <a href="HypTest.html" class="extype" name="edu.stmc.HypTest">HypTest</a></dd><dt>Note</dt><dd><span class="cmt"><p><a href="#completed:Boolean" class="extmbr" name="edu.stmc.GSPRT#completed">completed</a> should be <code>true</code></p></span>, <span class="cmt"><p>Asymptotic guarantee: as total number of samples goes to infinity, if the actual probability is strictly
-      larger than the input threshold then the probability of returning <code>true</code> would be at most <code>beta</code>.</p></span>, <span class="cmt"><p>The maximum number of samples can go up to 2<sup><sup>31</sup></sup>-1.</p></span></dd></dl></div>
+      larger than the input threshold then the probability of returning <code>true</code> would be at most <code>beta</code>.</p></span>, <span class="cmt"><p>In the current implementation, the maximum number of samples is 2<sup><sup>31</sup></sup>-1.</p></span></dd></dl></div>
     </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <span class="permalink">
@@ -584,7 +594,7 @@
       </span>
       
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.GSPRT">GSPRT</a> → <a href="HypTest.html" class="extype" name="edu.stmc.HypTest">HypTest</a></dd><dt>Note</dt><dd><span class="cmt"><p><a href="#completed:Boolean" class="extmbr" name="edu.stmc.GSPRT#completed">completed</a> should be <code>true</code></p></span>, <span class="cmt"><p>Asymptotic guarantee: as total number of samples goes to infinity, if the actual probability is strictly
-      smaller than the input threshold then the probability of returning <code>true</code> would be at most <code>alpha</code>.</p></span>, <span class="cmt"><p>The maximum number of samples can go up to 2<sup><sup>31</sup></sup>-1.</p></span></dd></dl></div>
+      smaller than the input threshold then the probability of returning <code>true</code> would be at most <code>alpha</code>.</p></span>, <span class="cmt"><p>In the current implementation, the maximum number of samples is 2<sup><sup>31</sup></sup>-1.</p></span></dd></dl></div>
     </li><li name="edu.stmc.GSPRT#reset" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="reset():Unit"></a>
       <span class="permalink">
@@ -616,7 +626,7 @@
         <span class="name">status</span><span class="result">: <span class="extype" name="edu.stmc.CompResult.Binary">Binary</span></span>
       </span>
       
-      <p class="shortcomment cmt">Same as <a href="#status:edu.stmc.CompResult.Binary" class="extmbr" name="edu.stmc.GSPRT#status">status</a>, but input parameters are taken from the current instance</p><div class="fullcomment"><div class="comment cmt"><p>Same as <a href="#status:edu.stmc.CompResult.Binary" class="extmbr" name="edu.stmc.GSPRT#status">status</a>, but input parameters are taken from the current instance</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+      <p class="shortcomment cmt">Same as <a href="#status(n:Int,N:Int):edu.stmc.CompResult.Binary" class="extmbr" name="edu.stmc.GSPRT#status">status(n*</a>, but input parameters are taken from the current instance</p><div class="fullcomment"><div class="comment cmt"><p>Same as <a href="#status(n:Int,N:Int):edu.stmc.CompResult.Binary" class="extmbr" name="edu.stmc.GSPRT#status">status(n*</a>, but input parameters are taken from the current instance</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@inline</span><span class="args">()</span>
               
         </dd></dl></div>

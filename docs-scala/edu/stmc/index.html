@@ -19,7 +19,7 @@
       <script type="text/javascript" src="../../lib/scheduler.js"></script>
       <script type="text/javascript" src="../../lib/template.js"></script>
       <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
-      
+      <script type="text/javascript" src="../../lib/modernizr.custom.js"></script><script type="text/javascript" src="../../lib/diagrams.js" id="diagrams-js"></script>
       <script type="text/javascript">
         /* this variable can be used by the JS to determine the path to the root document */
         var toRoot = '../../';
@@ -149,7 +149,17 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"></div>
+          <div id="comment" class="fullcommenttop"><div class="toggleContainer block diagram-container" id="content-diagram-container">
+                <span class="toggle diagram-link">
+                  Content Hierarchy
+                </span>
+                <div class="diagram" id="content-diagram"><svg class="package-diagram" id="graph1" viewBox="0.00 0.00 247.50 94.00" height="94pt" width="248pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 90)" class="graph" id="graph0"><polygon points="-4,4 -4,-90 243.5,-90 243.5,4 -4,4" stroke="transparent" fill="#ffffff"></polygon><!-- node0 --><g class="node class" id="graph1_0"><g id="a_class|graph1_0"><a xlink:title="edu.stmc.TSPRT" xlink:href="TSPRT.html#inheritance-diagram"><path d="M60.6667,-25C60.6667,-25 8.3333,-25 8.3333,-25 4.1667,-25 0,-20.8333 0,-16.6667 0,-16.6667 0,-8.3333 0,-8.3333 0,-4.1667 4.1667,0 8.3333,0 8.3333,0 60.6667,0 60.6667,0 64.8333,0 69,-4.1667 69,-8.3333 69,-8.3333 69,-16.6667 69,-16.6667 69,-20.8333 64.8333,-25 60.6667,-25" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-19.5" x="10.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-9.6" x="31.418" text-anchor="start">TSPRT</text></a></g></g><!-- node1 --><g class="node class" id="graph1_1"><g id="a_class|graph1_1"><a xlink:title="edu.stmc.SPRT" xlink:href="SPRT.html#inheritance-diagram"><path d="M143.1667,-25C143.1667,-25 95.8333,-25 95.8333,-25 91.6667,-25 87.5,-20.8333 87.5,-16.6667 87.5,-16.6667 87.5,-8.3333 87.5,-8.3333 87.5,-4.1667 91.6667,0 95.8333,0 95.8333,0 143.1667,0 143.1667,0 147.3333,0 151.5,-4.1667 151.5,-8.3333 151.5,-8.3333 151.5,-16.6667 151.5,-16.6667 151.5,-20.8333 147.3333,-25 143.1667,-25" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-19.5" x="97.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-9.6" x="118.3613" text-anchor="start">SPRT</text></a></g></g><!-- node2 --><g class="node trait" id="graph1_2"><g id="a_trait|graph1_2"><a xlink:title="edu.stmc.HypTest" xlink:href="HypTest.html#inheritance-diagram"><path d="M147.1667,-86C147.1667,-86 91.8333,-86 91.8333,-86 87.6667,-86 83.5,-81.8333 83.5,-77.6667 83.5,-77.6667 83.5,-69.3333 83.5,-69.3333 83.5,-65.1667 87.6667,-61 91.8333,-61 91.8333,-61 147.1667,-61 147.1667,-61 151.3333,-61 155.5,-65.1667 155.5,-69.3333 155.5,-69.3333 155.5,-77.6667 155.5,-77.6667 155.5,-81.8333 151.3333,-86 147.1667,-86" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-80.5" x="93.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-70.6" x="114.4395" text-anchor="start">HypTest</text></a></g></g><!-- node2&#45;&gt;node0 --><g class="edge inheritance" id="graph1_2_0"><g id="a_inheritance|graph1_2_0"><a xlink:title="TSPRT is a subtype of HypTest"><path d="M96.1579,-56.7486C82.2372,-46.7585 64.8486,-34.2796 52.0895,-25.123" stroke="#d4d4d4" fill="none"></path><polygon points="94.7724,-58.7699 101.8879,-60.8608 97.6293,-54.7889 94.7724,-58.7699" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2&#45;&gt;node1 --><g class="edge inheritance" id="graph1_2_1"><g id="a_inheritance|graph1_2_1"><a xlink:title="SPRT is a subtype of HypTest"><path d="M119.5,-53.7386C119.5,-44.3393 119.5,-33.3803 119.5,-25.123" stroke="#d4d4d4" fill="none"></path><polygon points="117.0501,-53.8607 119.5,-60.8608 121.9501,-53.8608 117.0501,-53.8607" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3 --><g class="node class" id="graph1_3"><g id="a_class|graph1_3"><a xlink:title="edu.stmc.GSPRT" xlink:href="GSPRT.html#inheritance-diagram"><path d="M231.1667,-25C231.1667,-25 177.8333,-25 177.8333,-25 173.6667,-25 169.5,-20.8333 169.5,-16.6667 169.5,-16.6667 169.5,-8.3333 169.5,-8.3333 169.5,-4.1667 173.6667,0 177.8333,0 177.8333,0 231.1667,0 231.1667,0 235.3333,0 239.5,-4.1667 239.5,-8.3333 239.5,-8.3333 239.5,-16.6667 239.5,-16.6667 239.5,-20.8333 235.3333,-25 231.1667,-25" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-19.5" x="179.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-9.6" x="200.25" text-anchor="start">GSPRT</text></a></g></g><!-- node2&#45;&gt;node3 --><g class="edge inheritance" id="graph1_2_3"><g id="a_inheritance|graph1_2_3"><a xlink:title="GSPRT is a subtype of HypTest"><path d="M142.8421,-56.7486C156.7628,-46.7585 174.1514,-34.2796 186.9105,-25.123" stroke="#d4d4d4" fill="none"></path><polygon points="141.3707,-54.7889 137.1121,-60.8608 144.2276,-58.7699 141.3707,-54.7889" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div id="diagram-controls" class="hiddenContent">
+                  <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
+                  <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
+                  <button title="Toggle full-screen" id="diagram-fs" class="diagram-btn to-full"><i class="material-icons"></i></button>
+                </div>
+              </div></div>
         
 
       <div id="mbrsel">
@@ -235,7 +245,7 @@
       
       <p class="shortcomment cmt">Sequential Probability Ratio Test
 </p><div class="fullcomment"><div class="comment cmt"><p>Sequential Probability Ratio Test
-</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>Probabilistic guarantees in this class ignore numerical errors caused by floating point arithmetic.</p></span>, <span class="cmt"><p>The following requirements must be met by the main constructor:</p><ul><li>0 &lt; threshold &lt; 1</li><li>0 &lt; alpha &lt; 0.5</li><li>0 &lt; beta &lt; 0.5</li><li>0 &lt; delta &lt; 0.5</li><li>delta &lt; threshold</li><li>delta &lt; 1 - threshold</li></ul></span></dd></dl></div>
+</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>Probabilistic guarantees in this class ignore numerical errors caused by floating point arithmetic.</p></span></dd></dl></div>
     </li><li name="edu.stmc.StratificationMethod" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="StratificationMethodextendsSimulationMethod"></a><a id="StratificationMethod:StratificationMethod"></a>
       <span class="permalink">
@@ -268,7 +278,7 @@
       </span>
       
       <p class="shortcomment cmt">Ternary Sequential Probability Ratio Test</p><div class="fullcomment"><div class="comment cmt"><p>Ternary Sequential Probability Ratio Test</p><p><i>Ternary</i> means if the algorithm terminates, there are three possibilities for its answer:
-<i>reject</i>, <i>failed_to_reject</i>, and <i>undecided</i>.</p><p><span class="extype" name="HypTestName">HypTestName</span>
+<i>reject</i>, <i>failed_to_reject</i>, and <i>undecided</i>.
 </p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>Probabilistic guarantees in this class ignore numerical errors caused by floating point arithmetic.</p></span></dd></dl></div>
     </li></ol>
             </div>

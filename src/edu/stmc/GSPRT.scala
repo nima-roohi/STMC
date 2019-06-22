@@ -9,11 +9,11 @@ import scala.math.log
   * @constructor Construct a hypothesis test in which the null hypothesis is `p < t` and the alternative hypothesis is
   *              `p > t`, where `p` is the actual probability and `t` is the input threshold.
   * @param threshold  Input Threshold
-  * @param alpha      Type I Error Probability
-  * @param beta       Type II Error Probability
+  * @param alpha      Type I  Error Probability (also known as 'false positive' probability).
+  * @param beta       Type II Error Probability (also known as 'false negative' probability).
   * @param minSamples Minimum number of samples before making any decision
   * <pre>
-  *   The following requirements must be met:
+  * The following requirements must be met by the main constructor:
   *   0 < threshold < 1
   *   0 < alpha < 0.5
   *   0 < beta < 0.5
@@ -83,13 +83,13 @@ class GSPRT(private[this] val threshold: Double,
     assert(java.lang.Double.isFinite(logMu1), s"logMu1 ($logMu1) is not a finite number")
     val exp = n * logP0 + (N - n) * logP1
     val logT = if (mu >= threshold) n * logMu0 + (N - n) * logMu1 - exp
-    else exp - n * logMu0 + (N - n) * logMu1
+               else exp - n * logMu0 + (N - n) * logMu1
     if (logT >= logU) CompResult.Binary.LARGER
     else if (logT <= logL) CompResult.Binary.SMALLER
     else CompResult.Binary.UNDECIDED
   }
 
-  /** Same as [[status]], but input parameters are taken from the current instance */
+  /** Same as [[status(n*]], but input parameters are taken from the current instance */
   @inline
   final def status: CompResult.Binary = status(n, N)
 
@@ -101,13 +101,13 @@ class GSPRT(private[this] val threshold: Double,
   /** @note [[completed]] should be `true`
     * @note Asymptotic guarantee: as total number of samples goes to infinity, if the actual probability is strictly
     *       smaller than the input threshold then the probability of returning `true` would be at most `alpha`.
-    * @note The maximum number of samples can go up to 2^^31^^-1. */
+    * @note In the current implementation, the maximum number of samples is 2^^31^^-1. */
   override def rejected: Boolean = status eq CompResult.Binary.LARGER
 
   /** @note [[completed]] should be `true`
     * @note Asymptotic guarantee: as total number of samples goes to infinity, if the actual probability is strictly
     *       larger than the input threshold then the probability of returning `true` would be at most `beta`.
-    * @note The maximum number of samples can go up to 2^^31^^-1. */
+    * @note In the current implementation, the maximum number of samples is 2^^31^^-1. */
   override def failed_to_reject: Boolean = status eq CompResult.Binary.SMALLER
 
   override def parametersStr: String =

@@ -1,25 +1,27 @@
 package edu.stmc
 
 
+// @formatter:off
 /** Sequential Probability Ratio Test
   *
   * @note Probabilistic guarantees in this class ignore numerical errors caused by floating point arithmetic.
   * @constructor Construct a hypothesis test in which the null hypothesis is `p = t-δ` and the alternative hypothesis
-  *              is `p = t+δ`, where `p` is the actual probability, `t` is the input threshold, and `δ` is the input
-  *              indifference region.
+  *              is `p = t+δ`, where `p` is the actual probability, `t` is the input threshold, and `δ` is the half of
+  *              the size of indifference region.
   * @param threshold Input Threshold
-  * @param alpha     Type I Error Probability (also known as 'false positive' probability) is the probability of
-  *                  incorrectly rejecting the null hypothesis.
-  * @param beta      Type II Error Probability (also known as 'false negative' probability) is the probability of
-  *                  incorrectly not rejecting the null hypothesis.
+  * @param alpha     Type I  Error Probability (also known as 'false positive' probability).
+  * @param beta      Type II Error Probability (also known as 'false negative' probability).
   * @param delta     Half of the size of indifference region.
-  * @note The following requirements must be met by the main constructor:
+  * <pre>
+  * The following requirements must be met by the main constructor:
   *   - 0 < threshold < 1
   *   - 0 < alpha < 0.5
   *   - 0 < beta < 0.5
   *   - 0 < delta < 0.5
   *   - delta < threshold
-  *   - delta < 1 - threshold */
+  *   - delta < 1 - threshold
+  * </pre> */
+// @formatter:on
 class SPRT(private[this] val threshold: Double,
            private[this] val alpha: Double,
            private[this] val beta: Double,
@@ -54,17 +56,17 @@ class SPRT(private[this] val threshold: Double,
   override def update(passed: Boolean): Unit = if (passed) logT += q1 else logT += q0
   override def update(passed: Int, failed: Int): Unit = logT += passed * q1 + failed * q0
 
-  /** @note The following probabilistic gurantees are made:
-    *   1. If the actual probability is `threshold-delta` then the probability of returning
+  /** @note The following probabilistic guarantees are made:
+    *   1. If the actual probability is at most `threshold-delta` then the probability of returning
     *       [[CompResult.Binary.LARGER]] is at most `alpha`.
-    *   1. If the actual probability is `threshold+delta` then the probability of returning
+    *   1. If the actual probability is at least `threshold+delta` then the probability of returning
     *       [[CompResult.Binary.SMALLER]] is at most `beta`. */
   def status(logT: Double): CompResult.Binary =
     if (logT <= logL) CompResult.Binary.SMALLER
     else if (logT >= logU) CompResult.Binary.LARGER
     else CompResult.Binary.UNDECIDED
 
-  /** Same as [[status]], but input parameters are taken from the current instance */
+  /** Same as [[status(logT*]], but input parameter is taken from the current instance */
   @inline
   final def status: CompResult.Binary = status(logT)
 
@@ -73,13 +75,13 @@ class SPRT(private[this] val threshold: Double,
   /** @note [[completed]] does not need to be `true` (as required by [[HypTest]]). */
   override def decided: Boolean = status ne CompResult.Binary.UNDECIDED
 
-  /** @note [[completed]] should be `true`
-    * @note If the actual probability is `threshold - delta` then the probability of returning `true` would be at most
+  /** @note Requires [[completed]] to be `true`.
+    * @note If the actual probability is at most `threshold-delta` then the probability of returning `true` is at most
     *       `alpha`. */
   override def rejected: Boolean = status eq CompResult.Binary.LARGER
 
-  /** @note [[completed]] should be `true`
-    * @note If the actual probability is `threshold + delta` then the probability of returning `true` would be at most
+  /** @note Requires [[completed]] to be `true`.
+    * @note If the actual probability is at least `threshold+delta` then the probability of returning `true` is at most
     *       `beta`. */
   override def failed_to_reject: Boolean = status eq CompResult.Binary.LARGER
 

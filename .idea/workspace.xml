@@ -7,67 +7,116 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="846f6b2c-a6fb-4a48-9b7d-a1527616ac99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/edu/stmc/TSPRT.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/nima.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/nima.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/allclasses-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/allclasses-noframe.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/constant-values.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/deprecated-list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/edu/stmc/C1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/edu/stmc/C2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/edu/stmc/GSPRT.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/edu/stmc/GTResult.Binary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/edu/stmc/GTResult.Ternary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/edu/stmc/GTResult.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/edu/stmc/Main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/edu/stmc/Res.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/edu/stmc/SPRT.Binary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/edu/stmc/SPRT.Ternary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/edu/stmc/SPRT.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/edu/stmc/class-use/C1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/edu/stmc/class-use/C2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/edu/stmc/class-use/GSPRT.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/edu/stmc/class-use/GTResult.Binary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/edu/stmc/class-use/GTResult.Ternary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/edu/stmc/class-use/GTResult.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/edu/stmc/class-use/Main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/edu/stmc/class-use/Res.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/edu/stmc/class-use/SPRT.Binary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/edu/stmc/class-use/SPRT.Ternary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/edu/stmc/class-use/SPRT.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/edu/stmc/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/edu/stmc/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/edu/stmc/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/edu/stmc/package-use.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/help-doc.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-10.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-11.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-12.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-13.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-14.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-15.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-6.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-7.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-8.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-9.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/overview-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/package-list" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/stylesheet.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/CompResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/CompResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/allclasses-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/allclasses-frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/allclasses-noframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/allclasses-noframe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/constant-values.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/deprecated-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/edu/stmc/CompResult.Binary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/edu/stmc/CompResult.Binary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/edu/stmc/CompResult.Ternary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/edu/stmc/CompResult.Ternary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/edu/stmc/CompResult.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/edu/stmc/CompResult.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/edu/stmc/HypTestName.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/edu/stmc/HypTestName.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/edu/stmc/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/edu/stmc/Main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/edu/stmc/STMCConfig.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/edu/stmc/STMCConfig.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/edu/stmc/SmplMethodName.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/edu/stmc/SmplMethodName.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/edu/stmc/class-use/CompResult.Binary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/edu/stmc/class-use/CompResult.Binary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/edu/stmc/class-use/CompResult.Ternary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/edu/stmc/class-use/CompResult.Ternary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/edu/stmc/class-use/CompResult.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/edu/stmc/class-use/CompResult.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/edu/stmc/class-use/HypTestName.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/edu/stmc/class-use/HypTestName.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/edu/stmc/class-use/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/edu/stmc/class-use/Main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/edu/stmc/class-use/STMCConfig.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/edu/stmc/class-use/STMCConfig.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/edu/stmc/class-use/SmplMethodName.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/edu/stmc/class-use/SmplMethodName.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/edu/stmc/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/edu/stmc/package-frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/edu/stmc/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/edu/stmc/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/edu/stmc/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/edu/stmc/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/edu/stmc/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/edu/stmc/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/help-doc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/index-files/index-1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/index-files/index-10.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/index-files/index-11.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/index-files/index-12.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/index-files/index-2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/index-files/index-3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/index-files/index-4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/index-files/index-5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/index-files/index-6.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/index-files/index-7.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/index-files/index-8.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/index-files/index-9.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-java/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/overview-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-scala/edu/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/edu/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-scala/edu/stmc/GSPRT$.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/edu/stmc/GSPRT$.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-scala/edu/stmc/GSPRT.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/edu/stmc/GSPRT.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-scala/edu/stmc/HypTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/edu/stmc/HypTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-scala/edu/stmc/SPRT$.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/edu/stmc/SPRT$.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-scala/edu/stmc/SPRT.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/edu/stmc/SPRT.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-scala/edu/stmc/StratificationMethod.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/edu/stmc/StratificationMethod.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-scala/edu/stmc/TSPRT$.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/edu/stmc/TSPRT$.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-scala/edu/stmc/TSPRT.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/edu/stmc/TSPRT.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-scala/edu/stmc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/edu/stmc/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-scala/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MaterialIcons-Regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MaterialIcons-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/MaterialIcons-Regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/abstract_type.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/class.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/class_comp.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/class_diagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/diagrams.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/diagrams.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/jquery.mousewheel.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/jquery.panzoom.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/lato-v11-latin-100.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/lato-v11-latin-100.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/lato-v11-latin-100.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/lato-v11-latin-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/lato-v11-latin-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/lato-v11-latin-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/modernizr.custom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/object.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/object_comp.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/object_comp_trait.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/object_diagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/open-sans-v13-latin-400i.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/open-sans-v13-latin-400i.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/open-sans-v13-latin-400i.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/open-sans-v13-latin-700.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/open-sans-v13-latin-700.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/open-sans-v13-latin-700.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/open-sans-v13-latin-700i.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/open-sans-v13-latin-700i.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/open-sans-v13-latin-700i.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/open-sans-v13-latin-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/open-sans-v13-latin-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/open-sans-v13-latin-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ownderbg2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ownerbg.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ownerbg2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/package.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ref-index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scheduler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/source-code-pro-v6-latin-700.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/source-code-pro-v6-latin-700.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/source-code-pro-v6-latin-700.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/source-code-pro-v6-latin-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/source-code-pro-v6-latin-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/source-code-pro-v6-latin-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/template.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/template.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/tools.tooltip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/trait.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/trait_comp.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/trait_diagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/type_diagram.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/stmc/GSPRT.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/GSPRT.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/HypTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/HypTest.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/SPRT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/stmc/SPRT.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/SPRT.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/stmc/StratificationMethod.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/StratificationMethod.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/edu/stmc/SPRTTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/test/edu/stmc/SPRTTest.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/stmc/TSPRT.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/TSPRT.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -83,24 +132,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/stmc/CompResult.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar:///opt/java/scala-2.12.8/scala-src-2.12.8.zip!/scala-src-2.12.8/src/library/scala/Enumeration.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="217" column="8" selection-start-line="217" selection-start-column="8" selection-end-line="217" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/stmc/HypTest.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
@@ -110,28 +141,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/stmc/GSPRT.scala">
+        <entry file="file://$PROJECT_DIR$/src/edu/stmc/SPRT.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="72" column="48" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="48" />
+            <state relative-caret-position="744">
+              <caret line="63" selection-start-line="59" selection-end-line="63" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/stmc/SPRT.scala">
+        <entry file="file://$PROJECT_DIR$/src/edu/stmc/TSPRT.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="470">
+              <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/edu/stmc/TSPRT.scala">
+        <entry file="file://$PROJECT_DIR$/src/edu/stmc/GSPRT.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+            <state relative-caret-position="270">
+              <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -163,7 +194,6 @@
       <find>(n * logP0 + (N - n) * logP1)</find>
       <find>update</find>
       <find>status3</find>
-      <find>status</find>
       <find>clone</find>
       <find>+ &quot;</find>
       <find>SPRT.Ternary</find>
@@ -172,11 +202,11 @@
       <find>@note</find>
       <find>does</find>
       <find>*</find>
-      <find>*</find>
       <find>Nima</find>
-      <find>*</find>
       <find>TernarySPRT</find>
       <find>*              *</find>
+      <find>/SPRT.scala:92: warning: The link target &quot;status&quot;</find>
+      <find>status</find>
     </findStrings>
     <replaceStrings>
       <replace>java.lang.Math</replace>
@@ -193,18 +223,35 @@
       <replace>HypTestName</replace>
       <replace>CompResult</replace>
       <replace>nullHypRejected</replace>
-      <replace>log</replace>
       <replace>TernarySPRT</replace>
       <replace>positive</replace>
       <replace>negative</replace>
       <replace>*</replace>
-      <replace>*</replace>
       <replace>TSPRT</replace>
-      <replace>*</replace>
+      <replace>log</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="dummy://scala-decompiled/HypTestName.decompiled.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="dummy://scala-decompiled/GSPRT.decompiled.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="dummy://scala-decompiled/GSPRT.decompiled.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="dummy://scala-decompiled/GSPRT.decompiled.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="dummy://scala-decompiled/GSPRT.decompiled.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="dummy://scala-decompiled/GSPRT.decompiled.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="dummy://scala-decompiled/GSPRT.decompiled.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="dummy://scala-decompiled/GSPRT.decompiled.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="dummy://scala-decompiled/GSPRT.decompiled.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="dummy://scala-decompiled/GSPRT.decompiled.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="dummy://scala-decompiled/GSPRT.decompiled.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="dummy://scala-decompiled/GSPRT.decompiled.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="dummy://scala-decompiled/HypTestName.decompiled.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="dummy://scala-decompiled/GSPRT.decompiled.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="dummy://scala-decompiled/HypTestName.decompiled.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="dummy://scala-decompiled/GSPRT.decompiled.java" root0="SKIP_HIGHLIGHTING" />
+    <setting file="dummy://scala-decompiled/GSPRT.decompiled.java" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -231,14 +278,14 @@
         <option value="$PROJECT_DIR$/src/edu/stmc/HypTestName.java" />
         <option value="$PROJECT_DIR$/test/edu/stmc/GSPRTTest.scala" />
         <option value="$PROJECT_DIR$/src/edu/stmc/SPRT.java" />
-        <option value="$PROJECT_DIR$/src/edu/stmc/StratificationMethod.scala" />
-        <option value="$PROJECT_DIR$/src/edu/stmc/SPRT.scala" />
         <option value="$PROJECT_DIR$/src/edu/stmc/HypTest.scala" />
         <option value="$PROJECT_DIR$/test/edu/stmc/SPRTTest.scala" />
-        <option value="$PROJECT_DIR$/src/edu/stmc/GSPRT.scala" />
         <option value="$PROJECT_DIR$/src/edu/stmc/Tmp2.java" />
         <option value="$PROJECT_DIR$/src/edu/stmc/Tmp.scala" />
         <option value="$PROJECT_DIR$/src/edu/stmc/CompResult.java" />
+        <option value="$PROJECT_DIR$/src/edu/stmc/StratificationMethod.scala" />
+        <option value="$PROJECT_DIR$/src/edu/stmc/SPRT.scala" />
+        <option value="$PROJECT_DIR$/src/edu/stmc/GSPRT.scala" />
         <option value="$PROJECT_DIR$/src/edu/stmc/TSPRT.scala" />
       </list>
     </option>
@@ -257,13 +304,30 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="stmc" type="b2602c69:ProjectViewProjectNode" />
               <item name="stmc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stmc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stmc" type="462c0819:PsiDirectoryNode" />
+              <item name="prism-mod" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stmc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stmc" type="462c0819:PsiDirectoryNode" />
+              <item name="prism-mod" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stmc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stmc" type="462c0819:PsiDirectoryNode" />
+              <item name="prism-mod" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="prism" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="stmc" type="b2602c69:ProjectViewProjectNode" />
@@ -280,6 +344,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -411,19 +476,19 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="547" y="23" width="1920" height="1020" extended-state="0" />
+    <frame x="547" y="23" width="2013" height="1342" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Capture Tool" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14834578" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14658634" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3296" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32884398" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3288" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -431,15 +496,15 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3296" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.19865319" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.1984" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.2497332" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Maven" order="7" />
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
@@ -563,29 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prism-mod/src/prism/Prism.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="2967" selection-start-line="2967" selection-end-line="2967" />
-          <folding>
-            <element signature="e#10963#10964#0" expanded="true" />
-            <element signature="e#10986#10987#0" expanded="true" />
-            <element signature="e#11213#11214#0" expanded="true" />
-            <element signature="e#11249#11250#0" expanded="true" />
-            <element signature="e#18058#18059#0" expanded="true" />
-            <element signature="e#18098#18099#0" expanded="true" />
-            <element signature="e#18239#18240#0" expanded="true" />
-            <element signature="e#18273#18274#0" expanded="true" />
-            <element signature="e#18664#18665#0" expanded="true" />
-            <element signature="e#18696#18697#0" expanded="true" />
-            <element signature="e#18921#18922#0" expanded="true" />
-            <element signature="e#18967#18968#0" expanded="true" />
-            <element signature="e#19260#19261#0" expanded="true" />
-            <element signature="e#19300#19301#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prism-org/src/simulator/method/SimulationMethod.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1068">
@@ -626,17 +668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/stmc/SmplMethodName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="e#158#159#0" expanded="true" />
-            <element signature="e#200#201#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/stmc/GSPRT.java" />
     <entry file="jar:///opt/java/scala-2.12.8/scala-src-2.12.8.zip!/scala-src-2.12.8/src/library/scala/Cloneable.scala">
       <provider selected="true" editor-type-id="text-editor">
@@ -645,40 +676,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/edu/stmc/GSPRTTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="25" />
-          <folding>
-            <element signature="e#18#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///opt/java/jdk-8.0.191/src.zip!/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1045">
-          <caret line="211" column="28" selection-start-line="211" selection-start-column="28" selection-end-line="211" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/stmc/SPRT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="130" column="25" selection-start-line="130" selection-start-column="25" selection-end-line="130" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/stmc/StratificationMethod.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="124" column="42" selection-start-line="124" selection-start-column="42" selection-end-line="124" selection-end-column="42" />
-          <folding>
-            <element signature="e#18#80#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///opt/java/jdk-8.0.191/src.zip!/java/lang/Object.java" />
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc/SPRT.java" />
     <entry file="jar:///opt/java/scala-2.12.8/scala-src-2.12.8.zip!/scala-src-2.12.8/src/library/scala/collection/immutable/List.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="397">
@@ -693,13 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/stmc/SPRT.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/edu/stmc/SPRTTest.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="890">
@@ -710,27 +702,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/stmc/HypTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="36" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/stmc/GSPRT.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="72" column="48" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/stmc/Tmp2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc/Tmp2.java" />
     <entry file="jar:///opt/java/scala-2.12.8/scala-src-2.12.8.zip!/scala-src-2.12.8/src/library/scala/Enumeration.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -738,34 +710,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/stmc/Tmp.scala">
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc/Tmp.scala" />
+    <entry file="file://$PROJECT_DIR$/test/edu/stmc/GSPRTTest.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        <state relative-caret-position="240">
+          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
           <folding>
-            <element signature="e#18#49#0" expanded="true" />
+            <element signature="e#18#63#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/stmc/CompResult.java">
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc/SmplMethodName.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="60">
+          <caret line="4" column="26" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="26" />
+          <folding>
+            <element signature="e#158#159#0" expanded="true" />
+            <element signature="e#214#215#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/stmc/HypTestName.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="4" column="23" selection-start-line="4" selection-end-line="12" />
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prism-org/src/prism/PrismException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc/StratificationMethod.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="46" lean-forward="true" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
+          <folding>
+            <element signature="e#18#80#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prism-mod/src/prism/Prism.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42120">
+          <caret line="2967" selection-start-line="2967" selection-end-line="2967" />
+          <folding>
+            <element signature="e#0#147989#0" expanded="true" />
+            <element signature="e#10963#10964#0" expanded="true" />
+            <element signature="e#10986#10987#0" expanded="true" />
+            <element signature="e#11213#11214#0" expanded="true" />
+            <element signature="e#11249#11250#0" expanded="true" />
+            <element signature="e#18058#18059#0" expanded="true" />
+            <element signature="e#18098#18099#0" expanded="true" />
+            <element signature="e#18239#18240#0" expanded="true" />
+            <element signature="e#18273#18274#0" expanded="true" />
+            <element signature="e#18664#18665#0" expanded="true" />
+            <element signature="e#18696#18697#0" expanded="true" />
+            <element signature="e#18921#18922#0" expanded="true" />
+            <element signature="e#18967#18968#0" expanded="true" />
+            <element signature="e#19260#19261#0" expanded="true" />
+            <element signature="e#19300#19301#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc/CompResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="46" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc/HypTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="36" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc/SPRT.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="744">
+          <caret line="63" selection-start-line="59" selection-end-line="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/stmc/TSPRT.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        <state relative-caret-position="470">
+          <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc/GSPRT.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
         </state>
       </provider>
     </entry>
