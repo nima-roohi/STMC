@@ -1138,9 +1138,7 @@ public class PrismCL implements PrismModelListener {
         // Any "hidden" options, i.e. not in -help text/manual, are indicated as such.
 
         // === DOWN ====================================================================================================
-        if ("repeat".equals(sw)) i++; /* handled by edu.stmc.Main class */
-        else if ("multithread".equals(sw) || "mt".equals(sw)) /* handled by edu.stmc.Main class */ ;
-        else if (STMCConfig.enabled && "stmc".equals(sw)) /* handled right before this loop */ ;
+        if (STMCConfig.enabled && "stmc".equals(sw)) /* handled right before this loop */ ;
         else if (STMCConfig.enabled && "miniter".equals(sw)) STMCConfig.minIters = parseInt(args, ++i, sw, 1, null);
         else if (STMCConfig.enabled && "alpha".equals(sw)) STMCConfig.alpha = parseDouble(args, ++i, sw, 0.0, 0.5);
         else if (STMCConfig.enabled && "beta".equals(sw)) STMCConfig.beta = parseDouble(args, ++i, sw, 0.0, 0.5);

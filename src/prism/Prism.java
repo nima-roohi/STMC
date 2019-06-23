@@ -606,10 +606,7 @@ public class Prism extends PrismComponent implements PrismSettingsListener {
    * ("prism" by default, extensions might override)
    */
   public static String getCommandLineName() {
-    // === DOWN ========================================================================================================
-    // return "prism";
-    return "stmc";
-    // ===  UP  ========================================================================================================
+    return "prism";
   }
 
   /**
@@ -632,7 +629,6 @@ public class Prism extends PrismComponent implements PrismSettingsListener {
 
   // === DOWN ==========================================================================================================
   public static String getOriginalToolName() { return "PRISM"; }
-  public static String getOriginalCommandLineName() { return "prism"; }
   public static String getOriginalVersion() {
     String v = version;
     // Append version suffix (e.g. "dev", "beta") if non-empty
