@@ -1,0 +1,8 @@
+@inproceedings{wang_StatisticalVerificationDynamical_2015,
+ author = {Wang, Yu and Roohi, Nima and West, Matthew and Viswanathan, Mahesh and Dullerud, Geir E.},
+ booktitle = {Proceedings of the 18th {{International Conference}} on {{Hybrid Systems}}: {{Computation}} and {{Control}}},
+ pages = {169--178},
+ title = {Statistical {{Verification}} of {{Dynamical Systems Using Set Oriented Methods}}},
+ year = {2015}
+}
+

@@ -1,38 +1,45 @@
 {
     "papers": [
         {
-            "address": "IFAC-PapersOnLine, 267-273",
-            "authors": "Wang, Yu and Roohi, Nima and West, Matthew and Viswanathan, Mahesh and Dullerud, Geir E.",
+            "address": "IFAC-PapersOnLine, vol. 48, no. 27, pp. 267-273 (2015)",
+            "authors": "Yu Wang, Nima Roohi, Matthew West, Mahesh Viswanathan and Geir E. Dullerud",
+            "bibtex": "wang_MoriZwanzigMITLBased_2015",
             "name": "A Mori-Zwanzig and MITL Based Approach to Statistical Verification of Continuous-Time Dynamical Systems"
         },
         {
-            "address": "IFAC-PapersOnLine, 85-90",
-            "authors": "Wang, Yu and Roohi, Nima and West, Matthew and Viswanathan, Mahesh and Dullerud, Geir E.",
+            "address": "IFAC-PapersOnLine, vol. 51, no. 16, pp. 85-90 (2018)",
+            "authors": "Yu Wang, Nima Roohi, Matthew West, Mahesh Viswanathan and Geir E. Dullerud",
+            "bibtex": "wang_StatisticalVerificationPCTL_2018",
             "name": "Statistical Verification of PCTL Using Stratified Samples"
         },
         {
-            "address": "Proceedings of the 20th International Conference on Hybrid Systems: Computation and Control, 65--70",
-            "authors": "Roohi, Nima and Wang, Yu and West, Matthew and Dullerud, Geir E. and Viswanathan, Mahesh",
+            "address": "Proceedings of the 20th International Conference on Hybrid Systems: Computation and Control, pp. 65--70 (2017)",
+            "authors": "Nima Roohi, Yu Wang, Matthew West, Geir E. Dullerud and Mahesh Viswanathan",
+            "bibtex": "roohi_StatisticalVerificationToyota_2017",
             "name": "Statistical Verification of the Toyota Powertrain Control Verification Benchmark"
         },
         {
-            "address": "Proceedings of the 53rd IEEE Conference on Decision and Control, 5445-5450",
-            "authors": "Wang, Yu and Roohi, Nima and Dullerud, Geir E. and Viswanathan, Mahesh",
+            "address": "Proceedings of the 53rd IEEE Conference on Decision and Control, pp. 5445-5450 (2014)",
+            "authors": "Yu Wang, Nima Roohi, Geir E. Dullerud and Mahesh Viswanathan",
+            "bibtex": "wang_StabilityLinearAutonomous_2014",
             "name": "Stability of Linear Autonomous Systems under Regular Switching Sequences"
         },
         {
-            "address": "Proceedings of the 55th Conference on Decision and Control (CDC), 3012-3017",
-            "authors": "Wang, Yu and Roohi, Nima and West, Matthew and Viswanathan, Mahesh and Dullerud, Geir E.",
+            "address": "Proceedings of the 55th Conference on Decision and Control (CDC), pp. 3012-3017 (2016)",
+            "authors": "Yu Wang, Nima Roohi, Matthew West, Mahesh Viswanathan and Geir E. Dullerud",
+            "bibtex": "wang_VerifyingContinuoustimeStochastic_2016",
             "name": "Verifying Continuous-Time Stochastic Hybrid Systems via Mori-Zwanzig Model Reduction"
         },
         {
-            "address": "IEEE Transactions on Automatic Control, 2568-2575",
-            "authors": "Wang, Yu and Roohi, Nima and Dullerud, Geir E. and Viswanathan, Mahesh",
+            "address": "IEEE Transactions on Automatic Control, vol. 62, no. 5, pp. 2568-2575 (2017)",
+            "authors": "Yu Wang, Nima Roohi, Geir E. Dullerud and Mahesh Viswanathan",
+            "bibtex": "wang_StabilityAnalysisSwitched_2017",
             "name": "Stability Analysis of Switched Linear Systems Defined by Regular Languages"
         },
         {
-            "address": "Proceedings of the 18th International Conference on Hybrid Systems: Computation and Control, 169--178",
-            "authors": "Wang, Yu and Roohi, Nima and West, Matthew and Viswanathan, Mahesh and Dullerud, Geir E.",
+            "address": "Proceedings of the 18th International Conference on Hybrid Systems: Computation and Control, pp. 169--178 (2015)",
+            "authors": "Yu Wang, Nima Roohi, Matthew West, Mahesh Viswanathan and Geir E. Dullerud",
+            "bibtex": "wang_StatisticalVerificationDynamical_2015",
             "name": "Statistical Verification of Dynamical Systems Using Set Oriented Methods"
         }
     ]

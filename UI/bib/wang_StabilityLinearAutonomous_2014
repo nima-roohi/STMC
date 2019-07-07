@@ -1,0 +1,8 @@
+@inproceedings{wang_StabilityLinearAutonomous_2014,
+ author = {Wang, Yu and Roohi, Nima and Dullerud, Geir E. and Viswanathan, Mahesh},
+ booktitle = {Proceedings of the 53rd {{IEEE Conference}} on {{Decision}} and {{Control}}},
+ pages = {5445-5450},
+ title = {Stability of {{Linear Autonomous Systems}} under {{Regular Switching Sequences}}},
+ year = {2014}
+}
+
