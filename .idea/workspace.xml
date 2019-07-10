@@ -7,54 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="846f6b2c-a6fb-4a48-9b7d-a1527616ac99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/edu/stmc/HypMethod.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/edu/stmc/HypMethodSPRT.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/prism/SimulatorEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/nima.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/nima.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-java/edu/stmc/HypTestName.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/edu/stmc/HypTestName.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-java/edu/stmc/SmplMethodName.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/edu/stmc/SmplMethodName.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-java/edu/stmc/class-use/HypTestName.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/edu/stmc/class-use/HypTestName.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-java/edu/stmc/class-use/SmplMethodName.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-java/edu/stmc/class-use/SmplMethodName.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-scala/edu/stmc/HypTestName.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/edu/stmc/HypTestName.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-scala/edu/stmc/SmplMethodName.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/edu/stmc/SmplMethodName.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-scala/edu/stmc/HypMethod.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/edu/stmc/HypMethod.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-scala/edu/stmc/HypMethodSPRT.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/edu/stmc/HypMethodSPRT.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs-scala/edu/stmc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/edu/stmc/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs-scala/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/automata/LTL2RabinLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/automata/LTL2RabinLibrary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/explicit/ConstructModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/explicit/ConstructModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/explicit/DTMCModelChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/explicit/DTMCModelChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/explicit/MDPModelChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/explicit/MDPModelChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/explicit/ModelExplicit.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/explicit/ModelExplicit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/explicit/ProbModelChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/explicit/ProbModelChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/explicit/QuantAbstractRefineExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/explicit/QuantAbstractRefineExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/explicit/StateModelChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/explicit/StateModelChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/explicit/modelviews/ModelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/explicit/modelviews/ModelView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/jdd/DebugJDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/jdd/DebugJDD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/param/ParamResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/param/ParamResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/parser/PrismSyntaxHighlighter.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/parser/PrismSyntaxHighlighter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/parser/ast/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/parser/ast/Property.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/prism/PrismCL.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/prism/PrismCL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/strat/MDStrategyIV.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/strat/MDStrategyIV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/userinterface/GUIPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/userinterface/GUIPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/userinterface/GUIPrism.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/userinterface/GUIPrism.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/userinterface/model/GUIMultiModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/userinterface/model/GUIMultiModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/userinterface/model/GUIMultiModelHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/userinterface/model/GUIMultiModelHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/userinterface/model/GUIMultiModelTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/userinterface/model/GUIMultiModelTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/userinterface/properties/GUIMultiProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/userinterface/properties/GUIMultiProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/userinterface/util/ExpressionProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/userinterface/util/ExpressionProperty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/GSPRT.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/HypTest.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/HypTestName.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/SPRT.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/STMCConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/SmplMethodName.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/StratificationMethod.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/TSPRT.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/prism/Prism.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/stmc/HypMethod.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/HypMethod.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/stmc/HypMethodSPRT.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/HypMethodSPRT.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/prism/PrismCL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/prism/PrismCL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stmc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/stmc.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/edu/stmc/GSPRTTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/test/edu/stmc/GSPRTTest.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/edu/stmc/SPRTTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/test/edu/stmc/SPRTTest.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -71,10 +30,40 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/prism/PrismCL.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="2344" selection-start-line="2344" selection-end-line="2344" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/edu/stmc/GSPRTTest.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="35" column="5" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="35" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/edu/stmc/SPRTTest.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="51" selection-start-line="51" selection-end-line="51" />
+              <folding>
+                <element signature="e#18#63#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/stmc/HypMethodSPRT.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="29" column="53" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="53" />
+            <state relative-caret-position="551">
+              <caret line="149" column="17" selection-start-line="149" selection-start-column="17" selection-end-line="149" selection-end-column="17" />
               <folding>
                 <element signature="e#18#34#0" expanded="true" />
               </folding>
@@ -82,11 +71,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/prism/PrismCL.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/edu/stmc/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="2348" selection-start-line="2348" selection-end-line="2348" />
+            <state relative-caret-position="570">
+              <caret line="45" column="11" lean-forward="true" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -102,27 +94,9 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>setTimeout</find>
-      <find>proce</find>
-      <find>+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</find>
-      <find>log</find>
-      <find>commandLine</find>
-      <find>new_args</find>
-      <find>params</find>
-      <find>Sampler</find>
-      <find>rng</find>
-      <find>DTMC</find>
-      <find>randome</find>
-      <find>delta</find>
-      <find>computeMissingParameterAfterSim</find>
-      <find>missingParameterComputed</find>
-      <find>getProgress</find>
-      <find>computeMissingParameterBeforeSim</find>
-      <find>getParametersString</find>
       <find>compl</find>
       <find>getResult</find>
       <find>getResultExplanation</find>
-      <find>completed</find>
       <find>getMissingParameter</find>
       <find>modelCheckSimulator</find>
       <find>getVersion</find>
@@ -132,6 +106,24 @@
       <find>Therefore,</find>
       <find>hyp</find>
       <find>setExpression</find>
+      <find>StrategyExportType</find>
+      <find>clone</find>
+      <find>expr</find>
+      <find>completed</find>
+      <find>shouldStopNow</find>
+      <find>HypMethodSPRT</find>
+      <find>isUB</find>
+      <find>status eq CompResult.Binary.LARGER</find>
+      <find>Math.log(beta / (1 - alpha))</find>
+      <find>threshold</find>
+      <find>isLB</find>
+      <find>SPRT</find>
+      <find>LB</find>
+      <find>detail</find>
+      <find>expl</find>
+      <find>parameter</find>
+      <find>Parameter</find>
+      <find>toString</find>
     </findStrings>
     <replaceStrings>
       <replace>java.lang.Math</replace>
@@ -158,6 +150,9 @@
       <replace>, STMCConfig.alpha, STMCConfig.beta</replace>
       <replace>params</replace>
       <replace>params.get(i)</replace>
+      <replace>isLB</replace>
+      <replace>LB</replace>
+      <replace>HypMethodSPRT().init</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -204,14 +199,14 @@
         <option value="$PROJECT_DIR$/src/edu/stmc/NameHypTest.java" />
         <option value="$PROJECT_DIR$/src/edu/stmc/NameSmplMethod.java" />
         <option value="$PROJECT_DIR$/test/edu/stmc/GSPRTTest.scala" />
-        <option value="$PROJECT_DIR$/test/edu/stmc/SPRTTest.scala" />
         <option value="$PROJECT_DIR$/src/prism/SimulatorEngine.java" />
         <option value="$PROJECT_DIR$/prism-src/src/simulator/method/SimulationMethod.java" />
+        <option value="$PROJECT_DIR$/src/prism/Prism.java" />
+        <option value="$PROJECT_DIR$/test/edu/stmc/SPRTTest.scala" />
+        <option value="$PROJECT_DIR$/src/prism/PrismCL.java" />
         <option value="$PROJECT_DIR$/src/edu/stmc/HypMethod.scala" />
         <option value="$PROJECT_DIR$/src/edu/stmc/HypMethodSPRT.scala" />
         <option value="$PROJECT_DIR$/src/edu/stmc/Main.java" />
-        <option value="$PROJECT_DIR$/src/prism/Prism.java" />
-        <option value="$PROJECT_DIR$/src/prism/PrismCL.java" />
       </list>
     </option>
   </component>
@@ -266,6 +261,17 @@
               <item name="stmc" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="prism" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stmc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stmc" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="stmc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="stmc" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="stmc" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -330,6 +336,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SPRTTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+      <module name="stmc" />
+      <setting name="path" value="edu.stmc.SPRTTest" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="showProgressMessages" value="true" />
+      <setting name="useSbt" value="false" />
+      <setting name="useUiWithSbt" value="false" />
+      <setting name="jrePath" value="" />
+      <envs />
+      <setting name="testKind" value="Class" />
+      <setting name="path" value="edu.stmc.SPRTTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ScalaTests in 'test'" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" nameIsGenerated="true">
       <module name="stmc" />
       <setting name="path" value="" />
@@ -355,6 +379,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="ScalaTest.SPRTTest" />
         <item itemvalue="ScalaTest.ScalaTests in 'test'" />
       </list>
     </recent_temporary>
@@ -373,35 +398,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ScalaTests_in_'test' - 2019.06.20 at 00h 34m 33s.xml">
-      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="SPRTTest - 2019.07.10 at 05h 06m 24s.xml">
+      <configuration name="SPRTTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="ScalaTests_in_'test' - 2019.06.20 at 00h 37m 49s.xml">
-      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="SPRTTest - 2019.07.10 at 05h 06m 44s.xml">
+      <configuration name="SPRTTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="ScalaTests_in_'test' - 2019.06.20 at 00h 38m 13s.xml">
-      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="SPRTTest - 2019.07.10 at 05h 11m 15s.xml">
+      <configuration name="SPRTTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="ScalaTests_in_'test' - 2019.06.20 at 00h 39m 52s.xml">
-      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="SPRTTest - 2019.07.10 at 05h 16m 48s.xml">
+      <configuration name="SPRTTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="ScalaTests_in_'test' - 2019.06.20 at 00h 40m 10s.xml">
-      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="SPRTTest - 2019.07.10 at 05h 17m 24s.xml">
+      <configuration name="SPRTTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="ScalaTests_in_'test' - 2019.06.20 at 00h 42m 01s.xml">
-      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="SPRTTest - 2019.07.10 at 05h 18m 20s.xml">
+      <configuration name="SPRTTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="ScalaTests_in_'test' - 2019.06.20 at 00h 42m 21s.xml">
-      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="SPRTTest - 2019.07.10 at 05h 19m 17s.xml">
+      <configuration name="SPRTTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="ScalaTests_in_'test' - 2019.06.20 at 00h 42m 43s.xml">
-      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="SPRTTest - 2019.07.10 at 05h 19m 40s.xml">
+      <configuration name="SPRTTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="ScalaTests_in_'test' - 2019.06.20 at 00h 43m 22s.xml">
-      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="SPRTTest - 2019.07.10 at 05h 24m 54s.xml">
+      <configuration name="SPRTTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="ScalaTests_in_'test' - 2019.06.20 at 00h 45m 44s.xml">
-      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="SPRTTest - 2019.07.10 at 05h 26m 59s.xml">
+      <configuration name="SPRTTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -422,7 +447,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3297162" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3296" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.19782972" />
@@ -435,6 +460,16 @@
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Maven" order="7" />
     </layout>
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LAST_COMMIT_MESSAGE" value="" />
@@ -469,30 +504,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/prism-src/src/prism/PrismFileLog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="102" column="30" lean-forward="true" selection-start-line="102" selection-start-column="30" selection-end-line="102" selection-end-column="30" />
-          <folding>
-            <element signature="e#1736#1737#0" expanded="true" />
-            <element signature="e#1757#1758#0" expanded="true" />
-            <element signature="e#2991#2992#0" expanded="true" />
-            <element signature="e#3020#3021#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/prism-src/src/parser/ast/RelOp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="64" column="7" selection-start-line="64" selection-start-column="7" selection-end-line="64" selection-end-column="7" />
-          <folding>
-            <element signature="e#2206#2207#0" expanded="true" />
-            <element signature="e#2225#2226#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prism-src/src/parser/ast/ExpressionUnaryOp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-544">
@@ -701,20 +712,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/edu/stmc/SPRTTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="48" column="8" lean-forward="true" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/edu/stmc/GSPRTTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="35" column="5" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="35" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///opt/prism-4.5/lib/colt.jar!/cern/jet/random/Exponential.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
@@ -744,13 +741,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="326">
           <caret line="241" column="3" lean-forward="true" selection-start-line="241" selection-start-column="3" selection-end-line="241" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/prism-src/src/simulator/SimulatorEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="308" column="22" lean-forward="true" selection-start-line="308" selection-start-column="22" selection-end-line="308" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -785,48 +775,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/stmc/HypMethod.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="97" column="26" selection-start-line="97" selection-start-column="6" selection-end-line="97" selection-end-column="26" />
-          <folding>
-            <element signature="e#18#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/stmc_ORG/SPRT.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="685">
-          <caret line="86" lean-forward="true" selection-start-line="55" selection-end-line="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/prism-src/src/simulator/method/SimulationMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="81" column="36" selection-start-line="81" selection-start-column="36" selection-end-line="81" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/prism-src/src/simulator/method/SPRTMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-185">
-          <caret line="42" column="46" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///opt/java/scala-2.12.8/scala-src-2.12.8.zip!/scala-src-2.12.8/src/library/scala/App.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
           <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/stmc_ORG/StratificationMethod.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="41" column="43" lean-forward="true" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -848,26 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/stmc/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/stmc/HypMethodSPRT.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="29" column="53" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="53" />
-          <folding>
-            <element signature="e#18#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/stmc/NameHypTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -882,10 +814,116 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/prism-src/src/prism/PrismCL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="28" selection-start-line="28" selection-end-line="56" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prism-src/src/simulator/method/SPRTMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="237" column="31" selection-start-line="237" selection-start-column="26" selection-end-line="237" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prism-src/src/simulator/method/SimulationMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="668">
+          <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
+          <folding>
+            <element signature="e#0#5778#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prism-src/src/parser/ast/ExpressionQuant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="124" column="15" selection-start-line="124" selection-start-column="15" selection-end-line="124" selection-end-column="15" />
+          <folding>
+            <element signature="e#3778#3779#0" expanded="true" />
+            <element signature="e#3797#3798#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prism-src/src/simulator/SimulatorEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="1527" selection-start-line="1527" selection-end-line="1527" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc_ORG/StratificationMethod.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="59" column="2" selection-start-line="59" selection-start-column="2" selection-end-line="62" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc_ORG/SPRT.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="39" column="64" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc/HypMethod.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="97" column="2" selection-start-line="97" selection-start-column="2" selection-end-line="97" selection-end-column="52" />
+          <folding>
+            <element signature="e#18#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="45" column="11" lean-forward="true" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc/HypMethodSPRT.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="149" column="17" selection-start-line="149" selection-start-column="17" selection-end-line="149" selection-end-column="17" />
+          <folding>
+            <element signature="e#18#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/prism/PrismCL.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="2348" selection-start-line="2348" selection-end-line="2348" />
+        <state relative-caret-position="154">
+          <caret line="2344" selection-start-line="2344" selection-end-line="2344" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/edu/stmc/GSPRTTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="35" column="5" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="35" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/edu/stmc/SPRTTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+          <folding>
+            <element signature="e#18#63#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

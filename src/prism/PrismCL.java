@@ -26,13 +26,6 @@
 
 package prism;
 
-import common.StackTraceHelper;
-import edu.stmc.*;
-import parser.Values;
-import parser.ast.*;
-import simulator.GenerateSimulationPath;
-import simulator.method.*;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -40,6 +33,27 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
+
+import common.StackTraceHelper;
+import edu.stmc.HypMethodSPRT;
+import edu.stmc.NameHypTest;
+import edu.stmc.NameSmplMethod;
+import edu.stmc.STMCConfig;
+import parser.Values;
+import parser.ast.*;
+import prism.Prism.StrategyExportType;
+import simulator.GenerateSimulationPath;
+import simulator.method.ACIconfidence;
+import simulator.method.ACIiterations;
+import simulator.method.ACIwidth;
+import simulator.method.APMCapproximation;
+import simulator.method.APMCconfidence;
+import simulator.method.APMCiterations;
+import simulator.method.CIconfidence;
+import simulator.method.CIiterations;
+import simulator.method.CIwidth;
+import simulator.method.SPRTMethod;
+import simulator.method.SimulationMethod;
 
 // prism - command line version
 
@@ -2328,7 +2342,6 @@ public class PrismCL implements PrismModelListener {
       final ExpressionProb expr2 = (ExpressionProb) expr;
       if (!expr2.getBound().isConstant())
         throw new PrismException("Threshold in the input expression '" + expr + "' is not a constant.");
-      final double threshold = expr2.getBound().evaluateDouble();
       final RelOp  op        = expr2.getRelOp();
       switch (op) {
         case LT:
@@ -2343,9 +2356,6 @@ public class PrismCL implements PrismModelListener {
         throw new PrismException("Parameter hyp_test_method (htm) is not specified");
       if (STMCConfig.alpha == null) throw new PrismException("Parameter alpha is not specified for SPRT");
       if (STMCConfig.beta == null) throw new PrismException("Parameter beta is not specified for SPRT");
-      final boolean isLb  = op.isLowerBound();
-      final double  alpha = isLb ? STMCConfig.alpha : STMCConfig.beta;
-      final double  beta  = isLb ? STMCConfig.beta : STMCConfig.alpha;
       switch (STMCConfig.hypTestMethod) {
         case SPRT:
           if (STMCConfig.delta == null) throw new PrismException("Parameter delta is not specified for SPRT");
@@ -2353,7 +2363,7 @@ public class PrismCL implements PrismModelListener {
             mainLog.printWarning("Option -gamma is not used for the SPRT method and is being ignored");
           if (STMCConfig.minIters != null)
             mainLog.printWarning("Option -miniter is not used for the SPRT method and is being ignored");
-          return new HypMethodSPRT(threshold, alpha, beta, STMCConfig.delta);
+          return new HypMethodSPRT();
         case GSPRT:
           // if (STMCConfig.minIters == null) throw new PrismException("Parameter minIters is not specified for GSPRT");
           // hyp = new GSPRT(threshold, alpha, beta, STMCConfig.minIters);

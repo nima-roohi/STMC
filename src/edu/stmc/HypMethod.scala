@@ -67,7 +67,7 @@ abstract class HypMethod extends SimulationMethod {
     * @param iters   The number of iterations (samples) done so far
     * @param sampler The Sampler object for this simulation
     * @return true if the simulation should stop, false otherwise */
-  def shouldStopNow(iters: Int, sampler: Sampler): Boolean = completed
+  def shouldStopNow(iters: Int, sampler: Sampler): Boolean
 
   /** Get an indication of progress so far for simulation, i.e. an approximate value
     * for the percentage of work (samples) done. The value is a multiple of 10 in the range [0,100].
@@ -88,16 +88,16 @@ abstract class HypMethod extends SimulationMethod {
     * @param sampler The Sampler object for this simulation
     * @throws PrismException if we can't get a result for some reason. */
   @throws[PrismException]
-  def getResult(sampler: Sampler): AnyRef
+  def getResult(sampler: Sampler): AnyRef = Boolean.box(failed_to_reject)
 
   /** Get an explanation for the result of the simulation as a string.
     *
     * @param sampler The Sampler object for this simulation (e.g. to get mean)
     * @throws PrismException if we can't get a result for some reason. */
   @throws[PrismException]
-  def getResultExplanation(sampler: Sampler): String = getParametersString
+  def getResultExplanation(sampler: Sampler): String
 
-  override def clone: SimulationMethod = throw new Error("Must have been overridden")
+  override def clone: HypMethod = super.clone().asInstanceOf
 
   //--------------------------------------------------------------------------------------------------------------------
 
