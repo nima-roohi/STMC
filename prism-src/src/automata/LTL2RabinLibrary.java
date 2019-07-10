@@ -39,7 +39,6 @@ import parser.ast.*;
 import parser.visitor.ASTTraverse;
 import parser.visitor.ASTTraverseModify;
 import prism.IntegerBound;
-import prism.Prism;
 import prism.PrismException;
 import prism.PrismLangException;
 import prism.PrismNotSupportedException;

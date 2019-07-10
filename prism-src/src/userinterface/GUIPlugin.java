@@ -40,7 +40,6 @@ import javax.swing.JPanel;
 import javax.swing.JToolBar;
 import javax.swing.filechooser.FileFilter;
 
-import prism.Prism;
 import prism.PrismSettingsListener;
 import userinterface.util.GUIEvent;
 import userinterface.util.GUIEventHandler;

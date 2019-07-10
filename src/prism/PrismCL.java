@@ -30,7 +30,6 @@ import common.StackTraceHelper;
 import edu.stmc.*;
 import parser.Values;
 import parser.ast.*;
-import prism.Prism.StrategyExportType;
 import simulator.GenerateSimulationPath;
 import simulator.method.*;
 
@@ -1078,21 +1077,21 @@ public class PrismCL implements PrismModelListener {
     }
     return res;
   }
-  private SmplMethodName parseSamplingMethod(final String[] args, final int i, final String sw) {
+  private NameSmplMethod parseSamplingMethod(final String[] args, final int i, final String sw) {
     if (i >= args.length)
       errorAndExit("Missing value for -" + sw + " switch");
     try {
-      return SmplMethodName.valueOf(args[i].toUpperCase());
+      return NameSmplMethod.valueOf(args[i].toUpperCase());
     } catch (NumberFormatException e) {
       errorAndExit("Invalid integer value for -" + sw + " switch");
       throw e;
     }
   }
-  private HypTestName parseHypTestMethod(final String[] args, final int i, final String sw) {
+  private NameHypTest parseHypTestMethod(final String[] args, final int i, final String sw) {
     if (i >= args.length)
       errorAndExit("Missing value for -" + sw + " switch");
     try {
-      return HypTestName.valueOf(args[i].toUpperCase());
+      return NameHypTest.valueOf(args[i].toUpperCase());
     } catch (NoSuchElementException e) {
       errorAndExit("Invalid integer value for -" + sw + " switch");
       throw e;
@@ -1139,16 +1138,16 @@ public class PrismCL implements PrismModelListener {
 
         // === DOWN ====================================================================================================
         if (STMCConfig.enabled && "stmc".equals(sw)) /* handled right before this loop */ ;
-        else if (STMCConfig.enabled && "miniter".equals(sw)) STMCConfig.minIters = parseInt(args, ++i, sw, 1, null);
+        else if (STMCConfig.enabled && "min_iter".equals(sw)) STMCConfig.minIters = parseInt(args, ++i, sw, 1, null);
         else if (STMCConfig.enabled && "alpha".equals(sw)) STMCConfig.alpha = parseDouble(args, ++i, sw, 0.0, 0.5);
         else if (STMCConfig.enabled && "beta".equals(sw)) STMCConfig.beta = parseDouble(args, ++i, sw, 0.0, 0.5);
         else if (STMCConfig.enabled && "gamma".equals(sw)) STMCConfig.gamma = parseDouble(args, ++i, sw, 0.0, 0.5);
         else if (STMCConfig.enabled && "delta".equals(sw)) STMCConfig.delta = parseDouble(args, ++i, sw, 0.0, 0.5);
-        else if (STMCConfig.enabled && ("ss".equals(sw) || "stratasize".equals(sw)))
+        else if (STMCConfig.enabled && ("ss".equals(sw) || "strata_size".equals(sw)))
           STMCConfig.strataSizes = parseIntArray(args, ++i, sw, 1, null);
-        else if (STMCConfig.enabled && ("sm".equals(sw) || "sampmethod".equals(sw)))
+        else if (STMCConfig.enabled && ("sm".equals(sw) || "smp_method".equals(sw)))
           STMCConfig.samplingMethod = parseSamplingMethod(args, ++i, sw);
-        else if (STMCConfig.enabled && ("htm".equals(sw) || "hyptestmethod".equals(sw)))
+        else if (STMCConfig.enabled && ("htm".equals(sw) || "hyp_test_method".equals(sw)))
           STMCConfig.hypTestMethod = parseHypTestMethod(args, ++i, sw);
         else
           // ===  UP  ==================================================================================================
@@ -2156,10 +2155,7 @@ public class PrismCL implements PrismModelListener {
   public void printArguments(String[] args) {
     String s;
     int    i;
-    // === DOWN ========================================================================================================
-    // mainLog.print("Command line: prism");
-    mainLog.print("Command line: " + Prism.getCommandLineName());
-    // ===  UP  ========================================================================================================
+    mainLog.print("Command line: prism");
     // Print out the command-line arguments
     for (i = 0; i < args.length; i++) {
       s = args[i];
@@ -2327,15 +2323,12 @@ public class PrismCL implements PrismModelListener {
     if (STMCConfig.enabled) {
       if (!(expr instanceof ExpressionProb))
         throw new PrismException(
-        Prism.getToolName() + " only supports probability expressions. However, type of the input expression '" +
-        expr + "' is " + expr.getClass().getName());
+        "SPRT only supports probability expressions. However, type of the input expression '" + expr + "' is " +
+        expr.getClass().getName());
       final ExpressionProb expr2 = (ExpressionProb) expr;
       if (!expr2.getBound().isConstant())
         throw new PrismException("Threshold in the input expression '" + expr + "' is not a constant.");
-      if (STMCConfig.hypTestMethod == null)
-        throw new PrismException("Parameter hyptestmethod (htm) is not specified");
       final double threshold = expr2.getBound().evaluateDouble();
-      HypTest      test      = null;
       final RelOp  op        = expr2.getRelOp();
       switch (op) {
         case LT:
@@ -2346,37 +2339,38 @@ public class PrismCL implements PrismModelListener {
         default:
           throw new PrismException("Unsupported relation (" + op + ") in the input expression " + expr);
       }
-      final boolean isLb = op.isLowerBound();
+      if (STMCConfig.hypTestMethod == null)
+        throw new PrismException("Parameter hyp_test_method (htm) is not specified");
       if (STMCConfig.alpha == null) throw new PrismException("Parameter alpha is not specified for SPRT");
       if (STMCConfig.beta == null) throw new PrismException("Parameter beta is not specified for SPRT");
-      final double alpha = isLb ? STMCConfig.alpha : STMCConfig.beta;
-      final double beta  = isLb ? STMCConfig.beta : STMCConfig.alpha;
+      final boolean isLb  = op.isLowerBound();
+      final double  alpha = isLb ? STMCConfig.alpha : STMCConfig.beta;
+      final double  beta  = isLb ? STMCConfig.beta : STMCConfig.alpha;
       switch (STMCConfig.hypTestMethod) {
         case SPRT:
           if (STMCConfig.delta == null) throw new PrismException("Parameter delta is not specified for SPRT");
-          test = new SPRT(threshold, alpha, beta, STMCConfig.delta);
           if (STMCConfig.gamma != null)
             mainLog.printWarning("Option -gamma is not used for the SPRT method and is being ignored");
           if (STMCConfig.minIters != null)
             mainLog.printWarning("Option -miniter is not used for the SPRT method and is being ignored");
-          break;
+          return new HypMethodSPRT(threshold, alpha, beta, STMCConfig.delta);
         case GSPRT:
-          if (STMCConfig.minIters == null) throw new PrismException("Parameter minIters is not specified for GSPRT");
-          test = new GSPRT(threshold, alpha, beta, STMCConfig.minIters);
-          if (STMCConfig.gamma != null)
-            mainLog.printWarning("Option -gamma is not used for the GSPRT method and is being ignored");
-          if (STMCConfig.delta != null)
-            mainLog.printWarning("Option -delta is not used for the GSPRT method and is being ignored");
+          // if (STMCConfig.minIters == null) throw new PrismException("Parameter minIters is not specified for GSPRT");
+          // hyp = new GSPRT(threshold, alpha, beta, STMCConfig.minIters);
+          // if (STMCConfig.gamma != null)
+          //   mainLog.printWarning("Option -gamma is not used for the GSPRT method and is being ignored");
+          // if (STMCConfig.delta != null)
+          //   mainLog.printWarning("Option -delta is not used for the GSPRT method and is being ignored");
           break;
         case TSPRT:
-          if (STMCConfig.gamma == null) throw new PrismException("Parameter gamma is not specified for TSPRT");
-          if (STMCConfig.delta == null) throw new PrismException("Parameter delta is not specified for TSPRT");
-          test = new TSPRT(threshold, alpha, beta, STMCConfig.gamma, STMCConfig.delta);
-          if (STMCConfig.minIters != null)
-            mainLog.printWarning("Option -minIters is not used for the TSPRT method and is being ignored");
+          // if (STMCConfig.gamma == null) throw new PrismException("Parameter gamma is not specified for TSPRT");
+          // if (STMCConfig.delta == null) throw new PrismException("Parameter delta is not specified for TSPRT");
+          // hyp = new TSPRT(threshold, alpha, beta, STMCConfig.gamma, STMCConfig.delta);
+          // if (STMCConfig.minIters != null)
+          //   mainLog.printWarning("Option -minIters is not used for the TSPRT method and is being ignored");
           break;
       }
-      return new StratificationMethod(expr2, test);
+      throw new Error("Must be unreachable");
     }
     // ===  UP  ========================================================================================================
 
@@ -2476,26 +2470,26 @@ public class PrismCL implements PrismModelListener {
     // === DOWN ========================================================================================================
     mainLog.println("This is a modification of PRISM. So we first print all the options that are introduced by this modification.");
     mainLog.println("Some of these options are already available in PRISM, so there will be two versions of them below.");
-    mainLog.println("-stmc .......................... Use algorithms in " + Prism.getToolName() + " instead of those in PRISM. This option simply activates our tool.\n" +
-                    "                                 Requiring to set this option to use new algorithms, makes it possible to use PRISM exactly\n" +
-                    "                                 as before if one wants to (for example, to compare different algorithms). Note that not\n" +
-                    "                                 setting this option implies that all options will be passed directly to PRISM. Therefore,\n" +
-                    "                                 whenever this option is not set, no option specific to " + Prism.getToolName() + " must be set either\n" +
+    mainLog.println("-stmc .......................... Use algorithms in STMC instead of those in PRISM. This option simply activates our tool.\n" +
+                    "                                 Requiring to set this option to use new the algorithms, makes it possible to use PRISM\n" +
+                    "                                 exactly as before if one wants to (for example, to compare different algorithms). Note\n" +
+                    "                                 that not setting this option implies that all options will be passed directly to PRISM.\n" +
+                    "                                 Therefore, whenever this option is not set, no option specific to SPRT must be set either\n" +
                     "                                 (otherwise, PRISM will complain and terminate immediately).");
-    mainLog.println("-sampmethod (or -sm) <name> .... Simulation method. One of " + SmplMethodName.valuesToString() + ".");
-    mainLog.println("-hyptestmethod (or -htm) <name>  Hypothesis testing method to use. One of " + HypTestName.valuesToString() + ".");
-    mainLog.println("-miniter <n> ................... Minimum number of iterations (when GSPRT is used).");
-    mainLog.println("-stratasize (or -ss) <list> .... Size of strata (when stratification is used). Comma separated non-empty list of positive\n" +
+    mainLog.println("-smp_method (or -sm) <name> .... Simulation method. One of " + NameSmplMethod.valuesToString() + ".");
+    mainLog.println("-hyp_test_method (or -htm) <name>Hypothesis testing method to use. One of " + NameHypTest.valuesToString() + ".");
+    mainLog.println("-min_iter <n> .................. Minimum number of iterations (when GSPRT is used).");
+    mainLog.println("-strata_size (or -ss) <list> ... Size of strata (when stratification is used). Comma separated non-empty list of positive\n" +
                     "                                 integers. Length specifies how many steps each stratum determines. Multiplication of values\n" +
-                    "                                 specifies number of strata. Individual values define number of strata at each steps. As an\n" +
-                    "                                 example, 2,3 defines 6 as the number of strata, 2 for the number of strata for first step,\n" +
-                    "                                 and 3 as the number of strata for each of the alternatives in the second step.");
+                    "                                 specifies number of strata. Individual values define number of strata at each step. As an\n" +
+                    "                                 example, 2,3 defines 6 as the number of strata, 2 for the number of strata in the first step,\n" +
+                    "                                 and 3 for the number of strata in each of the alternatives in the second step.");
     mainLog.println("-alpha <number> ................ Type I   error probability; a double value between 0 and 0.5 (both exclusive).");
     mainLog.println("-beta <number> ................. Type II  error probability; a double value between 0 and 0.5 (both exclusive).");
     mainLog.println("-gamma <number> ................ Type III error probability; a double value between 0 and 0.5 (both exclusive).");
     mainLog.println("-delta <number> ................ delta parameter; a double value between 0 and 1 (both exclusive).");
     mainLog.println();
-    mainLog.println("Note that other options might be still used by " + Prism.getToolName() + " or affect its behavior. However, they affect PRISM and " + Prism.getToolName() + " the same\n" +
+    mainLog.println("Note that other options might be still used by SPRT or affect its behavior. However, they affect PRISM and SPRT the same\n" +
                     "way. Example of these properties include, but are not limited to: -pf -property -const -javamaxmem -javastack -timeout\n" +
                     " -dtmc -ctmc -mdp -verbose.");
     mainLog.println();
@@ -2653,9 +2647,15 @@ public class PrismCL implements PrismModelListener {
   }
 
   // print version
-
   private void printVersion() {
-    mainLog.println(Prism.getToolName() + " version " + Prism.getVersion());
+    // === DOWN ========================================================================================================
+    // mainLog.println(Prism.getToolName() + " version " + Prism.getVersion());
+    final String org = Prism.getToolName() + " version " + Prism.getVersion();
+    if (STMCConfig.enabled)
+      mainLog.println(org + ", STMC version 0.1");
+    else
+      mainLog.println(org);
+    // ===  UP  ========================================================================================================
   }
 
   /**

@@ -35,7 +35,6 @@ import parser.ast.ExpressionIdent;
 import parser.type.Type;
 import parser.type.TypeBool;
 import parser.type.TypeDouble;
-import prism.Prism;
 import prism.PrismException;
 import prism.PrismLangException;
 import prism.PrismNotSupportedException;

@@ -54,7 +54,6 @@ import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import prism.ModelType;
-import prism.Prism;
 import prism.PrismSettings;
 import prism.PrismSettingsListener;
 import userinterface.GUIClipboardEvent;

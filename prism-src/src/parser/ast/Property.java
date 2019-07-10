@@ -43,7 +43,6 @@ import prism.PrismNotSupportedException;
 import prism.PrismUtils;
 import prism.DefinedConstant;
 import prism.Point;
-import prism.Prism;
 import prism.TileList;
 
 /**
