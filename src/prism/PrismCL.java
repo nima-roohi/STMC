@@ -35,7 +35,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 import common.StackTraceHelper;
-import edu.stmc.HypMethodSPRT;
+import edu.stmc.HypTestSPRT;
 import edu.stmc.NameHypTest;
 import edu.stmc.NameSmplMethod;
 import edu.stmc.STMCConfig;
@@ -2363,7 +2363,7 @@ public class PrismCL implements PrismModelListener {
             mainLog.printWarning("Option -gamma is not used for the SPRT method and is being ignored");
           if (STMCConfig.minIters != null)
             mainLog.printWarning("Option -miniter is not used for the SPRT method and is being ignored");
-          return new HypMethodSPRT();
+          return new HypTestSPRT();
         case GSPRT:
           // if (STMCConfig.minIters == null) throw new PrismException("Parameter minIters is not specified for GSPRT");
           // hyp = new GSPRT(threshold, alpha, beta, STMCConfig.minIters);

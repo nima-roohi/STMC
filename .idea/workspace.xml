@@ -6,18 +6,7 @@
     <option name="CUSTOM_SCOPE_NAME" value="stmc-src" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="846f6b2c-a6fb-4a48-9b7d-a1527616ac99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/edu/stmc/HypMethodTSPRT.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/edu/stmc/HypMethodTSPRTTest.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-scala/edu/stmc/HypMethod.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/edu/stmc/HypMethod.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-scala/edu/stmc/HypMethodSPRT.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/edu/stmc/HypMethodSPRT.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-scala/edu/stmc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/edu/stmc/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-scala/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/HypMethod.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/HypMethod.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/HypMethodSPRT.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/HypMethodSPRT.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/edu/stmc/SPRTTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/test/edu/stmc/HypMethodSPRTTest.scala" afterDir="false" />
-    </list>
+    <list default="true" id="846f6b2c-a6fb-4a48-9b7d-a1527616ac99" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +20,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/stmc/HypMethodTSPRT.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
@@ -39,15 +28,6 @@
               <folding>
                 <element signature="e#18#64#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/edu/stmc/HypMethodTSPRTTest.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="657">
-              <caret line="114" column="92" lean-forward="true" selection-start-line="114" selection-start-column="92" selection-end-line="114" selection-end-column="92" />
             </state>
           </provider>
         </entry>
@@ -893,6 +873,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/edu/stmc/HypMethodTSPRTTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1230">
+          <caret line="84" column="55" selection-start-line="84" selection-start-column="55" selection-end-line="84" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/stmc/HypMethodTSPRT.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -900,13 +887,6 @@
           <folding>
             <element signature="e#18#64#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/edu/stmc/HypMethodTSPRTTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
-          <caret line="114" column="92" lean-forward="true" selection-start-line="114" selection-start-column="92" selection-end-line="114" selection-end-column="92" />
         </state>
       </provider>
     </entry>

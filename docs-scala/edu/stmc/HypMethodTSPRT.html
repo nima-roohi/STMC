@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>stmc documentation  - edu.stmc.HypMethodTSPRT</title>
-          <meta name="description" content="stmc documentation - edu.stmc.HypMethodTSPRT" />
-          <meta name="keywords" content="stmc documentation edu.stmc.HypMethodTSPRT" />
+          <title>stmc documentation - edu.stmc.HypTestTSPRT</title>
+          <meta name="description" content="stmc documentation - edu.stmc.HypTestTSPRT" />
+          <meta name="keywords" content="stmc documentation edu.stmc.HypTestTSPRT" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -136,22 +136,22 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">HypMethodTSPRT</span><span class="result"> extends <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a></span>
+        <span class="name">HypMethodTSPRT</span><span class="result"> extends <a href="HypMethod.html" class="extype" name="edu.stmc.HypTest">HypMethod</a></span>
       </span>
       </h4>
 
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Ternary Sequential Probability Ratio Test</p><p><i>Ternary</i> means if the algorithm terminates, there are three possibilities for its answer:</p><ol class="decimal"><li><i>reject</i>: Null hypothesis is rejected,</li><li><i>failed_to_reject</i>: Null hypothesis is not rejected, and</li><li><i>too_close</i>: Threshold and actual probability are too close to make a call.
-</li></ol></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p></p><ol class="decimal"><li>Probabilistic guarantees in this class ignore numerical errors caused by floating point arithmetic.</li><li>Method <a href="#init(threshold:Double,alpha:Double,beta:Double,delta:Double,LB:Boolean):edu.stmc.HypMethodTSPRT" class="extmbr" name="edu.stmc.HypMethodTSPRT#init">init</a> must be called before this test can be actually performed.</li></ol></span></dd></dl><div class="toggleContainer block">
+</li></ol></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p></p><ol class="decimal"><li>Probabilistic guarantees in this class ignore numerical errors caused by floating point arithmetic.</li><li>Method <a href="#init(threshold:Double,alpha:Double,beta:Double,delta:Double,LB:Boolean):edu.stmc.HypTestTSPRT" class="extmbr" name="edu.stmc.HypMethodTSPRT#init">init</a> must be called before this test can be actually performed.</li></ol></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a>, <span class="extype" name="simulator.method.SimulationMethod">SimulationMethod</span>, <span class="extype" name="java.lang.Cloneable">Cloneable</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="HypMethod.html" class="extype" name="edu.stmc.HypTest">HypMethod</a>, <span class="extype" name="simulator.method.SimulationMethod">SimulationMethod</span>, <span class="extype" name="java.lang.Cloneable">Cloneable</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
                 <span class="toggle diagram-link">
                   Type Hierarchy
                 </span>
-                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 166.00 118.00" height="118pt" width="166pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 114)" class="graph" id="page0,1_graph0"><polygon points="-4,4 -4,-114 162,-114 162,4 -4,4" stroke="transparent" fill="#ffffff"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this class" id="graph1_0"><g id="a_this class|graph1_0"><a xlink:title="edu.stmc.HypMethodTSPRT (this class)" xlink:href="#inheritance-diagram"><path d="M125.6667,-49C125.6667,-49 32.3333,-49 32.3333,-49 28.1667,-49 24,-44.8333 24,-40.6667 24,-40.6667 24,-32.3333 24,-32.3333 24,-28.1667 28.1667,-24 32.3333,-24 32.3333,-24 125.6667,-24 125.6667,-24 129.8333,-24 134,-28.1667 134,-32.3333 134,-32.3333 134,-40.6667 134,-40.6667 134,-44.8333 129.8333,-49 125.6667,-49" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-43.5" x="34" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-33.6" x="54.9629" text-anchor="start">HypMethodTSPRT</text></a></g></g><!-- node1 --><g class="node class" id="graph1_1"><g id="a_class|graph1_1"><a xlink:title="edu.stmc.HypMethod" xlink:href="HypMethod.html#inheritance-diagram"><path d="M112.6667,-110C112.6667,-110 45.3333,-110 45.3333,-110 41.1667,-110 37,-105.8333 37,-101.6667 37,-101.6667 37,-93.3333 37,-93.3333 37,-89.1667 41.1667,-85 45.3333,-85 45.3333,-85 112.6667,-85 112.6667,-85 116.8333,-85 121,-89.1667 121,-93.3333 121,-93.3333 121,-101.6667 121,-101.6667 121,-105.8333 116.8333,-110 112.6667,-110" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-104.5" x="47" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-94.6" x="67.9336" text-anchor="start">HypMethod</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="HypMethodTSPRT is a subtype of HypMethod"><path d="M79,-77.7386C79,-68.3393 79,-57.3803 79,-49.123" stroke="#d4d4d4" fill="none"></path><polygon points="76.5501,-77.8607 79,-84.8608 81.4501,-77.8608 76.5501,-77.8607" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 166.00 118.00" height="118pt" width="166pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 114)" class="graph" id="page0,1_graph0"><polygon points="-4,4 -4,-114 162,-114 162,4 -4,4" stroke="transparent" fill="#ffffff"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this class" id="graph1_0"><g id="a_this class|graph1_0"><a xlink:title="edu.stmc.HypTestTSPRT (this class)" xlink:href="#inheritance-diagram"><path d="M125.6667,-49C125.6667,-49 32.3333,-49 32.3333,-49 28.1667,-49 24,-44.8333 24,-40.6667 24,-40.6667 24,-32.3333 24,-32.3333 24,-28.1667 28.1667,-24 32.3333,-24 32.3333,-24 125.6667,-24 125.6667,-24 129.8333,-24 134,-28.1667 134,-32.3333 134,-32.3333 134,-40.6667 134,-40.6667 134,-44.8333 129.8333,-49 125.6667,-49" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-43.5" x="34" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-33.6" x="54.9629" text-anchor="start">HypMethodTSPRT</text></a></g></g><!-- node1 --><g class="node class" id="graph1_1"><g id="a_class|graph1_1"><a xlink:title="edu.stmc.HypTest" xlink:href="HypMethod.html#inheritance-diagram"><path d="M112.6667,-110C112.6667,-110 45.3333,-110 45.3333,-110 41.1667,-110 37,-105.8333 37,-101.6667 37,-101.6667 37,-93.3333 37,-93.3333 37,-89.1667 41.1667,-85 45.3333,-85 45.3333,-85 112.6667,-85 112.6667,-85 116.8333,-85 121,-89.1667 121,-93.3333 121,-93.3333 121,-101.6667 121,-101.6667 121,-105.8333 116.8333,-110 112.6667,-110" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-104.5" x="47" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-94.6" x="67.9336" text-anchor="start">HypMethod</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="HypMethodTSPRT is a subtype of HypMethod"><path d="M79,-77.7386C79,-68.3393 79,-57.3803 79,-49.123" stroke="#d4d4d4" fill="none"></path><polygon points="76.5501,-77.8607 79,-84.8608 81.4501,-77.8608 76.5501,-77.8607" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
                 <div id="diagram-controls" class="hiddenContent">
                   <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
                   <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
@@ -182,7 +182,7 @@
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="edu.stmc.HypMethodTSPRT"><span>HypMethodTSPRT</span></li><li class="in" name="edu.stmc.HypMethod"><span>HypMethod</span></li><li class="in" name="simulator.method.SimulationMethod"><span>SimulationMethod</span></li><li class="in" name="java.lang.Cloneable"><span>Cloneable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="edu.stmc.HypTestTSPRT"><span>HypMethodTSPRT</span></li><li class="in" name="edu.stmc.HypTest"><span>HypMethod</span></li><li class="in" name="simulator.method.SimulationMethod"><span>SimulationMethod</span></li><li class="in" name="java.lang.Cloneable"><span>Cloneable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
               <span class="filtertype"></span>
@@ -203,7 +203,7 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="edu.stmc.HypMethodTSPRT#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;():edu.stmc.HypMethodTSPRT"></a><a id="&lt;init&gt;:HypMethodTSPRT"></a>
+      <a id="&lt;init&gt;():edu.stmc.HypTestTSPRT"></a><a id="&lt;init&gt;:HypMethodTSPRT"></a>
       <span class="permalink">
       <a href="../../edu/stmc/HypMethodTSPRT.html#&lt;init&gt;():edu.stmc.HypMethodTSPRT" title="Permalink">
         <i class="material-icons"></i>
@@ -293,7 +293,7 @@
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li name="edu.stmc.HypMethodTSPRT#clone" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="clone():edu.stmc.HypMethodTSPRT"></a><a id="clone():HypMethodTSPRT"></a>
+      <a id="clone():edu.stmc.HypTestTSPRT"></a><a id="clone():HypMethodTSPRT"></a>
       <span class="permalink">
       <a href="../../edu/stmc/HypMethodTSPRT.html#clone():edu.stmc.HypMethodTSPRT" title="Permalink">
         <i class="material-icons"></i>
@@ -304,10 +304,10 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a></span>
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="" class="extype" name="edu.stmc.HypTestTSPRT">HypMethodTSPRT</a></span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod → AnyRef</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTestTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypTest">HypMethod</a> → SimulationMethod → AnyRef</dd></dl></div>
     </li><li name="edu.stmc.HypMethodTSPRT#completed" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="completed:Boolean"></a>
       <span class="permalink">
@@ -323,7 +323,7 @@
         <span class="name">completed</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       
-      <p class="shortcomment cmt">Whether or not the test is completed.</p><div class="fullcomment"><div class="comment cmt"><p>Whether or not the test is completed.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a></dd></dl></div>
+      <p class="shortcomment cmt">Whether or not the test is completed.</p><div class="fullcomment"><div class="comment cmt"><p>Whether or not the test is completed.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTestTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypTest">HypMethod</a></dd></dl></div>
     </li><li name="edu.stmc.HypMethod#computeMissingParameterAfterSim" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="computeMissingParameterAfterSim():Unit"></a>
       <span class="permalink">
@@ -344,7 +344,7 @@ one of which can be left free) *after* simulation.</p><div class="fullcomment"><
 one of which can be left free) *after* simulation. (Sometimes the parameter
 cannot be determined before simulation.)
 This method may get called multiple times.
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod</dd><dt>Note</dt><dd><span class="cmt"><p>Default implementation is added in STMC and it does nothing.</p></span></dd></dl></div>
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="HypMethod.html" class="extype" name="edu.stmc.HypTest">HypMethod</a> → SimulationMethod</dd><dt>Note</dt><dd><span class="cmt"><p>Default implementation is added in STMC and it does nothing.</p></span></dd></dl></div>
     </li><li name="edu.stmc.HypMethod#computeMissingParameterBeforeSim" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="computeMissingParameterBeforeSim():Unit"></a>
       <span class="permalink">
@@ -365,7 +365,7 @@ one of which can be left free) *before* simulation.</p><div class="fullcomment">
 one of which can be left free) *before* simulation. This is not always
 possible - sometimes the parameter cannot be determined until afterwards.
 This method may get called multiple times.
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod</dd><dt>Annotations</dt><dd>
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="HypMethod.html" class="extype" name="edu.stmc.HypTest">HypMethod</a> → SimulationMethod</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
       <span class="defval" name="scala.this.throws.&lt;init&gt;$default$1[prism.PrismException]">...</span>
@@ -387,7 +387,7 @@ This method may get called multiple times.
         <span class="name">decided</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a></dd><dt>Note</dt><dd><span class="cmt"><p><a href="#completed:Boolean" class="extmbr" name="edu.stmc.HypMethodTSPRT#completed">completed</a> does not need to be <code>true</code> (as required by <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a>).</p></span></dd></dl></div>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTestTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypTest">HypMethod</a></dd><dt>Note</dt><dd><span class="cmt"><p><a href="#completed:Boolean" class="extmbr" name="edu.stmc.HypMethodTSPRT#completed">completed</a> does not need to be <code>true</code> (as required by <a href="HypMethod.html" class="extype" name="edu.stmc.HypTest">HypMethod</a>).</p></span></dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
       <span class="permalink">
@@ -435,7 +435,7 @@ This method may get called multiple times.
         <span class="name">failed_to_reject</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a></dd><dt>Note</dt><dd><span class="cmt"><p></p><ol class="decimal"><li>Requires <a href="#completed:Boolean" class="extmbr" name="edu.stmc.HypMethodTSPRT#completed">completed</a> to be <code>true</code>.</li><li>The following probabilistic guarantees are made:<ol class="lowerAlpha"><li>When <span class="extype" name="LB">LB</span> is <code>false</code>: if the actual probability is at most <code>θ - δ</code> then the probability of returning <code>true</code> is at most <code>β</code>.</li><li>When <span class="extype" name="LB">LB</span> is <code>true</code>:  if the actual probability is at most <code>θ + δ</code> then the probability of returning <code>true</code> is at most <code>β</code>.</li></ol></li></ol></span></dd></dl></div>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTestTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypTest">HypMethod</a></dd><dt>Note</dt><dd><span class="cmt"><p></p><ol class="decimal"><li>Requires <a href="#completed:Boolean" class="extmbr" name="edu.stmc.HypMethodTSPRT#completed">completed</a> to be <code>true</code>.</li><li>The following probabilistic guarantees are made:<ol class="lowerAlpha"><li>When <span class="extype" name="LB">LB</span> is <code>false</code>: if the actual probability is at most <code>θ - δ</code> then the probability of returning <code>true</code> is at most <code>β</code>.</li><li>When <span class="extype" name="LB">LB</span> is <code>true</code>:  if the actual probability is at most <code>θ + δ</code> then the probability of returning <code>true</code> is at most <code>β</code>.</li></ol></li></ol></span></dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">
@@ -472,7 +472,7 @@ This method may get called multiple times.
         <span class="name">getFullName</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
       
-      <p class="shortcomment cmt">Get the (full) name of this method.</p><div class="fullcomment"><div class="comment cmt"><p>Get the (full) name of this method.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod</dd></dl></div>
+      <p class="shortcomment cmt">Get the (full) name of this method.</p><div class="fullcomment"><div class="comment cmt"><p>Get the (full) name of this method.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTestTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypTest">HypMethod</a> → SimulationMethod</dd></dl></div>
     </li><li name="edu.stmc.HypMethodTSPRT#getMissingParameter" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getMissingParameter():AnyRef"></a>
       <span class="permalink">
@@ -491,7 +491,7 @@ This method may get called multiple times.
       <p class="shortcomment cmt">Get the missing (computed) parameter.</p><div class="fullcomment"><div class="comment cmt"><p>Get the missing (computed) parameter. If it has not already been computed and
 this can be done *before* simulation, calling this method will trigger its computation.
 If it can only be done *after*, an exception is thrown.
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the computed missing parameter (as an Integer or Double object)</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod</dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><span class="extype" name="PrismException"><code>PrismException</code></span> if missing parameter is not and cannot be computed yet
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the computed missing parameter (as an Integer or Double object)</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTestTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypTest">HypMethod</a> → SimulationMethod</dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><span class="extype" name="PrismException"><code>PrismException</code></span> if missing parameter is not and cannot be computed yet
                        or if the parameters set so far are invalid.</p></span></dd></dl></div>
     </li><li name="edu.stmc.HypMethodTSPRT#getName" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getName():String"></a>
@@ -508,7 +508,7 @@ If it can only be done *after*, an exception is thrown.
         <span class="name">getName</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
       
-      <p class="shortcomment cmt">Get the (short) name of this method.</p><div class="fullcomment"><div class="comment cmt"><p>Get the (short) name of this method.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod</dd></dl></div>
+      <p class="shortcomment cmt">Get the (short) name of this method.</p><div class="fullcomment"><div class="comment cmt"><p>Get the (short) name of this method.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTestTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypTest">HypMethod</a> → SimulationMethod</dd></dl></div>
     </li><li name="edu.stmc.HypMethodTSPRT#getParametersString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getParametersString():String"></a>
       <span class="permalink">
@@ -524,7 +524,7 @@ If it can only be done *after*, an exception is thrown.
         <span class="name">getParametersString</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
       
-      <p class="shortcomment cmt">Get the parameters of the simulation (including the computed one) as a string.</p><div class="fullcomment"><div class="comment cmt"><p>Get the parameters of the simulation (including the computed one) as a string.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod</dd></dl></div>
+      <p class="shortcomment cmt">Get the parameters of the simulation (including the computed one) as a string.</p><div class="fullcomment"><div class="comment cmt"><p>Get the parameters of the simulation (including the computed one) as a string.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTestTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypTest">HypMethod</a> → SimulationMethod</dd></dl></div>
     </li><li name="edu.stmc.HypMethod#getProgress" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getProgress(iters:Int,sampler:simulator.sampler.Sampler):Int"></a><a id="getProgress(Int,Sampler):Int"></a>
       <span class="permalink">
@@ -547,7 +547,7 @@ It is assumed that this method is called *after* the call to isCompleted(...).
 Note: The iteration count may exceed that dictated by this method,
 e.g. if multiple properties are being simulated simultaneously.
 TODO: check methods for this
-</p></div><dl class="paramcmts block"><dt class="param">iters</dt><dd class="cmt"><p>The number of iterations (samples) done so far</p></dd><dt class="param">sampler</dt><dd class="cmt"><p>The Sampler object for this simulation</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod</dd><dt>Note</dt><dd><span class="cmt"><p>Default implementation is added in STMC and it returns 0.</p></span></dd></dl></div>
+</p></div><dl class="paramcmts block"><dt class="param">iters</dt><dd class="cmt"><p>The number of iterations (samples) done so far</p></dd><dt class="param">sampler</dt><dd class="cmt"><p>The Sampler object for this simulation</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="HypMethod.html" class="extype" name="edu.stmc.HypTest">HypMethod</a> → SimulationMethod</dd><dt>Note</dt><dd><span class="cmt"><p>Default implementation is added in STMC and it returns 0.</p></span></dd></dl></div>
     </li><li name="edu.stmc.HypMethod#getResult" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getResult(sampler:simulator.sampler.Sampler):AnyRef"></a><a id="getResult(Sampler):AnyRef"></a>
       <span class="permalink">
@@ -565,7 +565,7 @@ TODO: check methods for this
       
       <p class="shortcomment cmt">Get the (approximate) result for the property that simulation is being used to approximate.</p><div class="fullcomment"><div class="comment cmt"><p>Get the (approximate) result for the property that simulation is being used to approximate.
 This should be a Boolean/Double for bounded/quantitative properties, respectively.
-</p></div><dl class="paramcmts block"><dt class="param">sampler</dt><dd class="cmt"><p>The Sampler object for this simulation</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod</dd><dt>Annotations</dt><dd>
+</p></div><dl class="paramcmts block"><dt class="param">sampler</dt><dd class="cmt"><p>The Sampler object for this simulation</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="HypMethod.html" class="extype" name="edu.stmc.HypTest">HypMethod</a> → SimulationMethod</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
       <span class="defval" name="scala.this.throws.&lt;init&gt;$default$1[prism.PrismException]">...</span>
@@ -588,7 +588,7 @@ This should be a Boolean/Double for bounded/quantitative properties, respectivel
       </span>
       
       <p class="shortcomment cmt">Get an explanation for the result of the simulation as a string.</p><div class="fullcomment"><div class="comment cmt"><p>Get an explanation for the result of the simulation as a string.
-</p></div><dl class="paramcmts block"><dt class="param">sampler</dt><dd class="cmt"><p>The Sampler object for this simulation (e.g. to get mean)</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod</dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><span class="extype" name="PrismException"><code>PrismException</code></span> if we can't get a result for some reason.</p></span></dd></dl></div>
+</p></div><dl class="paramcmts block"><dt class="param">sampler</dt><dd class="cmt"><p>The Sampler object for this simulation (e.g. to get mean)</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTestTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypTest">HypMethod</a> → SimulationMethod</dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><span class="extype" name="PrismException"><code>PrismException</code></span> if we can't get a result for some reason.</p></span></dd></dl></div>
     </li><li name="scala.AnyRef#hashCode" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
       <span class="permalink">
@@ -611,7 +611,7 @@ This should be a Boolean/Double for bounded/quantitative properties, respectivel
               
         </dd></dl></div>
     </li><li name="edu.stmc.HypMethodTSPRT#init" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="init(threshold:Double,alpha:Double,beta:Double,delta:Double,LB:Boolean):edu.stmc.HypMethodTSPRT"></a><a id="init(Double,Double,Double,Double,Boolean):HypMethodTSPRT"></a>
+      <a id="init(threshold:Double,alpha:Double,beta:Double,delta:Double,LB:Boolean):edu.stmc.HypTestTSPRT"></a><a id="init(Double,Double,Double,Double,Boolean):HypMethodTSPRT"></a>
       <span class="permalink">
       <a href="../../edu/stmc/HypMethodTSPRT.html#init(threshold:Double,alpha:Double,beta:Double,delta:Double,LB:Boolean):edu.stmc.HypMethodTSPRT" title="Permalink">
         <i class="material-icons"></i>
@@ -622,7 +622,7 @@ This should be a Boolean/Double for bounded/quantitative properties, respectivel
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">init</span><span class="params">(<span name="threshold">threshold: <span class="extype" name="scala.Double">Double</span></span>, <span name="alpha">alpha: <span class="extype" name="scala.Double">Double</span></span>, <span name="beta">beta: <span class="extype" name="scala.Double">Double</span></span>, <span name="delta">delta: <span class="extype" name="scala.Double">Double</span></span>, <span name="LB">LB: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">true</span></span>)</span><span class="result">: <a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a></span>
+        <span class="name">init</span><span class="params">(<span name="threshold">threshold: <span class="extype" name="scala.Double">Double</span></span>, <span name="alpha">alpha: <span class="extype" name="scala.Double">Double</span></span>, <span name="beta">beta: <span class="extype" name="scala.Double">Double</span></span>, <span name="delta">delta: <span class="extype" name="scala.Double">Double</span></span>, <span name="LB">LB: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">true</span></span>)</span><span class="result">: <a href="" class="extype" name="edu.stmc.HypTestTSPRT">HypMethodTSPRT</a></span>
       </span>
       
       <p class="shortcomment cmt">Initialize or reset this to a hypothesis test in which the null hypothesis is <code>p = θ - δ</code> and the alternative hypothesis is <code>p = θ + δ</code>, where <code>p</code> is
@@ -718,7 +718,7 @@ the actual probability, <code>θ</code> is the input threshold, and <code>δ</co
         <span class="name">rejected</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a></dd><dt>Note</dt><dd><span class="cmt"><p></p><ol class="decimal"><li>Requires <a href="#completed:Boolean" class="extmbr" name="edu.stmc.HypMethodTSPRT#completed">completed</a> to be <code>true</code>.</li><li>The following probabilistic guarantees are made:<ol class="lowerAlpha"><li>When <span class="extype" name="LB">LB</span> is <code>true</code>:  if the actual probability is at most <code>θ - δ</code> then the probability of returning <code>true</code> is at most <code>α</code>.</li><li>When <span class="extype" name="LB">LB</span> is <code>false</code>: if the actual probability is at most <code>θ + δ</code> then the probability of returning <code>true</code> is at most <code>α</code>.</li></ol></li></ol></span></dd></dl></div>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTestTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypTest">HypMethod</a></dd><dt>Note</dt><dd><span class="cmt"><p></p><ol class="decimal"><li>Requires <a href="#completed:Boolean" class="extmbr" name="edu.stmc.HypMethodTSPRT#completed">completed</a> to be <code>true</code>.</li><li>The following probabilistic guarantees are made:<ol class="lowerAlpha"><li>When <span class="extype" name="LB">LB</span> is <code>true</code>:  if the actual probability is at most <code>θ - δ</code> then the probability of returning <code>true</code> is at most <code>α</code>.</li><li>When <span class="extype" name="LB">LB</span> is <code>false</code>: if the actual probability is at most <code>θ + δ</code> then the probability of returning <code>true</code> is at most <code>α</code>.</li></ol></li></ol></span></dd></dl></div>
     </li><li name="edu.stmc.HypMethodTSPRT#reset" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="reset():Unit"></a>
       <span class="permalink">
@@ -735,7 +735,7 @@ the actual probability, <code>θ</code> is the input threshold, and <code>δ</co
       </span>
       
       <p class="shortcomment cmt">Reset the status of this method (but not values of any parameters that have been set).</p><div class="fullcomment"><div class="comment cmt"><p>Reset the status of this method (but not values of any parameters that have been set). Typically
-called if this instance is going to be re-used for another run of approximate verification.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod</dd></dl></div>
+called if this instance is going to be re-used for another run of approximate verification.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTestTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypTest">HypMethod</a> → SimulationMethod</dd></dl></div>
     </li><li name="edu.stmc.HypMethodTSPRT#setExpression" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="setExpression(expr:parser.ast.Expression):Unit"></a><a id="setExpression(Expression):Unit"></a>
       <span class="permalink">
@@ -754,7 +754,7 @@ called if this instance is going to be re-used for another run of approximate ve
       <p class="shortcomment cmt">Set the Expression (property) that simulation is going to be used to approximate.</p><div class="fullcomment"><div class="comment cmt"><p>Set the Expression (property) that simulation is going to be used to approximate.
 It will be either an ExpressionProb or ExpressionReward object.
 All constants should have already been defined and replaced.
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod</dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><span class="extype" name="PrismException"><code>PrismException</code></span> if property is inappropriate somehow for this method.</p></span></dd></dl></div>
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTestTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypTest">HypMethod</a> → SimulationMethod</dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><span class="extype" name="PrismException"><code>PrismException</code></span> if property is inappropriate somehow for this method.</p></span></dd></dl></div>
     </li><li name="edu.stmc.HypMethodTSPRT#shouldStopNow" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="shouldStopNow(iters:Int,sampler:simulator.sampler.Sampler):Boolean"></a><a id="shouldStopNow(Int,Sampler):Boolean"></a>
       <span class="permalink">
@@ -777,7 +777,7 @@ criteria of this method, and the current state of simulation (the number of
 iterations so far and the corresponding Sampler object).
 Note: This method may continue being called after 'true' is returned,
 e.g. if multiple properties are being simulated simultaneously.
-</p></div><dl class="paramcmts block"><dt class="param">iters</dt><dd class="cmt"><p>The number of iterations (samples) done so far</p></dd><dt class="param">sampler</dt><dd class="cmt"><p>The Sampler object for this simulation</p></dd><dt>returns</dt><dd class="cmt"><p>true if the simulation should stop, false otherwise</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod</dd></dl></div>
+</p></div><dl class="paramcmts block"><dt class="param">iters</dt><dd class="cmt"><p>The number of iterations (samples) done so far</p></dd><dt class="param">sampler</dt><dd class="cmt"><p>The Sampler object for this simulation</p></dd><dt>returns</dt><dd class="cmt"><p>true if the simulation should stop, false otherwise</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTestTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypTest">HypMethod</a> → SimulationMethod</dd></dl></div>
     </li><li name="edu.stmc.HypMethodTSPRT#status" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="status:edu.stmc.CompResult.Binary"></a><a id="status:Binary"></a>
       <span class="permalink">
@@ -860,7 +860,7 @@ e.g. if multiple properties are being simulated simultaneously.
         <span class="name">update</span><span class="params">(<span name="positive">positive: <span class="extype" name="scala.Int">Int</span></span>, <span name="negative">negative: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">positive</dt><dd class="cmt"><p>Number of samples that are positive.</p></dd><dt class="param">negative</dt><dd class="cmt"><p>Number of samples that are negative.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a></dd><dt>Note</dt><dd><span class="cmt"><p></p><ol class="decimal"><li>Requires <code>positive &gt;= 0</code> and <code>negative &gt;= 0</code>.</li><li>No restriction on total number of samples</li></ol></span></dd></dl></div>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">positive</dt><dd class="cmt"><p>Number of samples that are positive.</p></dd><dt class="param">negative</dt><dd class="cmt"><p>Number of samples that are negative.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTestTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypTest">HypMethod</a></dd><dt>Note</dt><dd><span class="cmt"><p></p><ol class="decimal"><li>Requires <code>positive &gt;= 0</code> and <code>negative &gt;= 0</code>.</li><li>No restriction on total number of samples</li></ol></span></dd></dl></div>
     </li><li name="edu.stmc.HypMethodTSPRT#update" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="update(positive:Boolean):Unit"></a><a id="update(Boolean):Unit"></a>
       <span class="permalink">
@@ -876,7 +876,7 @@ e.g. if multiple properties are being simulated simultaneously.
         <span class="name">update</span><span class="params">(<span name="positive">positive: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">positive</dt><dd class="cmt"><p>Whether or not the new sample is positive.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a></dd><dt>Note</dt><dd><span class="cmt"><p>No restriction on total number of samples.</p></span></dd></dl></div>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">positive</dt><dd class="cmt"><p>Whether or not the new sample is positive.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTestTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypTest">HypMethod</a></dd><dt>Note</dt><dd><span class="cmt"><p>No restriction on total number of samples.</p></span></dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long,x$2:Int):Unit"></a><a id="wait(Long,Int):Unit"></a>
       <span class="permalink">
@@ -984,8 +984,8 @@ e.g. if multiple properties are being simulated simultaneously.
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="edu.stmc.HypMethod">
-              <h3>Inherited from <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a></h3>
+        <div class="parent" name="edu.stmc.HypTest">
+              <h3>Inherited from <a href="HypMethod.html" class="extype" name="edu.stmc.HypTest">HypMethod</a></h3>
             </div><div class="parent" name="simulator.method.SimulationMethod">
               <h3>Inherited from <span class="extype" name="simulator.method.SimulationMethod">SimulationMethod</span></h3>
             </div><div class="parent" name="java.lang.Cloneable">

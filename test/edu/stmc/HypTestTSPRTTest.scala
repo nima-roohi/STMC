@@ -4,10 +4,10 @@ import java.util.concurrent.ThreadLocalRandom
 
 import org.scalatest._
 
-class HypMethodTSPRTTest extends FlatSpec {
+class HypTestTSPRTTest extends FlatSpec {
 
   private def run(threshold: Double, alpha: Double, beta: Double, gamma: Double, delta: Double, LB: Boolean) = {
-    val test = new HypMethodTSPRT().init(threshold, alpha, beta, gamma, delta, LB)
+    val test = new HypTestTSPRT().init(threshold, alpha, beta, gamma, delta, LB)
     val rnd = ThreadLocalRandom.current()
     while (!test.completed)
       test.update(rnd.nextBoolean())

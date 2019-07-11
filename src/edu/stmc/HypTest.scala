@@ -7,7 +7,7 @@ import simulator.sampler.Sampler
 
 /** Same as [[SimulationMethod]], with a few default implementations and a few more additional functions that help
   * testing the class without using [[Sampler]] or [[Expression]]. */
-abstract class HypMethod extends SimulationMethod {
+abstract class HypTest extends SimulationMethod {
 
   /** Get the (short) name of this method. */
   override def getName: String
@@ -97,7 +97,7 @@ abstract class HypMethod extends SimulationMethod {
   @throws[PrismException]
   def getResultExplanation(sampler: Sampler): String
 
-  override def clone: HypMethod = super.clone().asInstanceOf
+  override def clone: HypTest = super.clone().asInstanceOf
 
   //------------------------------------------------------------------------------------------------------------------------------------------------------------
 

@@ -14,12 +14,12 @@ import simulator.sampler.Sampler
   * @note
   *   1. Probabilistic guarantees in this class ignore numerical errors caused by floating point arithmetic.
   *   1. Method [[init]] must be called before this test can be actually performed. */
-final class HypMethodTSPRT private(private[this] var lb: HypMethodSPRT,
-                                   private[this] var ub: HypMethodSPRT,
-                                   private[this] var LB: Boolean) extends HypMethod {
+final class HypTestTSPRT private(private[this] var lb: HypTestSPRT,
+                                 private[this] var ub: HypTestSPRT,
+                                 private[this] var LB: Boolean) extends HypTest {
 
   /** Create an uninitialized instance of this method. */
-  def this() = this(new HypMethodSPRT, new HypMethodSPRT, false)
+  def this() = this(new HypTestSPRT, new HypTestSPRT, false)
 
   /** Initialize or reset this to a hypothesis test in which the null hypothesis is `p = θ - δ` and the alternative hypothesis is `p = θ + δ`, where `p` is
     * the actual probability, `θ` is the input threshold, and `δ` is the half of the size of indifference region.
@@ -38,7 +38,7 @@ final class HypMethodTSPRT private(private[this] var lb: HypMethodSPRT,
     *   - 0 < δ < 0.5
     *   - δ < θ
     *   - δ < 1 - θ */
-  def init(threshold: Double, alpha: Double, beta: Double, gamma: Double, delta: Double, LB: Boolean = true): HypMethodTSPRT = {
+  def init(threshold: Double, alpha: Double, beta: Double, gamma: Double, delta: Double, LB: Boolean = true): HypTestTSPRT = {
     val half_delta = delta / 2
     this.LB = LB
     if (LB) {
@@ -64,7 +64,7 @@ final class HypMethodTSPRT private(private[this] var lb: HypMethodSPRT,
 
   def getResultExplanation(sampler: Sampler): String = s"lower-bound (${lb.getResultExplanation(sampler)}), upper-bound (${ub.getResultExplanation(sampler)})"
 
-  override def clone: HypMethodTSPRT = new HypMethodTSPRT(lb.clone, ub.clone, LB)
+  override def clone: HypTestTSPRT = new HypTestTSPRT(lb.clone, ub.clone, LB)
 
   override def setExpression(expr: Expression): Unit =
     if (!expr.isInstanceOf[ExpressionProb])

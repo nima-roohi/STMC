@@ -4,10 +4,10 @@ import java.util.concurrent.ThreadLocalRandom
 
 import org.scalatest._
 
-class HypMethodSPRTTest extends FlatSpec {
+class HypTestSPRTTest extends FlatSpec {
 
   def binaryTest(threshold: Double, alpha: Double, beta: Double, delta: Double, LB: Boolean): Boolean = {
-    val test = new HypMethodSPRT().init(threshold, alpha, beta, delta, LB)
+    val test = new HypTestSPRT().init(threshold, alpha, beta, delta, LB)
     val rnd = ThreadLocalRandom.current()
     while (!test.completed)
       test.update(rnd.nextBoolean())
@@ -15,7 +15,7 @@ class HypMethodSPRTTest extends FlatSpec {
   }
 
   def binaryTestCmp(threshold: Double, alpha: Double, beta: Double, delta: Double, LB: Boolean): CompResult.Binary = {
-    val test = new HypMethodSPRT().init(threshold, alpha, beta, delta, LB)
+    val test = new HypTestSPRT().init(threshold, alpha, beta, delta, LB)
     val rnd = ThreadLocalRandom.current()
     var res = CompResult.Binary.UNDECIDED
     while (res == CompResult.Binary.UNDECIDED) {

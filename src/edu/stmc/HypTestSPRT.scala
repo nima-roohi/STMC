@@ -10,7 +10,7 @@ import simulator.sampler.Sampler
   *   1. Probabilistic guarantees in this class ignore numerical errors caused by floating point arithmetic.
   *   1. Method [[init]] must be called before this test can be actually performed.
   * @constructor Create an uninitialized instance of this method. */
-final class HypMethodSPRT() extends HypMethod {
+final class HypTestSPRT() extends HypTest {
 
   // Input parameters
   private[this] var threshold: Double = _
@@ -43,7 +43,7 @@ final class HypMethodSPRT() extends HypMethod {
     *   - 0 < δ < 0.5
     *   - δ < θ
     *   - δ < 1 - θ */
-  def init(threshold: Double, alpha: Double, beta: Double, delta: Double, LB: Boolean = true): HypMethodSPRT = {
+  def init(threshold: Double, alpha: Double, beta: Double, delta: Double, LB: Boolean = true): HypTestSPRT = {
     require(0 < threshold && threshold < 1, s"Invalid threshold $threshold")
     require(0 < alpha && alpha < 0.5, s"Invalid type I error $alpha")
     require(0 < beta && beta < 0.5, s"Invalid type II error $beta")
@@ -111,8 +111,8 @@ final class HypMethodSPRT() extends HypMethod {
   def getResultExplanation(sampler: Sampler): String =
     s"$getParametersString, logT: $logT"
 
-  override def clone: HypMethodSPRT = {
-    val res = new HypMethodSPRT()
+  override def clone: HypTestSPRT = {
+    val res = new HypTestSPRT()
     res.reset(threshold, alpha, beta, delta, LB, q0, q1, logL, logU, logT)
     res
   }
@@ -162,7 +162,7 @@ final class HypMethodSPRT() extends HypMethod {
 
   override def completed: Boolean = status ne CompResult.Binary.UNDECIDED
 
-  /** @note [[completed]] does not need to be `true` (as required by [[HypMethod]]). */
+  /** @note [[completed]] does not need to be `true` (as required by [[HypTest]]). */
   override def too_close: Boolean = status ne CompResult.Binary.UNDECIDED
 
   /** @note
