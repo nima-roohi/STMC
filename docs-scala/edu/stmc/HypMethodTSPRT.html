@@ -3,9 +3,9 @@
         <head>
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <title>stmc documentation  - edu.stmc.HypMethodSPRT</title>
-          <meta name="description" content="stmc documentation - edu.stmc.HypMethodSPRT" />
-          <meta name="keywords" content="stmc documentation edu.stmc.HypMethodSPRT" />
+          <title>stmc documentation  - edu.stmc.HypMethodTSPRT</title>
+          <meta name="description" content="stmc documentation - edu.stmc.HypMethodTSPRT" />
+          <meta name="keywords" content="stmc documentation edu.stmc.HypMethodTSPRT" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -107,12 +107,12 @@
                         <a href="HypMethod.html" title="Same as SimulationMethod, with a few default implementations and a few more additional functions that help testing the class without using Sampler or Expression.">HypMethod</a>
                       </li><li class="current-entities indented2">
                         <span class="separator"></span>
-                        <a class="class" href="" title="Sequential Probability Ratio Test"></a>
-                        <a href="" title="Sequential Probability Ratio Test">HypMethodSPRT</a>
+                        <a class="class" href="HypMethodSPRT.html" title="Sequential Probability Ratio Test"></a>
+                        <a href="HypMethodSPRT.html" title="Sequential Probability Ratio Test">HypMethodSPRT</a>
                       </li><li class="current-entities indented2">
                         <span class="separator"></span>
-                        <a class="class" href="HypMethodTSPRT.html" title="Ternary Sequential Probability Ratio Test"></a>
-                        <a href="HypMethodTSPRT.html" title="Ternary Sequential Probability Ratio Test">HypMethodTSPRT</a>
+                        <a class="class" href="" title="Ternary Sequential Probability Ratio Test"></a>
+                        <a href="" title="Ternary Sequential Probability Ratio Test">HypMethodTSPRT</a>
                       </li>
               </ul>
             </div>
@@ -122,8 +122,8 @@
       <div id="definition">
         <div class="big-circle class">c</div>
         <p id="owner"><a href="../index.html" class="extype" name="edu">edu</a>.<a href="index.html" class="extype" name="edu.stmc">stmc</a></p>
-        <h1>HypMethodSPRT<span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html" title="Permalink">
+        <h1>HypMethodTSPRT<span class="permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span></h1>
@@ -136,12 +136,13 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">HypMethodSPRT</span><span class="result"> extends <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a></span>
+        <span class="name">HypMethodTSPRT</span><span class="result"> extends <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a></span>
       </span>
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Sequential Probability Ratio Test</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p></p><ol class="decimal"><li>Probabilistic guarantees in this class ignore numerical errors caused by floating point arithmetic.</li><li>Method <a href="#init(threshold:Double,alpha:Double,beta:Double,delta:Double,LB:Boolean):edu.stmc.HypMethodSPRT" class="extmbr" name="edu.stmc.HypMethodSPRT#init">init</a> must be called before this test can be actually performed.</li></ol></span></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Ternary Sequential Probability Ratio Test</p><p><i>Ternary</i> means if the algorithm terminates, there are three possibilities for its answer:</p><ol class="decimal"><li><i>reject</i>: Null hypothesis is rejected,</li><li><i>failed_to_reject</i>: Null hypothesis is not rejected, and</li><li><i>too_close</i>: Threshold and actual probability are too close to make a call.
+</li></ol></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p></p><ol class="decimal"><li>Probabilistic guarantees in this class ignore numerical errors caused by floating point arithmetic.</li><li>Method <a href="#init(threshold:Double,alpha:Double,beta:Double,delta:Double,LB:Boolean):edu.stmc.HypMethodTSPRT" class="extmbr" name="edu.stmc.HypMethodTSPRT#init">init</a> must be called before this test can be actually performed.</li></ol></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -150,7 +151,7 @@
                 <span class="toggle diagram-link">
                   Type Hierarchy
                 </span>
-                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 162.00 118.00" height="118pt" width="162pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 114)" class="graph" id="page0,1_graph0"><polygon points="-4,4 -4,-114 158,-114 158,4 -4,4" stroke="transparent" fill="#ffffff"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this class" id="graph1_0"><g id="a_this class|graph1_0"><a xlink:title="edu.stmc.HypMethodSPRT (this class)" xlink:href="#inheritance-diagram"><path d="M121.1667,-49C121.1667,-49 32.8333,-49 32.8333,-49 28.6667,-49 24.5,-44.8333 24.5,-40.6667 24.5,-40.6667 24.5,-32.3333 24.5,-32.3333 24.5,-28.1667 28.6667,-24 32.8333,-24 32.8333,-24 121.1667,-24 121.1667,-24 125.3333,-24 129.5,-28.1667 129.5,-32.3333 129.5,-32.3333 129.5,-40.6667 129.5,-40.6667 129.5,-44.8333 125.3333,-49 121.1667,-49" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-43.5" x="35" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-33.6" x="55.9063" text-anchor="start">HypMethodSPRT</text></a></g></g><!-- node1 --><g class="node class" id="graph1_1"><g id="a_class|graph1_1"><a xlink:title="edu.stmc.HypMethod" xlink:href="HypMethod.html#inheritance-diagram"><path d="M110.6667,-110C110.6667,-110 43.3333,-110 43.3333,-110 39.1667,-110 35,-105.8333 35,-101.6667 35,-101.6667 35,-93.3333 35,-93.3333 35,-89.1667 39.1667,-85 43.3333,-85 43.3333,-85 110.6667,-85 110.6667,-85 114.8333,-85 119,-89.1667 119,-93.3333 119,-93.3333 119,-101.6667 119,-101.6667 119,-105.8333 114.8333,-110 110.6667,-110" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-104.5" x="45" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-94.6" x="65.9336" text-anchor="start">HypMethod</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="HypMethodSPRT is a subtype of HypMethod"><path d="M77,-77.7386C77,-68.3393 77,-57.3803 77,-49.123" stroke="#d4d4d4" fill="none"></path><polygon points="74.5501,-77.8607 77,-84.8608 79.4501,-77.8608 74.5501,-77.8607" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 166.00 118.00" height="118pt" width="166pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 114)" class="graph" id="page0,1_graph0"><polygon points="-4,4 -4,-114 162,-114 162,4 -4,4" stroke="transparent" fill="#ffffff"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this class" id="graph1_0"><g id="a_this class|graph1_0"><a xlink:title="edu.stmc.HypMethodTSPRT (this class)" xlink:href="#inheritance-diagram"><path d="M125.6667,-49C125.6667,-49 32.3333,-49 32.3333,-49 28.1667,-49 24,-44.8333 24,-40.6667 24,-40.6667 24,-32.3333 24,-32.3333 24,-28.1667 28.1667,-24 32.3333,-24 32.3333,-24 125.6667,-24 125.6667,-24 129.8333,-24 134,-28.1667 134,-32.3333 134,-32.3333 134,-40.6667 134,-40.6667 134,-44.8333 129.8333,-49 125.6667,-49" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-43.5" x="34" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-33.6" x="54.9629" text-anchor="start">HypMethodTSPRT</text></a></g></g><!-- node1 --><g class="node class" id="graph1_1"><g id="a_class|graph1_1"><a xlink:title="edu.stmc.HypMethod" xlink:href="HypMethod.html#inheritance-diagram"><path d="M112.6667,-110C112.6667,-110 45.3333,-110 45.3333,-110 41.1667,-110 37,-105.8333 37,-101.6667 37,-101.6667 37,-93.3333 37,-93.3333 37,-89.1667 41.1667,-85 45.3333,-85 45.3333,-85 112.6667,-85 112.6667,-85 116.8333,-85 121,-89.1667 121,-93.3333 121,-93.3333 121,-101.6667 121,-101.6667 121,-105.8333 116.8333,-110 112.6667,-110" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-104.5" x="47" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-94.6" x="67.9336" text-anchor="start">HypMethod</text></a></g></g><!-- node1&#45;&gt;node0 --><g class="edge inheritance" id="graph1_1_0"><g id="a_inheritance|graph1_1_0"><a xlink:title="HypMethodTSPRT is a subtype of HypMethod"><path d="M79,-77.7386C79,-68.3393 79,-57.3803 79,-49.123" stroke="#d4d4d4" fill="none"></path><polygon points="76.5501,-77.8607 79,-84.8608 81.4501,-77.8608 76.5501,-77.8607" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
                 <div id="diagram-controls" class="hiddenContent">
                   <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
                   <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
@@ -181,7 +182,7 @@
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="edu.stmc.HypMethodSPRT"><span>HypMethodSPRT</span></li><li class="in" name="edu.stmc.HypMethod"><span>HypMethod</span></li><li class="in" name="simulator.method.SimulationMethod"><span>SimulationMethod</span></li><li class="in" name="java.lang.Cloneable"><span>Cloneable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="edu.stmc.HypMethodTSPRT"><span>HypMethodTSPRT</span></li><li class="in" name="edu.stmc.HypMethod"><span>HypMethod</span></li><li class="in" name="simulator.method.SimulationMethod"><span>SimulationMethod</span></li><li class="in" name="java.lang.Cloneable"><span>Cloneable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
               <span class="filtertype"></span>
@@ -201,10 +202,10 @@
         <div id="allMembers">
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
-              <ol><li name="edu.stmc.HypMethodSPRT#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;():edu.stmc.HypMethodSPRT"></a><a id="&lt;init&gt;:HypMethodSPRT"></a>
+              <ol><li name="edu.stmc.HypMethodTSPRT#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;():edu.stmc.HypMethodTSPRT"></a><a id="&lt;init&gt;:HypMethodTSPRT"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#&lt;init&gt;():edu.stmc.HypMethodSPRT" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#&lt;init&gt;():edu.stmc.HypMethodTSPRT" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -213,7 +214,7 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">HypMethodSPRT</span><span class="params">()</span>
+        <span class="name">HypMethodTSPRT</span><span class="params">()</span>
       </span>
       
       <p class="shortcomment cmt">Create an uninitialized instance of this method.</p>
@@ -230,7 +231,7 @@
                 <li name="scala.AnyRef#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:Any):Boolean"></a><a id="!=(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#!=(x$1:Any):Boolean" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#!=(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -246,7 +247,7 @@
     </li><li name="scala.AnyRef###" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="##():Int"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html###():Int" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html###():Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -262,7 +263,7 @@
     </li><li name="scala.AnyRef#==" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="==(x$1:Any):Boolean"></a><a id="==(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#==(x$1:Any):Boolean" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#==(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -278,7 +279,7 @@
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#asInstanceOf[T0]:T0" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#asInstanceOf[T0]:T0" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -291,10 +292,10 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="edu.stmc.HypMethodSPRT#clone" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="clone():edu.stmc.HypMethodSPRT"></a><a id="clone():HypMethodSPRT"></a>
+    </li><li name="edu.stmc.HypMethodTSPRT#clone" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():edu.stmc.HypMethodTSPRT"></a><a id="clone():HypMethodTSPRT"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#clone():edu.stmc.HypMethodSPRT" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#clone():edu.stmc.HypMethodTSPRT" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -303,14 +304,14 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="" class="extype" name="edu.stmc.HypMethodSPRT">HypMethodSPRT</a></span>
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a></span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodSPRT">HypMethodSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod → AnyRef</dd></dl></div>
-    </li><li name="edu.stmc.HypMethodSPRT#completed" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod → AnyRef</dd></dl></div>
+    </li><li name="edu.stmc.HypMethodTSPRT#completed" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="completed:Boolean"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#completed:Boolean" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#completed:Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -322,11 +323,11 @@
         <span class="name">completed</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       
-      <p class="shortcomment cmt">Whether or not the test is completed.</p><div class="fullcomment"><div class="comment cmt"><p>Whether or not the test is completed.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodSPRT">HypMethodSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a></dd></dl></div>
+      <p class="shortcomment cmt">Whether or not the test is completed.</p><div class="fullcomment"><div class="comment cmt"><p>Whether or not the test is completed.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a></dd></dl></div>
     </li><li name="edu.stmc.HypMethod#computeMissingParameterAfterSim" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="computeMissingParameterAfterSim():Unit"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#computeMissingParameterAfterSim():Unit" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#computeMissingParameterAfterSim():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -347,7 +348,7 @@ This method may get called multiple times.
     </li><li name="edu.stmc.HypMethod#computeMissingParameterBeforeSim" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="computeMissingParameterBeforeSim():Unit"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#computeMissingParameterBeforeSim():Unit" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#computeMissingParameterBeforeSim():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -371,10 +372,10 @@ This method may get called multiple times.
     </span>)</span>
               
         </dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><span class="extype" name="PrismException"><code>PrismException</code></span> if the parameters set so far are invalid.</p></span></dd><dt>Note</dt><dd><span class="cmt"><p>Default implementation is added in STMC and it does nothing.</p></span></dd></dl></div>
-    </li><li name="edu.stmc.HypMethodSPRT#decided" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="edu.stmc.HypMethodTSPRT#decided" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="decided:Boolean"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#decided:Boolean" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#decided:Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -386,11 +387,11 @@ This method may get called multiple times.
         <span class="name">decided</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodSPRT">HypMethodSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a></dd><dt>Note</dt><dd><span class="cmt"><p><a href="#completed:Boolean" class="extmbr" name="edu.stmc.HypMethodSPRT#completed">completed</a> does not need to be <code>true</code> (as required by <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a>).</p></span></dd></dl></div>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a></dd><dt>Note</dt><dd><span class="cmt"><p><a href="#completed:Boolean" class="extmbr" name="edu.stmc.HypMethodTSPRT#completed">completed</a> does not need to be <code>true</code> (as required by <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a>).</p></span></dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#eq(x$1:AnyRef):Boolean" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#eq(x$1:AnyRef):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -406,7 +407,7 @@ This method may get called multiple times.
     </li><li name="scala.AnyRef#equals" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="equals(x$1:Any):Boolean"></a><a id="equals(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#equals(x$1:Any):Boolean" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#equals(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -419,10 +420,10 @@ This method may get called multiple times.
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="edu.stmc.HypMethodSPRT#failed_to_reject" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="edu.stmc.HypMethodTSPRT#failed_to_reject" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="failed_to_reject:Boolean"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#failed_to_reject:Boolean" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#failed_to_reject:Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -434,11 +435,11 @@ This method may get called multiple times.
         <span class="name">failed_to_reject</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodSPRT">HypMethodSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a></dd><dt>Note</dt><dd><span class="cmt"><p></p><ol class="decimal"><li>Requires <a href="#completed:Boolean" class="extmbr" name="edu.stmc.HypMethodSPRT#completed">completed</a> to be <code>true</code>.</li><li>The following probabilistic guarantees are made:<ol class="lowerAlpha"><li>When <span class="extype" name="LB">LB</span> is <code>false</code>: if the actual probability is at most <code>θ - δ</code> then the probability of returning <code>true</code> is at most <code>β</code>.</li><li>When <span class="extype" name="LB">LB</span> is <code>true</code>:  if the actual probability is at most <code>θ + δ</code> then the probability of returning <code>true</code> is at most <code>β</code>.</li></ol></li></ol></span></dd></dl></div>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a></dd><dt>Note</dt><dd><span class="cmt"><p></p><ol class="decimal"><li>Requires <a href="#completed:Boolean" class="extmbr" name="edu.stmc.HypMethodTSPRT#completed">completed</a> to be <code>true</code>.</li><li>The following probabilistic guarantees are made:<ol class="lowerAlpha"><li>When <span class="extype" name="LB">LB</span> is <code>false</code>: if the actual probability is at most <code>θ - δ</code> then the probability of returning <code>true</code> is at most <code>β</code>.</li><li>When <span class="extype" name="LB">LB</span> is <code>true</code>:  if the actual probability is at most <code>θ + δ</code> then the probability of returning <code>true</code> is at most <code>β</code>.</li></ol></li></ol></span></dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#getClass():Class[_]" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#getClass():Class[_]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -456,10 +457,10 @@ This method may get called multiple times.
                 <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="edu.stmc.HypMethodSPRT#getFullName" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="edu.stmc.HypMethodTSPRT#getFullName" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getFullName():String"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#getFullName():String" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#getFullName():String" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -471,11 +472,11 @@ This method may get called multiple times.
         <span class="name">getFullName</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
       
-      <p class="shortcomment cmt">Get the (full) name of this method.</p><div class="fullcomment"><div class="comment cmt"><p>Get the (full) name of this method.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodSPRT">HypMethodSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod</dd></dl></div>
-    </li><li name="edu.stmc.HypMethodSPRT#getMissingParameter" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <p class="shortcomment cmt">Get the (full) name of this method.</p><div class="fullcomment"><div class="comment cmt"><p>Get the (full) name of this method.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod</dd></dl></div>
+    </li><li name="edu.stmc.HypMethodTSPRT#getMissingParameter" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getMissingParameter():AnyRef"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#getMissingParameter():AnyRef" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#getMissingParameter():AnyRef" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -490,12 +491,12 @@ This method may get called multiple times.
       <p class="shortcomment cmt">Get the missing (computed) parameter.</p><div class="fullcomment"><div class="comment cmt"><p>Get the missing (computed) parameter. If it has not already been computed and
 this can be done *before* simulation, calling this method will trigger its computation.
 If it can only be done *after*, an exception is thrown.
-</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the computed missing parameter (as an Integer or Double object)</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodSPRT">HypMethodSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod</dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><span class="extype" name="PrismException"><code>PrismException</code></span> if missing parameter is not and cannot be computed yet
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the computed missing parameter (as an Integer or Double object)</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod</dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><span class="extype" name="PrismException"><code>PrismException</code></span> if missing parameter is not and cannot be computed yet
                        or if the parameters set so far are invalid.</p></span></dd></dl></div>
-    </li><li name="edu.stmc.HypMethodSPRT#getName" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="edu.stmc.HypMethodTSPRT#getName" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getName():String"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#getName():String" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#getName():String" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -507,11 +508,11 @@ If it can only be done *after*, an exception is thrown.
         <span class="name">getName</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
       
-      <p class="shortcomment cmt">Get the (short) name of this method.</p><div class="fullcomment"><div class="comment cmt"><p>Get the (short) name of this method.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodSPRT">HypMethodSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod</dd></dl></div>
-    </li><li name="edu.stmc.HypMethodSPRT#getParametersString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <p class="shortcomment cmt">Get the (short) name of this method.</p><div class="fullcomment"><div class="comment cmt"><p>Get the (short) name of this method.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod</dd></dl></div>
+    </li><li name="edu.stmc.HypMethodTSPRT#getParametersString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getParametersString():String"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#getParametersString():String" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#getParametersString():String" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -523,11 +524,11 @@ If it can only be done *after*, an exception is thrown.
         <span class="name">getParametersString</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
       
-      <p class="shortcomment cmt">Get the parameters of the simulation (including the computed one) as a string.</p><div class="fullcomment"><div class="comment cmt"><p>Get the parameters of the simulation (including the computed one) as a string.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodSPRT">HypMethodSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod</dd></dl></div>
+      <p class="shortcomment cmt">Get the parameters of the simulation (including the computed one) as a string.</p><div class="fullcomment"><div class="comment cmt"><p>Get the parameters of the simulation (including the computed one) as a string.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod</dd></dl></div>
     </li><li name="edu.stmc.HypMethod#getProgress" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getProgress(iters:Int,sampler:simulator.sampler.Sampler):Int"></a><a id="getProgress(Int,Sampler):Int"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#getProgress(iters:Int,sampler:simulator.sampler.Sampler):Int" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#getProgress(iters:Int,sampler:simulator.sampler.Sampler):Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -550,7 +551,7 @@ TODO: check methods for this
     </li><li name="edu.stmc.HypMethod#getResult" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getResult(sampler:simulator.sampler.Sampler):AnyRef"></a><a id="getResult(Sampler):AnyRef"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#getResult(sampler:simulator.sampler.Sampler):AnyRef" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#getResult(sampler:simulator.sampler.Sampler):AnyRef" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -571,10 +572,10 @@ This should be a Boolean/Double for bounded/quantitative properties, respectivel
     </span>)</span>
               
         </dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><span class="extype" name="PrismException"><code>PrismException</code></span> if we can't get a result for some reason.</p></span></dd></dl></div>
-    </li><li name="edu.stmc.HypMethodSPRT#getResultExplanation" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="edu.stmc.HypMethodTSPRT#getResultExplanation" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getResultExplanation(sampler:simulator.sampler.Sampler):String"></a><a id="getResultExplanation(Sampler):String"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#getResultExplanation(sampler:simulator.sampler.Sampler):String" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#getResultExplanation(sampler:simulator.sampler.Sampler):String" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -587,11 +588,11 @@ This should be a Boolean/Double for bounded/quantitative properties, respectivel
       </span>
       
       <p class="shortcomment cmt">Get an explanation for the result of the simulation as a string.</p><div class="fullcomment"><div class="comment cmt"><p>Get an explanation for the result of the simulation as a string.
-</p></div><dl class="paramcmts block"><dt class="param">sampler</dt><dd class="cmt"><p>The Sampler object for this simulation (e.g. to get mean)</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodSPRT">HypMethodSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod</dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><span class="extype" name="PrismException"><code>PrismException</code></span> if we can't get a result for some reason.</p></span></dd></dl></div>
+</p></div><dl class="paramcmts block"><dt class="param">sampler</dt><dd class="cmt"><p>The Sampler object for this simulation (e.g. to get mean)</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod</dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><span class="extype" name="PrismException"><code>PrismException</code></span> if we can't get a result for some reason.</p></span></dd></dl></div>
     </li><li name="scala.AnyRef#hashCode" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#hashCode():Int" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#hashCode():Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -609,10 +610,10 @@ This should be a Boolean/Double for bounded/quantitative properties, respectivel
                 <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="edu.stmc.HypMethodSPRT#init" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="init(threshold:Double,alpha:Double,beta:Double,delta:Double,LB:Boolean):edu.stmc.HypMethodSPRT"></a><a id="init(Double,Double,Double,Double,Boolean):HypMethodSPRT"></a>
+    </li><li name="edu.stmc.HypMethodTSPRT#init" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="init(threshold:Double,alpha:Double,beta:Double,delta:Double,LB:Boolean):edu.stmc.HypMethodTSPRT"></a><a id="init(Double,Double,Double,Double,Boolean):HypMethodTSPRT"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#init(threshold:Double,alpha:Double,beta:Double,delta:Double,LB:Boolean):edu.stmc.HypMethodSPRT" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#init(threshold:Double,alpha:Double,beta:Double,delta:Double,LB:Boolean):edu.stmc.HypMethodTSPRT" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -621,7 +622,7 @@ This should be a Boolean/Double for bounded/quantitative properties, respectivel
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">init</span><span class="params">(<span name="threshold">threshold: <span class="extype" name="scala.Double">Double</span></span>, <span name="alpha">alpha: <span class="extype" name="scala.Double">Double</span></span>, <span name="beta">beta: <span class="extype" name="scala.Double">Double</span></span>, <span name="delta">delta: <span class="extype" name="scala.Double">Double</span></span>, <span name="LB">LB: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">true</span></span>)</span><span class="result">: <a href="" class="extype" name="edu.stmc.HypMethodSPRT">HypMethodSPRT</a></span>
+        <span class="name">init</span><span class="params">(<span name="threshold">threshold: <span class="extype" name="scala.Double">Double</span></span>, <span name="alpha">alpha: <span class="extype" name="scala.Double">Double</span></span>, <span name="beta">beta: <span class="extype" name="scala.Double">Double</span></span>, <span name="delta">delta: <span class="extype" name="scala.Double">Double</span></span>, <span name="LB">LB: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">true</span></span>)</span><span class="result">: <a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a></span>
       </span>
       
       <p class="shortcomment cmt">Initialize or reset this to a hypothesis test in which the null hypothesis is <code>p = θ - δ</code> and the alternative hypothesis is <code>p = θ + δ</code>, where <code>p</code> is
@@ -631,7 +632,7 @@ the actual probability, <code>θ</code> is the input threshold, and <code>δ</co
     </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#isInstanceOf[T0]:Boolean" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#isInstanceOf[T0]:Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -647,7 +648,7 @@ the actual probability, <code>θ</code> is the input threshold, and <code>δ</co
     </li><li name="scala.AnyRef#ne" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a><a id="ne(AnyRef):Boolean"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#ne(x$1:AnyRef):Boolean" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#ne(x$1:AnyRef):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -663,7 +664,7 @@ the actual probability, <code>θ</code> is the input threshold, and <code>δ</co
     </li><li name="scala.AnyRef#notify" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notify():Unit"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#notify():Unit" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#notify():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -684,7 +685,7 @@ the actual probability, <code>θ</code> is the input threshold, and <code>δ</co
     </li><li name="scala.AnyRef#notifyAll" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notifyAll():Unit"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#notifyAll():Unit" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#notifyAll():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -702,10 +703,10 @@ the actual probability, <code>θ</code> is the input threshold, and <code>δ</co
                 <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="edu.stmc.HypMethodSPRT#rejected" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="edu.stmc.HypMethodTSPRT#rejected" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="rejected:Boolean"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#rejected:Boolean" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#rejected:Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -717,11 +718,11 @@ the actual probability, <code>θ</code> is the input threshold, and <code>δ</co
         <span class="name">rejected</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodSPRT">HypMethodSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a></dd><dt>Note</dt><dd><span class="cmt"><p></p><ol class="decimal"><li>Requires <a href="#completed:Boolean" class="extmbr" name="edu.stmc.HypMethodSPRT#completed">completed</a> to be <code>true</code>.</li><li>The following probabilistic guarantees are made:<ol class="lowerAlpha"><li>When <span class="extype" name="LB">LB</span> is <code>true</code>:  if the actual probability is at most <code>θ - δ</code> then the probability of returning <code>true</code> is at most <code>α</code>.</li><li>When <span class="extype" name="LB">LB</span> is <code>false</code>: if the actual probability is at most <code>θ + δ</code> then the probability of returning <code>true</code> is at most <code>α</code>.</li></ol></li></ol></span></dd></dl></div>
-    </li><li name="edu.stmc.HypMethodSPRT#reset" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a></dd><dt>Note</dt><dd><span class="cmt"><p></p><ol class="decimal"><li>Requires <a href="#completed:Boolean" class="extmbr" name="edu.stmc.HypMethodTSPRT#completed">completed</a> to be <code>true</code>.</li><li>The following probabilistic guarantees are made:<ol class="lowerAlpha"><li>When <span class="extype" name="LB">LB</span> is <code>true</code>:  if the actual probability is at most <code>θ - δ</code> then the probability of returning <code>true</code> is at most <code>α</code>.</li><li>When <span class="extype" name="LB">LB</span> is <code>false</code>: if the actual probability is at most <code>θ + δ</code> then the probability of returning <code>true</code> is at most <code>α</code>.</li></ol></li></ol></span></dd></dl></div>
+    </li><li name="edu.stmc.HypMethodTSPRT#reset" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="reset():Unit"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#reset():Unit" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#reset():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -734,11 +735,11 @@ the actual probability, <code>θ</code> is the input threshold, and <code>δ</co
       </span>
       
       <p class="shortcomment cmt">Reset the status of this method (but not values of any parameters that have been set).</p><div class="fullcomment"><div class="comment cmt"><p>Reset the status of this method (but not values of any parameters that have been set). Typically
-called if this instance is going to be re-used for another run of approximate verification.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodSPRT">HypMethodSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod</dd></dl></div>
-    </li><li name="edu.stmc.HypMethodSPRT#setExpression" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+called if this instance is going to be re-used for another run of approximate verification.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod</dd></dl></div>
+    </li><li name="edu.stmc.HypMethodTSPRT#setExpression" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="setExpression(expr:parser.ast.Expression):Unit"></a><a id="setExpression(Expression):Unit"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#setExpression(expr:parser.ast.Expression):Unit" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#setExpression(expr:parser.ast.Expression):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -753,11 +754,11 @@ called if this instance is going to be re-used for another run of approximate ve
       <p class="shortcomment cmt">Set the Expression (property) that simulation is going to be used to approximate.</p><div class="fullcomment"><div class="comment cmt"><p>Set the Expression (property) that simulation is going to be used to approximate.
 It will be either an ExpressionProb or ExpressionReward object.
 All constants should have already been defined and replaced.
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodSPRT">HypMethodSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod</dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><span class="extype" name="PrismException"><code>PrismException</code></span> if property is inappropriate somehow for this method.</p></span></dd></dl></div>
-    </li><li name="edu.stmc.HypMethodSPRT#shouldStopNow" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod</dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><span class="extype" name="PrismException"><code>PrismException</code></span> if property is inappropriate somehow for this method.</p></span></dd></dl></div>
+    </li><li name="edu.stmc.HypMethodTSPRT#shouldStopNow" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="shouldStopNow(iters:Int,sampler:simulator.sampler.Sampler):Boolean"></a><a id="shouldStopNow(Int,Sampler):Boolean"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#shouldStopNow(iters:Int,sampler:simulator.sampler.Sampler):Boolean" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#shouldStopNow(iters:Int,sampler:simulator.sampler.Sampler):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -776,11 +777,11 @@ criteria of this method, and the current state of simulation (the number of
 iterations so far and the corresponding Sampler object).
 Note: This method may continue being called after 'true' is returned,
 e.g. if multiple properties are being simulated simultaneously.
-</p></div><dl class="paramcmts block"><dt class="param">iters</dt><dd class="cmt"><p>The number of iterations (samples) done so far</p></dd><dt class="param">sampler</dt><dd class="cmt"><p>The Sampler object for this simulation</p></dd><dt>returns</dt><dd class="cmt"><p>true if the simulation should stop, false otherwise</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodSPRT">HypMethodSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod</dd></dl></div>
-    </li><li name="edu.stmc.HypMethodSPRT#status" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+</p></div><dl class="paramcmts block"><dt class="param">iters</dt><dd class="cmt"><p>The number of iterations (samples) done so far</p></dd><dt class="param">sampler</dt><dd class="cmt"><p>The Sampler object for this simulation</p></dd><dt>returns</dt><dd class="cmt"><p>true if the simulation should stop, false otherwise</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a> → SimulationMethod</dd></dl></div>
+    </li><li name="edu.stmc.HypMethodTSPRT#status" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="status:edu.stmc.CompResult.Binary"></a><a id="status:Binary"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#status:edu.stmc.CompResult.Binary" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#status:edu.stmc.CompResult.Binary" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -792,14 +793,14 @@ e.g. if multiple properties are being simulated simultaneously.
         <span class="name">status</span><span class="result">: <span class="extype" name="edu.stmc.CompResult.Binary">Binary</span></span>
       </span>
       
-      <p class="shortcomment cmt">Same as <a href="#status(logT:Double):edu.stmc.CompResult.Binary" class="extmbr" name="edu.stmc.HypMethodSPRT#status">status(logT*</a>, but input parameter is taken from the current instance</p><div class="fullcomment"><div class="comment cmt"><p>Same as <a href="#status(logT:Double):edu.stmc.CompResult.Binary" class="extmbr" name="edu.stmc.HypMethodSPRT#status">status(logT*</a>, but input parameter is taken from the current instance</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+      <p class="shortcomment cmt">Same as <a href="#status(logT:Double):edu.stmc.CompResult.Binary" class="extmbr" name="edu.stmc.HypMethodTSPRT#status">status(logT*</a>, but input parameter is taken from the current instance</p><div class="fullcomment"><div class="comment cmt"><p>Same as <a href="#status(logT:Double):edu.stmc.CompResult.Binary" class="extmbr" name="edu.stmc.HypMethodTSPRT#status">status(logT*</a>, but input parameter is taken from the current instance</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@inline</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="edu.stmc.HypMethodSPRT#status" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="edu.stmc.HypMethodTSPRT#status" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="status(logT:Double):edu.stmc.CompResult.Binary"></a><a id="status(Double):Binary"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#status(logT:Double):edu.stmc.CompResult.Binary" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#status(logT:Double):edu.stmc.CompResult.Binary" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -815,7 +816,7 @@ e.g. if multiple properties are being simulated simultaneously.
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -831,7 +832,7 @@ e.g. if multiple properties are being simulated simultaneously.
     </li><li name="scala.AnyRef#toString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toString():String"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#toString():String" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#toString():String" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -844,10 +845,10 @@ e.g. if multiple properties are being simulated simultaneously.
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="edu.stmc.HypMethodSPRT#update" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="edu.stmc.HypMethodTSPRT#update" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="update(positive:Int,negative:Int):Unit"></a><a id="update(Int,Int):Unit"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#update(positive:Int,negative:Int):Unit" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#update(positive:Int,negative:Int):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -859,11 +860,11 @@ e.g. if multiple properties are being simulated simultaneously.
         <span class="name">update</span><span class="params">(<span name="positive">positive: <span class="extype" name="scala.Int">Int</span></span>, <span name="negative">negative: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">positive</dt><dd class="cmt"><p>Number of samples that are positive.</p></dd><dt class="param">negative</dt><dd class="cmt"><p>Number of samples that are negative.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodSPRT">HypMethodSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a></dd><dt>Note</dt><dd><span class="cmt"><p></p><ol class="decimal"><li>Requires <code>positive &gt;= 0</code> and <code>negative &gt;= 0</code>.</li><li>No restriction on total number of samples</li></ol></span></dd></dl></div>
-    </li><li name="edu.stmc.HypMethodSPRT#update" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">positive</dt><dd class="cmt"><p>Number of samples that are positive.</p></dd><dt class="param">negative</dt><dd class="cmt"><p>Number of samples that are negative.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a></dd><dt>Note</dt><dd><span class="cmt"><p></p><ol class="decimal"><li>Requires <code>positive &gt;= 0</code> and <code>negative &gt;= 0</code>.</li><li>No restriction on total number of samples</li></ol></span></dd></dl></div>
+    </li><li name="edu.stmc.HypMethodTSPRT#update" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="update(positive:Boolean):Unit"></a><a id="update(Boolean):Unit"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#update(positive:Boolean):Unit" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#update(positive:Boolean):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -875,11 +876,11 @@ e.g. if multiple properties are being simulated simultaneously.
         <span class="name">update</span><span class="params">(<span name="positive">positive: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">positive</dt><dd class="cmt"><p>Whether or not the new sample is positive.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodSPRT">HypMethodSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a></dd><dt>Note</dt><dd><span class="cmt"><p>No restriction on total number of samples.</p></span></dd></dl></div>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">positive</dt><dd class="cmt"><p>Whether or not the new sample is positive.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypMethodTSPRT">HypMethodTSPRT</a> → <a href="HypMethod.html" class="extype" name="edu.stmc.HypMethod">HypMethod</a></dd><dt>Note</dt><dd><span class="cmt"><p>No restriction on total number of samples.</p></span></dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long,x$2:Int):Unit"></a><a id="wait(Long,Int):Unit"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -901,7 +902,7 @@ e.g. if multiple properties are being simulated simultaneously.
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long):Unit"></a><a id="wait(Long):Unit"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#wait(x$1:Long):Unit" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#wait(x$1:Long):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -925,7 +926,7 @@ e.g. if multiple properties are being simulated simultaneously.
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#wait():Unit" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#wait():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -955,7 +956,7 @@ e.g. if multiple properties are being simulated simultaneously.
               <ol><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypMethodSPRT.html#finalize():Unit" title="Permalink">
+      <a href="../../edu/stmc/HypMethodTSPRT.html#finalize():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>

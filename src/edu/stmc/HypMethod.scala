@@ -99,7 +99,7 @@ abstract class HypMethod extends SimulationMethod {
 
   override def clone: HypMethod = super.clone().asInstanceOf
 
-  //--------------------------------------------------------------------------------------------------------------------
+  //------------------------------------------------------------------------------------------------------------------------------------------------------------
 
   /** Update the test by adding an observation.
     *
@@ -118,11 +118,11 @@ abstract class HypMethod extends SimulationMethod {
   /** Whether or not the test is completed. */
   def completed: Boolean
 
-  /** Whether or not a decision is made (it is possible that a test terminates without choosing between the null and
-    * alternative hypotheses).
+  /** Whether or not the actual probability and the input threshold are too close to make a decision (sometimes,
+    * it is possible that a test terminates without choosing between the null and alternative hypotheses).
     *
     * @note Requires [[completed]] to be `true`. */
-  def decided: Boolean
+  def too_close: Boolean
 
   /** Whether the test rejects the null hypothesis in favor of the alternative hypothesis.
     *

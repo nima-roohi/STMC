@@ -7,14 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="846f6b2c-a6fb-4a48-9b7d-a1527616ac99" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/edu/stmc/HypMethodTSPRT.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/edu/stmc/HypMethodTSPRTTest.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs-scala/edu/stmc/HypMethod.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/edu/stmc/HypMethod.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs-scala/edu/stmc/HypMethodSPRT.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/edu/stmc/HypMethodSPRT.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs-scala/edu/stmc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/edu/stmc/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs-scala/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/stmc/HypMethod.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/HypMethod.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/stmc/HypMethodSPRT.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/HypMethodSPRT.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/prism/PrismCL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/prism/PrismCL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/edu/stmc/SPRTTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/test/edu/stmc/SPRTTest.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/edu/stmc/SPRTTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/test/edu/stmc/HypMethodSPRTTest.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,33 +30,24 @@
     <option name="delegatedBuild" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/prism/PrismCL.java">
+        <entry file="file://$PROJECT_DIR$/src/edu/stmc/HypMethodTSPRT.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="2344" selection-start-line="2344" selection-end-line="2344" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/edu/stmc/GSPRTTest.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="35" column="5" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="35" selection-end-column="5" />
+            <state relative-caret-position="345">
+              <caret line="23" column="94" selection-start-line="23" selection-start-column="89" selection-end-line="23" selection-end-column="94" />
+              <folding>
+                <element signature="e#18#64#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/edu/stmc/SPRTTest.scala">
+        <entry file="file://$PROJECT_DIR$/test/edu/stmc/HypMethodTSPRTTest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="51" selection-start-line="51" selection-end-line="51" />
-              <folding>
-                <element signature="e#18#63#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="657">
+              <caret line="114" column="92" lean-forward="true" selection-start-line="114" selection-start-column="92" selection-end-line="114" selection-end-column="92" />
             </state>
           </provider>
         </entry>
@@ -62,23 +55,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/stmc/HypMethodSPRT.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="149" column="17" selection-start-line="149" selection-start-column="17" selection-end-line="149" selection-end-column="17" />
-              <folding>
-                <element signature="e#18#34#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/edu/stmc/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="45" column="11" lean-forward="true" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="623">
+              <caret line="181" selection-start-line="179" selection-end-line="181" />
             </state>
           </provider>
         </entry>
@@ -94,28 +72,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>compl</find>
-      <find>getResult</find>
-      <find>getResultExplanation</find>
-      <find>getMissingParameter</find>
-      <find>modelCheckSimulator</find>
-      <find>getVersion</find>
-      <find>version</find>
-      <find>printVersion</find>
-      <find>DOWN</find>
-      <find>Therefore,</find>
-      <find>hyp</find>
-      <find>setExpression</find>
-      <find>StrategyExportType</find>
-      <find>clone</find>
-      <find>expr</find>
-      <find>completed</find>
       <find>shouldStopNow</find>
       <find>HypMethodSPRT</find>
       <find>isUB</find>
       <find>status eq CompResult.Binary.LARGER</find>
       <find>Math.log(beta / (1 - alpha))</find>
-      <find>threshold</find>
       <find>isLB</find>
       <find>SPRT</find>
       <find>LB</find>
@@ -124,17 +85,25 @@
       <find>parameter</find>
       <find>Parameter</find>
       <find>toString</find>
+      <find>.par</find>
+      <find>UNDECIDED</find>
+      <find>Binary</find>
+      <find>0.6</find>
+      <find>ternaryTestCmp</find>
+      <find>59999999999</find>
+      <find>it should &quot;decide LARGER very few times when upper-bound is correct&quot; in {</find>
+      <find>it should &quot;decide TOO_CLOSE very few times when lower-bound is correct and not too close&quot; in {</find>
+      <find>test</find>
+      <find>ternaryT</find>
+      <find>and not too close</find>
+      <find>prev(0.5)</find>
+      <find>gamma</find>
+      <find>alpha</find>
+      <find>beta</find>
+      <find>delta</find>
+      <find>threshold</find>
     </findStrings>
     <replaceStrings>
-      <replace>java.lang.Math</replace>
-      <replace>CompResult.Binary</replace>
-      <replace>.</replace>
-      <replace>@requires</replace>
-      <replace>logP1</replace>
-      <replace>GSPRT</replace>
-      <replace>null;</replace>
-      <replace>&quot;$1&quot;.equals(sw)</replace>
-      <replace>extends</replace>
       <replace>cloneCopy</replace>
       <replace>SMALLER</replace>
       <replace>HypTestName</replace>
@@ -153,6 +122,18 @@
       <replace>isLB</replace>
       <replace>LB</replace>
       <replace>HypMethodSPRT().init</replace>
+      <replace>Ternary</replace>
+      <replace>0.59999999999</replace>
+      <replace>ternaryTest</replace>
+      <replace>50000000001</replace>
+      <replace>run</replace>
+      <replace>t</replace>
+      <replace>0.5</replace>
+      <replace>γ</replace>
+      <replace>α</replace>
+      <replace>β</replace>
+      <replace>δ</replace>
+      <replace>θ</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -178,7 +159,6 @@
         <option value="$PROJECT_DIR$/src/edu/stmc/HypTest.scala" />
         <option value="$PROJECT_DIR$/src/edu/stmc/Tmp2.java" />
         <option value="$PROJECT_DIR$/src/edu/stmc/Tmp.scala" />
-        <option value="$PROJECT_DIR$/src/edu/stmc/CompResult.java" />
         <option value="$PROJECT_DIR$/src/edu/stmc/TSPRT.scala" />
         <option value="$PROJECT_DIR$/prism-mod/src/prism/PrismCL.java" />
         <option value="$PROJECT_DIR$/src/edu/stmc/GSPRT.scala" />
@@ -204,9 +184,13 @@
         <option value="$PROJECT_DIR$/src/prism/Prism.java" />
         <option value="$PROJECT_DIR$/test/edu/stmc/SPRTTest.scala" />
         <option value="$PROJECT_DIR$/src/prism/PrismCL.java" />
+        <option value="$PROJECT_DIR$/src/edu/stmc/Main.java" />
+        <option value="$PROJECT_DIR$/src/edu/stmc/CompResult.java" />
         <option value="$PROJECT_DIR$/src/edu/stmc/HypMethod.scala" />
         <option value="$PROJECT_DIR$/src/edu/stmc/HypMethodSPRT.scala" />
-        <option value="$PROJECT_DIR$/src/edu/stmc/Main.java" />
+        <option value="$PROJECT_DIR$/test/edu/stmc/HypMethodSPRTTest.scala" />
+        <option value="$PROJECT_DIR$/src/edu/stmc/HypMethodTSPRT.scala" />
+        <option value="$PROJECT_DIR$/test/edu/stmc/HypMethodTSPRTTest.scala" />
       </list>
     </option>
   </component>
@@ -224,6 +208,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -277,8 +263,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -287,23 +271,23 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.excludes" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/edu/stmc" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="edu.stmc" />
+      <recent name="prism" />
+      <recent name="simulator" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/edu/stmc" />
       <recent name="$PROJECT_DIR$/prism-mod" />
       <recent name="$PROJECT_DIR$/prism-mod/src" />
       <recent name="$PROJECT_DIR$/src/edu" />
       <recent name="$PROJECT_DIR$/src" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="prism" />
-      <recent name="simulator" />
-      <recent name="edu.stmc" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/edu/stmc" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -318,7 +302,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="ScalaTest.ScalaTests in 'test'">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <envs>
         <env name="DYLD_LIBRARY_PATH" value="/opt/prism-4.5/lib" />
@@ -332,6 +316,24 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HypMethodSPRTTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+      <module name="stmc" />
+      <setting name="path" value="edu.stmc.HypMethodSPRTTest" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="showProgressMessages" value="true" />
+      <setting name="useSbt" value="false" />
+      <setting name="useUiWithSbt" value="false" />
+      <setting name="jrePath" value="" />
+      <envs />
+      <setting name="testKind" value="Class" />
+      <setting name="path" value="edu.stmc.HypMethodSPRTTest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -370,14 +372,18 @@
       <setting name="package" value="" />
       <buffered bufClass="edu.stmc.GSPRTTest" />
       <buffered bufClass="edu.stmc.GSPRTTest" />
-      <buffered bufClass="edu.stmc.SPRTTest" />
-      <buffered bufClass="edu.stmc.SPRTTest" />
+      <buffered bufClass="edu.stmc.HypMethodSPRTTest" />
+      <buffered bufClass="edu.stmc.HypMethodSPRTTest" />
+      <buffered bufClass="edu.stmc.HypMethodTSPRTTest" />
+      <buffered bufClass="edu.stmc.HypMethodTSPRTTest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="ScalaTest.ScalaTests in 'test'" />
+        <item itemvalue="ScalaTest.HypMethodSPRTTest" />
         <item itemvalue="Application.Main" />
         <item itemvalue="ScalaTest.SPRTTest" />
         <item itemvalue="ScalaTest.ScalaTests in 'test'" />
@@ -398,42 +404,42 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SPRTTest - 2019.07.10 at 05h 06m 24s.xml">
-      <configuration name="SPRTTest" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="ScalaTests_in_'test' - 2019.07.11 at 03h 36m 44s.xml">
+      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="SPRTTest - 2019.07.10 at 05h 06m 44s.xml">
-      <configuration name="SPRTTest" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="ScalaTests_in_'test' - 2019.07.11 at 03h 39m 20s.xml">
+      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="SPRTTest - 2019.07.10 at 05h 11m 15s.xml">
-      <configuration name="SPRTTest" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="ScalaTests_in_'test' - 2019.07.11 at 03h 40m 56s.xml">
+      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="SPRTTest - 2019.07.10 at 05h 16m 48s.xml">
-      <configuration name="SPRTTest" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="ScalaTests_in_'test' - 2019.07.11 at 03h 41m 08s.xml">
+      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="SPRTTest - 2019.07.10 at 05h 17m 24s.xml">
-      <configuration name="SPRTTest" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="ScalaTests_in_'test' - 2019.07.11 at 03h 42m 44s.xml">
+      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="SPRTTest - 2019.07.10 at 05h 18m 20s.xml">
-      <configuration name="SPRTTest" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="ScalaTests_in_'test' - 2019.07.11 at 03h 43m 18s.xml">
+      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="SPRTTest - 2019.07.10 at 05h 19m 17s.xml">
-      <configuration name="SPRTTest" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="ScalaTests_in_'test' - 2019.07.11 at 03h 45m 07s.xml">
+      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="SPRTTest - 2019.07.10 at 05h 19m 40s.xml">
-      <configuration name="SPRTTest" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="ScalaTests_in_'test' - 2019.07.11 at 03h 47m 09s.xml">
+      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="SPRTTest - 2019.07.10 at 05h 24m 54s.xml">
-      <configuration name="SPRTTest" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="ScalaTests_in_'test' - 2019.07.11 at 03h 50m 09s.xml">
+      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="SPRTTest - 2019.07.10 at 05h 26m 59s.xml">
-      <configuration name="SPRTTest" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="ScalaTests_in_'test' - 2019.07.11 at 03h 51m 39s.xml">
+      <configuration name="ScalaTests in 'test'" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="640" y="23" width="1920" height="1290" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14639284" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14639284" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -442,7 +448,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32888147" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32804674" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32804674" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39899832" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -504,30 +510,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/prism-src/src/parser/ast/ExpressionUnaryOp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-544">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/stmc/StratificationMethod.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="69" column="68" selection-start-line="69" selection-start-column="68" selection-end-line="69" selection-end-column="68" />
-          <folding>
-            <element signature="e#18#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/stmc/SPRT.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1296">
-          <caret line="97" column="17" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prism-src/src/parser/ast/ExpressionProb.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -650,23 +632,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/stmc/GSPRT.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="76" column="4" selection-start-line="76" selection-start-column="4" selection-end-line="76" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/stmc/HypTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/stmc_ORG/CompResult.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc/GSPRT.scala" />
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc/HypTest.scala" />
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc_ORG/CompResult.java" />
     <entry file="jar:///opt/java/jdk-11.0.2/lib/src.zip!/java.base/java/io/File.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="566">
@@ -695,13 +663,6 @@
           <folding>
             <element signature="e#0#4590#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/prism-src/src/simulator/sampler/Sampler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="55" column="43" lean-forward="true" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -744,13 +705,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/stmc/CompResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/stmc/STMCConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -782,13 +736,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/prism/Prism.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="596" column="15" selection-start-line="596" selection-start-column="11" selection-end-line="596" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prism/Prism.java" />
     <entry file="file://$PROJECT_DIR$/prism-src/src/prism/Prism.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -873,33 +821,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/stmc/HypMethod.scala">
+    <entry file="file://$PROJECT_DIR$/test/edu/stmc/GSPRTTest.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="97" column="2" selection-start-line="97" selection-start-column="2" selection-end-line="97" selection-end-column="52" />
-          <folding>
-            <element signature="e#18#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/stmc/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="45" column="11" lean-forward="true" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/stmc/HypMethodSPRT.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="149" column="17" selection-start-line="149" selection-start-column="17" selection-end-line="149" selection-end-column="17" />
-          <folding>
-            <element signature="e#18#34#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="495">
+          <caret line="35" column="5" selection-start-line="9" selection-start-column="17" selection-end-line="35" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -910,20 +835,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/edu/stmc/GSPRTTest.scala">
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="35" column="5" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="35" selection-end-column="5" />
+        <state relative-caret-position="570">
+          <caret line="45" column="11" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/edu/stmc/SPRTTest.scala">
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc/CompResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        <state relative-caret-position="225">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/edu/stmc/HypMethodSPRTTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1365">
+          <caret line="91" selection-start-line="91" selection-end-line="91" />
           <folding>
             <element signature="e#18#63#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc_ORG/TSPRT.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="738">
+          <caret line="77" selection-start-line="74" selection-end-line="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc/HypMethod.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="582">
+          <caret line="101" column="117" selection-start-line="101" selection-start-column="117" selection-end-line="101" selection-end-column="117" />
+          <folding>
+            <element signature="e#18#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prism-src/src/simulator/sampler/Sampler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1957">
+          <caret line="92" column="25" selection-start-line="92" selection-start-column="25" selection-end-line="92" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc/HypMethodSPRT.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="623">
+          <caret line="181" selection-start-line="179" selection-end-line="181" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc/HypMethodTSPRT.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="94" selection-start-line="23" selection-start-column="89" selection-end-line="23" selection-end-column="94" />
+          <folding>
+            <element signature="e#18#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/edu/stmc/HypMethodTSPRTTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="657">
+          <caret line="114" column="92" lean-forward="true" selection-start-line="114" selection-start-column="92" selection-end-line="114" selection-end-column="92" />
         </state>
       </provider>
     </entry>

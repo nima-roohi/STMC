@@ -1,45 +1,48 @@
 package edu.stmc
 
-import java.lang
-
-import parser.ast.{Expression, ExpressionProb, RelOp}
+import parser.ast.{Expression, ExpressionProb}
 import prism.PrismException
 import simulator.sampler.Sampler
 
 /** Sequential Probability Ratio Test
   *
-  * @note Probabilistic guarantees in this class ignore numerical errors caused by floating point arithmetic.
-  * @note Method [[init]] must be called before this method can be actually used. */
+  * @note
+  *   1. Probabilistic guarantees in this class ignore numerical errors caused by floating point arithmetic.
+  *   1. Method [[init]] must be called before this test can be actually performed.
+  * @constructor Create an uninitialized instance of this method. */
 final class HypMethodSPRT() extends HypMethod {
 
+  // Input parameters
   private[this] var threshold: Double = _
   private[this] var alpha: Double = _
   private[this] var beta: Double = _
   private[this] var delta: Double = _
   private[this] var LB: Boolean = _
 
+  // Computed initially based on the input parameters
   private[this] var q0: Double = _
   private[this] var q1: Double = _
   private[this] var logL: Double = _
   private[this] var logU: Double = _
+
+  // Test statistic
   private[this] var logT = 0.0
 
-  /** Initialize (aka reset) this to a hypothesis test in which the null hypothesis is `p = t - δ` and the alternative
-    * hypothesis is `p = t + δ`, where `p` is the actual probability, `t` is the input threshold, and `δ` is the half
-    * of the size of indifference region.
+  /** Initialize or reset this to a hypothesis test in which the null hypothesis is `p = θ - δ` and the alternative hypothesis is `p = θ + δ`, where `p` is
+    * the actual probability, `θ` is the input threshold, and `δ` is the half of the size of indifference region.
     *
     * @param threshold Input Threshold
-    * @param alpha     Type I  Error Probability (also known as 'false positive' probability).
-    * @param beta      Type II Error Probability (also known as 'false negative' probability).
+    * @param alpha     Type I  (aka `false positive`) error probability (the probability of incorrectly     rejecting the null hypothesis).
+    * @param beta      Type II (aka `false negative`) error probability (the probability of incorrectly not rejecting the null hypothesis).
     * @param delta     Half of the size of indifference region.
-    * @param LB        Whether we are verifying threshold is less than the actual probability
-    * @note The following requirements must be met by the main constructor:
-    *   - 0 < threshold < 1
+    * @param LB        Whether or not the null and alternative hypotheses should be swapped (`true` means they should).
+    * @note The following requirements must be met by the main constructor (`θ` refers for threshold):
+    *   - 0 < θ < 1
     *   - 0 < α < 0.5
     *   - 0 < β < 0.5
     *   - 0 < δ < 0.5
-    *   - δ < threshold
-    *   - δ < 1 - threshold */
+    *   - δ < θ
+    *   - δ < 1 - θ */
   def init(threshold: Double, alpha: Double, beta: Double, delta: Double, LB: Boolean = true): HypMethodSPRT = {
     require(0 < threshold && threshold < 1, s"Invalid threshold $threshold")
     require(0 < alpha && alpha < 0.5, s"Invalid type I error $alpha")
@@ -61,13 +64,13 @@ final class HypMethodSPRT() extends HypMethod {
       this.beta = beta
     }
 
-    /** Lower and upper bounds after which the null hypothesis won't/will be rejected */
+    // Lower and upper bounds after which the null hypothesis won't/will be rejected
     logL = Math.log(this.beta / (1 - this.alpha))
     logU = Math.log((1 - this.beta) / this.alpha)
     assert(logL < 0, s"Lower-bound log is not negative " + logL)
     assert(logU > 0, s"Upper-bound log is not positive " + logU)
 
-    /** Step sizes for negative/positive samples */
+    // Step sizes for negative/positive samples
     q0 = Math.log((1 - ub) / (1 - lb))
     q1 = Math.log(ub / lb)
     assert(java.lang.Double.isFinite(q0), s"q0 ($q0) is not a finite number")
@@ -77,15 +80,6 @@ final class HypMethodSPRT() extends HypMethod {
 
     this
   }
-
-  override def reset(): Unit = logT = 0
-  override def getName: String = "SPRT"
-  override def getFullName: String = "Sequential Probability Ratio Test"
-  override def getParametersString: String =
-    s"threshold: $threshold, alpha: $alpha, beta: $beta, delta: $delta, LB: $LB, q0: $q0, q1: $q1, logL: $logL, logU: $logU"
-
-  def getResultExplanation(sampler: Sampler): String =
-    s"$getParametersString, logT: $logT"
 
   private def reset(threshold: Double,
                     alpha: Double, beta: Double, delta: Double,
@@ -104,6 +98,19 @@ final class HypMethodSPRT() extends HypMethod {
     this.logT = logT
   }
 
+  //------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  // SimulationMethod Methods
+
+  override def reset(): Unit = logT = 0
+  override def getName: String = "SPRT"
+  override def getFullName: String = "Sequential Probability Ratio Test"
+  override def getParametersString: String =
+    s"threshold: $threshold, alpha: $alpha, beta: $beta, delta: $delta, LB: $LB, q0: $q0, q1: $q1, logL: $logL, logU: $logU"
+
+  def getResultExplanation(sampler: Sampler): String =
+    s"$getParametersString, logT: $logT"
+
   override def clone: HypMethodSPRT = {
     val res = new HypMethodSPRT()
     res.reset(threshold, alpha, beta, delta, LB, q0, q1, logL, logU, logT)
@@ -112,8 +119,7 @@ final class HypMethodSPRT() extends HypMethod {
 
   override def setExpression(expr: Expression): Unit =
     if (!expr.isInstanceOf[ExpressionProb])
-      throw new PrismException(
-        s"Can only handle expressions of type ExpressionProp. However, type of '$expr' is ${expr.getClass.getName}")
+      throw new PrismException(s"Can only handle expressions of type ExpressionProp. However, type of '$expr' is ${expr.getClass.getName}")
     else {
       val expr2 = expr.asInstanceOf[ExpressionProb]
       val threshold = expr2.getBound.evaluateDouble
@@ -130,24 +136,21 @@ final class HypMethodSPRT() extends HypMethod {
     if (!completed) throw new PrismException("Missing parameter not computed yet")
     else status
 
-  //--------------------------------------------------------------------------------------------------------------------
+  //------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  // HypMethod Methods
 
   /** @note No restriction on total number of samples. */
-  override def update(passed: Boolean): Unit = if (passed) logT += q1 else logT += q0
+  override def update(positive: Boolean): Unit = if (positive) logT += q1 else logT += q0
 
-  /** @note Requires `positive >= 0` and `negative >= 0`.
-    * @note No restriction on total number of samples */
+  /** @note
+    *   1. Requires `positive >= 0` and `negative >= 0`.
+    *   1. No restriction on total number of samples */
   override def update(positive: Int, negative: Int): Unit = logT += positive * q1 + negative * q0
 
-  /** @note The following probabilistic guarantees are made:
-    *   1. If the actual probability is at most `threshold - δ` then the probability of returning
-    *       [[CompResult.Binary.LARGER]] is at most
-    *       a. `α` when [[LB]] is `false`,
-    *       a. `β` when [[LB]] is `true`.
-    *   1. If the actual probability is at least `threshold + δ` then the probability of returning
-    *       [[CompResult.Binary.SMALLER]] is at most `β`.
-    *       a. `β` when [[LB]] is `false`,
-    *       a. `α` when [[LB]] is `true`. */
+  /** @note The following probabilistic guarantees are made (if [[LB]] is `true` then swap `α` and `β`):
+    *   1. If the actual probability is at most  `θ - δ` then the probability of returning [[CompResult.Binary.LARGER]]  is at most `α`.
+    *   1. If the actual probability is at least `θ + δ` then the probability of returning [[CompResult.Binary.SMALLER]] is at most `β`. */
   def status(logT: Double): CompResult.Binary =
     if (logT <= logL) CompResult.Binary.SMALLER
     else if (logT >= logU) CompResult.Binary.LARGER
@@ -160,24 +163,22 @@ final class HypMethodSPRT() extends HypMethod {
   override def completed: Boolean = status ne CompResult.Binary.UNDECIDED
 
   /** @note [[completed]] does not need to be `true` (as required by [[HypMethod]]). */
-  override def decided: Boolean = status ne CompResult.Binary.UNDECIDED
+  override def too_close: Boolean = status ne CompResult.Binary.UNDECIDED
 
-  /** @note Requires [[completed]] to be `true`.
-    * @note The following probabilistic guarantees are made:
-    *       1. When [[LB]] is `true`: if the actual probability is at most `threshold - δ` then the probability of
-    *       returning `true` is at most `α`.
-    *       1. When [[LB]] is `false`: if the actual probability is at most `threshold + δ` then the probability of
-    *       returning `true` is at most `α`. */
+  /** @note
+    *   1. Requires [[completed]] to be `true`.
+    *   1. The following probabilistic guarantees are made:
+    *      a. When [[LB]] is `true`:  if the actual probability is at least `θ + δ` then the probability of returning `true` is at most `α`.
+    *      a. When [[LB]] is `false`: if the actual probability is at most  `θ - δ` then the probability of returning `true` is at most `α`. */
   override def rejected: Boolean =
     if (LB) status eq CompResult.Binary.SMALLER
     else status eq CompResult.Binary.LARGER
 
-  /** @note Requires [[completed]] to be `true`.
-    * @note The following probabilistic guarantees are made:
-    *       1. When [[LB]] is `false`: if the actual probability is at most `threshold - δ` then the probability of
-    *       returning `true` is at most `α`.
-    *       1. When [[LB]] is `true`: if the actual probability is at most `threshold + δ` then the probability of
-    *       returning `true` is at most `α`. */
+  /** @note
+    *   1. Requires [[completed]] to be `true`.
+    *   1. The following probabilistic guarantees are made:
+    *      a. When [[LB]] is `false`: if the actual probability is at least `θ + δ` then the probability of returning `true` is at most `β`.
+    *      a. When [[LB]] is `true`:  if the actual probability is at most  `θ - δ` then the probability of returning `true` is at most `β`. */
   override def failed_to_reject: Boolean = !rejected
 
 }
