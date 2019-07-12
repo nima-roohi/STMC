@@ -4,7 +4,7 @@
 //	Authors:
 //	* Dave Parker <david.parker@comlab.ox.ac.uk> (University of Oxford)
 //	
-//  Copyright (C) 2019 Nima Roohi <nroohi@ucsd.edu> (University of California San Diego)
+//	Copyright (C) 2019 Nima Roohi <nroohi@ucsd.edu> (University of California San Diego)
 //
 //------------------------------------------------------------------------------
 //	
