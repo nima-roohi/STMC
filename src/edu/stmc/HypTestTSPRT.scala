@@ -12,8 +12,12 @@ import simulator.sampler.Sampler
   *   1. ''too_close'': threshold and actual probability are too close to make a call.
   *
   * @note
+  *   1. Transforming binary error guarantee in SPRT to ternary error guarantee as specified in [[init]] is first introduced in
+  *   [[https://www.doi.org/10.1007/11609773_10 2006 - Error Control for Probabilistic Model Checking, by Håkan L. S. Younes]]
+  *   (the paper does not coin any new name).
+  *   1. Method [[init]] must be called before this test can be actually performed.
   *   1. Probabilistic guarantees in this class ignore numerical errors caused by floating point arithmetic.
-  *   1. Method [[init]] must be called before this test can be actually performed. */
+  *   1. See [[HypTestSPRT]] for a comment on actual error probabilities. */
 final class HypTestTSPRT private(private[this] var lb: HypTestSPRT,
                                  private[this] var ub: HypTestSPRT,
                                  private[this] var LB: Boolean) extends HypTest {
@@ -30,28 +34,31 @@ final class HypTestTSPRT private(private[this] var lb: HypTestSPRT,
     * @param gamma     Type III (aka `false too_close`) error probability (the probability of incorrectly call it too close).
     * @param delta     Half of the size of indifference region.
     * @param LB        Whether or not the null and alternative hypotheses should be swapped (`true` means they should).
-    * @note The following requirements must be met by the main constructor (`θ` refers for threshold):
+    * @note The following requirements must be met (`θ` refers to the input threshold):
     *   - 0 < θ < 1
     *   - 0 < α < 0.5
     *   - 0 < β < 0.5
     *   - 0 < γ < 0.5
     *   - 0 < δ < 0.5
     *   - δ < θ
-    *   - δ < 1 - θ */
+    *   - δ < 1 - θ
+    * @see [[status(lb*]], [[too_close]], [[rejected]], [[failed_to_reject]] */
   def init(threshold: Double, alpha: Double, beta: Double, gamma: Double, delta: Double, LB: Boolean = true): HypTestTSPRT = {
     val half_delta = delta / 2
     this.LB = LB
     if (LB) {
-      lb.init(threshold - half_delta, beta, gamma, half_delta, LB = false)
-      ub.init(threshold + half_delta, gamma, alpha, half_delta, LB = false)
+      lb.init(threshold - half_delta, gamma, alpha, half_delta, LB = false)
+      ub.init(threshold + half_delta, beta, gamma, half_delta, LB = false)
     } else {
-      lb.init(threshold - half_delta, alpha, gamma, half_delta, LB = false)
-      ub.init(threshold + half_delta, gamma, beta, half_delta, LB = false)
+      lb.init(threshold - half_delta, gamma, beta, half_delta, LB = false)
+      ub.init(threshold + half_delta, alpha, gamma, half_delta, LB = false)
     }
     this
   }
 
   //------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  // SimulationMethod Methods
 
   override def reset(): Unit = {
     lb.reset()
@@ -62,7 +69,8 @@ final class HypTestTSPRT private(private[this] var lb: HypTestSPRT,
   override def getFullName: String = "Ternary Sequential Probability Ratio Test"
   override def getParametersString: String = s"lower-bound (${lb.getParametersString}), upper-bound (${ub.getParametersString})"
 
-  def getResultExplanation(sampler: Sampler): String = s"lower-bound (${lb.getResultExplanation(sampler)}), upper-bound (${ub.getResultExplanation(sampler)})"
+  override def getResultExplanation(sampler: Sampler): String =
+    s"lower-bound (${lb.getResultExplanation(sampler)}), upper-bound (${ub.getResultExplanation(sampler)})"
 
   override def clone: HypTestTSPRT = new HypTestTSPRT(lb.clone, ub.clone, LB)
 
@@ -81,11 +89,18 @@ final class HypTestTSPRT private(private[this] var lb: HypTestSPRT,
     completed
   }
 
-  override def getMissingParameter: AnyRef =
-    if (!completed) throw new PrismException("Missing parameter not computed yet")
-    else status
+  override def getMissingParameter: java.lang.Integer =
+  // `SimulationMethod` requires the return type to be either an Integer or a Double object.
+    status match {
+    case CompResult.Ternary.SMALLER   => Int.box(-1)
+    case CompResult.Ternary.TOO_CLOSE => Int.box(0)
+    case CompResult.Ternary.LARGER    => Int.box(+1)
+    case CompResult.Ternary.UNDECIDED => throw new PrismException("Missing parameter not computed yet")
+    }
 
   //------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  // HypTest Methods
 
   /** @note No restriction on total number of samples. */
   override def update(positive: Boolean): Unit = {
@@ -104,12 +119,14 @@ final class HypTestTSPRT private(private[this] var lb: HypTestSPRT,
   /** @note The following probabilistic guarantees are made (if `LB` is `true` then swap `α` and `β`):
     *   1. If the actual probability is at most  `θ` then the probability of returning [[CompResult.Ternary.LARGER]]  is at most `α`.
     *   1. If the actual probability is at least `θ` then the probability of returning [[CompResult.Ternary.SMALLER]] is at most `β`.
-    *   1. If the actual probability is not `δ`-close (strictly) to `θ` then the probability of returning [[CompResult.Ternary.TOO_CLOSE]] is at most `γ`. */
+    *   1. If `θ` is not strictly within `δ`-neighborhood of the actual probability then the probability of returning [[CompResult.Ternary.TOO_CLOSE]]
+    *       is at most `γ`.
+    * @see [[init]] where all the parameters are set */
   def status(lb: CompResult.Binary, ub: CompResult.Binary): CompResult.Ternary =
-    if (lb eq CompResult.Binary.SMALLER) CompResult.Ternary.SMALLER
-    else if (ub eq CompResult.Binary.LARGER) CompResult.Ternary.LARGER
-    else if ((lb eq CompResult.Binary.UNDECIDED) || (ub eq CompResult.Binary.UNDECIDED)) CompResult.Ternary.UNDECIDED
-    else CompResult.Ternary.TOO_CLOSE
+    if ((lb eq CompResult.Binary.UNDECIDED) || (ub eq CompResult.Binary.UNDECIDED)) CompResult.Ternary.UNDECIDED
+    else if (lb != ub) CompResult.Ternary.TOO_CLOSE
+    else if (lb eq CompResult.Binary.SMALLER) CompResult.Ternary.SMALLER
+    else CompResult.Ternary.LARGER
 
   /** Same as [[status(lb*]], but input parameters are taken from the current instance */
   @inline
@@ -119,7 +136,7 @@ final class HypTestTSPRT private(private[this] var lb: HypTestSPRT,
 
   /** @note
     *   1. Requires [[completed]] to be `true`.
-    *   1. If the actual probability is ''not'' strictly within `θ - δ` and `θ + δ` then the probability of returning `true` is at most `γ`. */
+    *   1. If `θ` is ''not'' strictly within `δ`-neighborhood of the actual probability then the probability of returning `true` is at most `γ`. */
   override def too_close: Boolean = status eq CompResult.Ternary.TOO_CLOSE
 
   /** @note

@@ -7,8 +7,16 @@ import simulator.sampler.Sampler
 /** Sequential Probability Ratio Test
   *
   * @note
-  *   1. Probabilistic guarantees in this class ignore numerical errors caused by floating point arithmetic.
+  *   1. See Sequential Analysis, by Abraham Wald ([[https://isbnsearch.org/isbn/9780486615790 ISBN 9780486615790]] or
+  * [[https://isbnsearch.org/isbn/9780486439129 ISBN 9780486439129]]) for a reference to this method.
   *   1. Method [[init]] must be called before this test can be actually performed.
+  *   1. Probabilistic guarantees in this class ignore numerical errors caused by floating point arithmetic.
+  *   1. Strictly speaking, the error guarantees in this implementation are incorrect. They are exactly as defined in ''Section 3.3 - Determination of
+  * Constants A and B in Practice'' of the reference book. Let α' and β' be the actual error probabilities. According to the Wald, ''... the amount by which α'
+  * may exceed α', or β' may exceed β is very small and can be neglected for all practical purposes. Moreover, ... shows that at least one of the inequalities
+  * α' ≤ α or β' ≤ β must hold exactly.'' The author then continues ''In other words, for all practical purposes the test corresponding to [the practical
+  * values of parameters as defined by the book] provides at least the same protection against wrong decisions as the test corresponding to [the theoretical
+  * values of parameters].'' The section continues with a nice and very accessible discussion on number of samples required for the test.
   * @constructor Create an uninitialized instance of this method. */
 final class HypTestSPRT() extends HypTest {
 
@@ -36,13 +44,14 @@ final class HypTestSPRT() extends HypTest {
     * @param beta      Type II (aka `false negative`) error probability (the probability of incorrectly not rejecting the null hypothesis).
     * @param delta     Half of the size of indifference region.
     * @param LB        Whether or not the null and alternative hypotheses should be swapped (`true` means they should).
-    * @note The following requirements must be met by the main constructor (`θ` refers for threshold):
+    * @note The following requirements must be met (`θ` refers to the input threshold):
     *   - 0 < θ < 1
     *   - 0 < α < 0.5
     *   - 0 < β < 0.5
     *   - 0 < δ < 0.5
     *   - δ < θ
-    *   - δ < 1 - θ */
+    *   - δ < 1 - θ
+    * @see [[status(logT*]], [[rejected]], [[failed_to_reject]]*/
   def init(threshold: Double, alpha: Double, beta: Double, delta: Double, LB: Boolean = true): HypTestSPRT = {
     require(0 < threshold && threshold < 1, s"Invalid threshold $threshold")
     require(0 < alpha && alpha < 0.5, s"Invalid type I error $alpha")
@@ -85,7 +94,7 @@ final class HypTestSPRT() extends HypTest {
                     alpha: Double, beta: Double, delta: Double,
                     LB: Boolean,
                     q0: Double, q1: Double,
-                    logL: Double, logU: Double, logT: Double): Unit = {
+                    logL: Double, logU: Double, logT: Double): HypTestSPRT = {
     this.threshold = threshold
     this.alpha = alpha
     this.beta = beta
@@ -96,6 +105,7 @@ final class HypTestSPRT() extends HypTest {
     this.logL = logL
     this.logU = logU
     this.logT = logT
+    this
   }
 
   //------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -108,14 +118,9 @@ final class HypTestSPRT() extends HypTest {
   override def getParametersString: String =
     s"threshold: $threshold, alpha: $alpha, beta: $beta, delta: $delta, LB: $LB, q0: $q0, q1: $q1, logL: $logL, logU: $logU"
 
-  def getResultExplanation(sampler: Sampler): String =
-    s"$getParametersString, logT: $logT"
+  override def getResultExplanation(sampler: Sampler): String = s"$getParametersString, logT: $logT"
 
-  override def clone: HypTestSPRT = {
-    val res = new HypTestSPRT()
-    res.reset(threshold, alpha, beta, delta, LB, q0, q1, logL, logU, logT)
-    res
-  }
+  override def clone: HypTestSPRT = new HypTestSPRT().reset(threshold, alpha, beta, delta, LB, q0, q1, logL, logU, logT)
 
   override def setExpression(expr: Expression): Unit =
     if (!expr.isInstanceOf[ExpressionProb])
@@ -132,13 +137,17 @@ final class HypTestSPRT() extends HypTest {
     completed
   }
 
-  override def getMissingParameter: AnyRef =
-    if (!completed) throw new PrismException("Missing parameter not computed yet")
-    else status
+  override def getMissingParameter: java.lang.Integer =
+  // `SimulationMethod` requires the return type to be either an Integer or a Double object.
+    status match {
+    case CompResult.Binary.SMALLER   => Int.box(-1)
+    case CompResult.Binary.LARGER    => Int.box(+1)
+    case CompResult.Binary.UNDECIDED => throw new PrismException("Missing parameter not computed yet")
+    }
 
   //------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-  // HypMethod Methods
+  // HypTest Methods
 
   /** @note No restriction on total number of samples. */
   override def update(positive: Boolean): Unit = if (positive) logT += q1 else logT += q0
@@ -150,7 +159,8 @@ final class HypTestSPRT() extends HypTest {
 
   /** @note The following probabilistic guarantees are made (if [[LB]] is `true` then swap `α` and `β`):
     *   1. If the actual probability is at most  `θ - δ` then the probability of returning [[CompResult.Binary.LARGER]]  is at most `α`.
-    *   1. If the actual probability is at least `θ + δ` then the probability of returning [[CompResult.Binary.SMALLER]] is at most `β`. */
+    *   1. If the actual probability is at least `θ + δ` then the probability of returning [[CompResult.Binary.SMALLER]] is at most `β`.
+    * @see [[init]] where all the parameters are set */
   def status(logT: Double): CompResult.Binary =
     if (logT <= logL) CompResult.Binary.SMALLER
     else if (logT >= logU) CompResult.Binary.LARGER
@@ -162,8 +172,8 @@ final class HypTestSPRT() extends HypTest {
 
   override def completed: Boolean = status ne CompResult.Binary.UNDECIDED
 
-  /** @note [[completed]] does not need to be `true` (as required by [[HypTest]]). */
-  override def too_close: Boolean = status ne CompResult.Binary.UNDECIDED
+  /** @return `false` */
+  override def too_close: Boolean = false
 
   /** @note
     *   1. Requires [[completed]] to be `true`.

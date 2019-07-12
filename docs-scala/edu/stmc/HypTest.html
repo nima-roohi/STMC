@@ -102,33 +102,25 @@
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="edu">edu</a></dd></dl></div>
     </li><li class="current-entities indented2">
-                        <a class="object" href="GSPRT$.html" title=""></a>
-                        <a class="class" href="GSPRT.html" title="Generalized Sequential Probability Ratio Test"></a>
-                        <a href="GSPRT.html" title="Generalized Sequential Probability Ratio Test">GSPRT</a>
+                        <span class="separator"></span>
+                        <a class="class" href="" title="Same as SimulationMethod, with a few default implementations and a few more functions that help testing the class without using Sampler or Expression."></a>
+                        <a href="" title="Same as SimulationMethod, with a few default implementations and a few more functions that help testing the class without using Sampler or Expression.">HypTest</a>
                       </li><li class="current-entities indented2">
                         <span class="separator"></span>
-                        <a class="trait" href="" title="Hypothesis Testing"></a>
-                        <a href="" title="Hypothesis Testing">HypTest</a>
-                      </li><li class="current-entities indented2">
-                        <a class="object" href="SPRT$.html" title=""></a>
-                        <a class="class" href="SPRT.html" title="Sequential Probability Ratio Test"></a>
-                        <a href="SPRT.html" title="Sequential Probability Ratio Test">SPRT</a>
+                        <a class="class" href="HypTestSPRT.html" title="Sequential Probability Ratio Test"></a>
+                        <a href="HypTestSPRT.html" title="Sequential Probability Ratio Test">HypTestSPRT</a>
                       </li><li class="current-entities indented2">
                         <span class="separator"></span>
-                        <a class="class" href="StratificationMethod.html" title=""></a>
-                        <a href="StratificationMethod.html" title="">StratificationMethod</a>
-                      </li><li class="current-entities indented2">
-                        <a class="object" href="TSPRT$.html" title=""></a>
-                        <a class="class" href="TSPRT.html" title="Ternary Sequential Probability Ratio Test"></a>
-                        <a href="TSPRT.html" title="Ternary Sequential Probability Ratio Test">TSPRT</a>
+                        <a class="class" href="HypTestTSPRT.html" title="Ternary Sequential Probability Ratio Test"></a>
+                        <a href="HypTestTSPRT.html" title="Ternary Sequential Probability Ratio Test">HypTestTSPRT</a>
                       </li>
               </ul>
             </div>
           </div>
           <div id="content">
-            <body class="trait type">
+            <body class="class type">
       <div id="definition">
-        <div class="big-circle trait">t</div>
+        <div class="big-circle class">c</div>
         <p id="owner"><a href="../index.html" class="extype" name="edu">edu</a>.<a href="index.html" class="extype" name="edu.stmc">stmc</a></p>
         <h1>HypTest<span class="permalink">
       <a href="../../edu/stmc/HypTest.html" title="Permalink">
@@ -140,30 +132,33 @@
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">trait</span>
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">HypTest</span><span class="result"> extends <span class="extype" name="scala.Cloneable">Cloneable</span></span>
+        <span class="name">HypTest</span><span class="result"> extends <span class="extype" name="simulator.method.SimulationMethod">SimulationMethod</span></span>
       </span>
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Hypothesis Testing</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Same as <span class="extype" name="SimulationMethod">SimulationMethod</span>, with a few default implementations and a few more functions that help testing the class without using <span class="extype" name="Sampler">Sampler</span> or
+<span class="extype" name="Expression">Expression</span>.
+</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>Almost every method in <span class="extype" name="SimulationMethod">SimulationMethod</span> is declared here as well (even if it is not given a default implementation). So <code>ScalaDoc</code> will
+      inherit the documentation in children of this class.</p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><span class="extype" name="scala.Cloneable">Cloneable</span>, <span class="extype" name="java.lang.Cloneable">Cloneable</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="simulator.method.SimulationMethod">SimulationMethod</span>, <span class="extype" name="java.lang.Cloneable">Cloneable</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block">
             <span class="toggle">
               Known Subclasses
             </span>
-            <div class="subClasses hiddenContent"><a href="GSPRT.html" class="extype" name="edu.stmc.GSPRT">GSPRT</a>, <a href="SPRT.html" class="extype" name="edu.stmc.SPRT">SPRT</a>, <a href="TSPRT.html" class="extype" name="edu.stmc.TSPRT">TSPRT</a></div>
+            <div class="subClasses hiddenContent"><a href="HypTestSPRT.html" class="extype" name="edu.stmc.HypTestSPRT">HypTestSPRT</a>, <a href="HypTestTSPRT.html" class="extype" name="edu.stmc.HypTestTSPRT">HypTestTSPRT</a></div>
           </div><div class="toggleContainer block diagram-container" id="inheritance-diagram-container">
                 <span class="toggle diagram-link">
                   Type Hierarchy
                 </span>
-                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 247.50 155.00" height="155pt" width="248pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 151)" class="graph" id="page0,1_graph0"><polygon points="-4,4 -4,-151 243.5,-151 243.5,4 -4,4" stroke="transparent" fill="#ffffff"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this trait" id="graph1_0"><g id="a_this trait|graph1_0"><a xlink:title="edu.stmc.HypTest (this trait)" xlink:href="#inheritance-diagram"><path d="M147.6667,-86C147.6667,-86 92.3333,-86 92.3333,-86 88.1667,-86 84,-81.8333 84,-77.6667 84,-77.6667 84,-69.3333 84,-69.3333 84,-65.1667 88.1667,-61 92.3333,-61 92.3333,-61 147.6667,-61 147.6667,-61 151.8333,-61 156,-65.1667 156,-69.3333 156,-69.3333 156,-77.6667 156,-77.6667 156,-81.8333 151.8333,-86 147.6667,-86" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-80.5" x="94" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-70.6" x="114.9395" text-anchor="start">HypTest</text></a></g></g><!-- node1 --><g class="node class" id="graph1_1"><g id="a_class|graph1_1"><a xlink:title="edu.stmc.GSPRT" xlink:href="GSPRT.html#inheritance-diagram"><path d="M61.6667,-25C61.6667,-25 8.3333,-25 8.3333,-25 4.1667,-25 0,-20.8333 0,-16.6667 0,-16.6667 0,-8.3333 0,-8.3333 0,-4.1667 4.1667,0 8.3333,0 8.3333,0 61.6667,0 61.6667,0 65.8333,0 70,-4.1667 70,-8.3333 70,-8.3333 70,-16.6667 70,-16.6667 70,-20.8333 65.8333,-25 61.6667,-25" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-19.5" x="10" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-9.6" x="30.75" text-anchor="start">GSPRT</text></a></g></g><!-- node0&#45;&gt;node1 --><g class="edge inheritance" id="graph1_0_1"><g id="a_inheritance|graph1_0_1"><a xlink:title="GSPRT is a subtype of HypTest"><path d="M96.6579,-56.7486C82.7372,-46.7585 65.3486,-34.2796 52.5895,-25.123" stroke="#d4d4d4" fill="none"></path><polygon points="95.2724,-58.7699 102.3879,-60.8608 98.1293,-54.7889 95.2724,-58.7699" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node class" id="graph1_2"><g id="a_class|graph1_2"><a xlink:title="edu.stmc.SPRT" xlink:href="SPRT.html#inheritance-diagram"><path d="M143.6667,-25C143.6667,-25 96.3333,-25 96.3333,-25 92.1667,-25 88,-20.8333 88,-16.6667 88,-16.6667 88,-8.3333 88,-8.3333 88,-4.1667 92.1667,0 96.3333,0 96.3333,0 143.6667,0 143.6667,0 147.8333,0 152,-4.1667 152,-8.3333 152,-8.3333 152,-16.6667 152,-16.6667 152,-20.8333 147.8333,-25 143.6667,-25" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-19.5" x="98" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-9.6" x="118.8613" text-anchor="start">SPRT</text></a></g></g><!-- node0&#45;&gt;node2 --><g class="edge inheritance" id="graph1_0_2"><g id="a_inheritance|graph1_0_2"><a xlink:title="SPRT is a subtype of HypTest"><path d="M120,-53.7386C120,-44.3393 120,-33.3803 120,-25.123" stroke="#d4d4d4" fill="none"></path><polygon points="117.5501,-53.8607 120,-60.8608 122.4501,-53.8608 117.5501,-53.8607" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3 --><g class="node class" id="graph1_3"><g id="a_class|graph1_3"><a xlink:title="edu.stmc.TSPRT" xlink:href="TSPRT.html#inheritance-diagram"><path d="M231.1667,-25C231.1667,-25 178.8333,-25 178.8333,-25 174.6667,-25 170.5,-20.8333 170.5,-16.6667 170.5,-16.6667 170.5,-8.3333 170.5,-8.3333 170.5,-4.1667 174.6667,0 178.8333,0 178.8333,0 231.1667,0 231.1667,0 235.3333,0 239.5,-4.1667 239.5,-8.3333 239.5,-8.3333 239.5,-16.6667 239.5,-16.6667 239.5,-20.8333 235.3333,-25 231.1667,-25" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-19.5" x="181" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-9.6" x="201.918" text-anchor="start">TSPRT</text></a></g></g><!-- node0&#45;&gt;node3 --><g class="edge inheritance" id="graph1_0_3"><g id="a_inheritance|graph1_0_3"><a xlink:title="TSPRT is a subtype of HypTest"><path d="M143.3421,-56.7486C157.2628,-46.7585 174.6514,-34.2796 187.4105,-25.123" stroke="#d4d4d4" fill="none"></path><polygon points="141.8707,-54.7889 137.6121,-60.8608 144.7276,-58.7699 141.8707,-54.7889" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node4 --><g class="node trait" id="graph1_4"><g id="a_trait|graph1_4"><a xlink:title="scala.Cloneable"><path d="M151.1667,-147C151.1667,-147 88.8333,-147 88.8333,-147 84.6667,-147 80.5,-142.8333 80.5,-138.6667 80.5,-138.6667 80.5,-130.3333 80.5,-130.3333 80.5,-126.1667 84.6667,-122 88.8333,-122 88.8333,-122 151.1667,-122 151.1667,-122 155.3333,-122 159.5,-126.1667 159.5,-130.3333 159.5,-130.3333 159.5,-138.6667 159.5,-138.6667 159.5,-142.8333 155.3333,-147 151.1667,-147" stroke="#2e6d82" fill="#2e6d82"></path><image xlink:href="../../lib/trait_diagram.png" y="-141.5" x="91" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-131.6" x="111.875" text-anchor="start">Cloneable</text></a></g></g><!-- node4&#45;&gt;node0 --><g class="edge inheritance" id="graph1_4_0"><g id="a_inheritance|graph1_4_0"><a xlink:title="HypTest is a subtype of Cloneable"><path d="M120,-114.7386C120,-105.3393 120,-94.3803 120,-86.123" stroke="#d4d4d4" fill="none"></path><polygon points="117.5501,-114.8607 120,-121.8608 122.4501,-114.8608 117.5501,-114.8607" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
+                <div class="diagram" id="inheritance-diagram"><svg class="class-diagram" id="graph1" viewBox="0.00 0.00 217.50 155.00" height="155pt" width="218pt" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g transform="scale(1 1) rotate(0) translate(4 151)" class="graph" id="page0,1_graph0"><polygon points="-4,4 -4,-151 213.5,-151 213.5,4 -4,4" stroke="transparent" fill="#ffffff"></polygon><g class="cluster" id="clust1"></g><g class="cluster" id="clust2"></g><!-- node0 --><g class="node this class" id="graph1_0"><g id="a_this class|graph1_0"><a xlink:title="edu.stmc.HypTest (this class)" xlink:href="#inheritance-diagram"><path d="M131.1667,-86C131.1667,-86 75.8333,-86 75.8333,-86 71.6667,-86 67.5,-81.8333 67.5,-77.6667 67.5,-77.6667 67.5,-69.3333 67.5,-69.3333 67.5,-65.1667 71.6667,-61 75.8333,-61 75.8333,-61 131.1667,-61 131.1667,-61 135.3333,-61 139.5,-65.1667 139.5,-69.3333 139.5,-69.3333 139.5,-77.6667 139.5,-77.6667 139.5,-81.8333 135.3333,-86 131.1667,-86" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-80.5" x="77.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-70.6" x="98.4395" text-anchor="start">HypTest</text></a></g></g><!-- node1 --><g class="node class" id="graph1_1"><g id="a_class|graph1_1"><a xlink:title="edu.stmc.HypTestSPRT" xlink:href="HypTestSPRT.html#inheritance-diagram"><path d="M84.6667,-25C84.6667,-25 8.3333,-25 8.3333,-25 4.1667,-25 0,-20.8333 0,-16.6667 0,-16.6667 0,-8.3333 0,-8.3333 0,-4.1667 4.1667,0 8.3333,0 8.3333,0 84.6667,0 84.6667,0 88.8333,0 93,-4.1667 93,-8.3333 93,-8.3333 93,-16.6667 93,-16.6667 93,-20.8333 88.8333,-25 84.6667,-25" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-19.5" x="10.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-9.6" x="31.4121" text-anchor="start">HypTestSPRT</text></a></g></g><!-- node0&#45;&gt;node1 --><g class="edge inheritance" id="graph1_0_1"><g id="a_inheritance|graph1_0_1"><a xlink:title="HypTestSPRT is a subtype of HypTest"><path d="M86.8382,-55.669C77.6831,-45.8714 66.5459,-33.9526 58.2953,-25.123" stroke="#d4d4d4" fill="none"></path><polygon points="85.1202,-57.4189 91.6896,-60.8608 88.7004,-54.0734 85.1202,-57.4189" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node2 --><g class="node class" id="graph1_2"><g id="a_class|graph1_2"><a xlink:title="edu.stmc.HypTestTSPRT" xlink:href="HypTestTSPRT.html#inheritance-diagram"><path d="M201.1667,-25C201.1667,-25 119.8333,-25 119.8333,-25 115.6667,-25 111.5,-20.8333 111.5,-16.6667 111.5,-16.6667 111.5,-8.3333 111.5,-8.3333 111.5,-4.1667 115.6667,0 119.8333,0 119.8333,0 201.1667,0 201.1667,0 205.3333,0 209.5,-4.1667 209.5,-8.3333 209.5,-8.3333 209.5,-16.6667 209.5,-16.6667 209.5,-20.8333 205.3333,-25 201.1667,-25" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-19.5" x="121.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-9.6" x="142.4688" text-anchor="start">HypTestTSPRT</text></a></g></g><!-- node0&#45;&gt;node2 --><g class="edge inheritance" id="graph1_0_2"><g id="a_inheritance|graph1_0_2"><a xlink:title="HypTestTSPRT is a subtype of HypTest"><path d="M120.1618,-55.669C129.3169,-45.8714 140.4541,-33.9526 148.7047,-25.123" stroke="#d4d4d4" fill="none"></path><polygon points="118.2996,-54.0734 115.3104,-60.8608 121.8798,-57.4189 118.2996,-54.0734" stroke="#d4d4d4" fill="none"></polygon></a></g></g><!-- node3 --><g class="node class" id="graph1_3"><g id="a_class|graph1_3"><a xlink:title="simulator.method.SimulationMethod"><path d="M148.6667,-147C148.6667,-147 58.3333,-147 58.3333,-147 54.1667,-147 50,-142.8333 50,-138.6667 50,-138.6667 50,-130.3333 50,-130.3333 50,-126.1667 54.1667,-122 58.3333,-122 58.3333,-122 148.6667,-122 148.6667,-122 152.8333,-122 157,-126.1667 157,-130.3333 157,-130.3333 157,-138.6667 157,-138.6667 157,-142.8333 152.8333,-147 148.6667,-147" stroke="#418565" fill="#418565"></path><image xlink:href="../../lib/class_diagram.png" y="-141.5" x="60.5" preserveAspectRatio="xMinYMin meet" height="15px" width="15px"></image><text fill="#ffffff" font-size="8.00" font-family="Source Code Pro" y="-131.6" x="81.3711" text-anchor="start">SimulationMethod</text></a></g></g><!-- node3&#45;&gt;node0 --><g class="edge inheritance" id="graph1_3_0"><g id="a_inheritance|graph1_3_0"><a xlink:title="HypTest is a subtype of SimulationMethod"><path d="M103.5,-114.7386C103.5,-105.3393 103.5,-94.3803 103.5,-86.123" stroke="#d4d4d4" fill="none"></path><polygon points="101.0501,-114.8607 103.5,-121.8608 105.9501,-114.8608 101.0501,-114.8607" stroke="#d4d4d4" fill="none"></polygon></a></g></g></g></svg></div>
                 <div id="diagram-controls" class="hiddenContent">
                   <button id="diagram-zoom-out" class="diagram-btn"><i class="material-icons"></i></button>
                   <button id="diagram-zoom-in" class="diagram-btn"><i class="material-icons"></i></button>
@@ -194,7 +189,7 @@
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="edu.stmc.HypTest"><span>HypTest</span></li><li class="in" name="scala.Cloneable"><span>Cloneable</span></li><li class="in" name="java.lang.Cloneable"><span>Cloneable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="edu.stmc.HypTest"><span>HypTest</span></li><li class="in" name="simulator.method.SimulationMethod"><span>SimulationMethod</span></li><li class="in" name="java.lang.Cloneable"><span>Cloneable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
               <span class="filtertype"></span>
@@ -212,13 +207,48 @@
 
       <div id="template">
         <div id="allMembers">
-        
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="edu.stmc.HypTest#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;():edu.stmc.HypTest"></a><a id="&lt;init&gt;:HypTest"></a>
+      <span class="permalink">
+      <a href="../../edu/stmc/HypTest.html#&lt;init&gt;():edu.stmc.HypTest" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">HypTest</span><span class="params">()</span>
+      </span>
+      
+      
+    </li></ol>
+            </div>
 
         
 
         <div class="values members">
               <h3>Abstract Value Members</h3>
-              <ol><li name="edu.stmc.HypTest#completed" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+              <ol><li name="simulator.method.SimulationMethod#clone" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="clone():simulator.method.SimulationMethod"></a><a id="clone():SimulationMethod"></a>
+      <span class="permalink">
+      <a href="../../edu/stmc/HypTest.html#clone():simulator.method.SimulationMethod" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="simulator.method.SimulationMethod">SimulationMethod</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>SimulationMethod</dd></dl></div>
+    </li><li name="edu.stmc.HypTest#completed" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="completed:Boolean"></a>
       <span class="permalink">
       <a href="../../edu/stmc/HypTest.html#completed:Boolean" title="Permalink">
@@ -234,41 +264,6 @@
       </span>
       
       <p class="shortcomment cmt">Whether or not the test is completed.</p>
-    </li><li name="edu.stmc.HypTest#copy" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="copy():edu.stmc.HypTest"></a><a id="copy():HypTest"></a>
-      <span class="permalink">
-      <a href="../../edu/stmc/HypTest.html#copy():edu.stmc.HypTest" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">copy</span><span class="params">()</span><span class="result">: <a href="" class="extype" name="edu.stmc.HypTest">HypTest</a></span>
-      </span>
-      
-      <p class="shortcomment cmt">Create a copy of this instance, so changes in one does not affect changes in the other.</p>
-    </li><li name="edu.stmc.HypTest#decided" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="decided:Boolean"></a>
-      <span class="permalink">
-      <a href="../../edu/stmc/HypTest.html#decided:Boolean" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">decided</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
-      </span>
-      
-      <p class="shortcomment cmt">Whether or not a decision is made (it is possible that a test terminates without choosing between the null and
-alternative hypotheses).</p><div class="fullcomment"><div class="comment cmt"><p>Whether or not a decision is made (it is possible that a test terminates without choosing between the null and
-alternative hypotheses).
-</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>Requires <a href="#completed:Boolean" class="extmbr" name="edu.stmc.HypTest#completed">completed</a> to be <code>true</code>.</p></span></dd></dl></div>
     </li><li name="edu.stmc.HypTest#failed_to_reject" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="failed_to_reject:Boolean"></a>
       <span class="permalink">
@@ -286,10 +281,10 @@ alternative hypotheses).
       
       <p class="shortcomment cmt">Whether the test is failed to reject the null hypothesis in favor of the alternative hypothesis.</p><div class="fullcomment"><div class="comment cmt"><p>Whether the test is failed to reject the null hypothesis in favor of the alternative hypothesis.
 </p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>Requires <a href="#completed:Boolean" class="extmbr" name="edu.stmc.HypTest#completed">completed</a> to be <code>true</code>.</p></span></dd></dl></div>
-    </li><li name="edu.stmc.HypTest#parametersStr" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="parametersStr:String"></a>
+    </li><li name="edu.stmc.HypTest#getFullName" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="getFullName():String"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypTest.html#parametersStr:String" title="Permalink">
+      <a href="../../edu/stmc/HypTest.html#getFullName():String" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -298,10 +293,89 @@ alternative hypotheses).
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">parametersStr</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+        <span class="name">getFullName</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
       
-      <p class="shortcomment cmt">Get parameters of the test (including the computed ones) as a string.</p>
+      <p class="shortcomment cmt">Get the (full) name of this method.</p><div class="fullcomment"><div class="comment cmt"><p>Get the (full) name of this method.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTest">HypTest</a> → SimulationMethod</dd></dl></div>
+    </li><li name="edu.stmc.HypTest#getMissingParameter" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="getMissingParameter():AnyRef"></a>
+      <span class="permalink">
+      <a href="../../edu/stmc/HypTest.html#getMissingParameter():AnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getMissingParameter</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Get the missing (computed) parameter.</p><div class="fullcomment"><div class="comment cmt"><p>Get the missing (computed) parameter. If it has not already been computed and this can be done *before* simulation, calling this method will trigger
+its computation. If it can only be done *after*, an exception is thrown.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the computed missing parameter (as an Integer or Double object)</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTest">HypTest</a> → SimulationMethod</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="scala.this.throws.&lt;init&gt;$default$1[prism.PrismException]">...</span>
+    </span>)</span>
+              
+        </dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><span class="extype" name="PrismException"><code>PrismException</code></span> if missing parameter is not and cannot be computed yet or if the parameters set so far are invalid.</p></span></dd></dl></div>
+    </li><li name="edu.stmc.HypTest#getName" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="getName():String"></a>
+      <span class="permalink">
+      <a href="../../edu/stmc/HypTest.html#getName():String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getName</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Get the (short) name of this method.</p><div class="fullcomment"><div class="comment cmt"><p>Get the (short) name of this method.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTest">HypTest</a> → SimulationMethod</dd></dl></div>
+    </li><li name="edu.stmc.HypTest#getParametersString" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="getParametersString():String"></a>
+      <span class="permalink">
+      <a href="../../edu/stmc/HypTest.html#getParametersString():String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getParametersString</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Get the parameters of the simulation (including the computed one) as a string.</p><div class="fullcomment"><div class="comment cmt"><p>Get the parameters of the simulation (including the computed one) as a string.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTest">HypTest</a> → SimulationMethod</dd></dl></div>
+    </li><li name="edu.stmc.HypTest#getResultExplanation" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="getResultExplanation(sampler:simulator.sampler.Sampler):String"></a><a id="getResultExplanation(Sampler):String"></a>
+      <span class="permalink">
+      <a href="../../edu/stmc/HypTest.html#getResultExplanation(sampler:simulator.sampler.Sampler):String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getResultExplanation</span><span class="params">(<span name="sampler">sampler: <span class="extype" name="simulator.sampler.Sampler">Sampler</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Get an explanation for the result of the simulation as a string.</p><div class="fullcomment"><div class="comment cmt"><p>Get an explanation for the result of the simulation as a string.
+</p></div><dl class="paramcmts block"><dt class="param">sampler</dt><dd class="cmt"><p>The Sampler object for this simulation (e.g. to get mean)</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTest">HypTest</a> → SimulationMethod</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="scala.this.throws.&lt;init&gt;$default$1[prism.PrismException]">...</span>
+    </span>)</span>
+              
+        </dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><span class="extype" name="PrismException"><code>PrismException</code></span> if we can't get a result for some reason.</p></span></dd></dl></div>
     </li><li name="edu.stmc.HypTest#rejected" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="rejected:Boolean"></a>
       <span class="permalink">
@@ -319,7 +393,7 @@ alternative hypotheses).
       
       <p class="shortcomment cmt">Whether the test rejects the null hypothesis in favor of the alternative hypothesis.</p><div class="fullcomment"><div class="comment cmt"><p>Whether the test rejects the null hypothesis in favor of the alternative hypothesis.
 </p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>Requires <a href="#completed:Boolean" class="extmbr" name="edu.stmc.HypTest#completed">completed</a> to be <code>true</code>.</p></span></dd></dl></div>
-    </li><li name="edu.stmc.HypTest#reset" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+    </li><li name="edu.stmc.HypTest#reset" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="reset():Unit"></a>
       <span class="permalink">
       <a href="../../edu/stmc/HypTest.html#reset():Unit" title="Permalink">
@@ -334,7 +408,70 @@ alternative hypotheses).
         <span class="name">reset</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       
-      <p class="shortcomment cmt">Reset the test (can be used to restart the test).</p>
+      <p class="shortcomment cmt">Reset the status of this method (but not values of any parameters that have been set).</p><div class="fullcomment"><div class="comment cmt"><p>Reset the status of this method (but not values of any parameters that have been set). Typically called if this instance is going to be re-used for
+another run of approximate verification.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTest">HypTest</a> → SimulationMethod</dd></dl></div>
+    </li><li name="edu.stmc.HypTest#setExpression" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="setExpression(expr:parser.ast.Expression):Unit"></a><a id="setExpression(Expression):Unit"></a>
+      <span class="permalink">
+      <a href="../../edu/stmc/HypTest.html#setExpression(expr:parser.ast.Expression):Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setExpression</span><span class="params">(<span name="expr">expr: <span class="extype" name="parser.ast.Expression">Expression</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Set the Expression (property) that simulation is going to be used to approximate.</p><div class="fullcomment"><div class="comment cmt"><p>Set the Expression (property) that simulation is going to be used to approximate. It will be either an ExpressionProb or ExpressionReward object.
+All constants should have already been defined and replaced.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTest">HypTest</a> → SimulationMethod</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="scala.this.throws.&lt;init&gt;$default$1[prism.PrismException]">...</span>
+    </span>)</span>
+              
+        </dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><span class="extype" name="PrismException"><code>PrismException</code></span> if property is inappropriate somehow for this method.</p></span></dd></dl></div>
+    </li><li name="edu.stmc.HypTest#shouldStopNow" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="shouldStopNow(iters:Int,sampler:simulator.sampler.Sampler):Boolean"></a><a id="shouldStopNow(Int,Sampler):Boolean"></a>
+      <span class="permalink">
+      <a href="../../edu/stmc/HypTest.html#shouldStopNow(iters:Int,sampler:simulator.sampler.Sampler):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">shouldStopNow</span><span class="params">(<span name="iters">iters: <span class="extype" name="scala.Int">Int</span></span>, <span name="sampler">sampler: <span class="extype" name="simulator.sampler.Sampler">Sampler</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Determine whether or not simulation should stop now, based on the stopping criteria of this method, and the current state of simulation (the number of
+iterations so far and the corresponding Sampler object).</p><div class="fullcomment"><div class="comment cmt"><p>Determine whether or not simulation should stop now, based on the stopping criteria of this method, and the current state of simulation (the number of
+iterations so far and the corresponding Sampler object).
+</p></div><dl class="paramcmts block"><dt class="param">iters</dt><dd class="cmt"><p>The number of iterations (samples) done so far</p></dd><dt class="param">sampler</dt><dd class="cmt"><p>The Sampler object for this simulation</p></dd><dt>returns</dt><dd class="cmt"><p>true if the simulation should stop, false otherwise</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTest">HypTest</a> → SimulationMethod</dd><dt>Note</dt><dd><span class="cmt"><p>This method may continue being called after <code>true</code> is returned, e.g. if multiple properties are being simulated simultaneously.</p></span></dd></dl></div>
+    </li><li name="edu.stmc.HypTest#too_close" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="too_close:Boolean"></a>
+      <span class="permalink">
+      <a href="../../edu/stmc/HypTest.html#too_close:Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">too_close</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Whether or not the actual probability and the input threshold are too close to make a decision (sometimes, it is possible that a test terminates without
+choosing between rejection of the null hypothesis and failure to do so).</p><div class="fullcomment"><div class="comment cmt"><p>Whether or not the actual probability and the input threshold are too close to make a decision (sometimes, it is possible that a test terminates without
+choosing between rejection of the null hypothesis and failure to do so).
+</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>Requires <a href="#completed:Boolean" class="extmbr" name="edu.stmc.HypTest#completed">completed</a> to be <code>true</code>.</p></span></dd><dt>See also</dt><dd><span class="cmt"><p><a href="#rejected:Boolean" class="extmbr" name="edu.stmc.HypTest#rejected">rejected</a> and <a href="#failed_to_reject:Boolean" class="extmbr" name="edu.stmc.HypTest#failed_to_reject">failed_to_reject</a></p></span></dd></dl></div>
     </li><li name="edu.stmc.HypTest#update" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="update(positive:Int,negative:Int):Unit"></a><a id="update(Int,Int):Unit"></a>
       <span class="permalink">
@@ -439,10 +576,10 @@ alternative hypotheses).
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="clone():Object"></a><a id="clone():AnyRef"></a>
+    </li><li name="edu.stmc.HypTest#computeMissingParameterAfterSim" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="computeMissingParameterAfterSim():Unit"></a>
       <span class="permalink">
-      <a href="../../edu/stmc/HypTest.html#clone():Object" title="Permalink">
+      <a href="../../edu/stmc/HypTest.html#computeMissingParameterAfterSim():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -451,18 +588,37 @@ alternative hypotheses).
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <span class="name">computeMissingParameterAfterSim</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java/lang/index.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
-                <span class="name">@native</span><span class="args">()</span>
-              
+      <p class="shortcomment cmt">Compute the missing parameter (typically there are multiple parameters, one of which can be left free) *after* simulation (sometimes the parameter
+cannot be determined before simulation).</p><div class="fullcomment"><div class="comment cmt"><p>Compute the missing parameter (typically there are multiple parameters, one of which can be left free) *after* simulation (sometimes the parameter
+cannot be determined before simulation). This method may get called multiple times.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTest">HypTest</a> → SimulationMethod</dd><dt>Note</dt><dd><span class="cmt"><p>Default implementation is added in STMC and it does nothing.</p></span></dd></dl></div>
+    </li><li name="edu.stmc.HypTest#computeMissingParameterBeforeSim" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="computeMissingParameterBeforeSim():Unit"></a>
+      <span class="permalink">
+      <a href="../../edu/stmc/HypTest.html#computeMissingParameterBeforeSim():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">computeMissingParameterBeforeSim</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Compute the missing parameter (typically there are multiple parameters, one of which can be left free) *before* simulation.</p><div class="fullcomment"><div class="comment cmt"><p>Compute the missing parameter (typically there are multiple parameters, one of which can be left free) *before* simulation. This is not always
+possible - sometimes the parameter cannot be determined until afterwards. This method may get called multiple times.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTest">HypTest</a> → SimulationMethod</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
-      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+      <span class="defval" name="scala.this.throws.&lt;init&gt;$default$1[prism.PrismException]">...</span>
     </span>)</span>
               
-        </dd></dl></div>
+        </dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><span class="extype" name="PrismException"><code>PrismException</code></span> if the parameters set so far are invalid.</p></span></dd><dt>Note</dt><dd><span class="cmt"><p>Default implementation is added in STMC and it does nothing.</p></span></dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
       <span class="permalink">
@@ -495,28 +651,6 @@ alternative hypotheses).
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="finalize():Unit"></a>
-      <span class="permalink">
-      <a href="../../edu/stmc/HypTest.html#finalize():Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java/lang/index.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
-                <span class="name">@throws</span><span class="args">(<span>
-      
-      <span class="symbol">classOf[java.lang.Throwable]</span>
-    </span>)</span>
-              
-        </dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">
@@ -535,7 +669,52 @@ alternative hypotheses).
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd><dt>Annotations</dt><dd>
                 <span class="name">@native</span><span class="args">()</span>
               
+                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
+              
         </dd></dl></div>
+    </li><li name="edu.stmc.HypTest#getProgress" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getProgress(iters:Int,sampler:simulator.sampler.Sampler):Int"></a><a id="getProgress(Int,Sampler):Int"></a>
+      <span class="permalink">
+      <a href="../../edu/stmc/HypTest.html#getProgress(iters:Int,sampler:simulator.sampler.Sampler):Int" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getProgress</span><span class="params">(<span name="iters">iters: <span class="extype" name="scala.Int">Int</span></span>, <span name="sampler">sampler: <span class="extype" name="simulator.sampler.Sampler">Sampler</span></span>)</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Get an indication of progress so far for simulation, i.e.</p><div class="fullcomment"><div class="comment cmt"><p>Get an indication of progress so far for simulation, i.e. an approximate value for the percentage of work (samples) done. The value is a multiple of 10
+in the range [0,100]. This estimate may not be linear (e.g. for CI/ACI where 'iterations' is computed). It is assumed that this method is called *after*
+the call to isCompleted(...).
+</p></div><dl class="paramcmts block"><dt class="param">iters</dt><dd class="cmt"><p>The number of iterations (samples) done so far</p></dd><dt class="param">sampler</dt><dd class="cmt"><p>The Sampler object for this simulation</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTest">HypTest</a> → SimulationMethod</dd><dt>Note</dt><dd><span class="cmt"><p>Default implementation is added in STMC and it returns 0.</p></span>, <span class="cmt"><p>The iteration count may exceed that dictated by this method, e.g. if multiple properties are being simulated simultaneously.</p></span></dd></dl></div>
+    </li><li name="edu.stmc.HypTest#getResult" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getResult(sampler:simulator.sampler.Sampler):AnyRef"></a><a id="getResult(Sampler):AnyRef"></a>
+      <span class="permalink">
+      <a href="../../edu/stmc/HypTest.html#getResult(sampler:simulator.sampler.Sampler):AnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getResult</span><span class="params">(<span name="sampler">sampler: <span class="extype" name="simulator.sampler.Sampler">Sampler</span></span>)</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Get the (approximate) result for the property that simulation is being used to approximate.</p><div class="fullcomment"><div class="comment cmt"><p>Get the (approximate) result for the property that simulation is being used to approximate. This should be a Boolean/Double for bounded/quantitative
+properties, respectively.
+</p></div><dl class="paramcmts block"><dt class="param">sampler</dt><dd class="cmt"><p>The Sampler object for this simulation</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTest">HypTest</a> → SimulationMethod</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="scala.this.throws.&lt;init&gt;$default$1[prism.PrismException]">...</span>
+    </span>)</span>
+              
+        </dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><span class="extype" name="PrismException"><code>PrismException</code></span> if we can't get a result for some reason.</p></span></dd></dl></div>
     </li><li name="scala.AnyRef#hashCode" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
       <span class="permalink">
@@ -553,6 +732,8 @@ alternative hypotheses).
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd><dt>Annotations</dt><dd>
                 <span class="name">@native</span><span class="args">()</span>
+              
+                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
               
         </dd></dl></div>
     </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -605,6 +786,8 @@ alternative hypotheses).
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@native</span><span class="args">()</span>
               
+                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
+              
         </dd></dl></div>
     </li><li name="scala.AnyRef#notifyAll" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notifyAll():Unit"></a>
@@ -623,6 +806,8 @@ alternative hypotheses).
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@native</span><span class="args">()</span>
+              
+                <span class="name">@HotSpotIntrinsicCandidate</span><span class="args">()</span>
               
         </dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -657,28 +842,6 @@ alternative hypotheses).
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="wait():Unit"></a>
-      <span class="permalink">
-      <a href="../../edu/stmc/HypTest.html#wait():Unit" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
-                <span class="name">@throws</span><span class="args">(<span>
-      
-      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
-    </span>)</span>
-              
-        </dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long,x$2:Int):Unit"></a><a id="wait(Long,Int):Unit"></a>
       <span class="permalink">
@@ -725,18 +888,69 @@ alternative hypotheses).
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <span class="permalink">
+      <a href="../../edu/stmc/HypTest.html#wait():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
     </li>
               </ol>
             </div>
 
         
 
-        
+        <div class="values members">
+              <h3>Deprecated Value Members</h3>
+              <ol><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <span class="permalink">
+      <a href="../../edu/stmc/HypTest.html#finalize():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version ) see corresponding Javadoc for more information.">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java/lang/index.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@Deprecated</span>
+              
+                <span class="name">@deprecated</span>
+              
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version )</i> see corresponding Javadoc for more information.</p></dd></dl></div>
+    </li></ol>
+            </div>
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="scala.Cloneable">
-              <h3>Inherited from <span class="extype" name="scala.Cloneable">Cloneable</span></h3>
+        <div class="parent" name="simulator.method.SimulationMethod">
+              <h3>Inherited from <span class="extype" name="simulator.method.SimulationMethod">SimulationMethod</span></h3>
             </div><div class="parent" name="java.lang.Cloneable">
               <h3>Inherited from <span class="extype" name="java.lang.Cloneable">Cloneable</span></h3>
             </div><div class="parent" name="scala.AnyRef">

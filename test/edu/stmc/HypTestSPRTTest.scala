@@ -2,91 +2,123 @@ package edu.stmc
 
 import java.util.concurrent.ThreadLocalRandom
 
-import org.scalatest._
+import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.matchers.{MatchResult, Matcher}
 
-class HypTestSPRTTest extends FlatSpec {
+class HypTestSPRTTest extends FlatSpec with Matchers {
 
-  def binaryTest(threshold: Double, alpha: Double, beta: Double, delta: Double, LB: Boolean): Boolean = {
+  private def run(threshold: Double, alpha: Double, beta: Double, delta: Double, LB: Boolean) = {
     val test = new HypTestSPRT().init(threshold, alpha, beta, delta, LB)
     val rnd = ThreadLocalRandom.current()
     while (!test.completed)
       test.update(rnd.nextBoolean())
-    test.failed_to_reject
+    test
   }
 
-  def binaryTestCmp(threshold: Double, alpha: Double, beta: Double, delta: Double, LB: Boolean): CompResult.Binary = {
-    val test = new HypTestSPRT().init(threshold, alpha, beta, delta, LB)
-    val rnd = ThreadLocalRandom.current()
-    var res = CompResult.Binary.UNDECIDED
-    while (res == CompResult.Binary.UNDECIDED) {
-      test.update(rnd.nextBoolean())
-      res = test.status
-    }
-    res
+  private def test(threshold: Double, alpha: Double, beta: Double, delta: Double, LB: Boolean) =
+    run(threshold, alpha, beta, delta, LB).status
+
+  private def testR(threshold: Double, alpha: Double, beta: Double, delta: Double, LB: Boolean) =
+    run(threshold, alpha, beta, delta, LB).rejected
+
+  private def testF(threshold: Double, alpha: Double, beta: Double, delta: Double, LB: Boolean) =
+    run(threshold, alpha, beta, delta, LB).failed_to_reject
+
+  private val r1000 = (1 to 1000).par
+  private val r10000 = (1 to 10000).par
+
+  "SPRT" should "returns SMALLER (ie rejects) very few times when lower-bound (θ) is at least δ smaller than the actual probability" in {
+    assert(50 > r1000.count(_ => test(0.40, 0.01, 0.01, 0.1, LB = true) == CompResult.Binary.SMALLER))
+    assert(50 > r1000.count(_ => test(0.40, 0.01, 0.20, 0.1, LB = true) == CompResult.Binary.SMALLER))
+    assert(50 > r1000.count(_ => test(0.40, 0.01, 0.45, 0.1, LB = true) == CompResult.Binary.SMALLER))
+    assert(50 > r1000.count(_ => test(0.39, 0.01, 0.45, 0.1, LB = true) == CompResult.Binary.SMALLER))
+    assert(50 > r1000.count(_ => test(0.30, 0.01, 0.45, 0.1, LB = true) == CompResult.Binary.SMALLER))
+
+    assert(50 > r1000.count(_ => testR(0.40, 0.01, 0.01, 0.1, LB = true)))
+    assert(50 > r1000.count(_ => testR(0.40, 0.01, 0.20, 0.1, LB = true)))
+    assert(50 > r1000.count(_ => testR(0.40, 0.01, 0.45, 0.1, LB = true)))
+    assert(50 > r1000.count(_ => testR(0.39, 0.01, 0.45, 0.1, LB = true)))
+    assert(50 > r1000.count(_ => testR(0.30, 0.01, 0.45, 0.1, LB = true)))
   }
 
-  "A binary SPRT" should "decide coin flip correctly most of the time, when lower-bound is correct" in {
-    val passes = (1 to 1000).par.count(_ => binaryTest(0.4, 0.01, 0.01, 0.1, LB = true))
-    assert(passes > 900, s"Expected value is about 990, but the actual value is $passes")
+  it should "returns LARGER (ie rejects) very few times when lower-bound (θ) is at least δ larger than the actual probability" in {
+    assert(50 > r1000.count(_ => test(0.60, 0.01, 0.01, 0.1, LB = false) == CompResult.Binary.LARGER))
+    assert(50 > r1000.count(_ => test(0.60, 0.01, 0.20, 0.1, LB = false) == CompResult.Binary.LARGER))
+    assert(50 > r1000.count(_ => test(0.60, 0.01, 0.45, 0.1, LB = false) == CompResult.Binary.LARGER))
+    assert(50 > r1000.count(_ => test(0.61, 0.01, 0.45, 0.1, LB = false) == CompResult.Binary.LARGER))
+    assert(50 > r1000.count(_ => test(0.70, 0.01, 0.45, 0.1, LB = false) == CompResult.Binary.LARGER))
+
+    assert(50 > r1000.count(_ => testR(0.60, 0.01, 0.01, 0.1, LB = false)))
+    assert(50 > r1000.count(_ => testR(0.60, 0.01, 0.20, 0.1, LB = false)))
+    assert(50 > r1000.count(_ => testR(0.60, 0.01, 0.45, 0.1, LB = false)))
+    assert(50 > r1000.count(_ => testR(0.61, 0.01, 0.45, 0.1, LB = false)))
+    assert(50 > r1000.count(_ => testR(0.70, 0.01, 0.45, 0.1, LB = false)))
   }
 
-  it should "decide coin flip correctly most of the time, when lower-bound is incorrect" in {
-    val passes = (1 to 1000).par.count(_ => binaryTest(0.6, 0.01, 0.01, 0.1, LB = true))
-    assert(passes < 100, s"Expected value is about 10, but the actual value is $passes")
+  it should "returns LARGER (ie accepts) very few times when lower-bound (θ) is at least δ larger than the actual probability" in {
+    assert(50 > r1000.count(_ => test(0.60, 0.01, 0.01, 0.1, LB = true) == CompResult.Binary.LARGER))
+    assert(50 > r1000.count(_ => test(0.60, 0.20, 0.01, 0.1, LB = true) == CompResult.Binary.LARGER))
+    assert(50 > r1000.count(_ => test(0.60, 0.45, 0.01, 0.1, LB = true) == CompResult.Binary.LARGER))
+    assert(50 > r1000.count(_ => test(0.61, 0.47, 0.01, 0.1, LB = true) == CompResult.Binary.LARGER))
+    assert(50 > r1000.count(_ => test(0.70, 0.49, 0.01, 0.1, LB = true) == CompResult.Binary.LARGER))
+
+    assert(50 > r1000.count(_ => testF(0.60, 0.01, 0.01, 0.1, LB = true)))
+    assert(50 > r1000.count(_ => testF(0.60, 0.20, 0.01, 0.1, LB = true)))
+    assert(50 > r1000.count(_ => testF(0.60, 0.45, 0.01, 0.1, LB = true)))
+    assert(50 > r1000.count(_ => testF(0.61, 0.47, 0.01, 0.1, LB = true)))
+    assert(50 > r1000.count(_ => testF(0.70, 0.49, 0.01, 0.1, LB = true)))
   }
 
-  it should "decide coin flip correctly most of the time, when upper-bound is correct" in {
-    val passes = (1 to 1000).par.count(_ => binaryTest(0.6, 0.01, 0.01, 0.1, LB = false))
-    assert(passes > 900, s"Expected value is about 990, but the actual value is $passes")
+  it should "returns SMALLER (ie accepts) very few times when lower-bound (θ) is at least δ smaller than the actual probability" in {
+    assert(50 > r1000.count(_ => test(0.40, 0.01, 0.01, 0.1, LB = false) == CompResult.Binary.SMALLER))
+    assert(50 > r1000.count(_ => test(0.40, 0.20, 0.01, 0.1, LB = false) == CompResult.Binary.SMALLER))
+    assert(50 > r1000.count(_ => test(0.40, 0.45, 0.01, 0.1, LB = false) == CompResult.Binary.SMALLER))
+    assert(50 > r1000.count(_ => test(0.39, 0.47, 0.01, 0.1, LB = false) == CompResult.Binary.SMALLER))
+    assert(50 > r1000.count(_ => test(0.30, 0.49, 0.01, 0.1, LB = false) == CompResult.Binary.SMALLER))
+
+    assert(50 > r1000.count(_ => testF(0.40, 0.01, 0.01, 0.1, LB = false)))
+    assert(50 > r1000.count(_ => testF(0.40, 0.20, 0.01, 0.1, LB = false)))
+    assert(50 > r1000.count(_ => testF(0.40, 0.45, 0.01, 0.1, LB = false)))
+    assert(50 > r1000.count(_ => testF(0.39, 0.47, 0.01, 0.1, LB = false)))
+    assert(50 > r1000.count(_ => testF(0.30, 0.49, 0.01, 0.1, LB = false)))
   }
 
-  it should "decide coin flip correctly most of the time, when upper-bound is incorrect" in {
-    val passes = (1 to 1000).par.count(_ => binaryTest(0.4, 0.01, 0.01, 0.1, LB = false))
-    assert(passes < 100, s"Expected value is about 10, but the actual value is $passes")
+  def beInRange(lb: Int, ub: Int) = new BeInRange(lb, ub)
+  class BeInRange(lb: Int, ub: Int) extends Matcher[Int] {
+    def apply(v: Int) =
+      MatchResult(lb <= v && v <= ub, s"$v is not in [$lb,$ub]", s"$v is in [$lb,$ub]")
   }
 
-  "A binary SPRT" should "compare threshold and actual probability correctly most of the time, when lower-bound is correct" in {
-    val passes = (1 to 1000).par.count(_ => binaryTestCmp(0.4, 0.01, 0.01, 0.1, LB = true) == CompResult.Binary.LARGER)
-    assert(passes > 900, s"Expected value is about 990, but the actual value is $passes")
+  "Actual Type-I error probability in SPRT" should "be close to α when lower-bound (θ) is exactly δ smaller than the actual probability" in {
+    r10000.count(_ => testR(0.4, 0.05, 0.01, 0.1, LB = true)) should beInRange(300, 700)
+    r10000.count(_ => testR(0.4, 0.10, 0.01, 0.1, LB = true)) should beInRange(800, 1200)
+    r10000.count(_ => testR(0.4, 0.05, 0.10, 0.1, LB = true)) should beInRange(300, 700)
+    r10000.count(_ => testR(0.4, 0.05, 0.40, 0.1, LB = true)) should beInRange(300, 700)
+    r10000.count(_ => testR(0.4, 0.05, 0.05, 0.1, LB = true)) should beInRange(300, 700)
   }
 
-  it should "compare threshold and actual probability correctly most of the time, when lower-bound is incorrect" in {
-    val passes = (1 to 1000).par.count(_ => binaryTestCmp(0.6, 0.01, 0.01, 0.1, LB = true) == CompResult.Binary.LARGER)
-    assert(passes < 100, s"Expected value is about 10, but the actual value is $passes")
+  it should "be close to α when upper-bound (θ) is exactly δ larger than the actual probability" in {
+    r10000.count(_ => testR(0.6, 0.05, 0.01, 0.1, LB = false)) should beInRange(300, 700)
+    r10000.count(_ => testR(0.6, 0.10, 0.01, 0.1, LB = false)) should beInRange(800, 1200)
+    r10000.count(_ => testR(0.6, 0.05, 0.10, 0.1, LB = false)) should beInRange(300, 700)
+    r10000.count(_ => testR(0.6, 0.05, 0.40, 0.1, LB = false)) should beInRange(300, 700)
+    r10000.count(_ => testR(0.6, 0.05, 0.05, 0.1, LB = false)) should beInRange(300, 700)
   }
 
-  it should "compare threshold and actual probability correctly most of the time, when upper-bound is correct" in {
-    val passes = (1 to 1000).par.count(_ => binaryTestCmp(0.6, 0.01, 0.01, 0.1, LB = false) == CompResult.Binary.SMALLER)
-    assert(passes > 900, s"Expected value is about 990, but the actual value is $passes")
+  "Actual Type-II error probability in SPRT" should "be close to β when lower-bound (θ) is exactly δ larger than the actual probability" in {
+    r10000.count(_ => testF(0.6, 0.01, 0.05, 0.1, LB = true)) should beInRange(300, 700)
+    r10000.count(_ => testF(0.6, 0.01, 0.10, 0.1, LB = true)) should beInRange(800, 1200)
+    r10000.count(_ => testF(0.6, 0.10, 0.05, 0.1, LB = true)) should beInRange(300, 700)
+    r10000.count(_ => testF(0.6, 0.40, 0.05, 0.1, LB = true)) should beInRange(300, 700)
+    r10000.count(_ => testF(0.6, 0.05, 0.05, 0.1, LB = true)) should beInRange(300, 700)
   }
 
-  it should "compare threshold and actual probability correctly most of the time, when upper-bound is incorrect" in {
-    val passes = (1 to 1000).par.count(_ => binaryTestCmp(0.4, 0.01, 0.01, 0.1, LB = false) == CompResult.Binary.SMALLER)
-    assert(passes < 100, s"Expected value is about 10, but the actual value is $passes")
-  }
-
-  "Actual error probability" should "be close to alpha when lower-bound should not be rejected" in {
-    var passes: Int = 0
-    passes = (1 to 10000).par.count(_ => binaryTest(0.4, 0.05, 0.01, 0.1, LB = true))
-    assert(9350 < passes && passes < 9650, s"Expected value is about 9500, but the actual value is $passes")
-  }
-
-  it should "be close to alpha when upper should not be rejected" in {
-    var passes: Int = 0
-    passes = (1 to 10000).par.count(_ => binaryTest(0.6, 0.05, 0.01, 0.1, LB = false))
-    assert(9350 < passes && passes < 9650, s"Expected value is about 9500, but the actual value is $passes")
-  }
-
-  it should "be close to beta when lower-bound should be rejected" in {
-    var passes: Int = 0
-    passes = (1 to 10000).par.count(_ => binaryTest(0.6, 0.05, 0.01, 0.1, LB = true))
-    assert(passes < 250, s"Expected value is about 100, but the actual value is $passes")
-  }
-
-  it should "be close to beta when upper-bound should be rejected" in {
-    var passes: Int = 0
-    passes = (1 to 10000).par.count(_ => binaryTest(0.4, 0.05, 0.01, 0.1, LB = false))
-    assert(passes < 250, s"Expected value is about 100, but the actual value is $passes")
+  it should "be close to β when upper-bound (θ) is exactly δ smaller than the actual probability" in {
+    r10000.count(_ => testF(0.4, 0.01, 0.05, 0.1, LB = false)) should beInRange(300, 700)
+    r10000.count(_ => testF(0.4, 0.01, 0.10, 0.1, LB = false)) should beInRange(800, 1200)
+    r10000.count(_ => testF(0.4, 0.10, 0.05, 0.1, LB = false)) should beInRange(300, 700)
+    r10000.count(_ => testF(0.4, 0.40, 0.05, 0.1, LB = false)) should beInRange(300, 700)
+    r10000.count(_ => testF(0.4, 0.05, 0.05, 0.1, LB = false)) should beInRange(300, 700)
   }
 
 }

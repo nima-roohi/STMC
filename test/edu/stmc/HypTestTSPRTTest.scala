@@ -26,94 +26,130 @@ class HypTestTSPRTTest extends FlatSpec {
   private def testT(threshold: Double, alpha: Double, beta: Double, gamma: Double, delta: Double, LB: Boolean) =
     run(threshold, alpha, beta, gamma, delta, LB).too_close
 
-  "A ternary SPRT" should "decide SMALLER very few times when lower-bound is correct" in {
-    val passes = (1 to 1000).par.count(_ => test(0.5, 0.01, 0.01, 0.01, 0.1, LB = true) == CompResult.Ternary.SMALLER)
-    assert(passes < 100, s"Expected value is about 10, but the actual value is $passes")
+  private val r1000 = (1 to 1000).par
+
+  "Ternary SPRT" should "returns TOO_CLOSE very few times when threshold is not strictly within `δ`-neighborhood of the actual probability" in {
+    assert(50 > r1000.count(_ => test(0.40, 0.1, 0.2, 0.01, 0.10, LB = true) == CompResult.Ternary.TOO_CLOSE))
+    assert(100 > r1000.count(_ => test(0.49, 0.2, 0.4, 0.02, 0.01, LB = true) == CompResult.Ternary.TOO_CLOSE))
+    assert(150 > r1000.count(_ => test(0.35, 0.3, 0.3, 0.03, 0.15, LB = true) == CompResult.Ternary.TOO_CLOSE))
+    assert(150 > r1000.count(_ => test(0.65, 0.3, 0.3, 0.03, 0.15, LB = true) == CompResult.Ternary.TOO_CLOSE))
+
+    assert(50 > r1000.count(_ => test(0.60, 0.1, 0.2, 0.01, 0.10, LB = false) == CompResult.Ternary.TOO_CLOSE))
+    assert(100 > r1000.count(_ => test(0.51, 0.2, 0.1, 0.02, 0.01, LB = false) == CompResult.Ternary.TOO_CLOSE))
+    assert(150 > r1000.count(_ => test(0.65, 0.3, 0.4, 0.03, 0.15, LB = false) == CompResult.Ternary.TOO_CLOSE))
+    assert(150 > r1000.count(_ => test(0.35, 0.3, 0.4, 0.03, 0.15, LB = false) == CompResult.Ternary.TOO_CLOSE))
+
+    assert(50 > r1000.count(_ => testT(0.40, 0.3, 0.4, 0.01, 0.10, LB = true)))
+    assert(100 > r1000.count(_ => testT(0.49, 0.1, 0.3, 0.02, 0.01, LB = true)))
+    assert(150 > r1000.count(_ => testT(0.35, 0.2, 0.2, 0.03, 0.15, LB = true)))
+    assert(150 > r1000.count(_ => testT(0.65, 0.2, 0.2, 0.03, 0.15, LB = true)))
+
+    assert(50 > r1000.count(_ => testT(0.60, 0.3, 0.2, 0.01, 0.10, LB = false)))
+    assert(100 > r1000.count(_ => testT(0.51, 0.1, 0.3, 0.02, 0.01, LB = false)))
+    assert(150 > r1000.count(_ => testT(0.65, 0.2, 0.4, 0.03, 0.15, LB = false)))
+    assert(150 > r1000.count(_ => testT(0.35, 0.2, 0.4, 0.03, 0.15, LB = false)))
   }
 
-  it should "decide LARGER very few times when lower-bound is incorrect" in {
-    val passes = (1 to 1000).par.count(_ => test(0.5, 0.01, 0.01, 0.01, 0.1, LB = true) == CompResult.Ternary.LARGER)
-    assert(passes < 100, s"Expected value is about 10, but the actual value is $passes")
+  it should "returns SMALLER (ie rejects) very few times when lower-bound is correct" in {
+    assert(50 > r1000.count(_ => test(0.50, 0.01, 0.01, 0.20, 0.1, LB = true) == CompResult.Ternary.SMALLER))
+    assert(50 > r1000.count(_ => test(0.50, 0.01, 0.20, 0.30, 0.1, LB = true) == CompResult.Ternary.SMALLER))
+    assert(50 > r1000.count(_ => test(0.50, 0.01, 0.45, 0.40, 0.1, LB = true) == CompResult.Ternary.SMALLER))
+
+    assert(50 > r1000.count(_ => test(0.49, 0.01, 0.20, 0.30, 0.1, LB = true) == CompResult.Ternary.SMALLER))
+    assert(50 > r1000.count(_ => test(0.41, 0.01, 0.45, 0.40, 0.1, LB = true) == CompResult.Ternary.SMALLER))
+    assert(50 > r1000.count(_ => test(0.40, 0.01, 0.45, 0.40, 0.1, LB = true) == CompResult.Ternary.SMALLER))
+    assert(50 > r1000.count(_ => test(0.39, 0.01, 0.01, 0.20, 0.1, LB = true) == CompResult.Ternary.SMALLER))
+
+    assert(50 > r1000.count(_ => testR(0.50, 0.01, 0.01, 0.20, 0.1, LB = true)))
+    assert(50 > r1000.count(_ => testR(0.50, 0.01, 0.20, 0.30, 0.1, LB = true)))
+    assert(50 > r1000.count(_ => testR(0.50, 0.01, 0.45, 0.40, 0.1, LB = true)))
+
+    assert(50 > r1000.count(_ => testR(0.49, 0.01, 0.20, 0.30, 0.1, LB = true)))
+    assert(50 > r1000.count(_ => testR(0.41, 0.01, 0.45, 0.40, 0.1, LB = true)))
+    assert(50 > r1000.count(_ => testR(0.40, 0.01, 0.45, 0.40, 0.1, LB = true)))
+    assert(50 > r1000.count(_ => testR(0.39, 0.01, 0.01, 0.20, 0.1, LB = true)))
   }
 
-  it should "decide LARGER very few times when upper-bound is correct" in {
-    val passes = (1 to 1000).par.count(_ => test(0.5, 0.01, 0.01, 0.01, 0.1, LB = false) == CompResult.Ternary.LARGER)
-    assert(passes < 100, s"Expected value is about 10, but the actual value is $passes")
+  it should "returns LARGER (ie rejects) very few times when upper-bound is correct" in {
+    assert(50 > r1000.count(_ => test(0.50, 0.01, 0.01, 0.20, 0.1, LB = false) == CompResult.Ternary.LARGER))
+    assert(50 > r1000.count(_ => test(0.50, 0.01, 0.20, 0.30, 0.1, LB = false) == CompResult.Ternary.LARGER))
+    assert(50 > r1000.count(_ => test(0.50, 0.01, 0.45, 0.40, 0.1, LB = false) == CompResult.Ternary.LARGER))
+
+    assert(50 > r1000.count(_ => test(0.50, 0.01, 0.01, 0.20, 0.1, LB = false) == CompResult.Ternary.LARGER))
+    assert(50 > r1000.count(_ => test(0.51, 0.01, 0.20, 0.30, 0.1, LB = false) == CompResult.Ternary.LARGER))
+    assert(50 > r1000.count(_ => test(0.60, 0.01, 0.45, 0.40, 0.1, LB = false) == CompResult.Ternary.LARGER))
+    assert(50 > r1000.count(_ => test(0.61, 0.01, 0.45, 0.40, 0.1, LB = false) == CompResult.Ternary.LARGER))
+
+    assert(50 > r1000.count(_ => testR(0.50, 0.01, 0.01, 0.20, 0.1, LB = false)))
+    assert(50 > r1000.count(_ => testR(0.50, 0.01, 0.20, 0.30, 0.1, LB = false)))
+    assert(50 > r1000.count(_ => testR(0.50, 0.01, 0.45, 0.40, 0.1, LB = false)))
+
+    assert(50 > r1000.count(_ => testR(0.50, 0.01, 0.01, 0.20, 0.1, LB = false)))
+    assert(50 > r1000.count(_ => testR(0.51, 0.01, 0.20, 0.30, 0.1, LB = false)))
+    assert(50 > r1000.count(_ => testR(0.60, 0.01, 0.45, 0.40, 0.1, LB = false)))
+    assert(50 > r1000.count(_ => testR(0.61, 0.01, 0.45, 0.40, 0.1, LB = false)))
   }
 
-  it should "decide SMALLER very few times when upper-bound is incorrect" in {
-    val passes = (1 to 1000).par.count(_ => test(0.5, 0.01, 0.01, 0.01, 0.1, LB = false) == CompResult.Ternary.SMALLER)
-    assert(passes < 100, s"Expected value is about 10, but the actual value is $passes")
+  it should "returns LARGER (ie accepts) very few times when lower-bound is incorrect" in {
+    assert(50 > r1000.count(_ => test(0.50, 0.01, 0.01, 0.20, 0.1, LB = true) == CompResult.Ternary.LARGER))
+    assert(50 > r1000.count(_ => test(0.50, 0.20, 0.01, 0.30, 0.1, LB = true) == CompResult.Ternary.LARGER))
+    assert(50 > r1000.count(_ => test(0.50, 0.45, 0.01, 0.40, 0.1, LB = true) == CompResult.Ternary.LARGER))
+
+    assert(50 > r1000.count(_ => test(0.50, 0.01, 0.01, 0.20, 0.1, LB = true) == CompResult.Ternary.LARGER))
+    assert(50 > r1000.count(_ => test(0.51, 0.20, 0.01, 0.30, 0.1, LB = true) == CompResult.Ternary.LARGER))
+    assert(50 > r1000.count(_ => test(0.60, 0.45, 0.01, 0.40, 0.1, LB = true) == CompResult.Ternary.LARGER))
+    assert(50 > r1000.count(_ => test(0.61, 0.45, 0.01, 0.40, 0.1, LB = true) == CompResult.Ternary.LARGER))
+
+    assert(50 > r1000.count(_ => testF(0.50, 0.01, 0.01, 0.20, 0.1, LB = true)))
+    assert(50 > r1000.count(_ => testF(0.50, 0.20, 0.01, 0.30, 0.1, LB = true)))
+    assert(50 > r1000.count(_ => testF(0.50, 0.45, 0.01, 0.40, 0.1, LB = true)))
+
+    assert(50 > r1000.count(_ => testF(0.50, 0.01, 0.01, 0.20, 0.1, LB = true)))
+    assert(50 > r1000.count(_ => testF(0.51, 0.20, 0.01, 0.30, 0.1, LB = true)))
+    assert(50 > r1000.count(_ => testF(0.60, 0.45, 0.01, 0.40, 0.1, LB = true)))
+    assert(50 > r1000.count(_ => testF(0.61, 0.45, 0.01, 0.40, 0.1, LB = true)))
   }
 
-  it should "decide TOO_CLOSE very few times when lower-bound is correct and not too close" in {
-    val passes = (1 to 1000).par.count(_ => test(0.49, 0.01, 0.01, 0.01, 0.01, LB = true) == CompResult.Ternary.TOO_CLOSE)
-    assert(passes < 100, s"Expected value is about 10, but the actual value is $passes")
+  it should "returns SMALLER (ie accepts) very few times when upper-bound is incorrect" in {
+    assert(50 > r1000.count(_ => test(0.50, 0.01, 0.01, 0.20, 0.1, LB = false) == CompResult.Ternary.SMALLER))
+    assert(50 > r1000.count(_ => test(0.50, 0.20, 0.01, 0.30, 0.1, LB = false) == CompResult.Ternary.SMALLER))
+    assert(50 > r1000.count(_ => test(0.50, 0.45, 0.01, 0.40, 0.1, LB = false) == CompResult.Ternary.SMALLER))
+
+    assert(50 > r1000.count(_ => test(0.49, 0.20, 0.01, 0.30, 0.1, LB = false) == CompResult.Ternary.SMALLER))
+    assert(50 > r1000.count(_ => test(0.41, 0.45, 0.01, 0.40, 0.1, LB = false) == CompResult.Ternary.SMALLER))
+    assert(50 > r1000.count(_ => test(0.40, 0.45, 0.01, 0.40, 0.1, LB = false) == CompResult.Ternary.SMALLER))
+    assert(50 > r1000.count(_ => test(0.39, 0.01, 0.01, 0.20, 0.1, LB = false) == CompResult.Ternary.SMALLER))
+
+    assert(50 > r1000.count(_ => testF(0.50, 0.01, 0.01, 0.20, 0.1, LB = false)))
+    assert(50 > r1000.count(_ => testF(0.50, 0.20, 0.01, 0.30, 0.1, LB = false)))
+    assert(50 > r1000.count(_ => testF(0.50, 0.45, 0.01, 0.40, 0.1, LB = false)))
+
+    assert(50 > r1000.count(_ => testF(0.49, 0.20, 0.01, 0.30, 0.1, LB = false)))
+    assert(50 > r1000.count(_ => testF(0.41, 0.45, 0.01, 0.40, 0.1, LB = false)))
+    assert(50 > r1000.count(_ => testF(0.40, 0.45, 0.01, 0.40, 0.1, LB = false)))
+    assert(50 > r1000.count(_ => testF(0.39, 0.01, 0.01, 0.20, 0.1, LB = false)))
   }
 
-  it should "decide TOO_CLOSE very few times when upper-bound is correct and not too close" in {
-    val passes = (1 to 1000).par.count(_ => test(0.51, 0.01, 0.01, 0.01, 0.01, LB = false) == CompResult.Ternary.TOO_CLOSE)
-    assert(passes < 100, s"Expected value is about 10, but the actual value is $passes")
-  }
+  it should "often (ie probability 1-max(α,β)) returns TOO_CLOSE when threshold is the actual probability" in {
+    assert(60 < r1000.count(_ => test(0.5, 0.01, 0.02, 0.01, 0.10, LB = true) == CompResult.Ternary.TOO_CLOSE))
+    assert(120 < r1000.count(_ => test(0.5, 0.02, 0.04, 0.02, 0.01, LB = true) == CompResult.Ternary.TOO_CLOSE))
+    assert(90 < r1000.count(_ => test(0.5, 0.03, 0.03, 0.03, 0.15, LB = true) == CompResult.Ternary.TOO_CLOSE))
+    assert(90 < r1000.count(_ => test(0.5, 0.03, 0.03, 0.03, 0.15, LB = true) == CompResult.Ternary.TOO_CLOSE))
 
-  it should "decide TOO_CLOSE very few times when lower-bound is incorrect but not too close" in {
-    val passes = (1 to 1000).par.count(_ => test(0.51, 0.01, 0.01, 0.01, 0.01, LB = true) == CompResult.Ternary.TOO_CLOSE)
-    assert(passes < 100, s"Expected value is about 10, but the actual value is $passes")
-  }
+    assert(60 < r1000.count(_ => test(0.5, 0.01, 0.02, 0.1, 0.10, LB = false) == CompResult.Ternary.TOO_CLOSE))
+    assert(60 < r1000.count(_ => test(0.5, 0.02, 0.01, 0.2, 0.01, LB = false) == CompResult.Ternary.TOO_CLOSE))
+    assert(120 < r1000.count(_ => test(0.5, 0.03, 0.04, 0.3, 0.15, LB = false) == CompResult.Ternary.TOO_CLOSE))
+    assert(120 < r1000.count(_ => test(0.5, 0.03, 0.04, 0.3, 0.15, LB = false) == CompResult.Ternary.TOO_CLOSE))
 
-  it should "decide TOO_CLOSE very few times when upper-bound is incorrect but not too close" in {
-    val passes = (1 to 1000).par.count(_ => test(0.49, 0.01, 0.01, 0.01, 0.01, LB = false) == CompResult.Ternary.TOO_CLOSE)
-    assert(passes < 100, s"Expected value is about 10, but the actual value is $passes")
-  }
+    assert(90 < r1000.count(_ => testT(0.5, 0.01, 0.03, 0.04, 0.01, LB = true)))
+    assert(60 < r1000.count(_ => testT(0.5, 0.02, 0.02, 0.06, 0.15, LB = true)))
+    assert(60 < r1000.count(_ => testT(0.5, 0.02, 0.02, 0.09, 0.15, LB = true)))
+    assert(120 < r1000.count(_ => testT(0.5, 0.03, 0.04, 0.02, 0.10, LB = true)))
 
-  it should "reject very few times when lower-bound is correct" in {
-    val passes = (1 to 1000).par.count(_ => testR(0.5, 0.01, 0.01, 0.01, 0.1, LB = true))
-    assert(passes < 100, s"Expected value is about 10, but the actual value is $passes")
-  }
-
-  it should "reject very few times when upper-bound is correct" in {
-    val passes = (1 to 1000).par.count(_ => testR(0.5, 0.01, 0.01, 0.01, 0.1, LB = false))
-    assert(passes < 100, s"Expected value is about 10, but the actual value is $passes")
-  }
-
-  it should "fail to reject very few times when lower-bound is incorrect" in {
-    val passes = (1 to 1000).par.count(_ => testF(0.5, 0.01, 0.01, 0.01, 0.1, LB = true))
-    assert(passes < 100, s"Expected value is about 10, but the actual value is $passes")
-  }
-
-  it should "fail to reject very few times when upper-bound is incorrect" in {
-    val passes = (1 to 1000).par.count(_ => testF(0.5, 0.01, 0.01, 0.01, 0.1, LB = false))
-    assert(passes < 100, s"Expected value is about 10, but the actual value is $passes")
-  }
-
-  "A ternary SPRT" should "have its actual Type I error probability close to α=γ when lower-bound is the actual probability" in {
-    val passes = (1 to 10000).par.count(_ => testR(0.5, 0.03, 0.06, 0.03, 0.1, LB = true))
-    assert(100 < passes && passes < 500, s"Expected value is about 300, but the actual value is $passes")
-  }
-
-  it should "have its actual Type I error probability close to α=γ when upper-bound is the actual probability" in {
-    val passes = (1 to 10000).par.count(_ => testR(0.5, 0.03, 0.06, 0.03, 0.1, LB = false))
-    assert(100 < passes && passes < 500, s"Expected value is about 300, but the actual value is $passes")
-  }
-
-  it should "have its actual Type II error probability close to β=γ when lower-bound is the actual probability" in {
-    val passes = (1 to 10000).par.count(_ => testF(0.5, 0.03, 0.06, 0.06, 0.1, LB = true))
-    assert(400 < passes && passes < 800, s"Expected value is about 600, but the actual value is $passes")
-  }
-
-  it should "have its actual Type II error probability close to β=γ when upper-bound is the actual probability" in {
-    val passes = (1 to 10000).par.count(_ => testF(0.5, 0.03, 0.06, 0.06, 0.1, LB = false))
-    assert(400 < passes && passes < 800, s"Expected value is about 600, but the actual value is $passes")
-  }
-
-  it should "have its actual Type III error probability close to γ when lower-bound is the actual probability + δ" in {
-    val passes = (1 to 10000).par.count(_ => testT(0.51, 0.1, 0.06, 0.03, 0.01, LB = true))
-    assert(100 < passes && passes < 500, s"Expected value is about 300, but the actual value is $passes")
-  }
-
-  it should "have its actual Type III error probability close to γ when upper-bound is the actual probability - δ" in {
-    val passes = (1 to 10000).par.count(_ => testT(0.49, 0.1, 0.06, 0.03, 0.01, LB = false))
-    assert(100 < passes && passes < 500, s"Expected value is about 300, but the actual value is $passes")
+    assert(90 < r1000.count(_ => testT(0.5, 0.03, 0.02, 0.03, 0.10, LB = false)))
+    assert(90 < r1000.count(_ => testT(0.5, 0.01, 0.03, 0.06, 0.01, LB = false)))
+    assert(120 < r1000.count(_ => testT(0.5, 0.02, 0.04, 0.12, 0.15, LB = false)))
+    assert(120 < r1000.count(_ => testT(0.5, 0.02, 0.04, 0.15, 0.15, LB = false)))
   }
 
 }
