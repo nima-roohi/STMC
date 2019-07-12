@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="stmc-src-and-test" pattern="src:edu.stmc.*||test:edu.stmc.*" />
+</component>
