@@ -1,25 +1,21 @@
-/******************************************************************************
- * STMC - Statistical Model Checker                                           *
- *                                                                            *
- * Copyright (C) 2019                                                         *
- * Authors:                                                                   *
- *     Nima Roohi <nroohi@ucsd.edu> (University of California San Diego)      *
- *                                                                            *
- * This file is part of STMC.                                                 *
- *                                                                            *
- * STMC is free software: you can redistribute it and/or modify               *
- * it under the terms of the GNU General Public License as published by       *
- * the Free Software Foundation, either version 3 of the License, or          *
- * (at your option) any later version.                                        *
- *                                                                            *
- * Foobar is distributed in the hope that it will be useful,                  *
- * but WITHOUT ANY WARRANTY; without even the implied warranty of             *
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the              *
- * GNU General Public License for more details.                               *
- *                                                                            *
- * You should have received a copy of the GNU General Public License          *
- * along with Foobar.  If not, see <https://www.gnu.org/licenses/>.           *
- ******************************************************************************/
+/**************************************************************************************************
+ * STMC - Statistical Model Checker                                                               *
+ *                                                                                                *
+ * Copyright (C) 2019                                                                             *
+ * Authors:                                                                                       *
+ *   Nima Roohi <nroohi@ucsd.edu> (University of California San Diego)                            *
+ *                                                                                                *
+ * This program is free software: you can redistribute it and/or modify it under the terms        *
+ * of the GNU General Public License as published by the Free Software Foundation, either         *
+ * version 3 of the License, or (at your option) any later version.                               *
+ *                                                                                                *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;      *
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.      *
+ * See the GNU General Public License for more details.                                           *
+ *                                                                                                *
+ * You should have received a copy of the GNU General Public License along with this program.     *
+ * If not, see <https://www.gnu.org/licenses/>.                                                   *
+ **************************************************************************************************/
 
 package edu.stmc;
 
@@ -40,7 +36,9 @@ public class Main {
   /**
    * Remove the first character of the input string if it is equal to '-'. If the first character is removed then
    * remove the second character of the input string if it is also equal to '-'. Input string won't be trimmed.
+   * @param sw input switch
    * @return null if nothing is removed. Otherwise, the new string.
+   * @throws PrismException if after removing '-' the switch becomes empty.
    */
   private static String adjustSwitch(String sw) throws PrismException {
     if (sw.length() > 0 && sw.charAt(0) == '-') {
@@ -50,6 +48,8 @@ public class Main {
       // Remove optional second "-" (i.e. we allow switches of the form --sw too)
       if (sw.charAt(0) == '-')
         sw = sw.substring(1);
+      if (sw.length() == 0)
+        throw new PrismException("Invalid empty switch");
       return sw;
     }
     return null;

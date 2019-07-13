@@ -1,25 +1,21 @@
-/******************************************************************************
- * STMC - Statistical Model Checker                                           *
- *                                                                            *
- * Copyright (C) 2019                                                         *
- * Authors:                                                                   *
- *     Nima Roohi <nroohi@ucsd.edu> (University of California San Diego)      *
- *                                                                            *
- * This file is part of STMC.                                                 *
- *                                                                            *
- * STMC is free software: you can redistribute it and/or modify               *
- * it under the terms of the GNU General Public License as published by       *
- * the Free Software Foundation, either version 3 of the License, or          *
- * (at your option) any later version.                                        *
- *                                                                            *
- * Foobar is distributed in the hope that it will be useful,                  *
- * but WITHOUT ANY WARRANTY; without even the implied warranty of             *
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the              *
- * GNU General Public License for more details.                               *
- *                                                                            *
- * You should have received a copy of the GNU General Public License          *
- * along with Foobar.  If not, see <https://www.gnu.org/licenses/>.           *
- ******************************************************************************/
+/**************************************************************************************************
+ * STMC - Statistical Model Checker                                                               *
+ *                                                                                                *
+ * Copyright (C) 2019                                                                             *
+ * Authors:                                                                                       *
+ *   Nima Roohi <nroohi@ucsd.edu> (University of California San Diego)                            *
+ *                                                                                                *
+ * This program is free software: you can redistribute it and/or modify it under the terms        *
+ * of the GNU General Public License as published by the Free Software Foundation, either         *
+ * version 3 of the License, or (at your option) any later version.                               *
+ *                                                                                                *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;      *
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.      *
+ * See the GNU General Public License for more details.                                           *
+ *                                                                                                *
+ * You should have received a copy of the GNU General Public License along with this program.     *
+ * If not, see <https://www.gnu.org/licenses/>.                                                   *
+ **************************************************************************************************/
 
 package edu.stmc
 
@@ -90,10 +86,11 @@ abstract class HypTest extends SimulationMethod {
     * in the range [0,100]. This estimate may not be linear (e.g. for CI/ACI where 'iterations' is computed). It is assumed that this method is called *after*
     * the call to isCompleted(...).
     *
-    * @note Default implementation is added in STMC and it returns 0.
     * @param iters   The number of iterations (samples) done so far
     * @param sampler The Sampler object for this simulation
-    * @note The iteration count may exceed that dictated by this method, e.g. if multiple properties are being simulated simultaneously. */
+    * @note
+    *   1. The iteration count may exceed that dictated by this method, e.g. if multiple properties are being simulated simultaneously.
+    *   1. Default implementation is added in STMC and it returns 0. */
   override def getProgress(iters: Int, sampler: Sampler): Int = 0
 
   /** Get the (approximate) result for the property that simulation is being used to approximate. This should be a Boolean/Double for bounded/quantitative
@@ -123,8 +120,9 @@ abstract class HypTest extends SimulationMethod {
     *
     * @param positive Number of samples that are positive.
     * @param negative Number of samples that are negative.
-    * @note Requires `positive >= 0` and `negative >= 0`.
-    * @note Implementations might add a constraint on the total number of samples. */
+    * @note
+    *   1. Requires `positive >= 0` and `negative >= 0`.
+    *   1. Implementations might add a constraint on the total number of samples. */
   def update(positive: Int, negative: Int)
 
   /** Whether or not the test is completed. */
