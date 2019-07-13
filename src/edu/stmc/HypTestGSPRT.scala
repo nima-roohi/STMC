@@ -25,15 +25,11 @@ import simulator.sampler.Sampler
 
 import scala.math.log
 
-/** Generalized Sequential Probability Ratio Test
-  *
+/** Generalized Sequential Probability/Likelihood Ratio Test
   * TODO: Please look at the "Markup" section in https://docs.scala-lang.org/overviews/scaladoc/for-library-authors.html to learn about a few useful markups.
-  * TODO: What this method is and why do we need this when there is SPRT.
-  * TODO: Please indicate that the probabilistic error guarantees in this class are asymptotic.
-  * TODO: If a reference claims that being asymptotic is ok for some application, please include that.
-  *
+  * Generally, finding exact Probability/Likelihood Ratio Test for composite hypothesis testing (CHT) is challenging. See __T. L. Lai, Sequential analysis: some classical problems and new challenges, Statistica Sinica, pp. 303–351, 2001.__
+  * Here, we use Generalized Sequential Probability/Likelihood Ratio Test that gives approximate probability guarantees for finite samples. See __Fan, J., Zhang, C. and Zhang, J., 2001. Generalized likelihood ratio statistics and Wilks phenomenon. The Annals of statistics, 29(1), pp.153-193.__
   * @note
-  *   1. TODO: Add a Reference
   *   1. Method [[init]] must be called before this test can be actually performed.
   *   1. Probabilistic guarantees in this class ignore numerical errors caused by floating point arithmetic. */
 final class HypTestGSPRT() extends HypTest {
@@ -180,7 +176,6 @@ final class HypTestGSPRT() extends HypTest {
     n += positive
   }
 
-  // TODO: Please check the following probabilistic guarantees. Note that α and β should not be swapped (the implementation should be fixed instead).
 
   /** @note
     *   1. Requires `n ≤ N`
