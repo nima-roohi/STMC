@@ -184,7 +184,6 @@ final class HypTestGLRT() extends HypTest {
     n += positive
   }
 
-
   /** @note
     *   1. Requires `n ≤ N`
     *   1. Asymptotic guarantees: as total number of samples goes to infinity, the following probabilistic guarantees are made (if [[LB]] is `true` then
