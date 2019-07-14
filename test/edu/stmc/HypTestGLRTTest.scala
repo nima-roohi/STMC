@@ -23,10 +23,10 @@ import java.util.concurrent.ThreadLocalRandom
 
 import org.scalatest.FlatSpec
 
-class HypTestGSPRTTest extends FlatSpec {
+class HypTestGLRTTest extends FlatSpec {
 
   private def run(threshold: Double, alpha: Double, beta: Double, LB: Boolean, minSamples: Int = 200) = {
-    val test = new HypTestGSPRT().init(threshold, alpha, beta, minSamples, LB)
+    val test = new HypTestGLRT().init(threshold, alpha, beta, minSamples, LB)
     val rnd = ThreadLocalRandom.current()
     while (!test.completed)
       test.update(rnd.nextBoolean())

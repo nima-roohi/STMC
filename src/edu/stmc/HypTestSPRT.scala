@@ -26,7 +26,7 @@ import simulator.sampler.Sampler
 /** Sequential Probability Ratio Test
   *
   * @note
-  *   1. See Sequential Analysis, by Abraham Wald ([[https://isbnsearch.org/isbn/9780486615790 ISBN 9780486615790]] or
+  *   1. See ''Sequential Analysis, by Abraham Wald'' ([[https://isbnsearch.org/isbn/9780486615790 ISBN 9780486615790]] or
   * [[https://isbnsearch.org/isbn/9780486439129 ISBN 9780486439129]]) for a reference to this method.
   *   1. Method [[init]] must be called before this test can be actually performed.
   *   1. Probabilistic guarantees in this class ignore numerical errors caused by floating point arithmetic.

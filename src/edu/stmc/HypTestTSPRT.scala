@@ -32,7 +32,7 @@ import simulator.sampler.Sampler
   *
   * @note
   *   1. Transforming binary error guarantee in SPRT to ternary error guarantee as specified in [[init]] is first introduced in
-  *   [[https://www.doi.org/10.1007/11609773_10 2006 - Error Control for Probabilistic Model Checking, by Håkan L. S. Younes]]
+  *   ''[[https://www.doi.org/10.1007/11609773_10 2006 - Error Control for Probabilistic Model Checking, by Håkan L. S. Younes]]''
   *   (the paper does not coin any new name).
   *   1. Method [[init]] must be called before this test can be actually performed.
   *   1. Probabilistic guarantees in this class ignore numerical errors caused by floating point arithmetic.

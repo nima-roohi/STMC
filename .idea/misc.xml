@@ -8,14 +8,14 @@
     <option name="OPTION_DOCUMENT_TAG_VERSION" value="true" />
     <option name="OTHER_OPTIONS" value="-tag requires:a:&quot;Requires:&quot; -tag ensures:a:&quot;Ensures:&quot;" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8.0.191" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11.0.2" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="ScaladocSettings">
     <option name="outputDir" value="$PROJECT_DIR$/docs-scala" />
     <option name="additionalFlags" value="-diagrams -author -nowarn" />
     <option name="maxHeapSize" value="" />
-    <option name="docTitle" value="stmc documentation" />
+    <option name="docTitle" value="Statistical Model Checker API" />
     <option name="verbose" value="false" />
     <option name="openInBrowser" value="false" />
   </component>

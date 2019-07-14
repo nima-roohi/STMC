@@ -1,21 +1,22 @@
-/**************************************************************************************************
- * STMC - Statistical Model Checker                                                               *
- *                                                                                                *
- * Copyright (C) 2019                                                                             *
- * Authors:                                                                                       *
- *   Nima Roohi <nroohi@ucsd.edu> (University of California San Diego)                            *
- *                                                                                                *
- * This program is free software: you can redistribute it and/or modify it under the terms        *
- * of the GNU General Public License as published by the Free Software Foundation, either         *
- * version 3 of the License, or (at your option) any later version.                               *
- *                                                                                                *
- * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;      *
- * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.      *
- * See the GNU General Public License for more details.                                           *
- *                                                                                                *
- * You should have received a copy of the GNU General Public License along with this program.     *
- * If not, see <https://www.gnu.org/licenses/>.                                                   *
- **************************************************************************************************/
+/** ************************************************************************************************
+  * STMC - Statistical Model Checker                                                               *
+  * *
+  * Copyright (C) 2019                                                                             *
+  * Authors:                                                                                       *
+  * Nima Roohi <nroohi@ucsd.edu> (University of California San Diego)                            *
+  * Yu Wang <yu.wang094@duke.edu> (Duke University)                                              *
+  * *
+  * This program is free software: you can redistribute it and/or modify it under the terms        *
+  * of the GNU General Public License as published by the Free Software Foundation, either         *
+  * version 3 of the License, or (at your option) any later version.                               *
+  * *
+  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;      *
+  * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.      *
+  * See the GNU General Public License for more details.                                           *
+  * *
+  * You should have received a copy of the GNU General Public License along with this program.     *
+  * If not, see <https://www.gnu.org/licenses/>.                                                   *
+  * *************************************************************************************************/
 
 package edu.stmc
 
@@ -25,14 +26,21 @@ import simulator.sampler.Sampler
 
 import scala.math.log
 
-/** Generalized Sequential Probability/Likelihood Ratio Test
-  * TODO: Please look at the "Markup" section in https://docs.scala-lang.org/overviews/scaladoc/for-library-authors.html to learn about a few useful markups.
-  * Generally, finding exact Probability/Likelihood Ratio Test for composite hypothesis testing (CHT) is challenging. See __T. L. Lai, Sequential analysis: some classical problems and new challenges, Statistica Sinica, pp. 303–351, 2001.__
-  * Here, we use Generalized Sequential Probability/Likelihood Ratio Test that gives approximate probability guarantees for finite samples. See __Fan, J., Zhang, C. and Zhang, J., 2001. Generalized likelihood ratio statistics and Wilks phenomenon. The Annals of statistics, 29(1), pp.153-193.__
+/** Generalized Likelihood Ratio Tests
+  *
+  * Generally, finding exact probability/likelihood ratio for composite hypothesis testing is challenging. See ''[[https://www.jstor.org/stable/24306854
+  * Sequential Analysis: Some classical problems and new challenges, by Tze Leung Lai]]''. Here, we use Generalized Likelihood Ratio Tests that gives
+  * asymptotically probability guarantees for finite samples. See ''[[https://www.jstor.org/stable/2674021 Generalized Likelihood Ratio Statistics and Wilks
+  * Phenomenon, by Jianqing Fan et. al.]]'' for reference.
+  *
   * @note
   *   1. Method [[init]] must be called before this test can be actually performed.
-  *   1. Probabilistic guarantees in this class ignore numerical errors caused by floating point arithmetic. */
-final class HypTestGSPRT() extends HypTest {
+  *   1. Probabilistic guarantees in this class ignore numerical errors caused by floating point arithmetic.
+  *   1. The main issue with this test is that since probabilistic guarantees are asymptotic, for the test to perform reasonable in practice (eg. respect the
+  * input error parameters) minimum number of samples must be given as an input parameter as well. If this parameter is too large then average number of samples
+  * will be unnecessarily high, and if the parameter is too small then the actual error probability of the algorithm could be 0.5, even though the input error
+  * parameter is for example 10^^-7^^. */
+final class HypTestGLRT() extends HypTest {
 
   // Input parameters
   private[this] var threshold: Double = _
@@ -65,7 +73,7 @@ final class HypTestGSPRT() extends HypTest {
     *   - 0 < β < 0.5
     *   - minSamples > 1
     * @see [[status(n*]], [[rejected]], [[failed_to_reject]] */
-  def init(threshold: Double, alpha: Double, beta: Double, minSamples: Int, LB: Boolean = true): HypTestGSPRT = {
+  def init(threshold: Double, alpha: Double, beta: Double, minSamples: Int, LB: Boolean = true): HypTestGLRT = {
     require(minSamples > 1, s"Invalid minimum number of samples $minSamples")
     require(0 < threshold && threshold < 1, s"Invalid threshold $threshold")
     require(0 < alpha && alpha < 0.5, s"Invalid type I error $alpha")
@@ -101,7 +109,7 @@ final class HypTestGSPRT() extends HypTest {
                     alpha: Double, beta: Double,
                     minSamples: Int, LB: Boolean,
                     logL: Double, logU: Double, logP0: Double, logP1: Double,
-                    N: Int, n: Int): HypTestGSPRT = {
+                    N: Int, n: Int): HypTestGLRT = {
     this.threshold = threshold
     this.alpha = alpha
     this.beta = beta
@@ -132,7 +140,7 @@ final class HypTestGSPRT() extends HypTest {
 
   override def getResultExplanation(sampler: Sampler): String = s"$getParametersString, N: $N, n: $n"
 
-  override def clone: HypTestGSPRT = new HypTestGSPRT().reset(threshold, alpha, beta, minSamples, LB, logL, logU, logP0, logP1, N, n)
+  override def clone: HypTestGLRT = new HypTestGLRT().reset(threshold, alpha, beta, minSamples, LB, logL, logU, logP0, logP1, N, n)
 
   override def setExpression(expr: Expression): Unit =
     if (!expr.isInstanceOf[ExpressionProb])
