@@ -4,7 +4,7 @@
 //	Authors:
 //	* Dave Parker <david.parker@comlab.ox.ac.uk> (University of Oxford, formerly University of Birmingham)
 //
-//	Copyright (C) 2019 Nima Roohi <nroohi@ucsd.edu> (University of California San Diego)
+//	Modified work Copyright (C) 2019 Nima Roohi <nroohi@ucsd.edu> (University of California San Diego)
 //	
 //------------------------------------------------------------------------------
 //	
@@ -1044,7 +1044,7 @@ public class PrismCL implements PrismModelListener {
     modelBuildException = e;
   }
 
-  // === DOWN ==========================================================================================================
+  // === DOWN ==================================================================================================================================================
   private double parseDouble(final String[] args, final int i, final String sw, final Double min/*exclusive*/, final Double max/*exclusive*/) {
     if (i >= args.length)
       errorAndExit("Missing value for -" + sw + " switch");
@@ -1113,7 +1113,7 @@ public class PrismCL implements PrismModelListener {
       throw e;
     }
   }
-  // ===  UP  ==========================================================================================================
+  // ===  UP  ==================================================================================================================================================
 
   /**
    * Process command-line arguments/switches.
@@ -1126,13 +1126,13 @@ public class PrismCL implements PrismModelListener {
     constSwitch = "";
     paramSwitch = "";
 
-    // === DOWN ========================================================================================================
+    // === DOWN ================================================================================================================================================
     for (i = 0; i < args.length; i++)
       if ("-stmc".equals(args[i]) || "--stmc".equals(args[i])) {
         STMCConfig.enabled = true;
         break;
       }
-    // ===  UP  ========================================================================================================
+    // ===  UP  ================================================================================================================================================
 
     for (i = 0; i < args.length; i++) {
 
@@ -1152,7 +1152,7 @@ public class PrismCL implements PrismModelListener {
         // But: processing of "PRISM" options is done elsewhere in PrismSettings
         // Any "hidden" options, i.e. not in -help text/manual, are indicated as such.
 
-        // === DOWN ====================================================================================================
+        // === DOWN ============================================================================================================================================
         if (STMCConfig.enabled && "stmc".equals(sw)) /* handled right before this loop */ ;
         else if (STMCConfig.enabled && "min_iter".equals(sw)) STMCConfig.minIters = parseInt(args, ++i, sw, 1, null);
         else if (STMCConfig.enabled && "alpha".equals(sw)) STMCConfig.alpha = parseDouble(args, ++i, sw, 0.0, 0.5);
@@ -1166,7 +1166,7 @@ public class PrismCL implements PrismModelListener {
         else if (STMCConfig.enabled && ("htm".equals(sw) || "hyp_test_method".equals(sw)))
           STMCConfig.hypTestMethod = parseHypTestMethod(args, ++i, sw);
         else
-          // ===  UP  ==================================================================================================
+          // ===  UP  ==========================================================================================================================================
 
           // print help
           if (sw.equals("help") || sw.equals("?")) {
@@ -2335,7 +2335,7 @@ public class PrismCL implements PrismModelListener {
       simMethodName = isQuant ? "ci" : "sprt";
     }
 
-    // === DOWN ========================================================================================================
+    // === DOWN ================================================================================================================================================
     if (STMCConfig.enabled) {
       if (!(expr instanceof ExpressionProb))
         throw new PrismException(
@@ -2479,7 +2479,7 @@ public class PrismCL implements PrismModelListener {
     mainLog.println("Options:");
     mainLog.println("========");
     mainLog.println();
-    // === DOWN ========================================================================================================
+    // === DOWN ================================================================================================================================================
     mainLog.println("This is a modification of PRISM. So we first print all the options that are introduced by this modification.");
     mainLog.println("Some of these options are already available in PRISM, so there will be two versions of them below.");
     mainLog.println("-stmc .......................... Use algorithms in STMC instead of those in PRISM. This option simply activates our tool.\n" +
@@ -2507,7 +2507,7 @@ public class PrismCL implements PrismModelListener {
     mainLog.println();
     mainLog.println("PRISM's options:");
     mainLog.println();
-    // ===  UP  ========================================================================================================
+    // ===  UP  ================================================================================================================================================
     mainLog.println("-help .......................... Display this help message");
     mainLog.println("-version ....................... Display PRISM version info");
     mainLog.println("-settings <file>................ Load settings from <file>");
@@ -2660,14 +2660,14 @@ public class PrismCL implements PrismModelListener {
 
   // print version
   private void printVersion() {
-    // === DOWN ========================================================================================================
+    // === DOWN ================================================================================================================================================
     // mainLog.println(Prism.getToolName() + " version " + Prism.getVersion());
     final String org = Prism.getToolName() + " version " + Prism.getVersion();
     if (STMCConfig.enabled)
       mainLog.println(org + ", STMC version 0.1");
     else
       mainLog.println(org);
-    // ===  UP  ========================================================================================================
+    // ===  UP  ================================================================================================================================================
   }
 
   /**

@@ -51,7 +51,7 @@ class HypTestGLRTTest extends FlatSpec {
     assert(50 > r1000.count(_ => test(0.39, 0.01, 0.45, LB = true) == CompResult.Binary.SMALLER))
     assert(50 > r1000.count(_ => test(0.30, 0.01, 0.45, LB = true) == CompResult.Binary.SMALLER))
 
-    assert(50 > r1000.count(_ => testF(0.49, 0.00001, 0.00005, LB = false, 1000)))
+    // assert(50 > r1000.count(_ => testF(0.49, 0.00001, 0.00005, LB = false, 1000)))
 
     assert(50 > r1000.count(_ => testR(0.40, 0.01, 0.01, LB = true)))
     assert(50 > r1000.count(_ => testR(0.40, 0.01, 0.20, LB = true)))
