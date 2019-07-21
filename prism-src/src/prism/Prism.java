@@ -68,7 +68,7 @@ import pta.PTAModelChecker;
 import simulator.GenerateSimulationPath;
 import simulator.ModulesFileModelGenerator;
 import simulator.ModulesFileModelGeneratorSymbolic;
-import simulator.SimulatorEngine;
+import edu.stmc.SimulatorEngineStratified;
 import simulator.method.SimulationMethod;
 import sparse.PrismSparse;
 import strat.Strategy;
@@ -233,7 +233,7 @@ public class Prism extends PrismComponent implements PrismSettingsListener
 	private static boolean prismParserInUse = false;
 	private ExplicitFiles2MTBDD expf2mtbdd = null;
 	private ExplicitModel2MTBDD expm2mtbdd = null;
-	private SimulatorEngine theSimulator = null;
+	private SimulatorEngineStratified theSimulator = null;
 
 	//------------------------------------------------------------------------------
 	// Event listeners
@@ -1095,10 +1095,10 @@ public class Prism extends PrismComponent implements PrismSettingsListener
 	/**
 	 * Get the SimulatorEngine object for PRISM, creating if necessary.
 	 */
-	public SimulatorEngine getSimulator()
+	public SimulatorEngineStratified getSimulator()
 	{
 		if (theSimulator == null) {
-			theSimulator = new SimulatorEngine(this);
+			theSimulator = new SimulatorEngineStratified(this);
 		}
 		return theSimulator;
 	}

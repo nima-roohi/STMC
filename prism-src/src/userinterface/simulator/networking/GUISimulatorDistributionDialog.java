@@ -34,9 +34,9 @@ import javax.swing.table.*;
 import java.util.regex.*;
 import java.awt.*;
 
+import edu.stmc.SimulatorEngineStratified;
 import userinterface.*;
 import userinterface.properties.*;
-import simulator.*;
 import simulator.networking.*;
 import parser.*;
 import parser.ast.*;
@@ -47,7 +47,7 @@ public class GUISimulatorDistributionDialog extends javax.swing.JDialog implemen
 {
 	private SimulatorNetworkHandler network;
 	private File netFile;
-	private SimulatorEngine simulator;
+	private SimulatorEngineStratified simulator;
 	
 	//The job to be done
 	private boolean isExperiment;
@@ -70,7 +70,7 @@ public class GUISimulatorDistributionDialog extends javax.swing.JDialog implemen
 	
 	
 	/** Creates new form GUISimulatorDistributionDialog */
-	public GUISimulatorDistributionDialog(java.awt.Frame parent, SimulatorEngine simulator, boolean modal)
+	public GUISimulatorDistributionDialog(java.awt.Frame parent, SimulatorEngineStratified simulator, boolean modal)
 	{
 		super(parent, modal);
 		setTitle("PRISM Distributed Simulator");

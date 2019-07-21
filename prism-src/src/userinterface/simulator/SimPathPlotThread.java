@@ -29,21 +29,21 @@ package userinterface.simulator;
 import parser.ast.ModulesFile;
 import prism.PrismException;
 import simulator.GenerateSimulationPath;
-import simulator.SimulatorEngine;
+import edu.stmc.SimulatorEngineStratified;
 import userinterface.GUIComputationThread;
 import userinterface.graph.Graph;
 
 public class SimPathPlotThread extends GUIComputationThread
 {
-	private SimulatorEngine engine;
+	private SimulatorEngineStratified engine;
 	private ModulesFile modulesFile;
 	private parser.State initialState;
 	private String simPathDetails;
 	private long maxPathLength;
 	private Graph graphModel;
 
-	public SimPathPlotThread(GUISimulator guiSim, SimulatorEngine engine, ModulesFile modulesFile, parser.State initialState, String simPathDetails,
-			long maxPathLength, Graph graphModel)
+	public SimPathPlotThread(GUISimulator guiSim, SimulatorEngineStratified engine, ModulesFile modulesFile, parser.State initialState, String simPathDetails,
+													 long maxPathLength, Graph graphModel)
 	{
 		super(guiSim);
 		this.engine = engine;

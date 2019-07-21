@@ -1,9 +1,9 @@
 //==============================================================================
-//
-//  Copyright (c) 2002-
+//	
+//	Copyright (c) 2002-
 //	Authors:
 //	* Dave Parker <david.parker@comlab.ox.ac.uk> (University of Oxford)
-//	
+//
 //	Modified work Copyright (C) 2019 Nima Roohi <nroohi@ucsd.edu> (University of California San Diego)
 //
 //------------------------------------------------------------------------------
@@ -45,28 +45,33 @@ import java.util.List;
 
 /**
  * A discrete event simulation engine for PRISM models.
+ * <p>
  * The SimulatorEngine class provides support for:
  * <UL>
  * <LI> State/model exploration
  * <LI> Manual/random path generation
  * <LI> Monte-Carlo sampling techniques for approximate property verification
  * </UL>
+ * <p>
  * After creating a SimulatorEngine object, you can build paths or explore models using:
  * <UL>
  * <LI> {@link #createNewPath} if you want to create a path that will be stored in full
  * <LI> {@link #createNewOnTheFlyPath} if just want to do e.g. model exploration
  * </UL>
  * The input to these methods is a model (ModulesFile) in which all constants have already been defined.
+ * <p>
  * At this point, you can also load labels and properties into the simulator, whose values
  * will be available during path generation. Use:
  * <UL>
  * <LI> {@link #addLabel}
  * <LI> {@link #addProperty}
  * </UL>
+ * <p>
  * To actually initialise the path with an initial state (or to reinitialise later) use:
  * <UL>
  * <LI> {@link #initialisePath}
  * </UL>
+ * <p>
  * For sampling-based approximate model checking, use:
  * <UL>
  * <LI> {@link #isPropertyOKForSimulation}
@@ -79,46 +84,50 @@ import java.util.List;
 public class SimulatorEngine extends PrismComponent {
   // The current parsed model + info
   private ModulesFile modulesFile;
-  private ModelType   modelType;
+  private ModelType modelType;
   // Variable info
-  private VarList     varList;
-  private int         numVars;
+  private VarList varList;
+  private int numVars;
   // Constant definitions from model file
-  private Values      mfConstants;
+  private Values mfConstants;
 
   // Objects from model checking
   // Reachable states
   private List<State> reachableStates;
   // Strategy
-  private Strategy    strategy;
+  private Strategy strategy;
 
   // Labels + properties info
   protected List<Expression> labels;
-  private   List<Expression> properties;
-  private   List<Sampler>    propertySamplers;
+  // === DOWN ==================================================================================================================================================
+  // private List<Expression> properties;
+  // private List<Sampler> propertySamplers;
+  protected List<Expression> properties;
+  protected List<Sampler> propertySamplers;
+  // ===  UP  ==================================================================================================================================================
 
   // Current path info
-  protected Path           path;
-  protected boolean        onTheFly;
+  protected Path path;
+  protected boolean onTheFly;
   // Current state (note: this info is duplicated in the path - it is always the same
   // as path.getCurrentState(); we maintain it separately for efficiency,
   // i.e. to avoid creating new State objects at every step)
-  protected State          currentState;
+  protected State currentState;
   // List of currently available transitions
   protected TransitionList transitionList;
   // Has the transition list been built?
-  protected boolean        transitionListBuilt;
+  protected boolean transitionListBuilt;
   // State for which transition list applies
   // (if null, just the default - i.e. the last state in the current path)
-  protected State          transitionListState;
+  protected State transitionListState;
   // Temporary storage for manipulating states/rewards
-  protected double         tmpStateRewards[];
-  protected double         tmpTransitionRewards[];
+  protected double tmpStateRewards[];
+  protected double tmpTransitionRewards[];
 
   // Updater object for model
-  protected Updater               updater;
+  protected Updater updater;
   // Random number generator
-  private   RandomNumberGenerator rng;
+  private RandomNumberGenerator rng;
 
   // ------------------------------------------------------------------------------
   // Basic setup
@@ -171,6 +180,7 @@ public class SimulatorEngine extends PrismComponent {
   /**
    * Create a new path for a model.
    * Note: All constants in the model must have already been defined.
+   *
    * @param modulesFile Model for simulation
    */
   public void createNewPath(ModulesFile modulesFile) throws PrismException {
@@ -184,6 +194,7 @@ public class SimulatorEngine extends PrismComponent {
   /**
    * Create a new on-the-fly path for a model.
    * Note: All constants in the model must have already been defined.
+   *
    * @param modulesFile Model for simulation
    */
   public void createNewOnTheFlyPath(ModulesFile modulesFile) throws PrismException {
@@ -196,6 +207,7 @@ public class SimulatorEngine extends PrismComponent {
 
   /**
    * Initialise (or re-initialise) the simulation path, starting with a specific (or random) initial state.
+   *
    * @param initialState Initial state (if null, use default, selecting randomly if needed)
    */
   public void initialisePath(State initialState) throws PrismException {
@@ -231,8 +243,8 @@ public class SimulatorEngine extends PrismComponent {
    */
   public void manualTransition(int index) throws PrismException {
     TransitionList transitions = getTransitionList();
-    int            i           = transitions.getChoiceIndexOfTransition(index);
-    int            offset      = transitions.getChoiceOffsetOfTransition(index);
+    int i = transitions.getChoiceIndexOfTransition(index);
+    int offset = transitions.getChoiceOffsetOfTransition(index);
     if (modelType.continuousTime()) {
       double r = transitions.getProbabilitySum();
       executeTimedTransition(i, offset, rng.randomExpDouble(r), index);
@@ -249,8 +261,8 @@ public class SimulatorEngine extends PrismComponent {
    */
   public void manualTransition(int index, double time) throws PrismException {
     TransitionList transitions = getTransitionList();
-    int            i           = transitions.getChoiceIndexOfTransition(index);
-    int            offset      = transitions.getChoiceOffsetOfTransition(index);
+    int i = transitions.getChoiceIndexOfTransition(index);
+    int offset = transitions.getChoiceOffsetOfTransition(index);
     executeTimedTransition(i, offset, time, index);
   }
 
@@ -262,7 +274,7 @@ public class SimulatorEngine extends PrismComponent {
    */
   public boolean automaticTransition() throws PrismException {
     Choice choice;
-    int    numChoices, i, j;
+    int numChoices, i, j;
     double d, r;
 
     TransitionList transitions = getTransitionList();
@@ -338,7 +350,7 @@ public class SimulatorEngine extends PrismComponent {
     if (!modelType.continuousTime()) {
       return automaticTransitions((int) Math.ceil(time), false);
     } else {
-      int    i          = 0;
+      int i = 0;
       double targetTime = path.getTotalTime() + time;
       while (path.getTotalTime() < targetTime) {
         if (automaticTransition())
@@ -354,6 +366,7 @@ public class SimulatorEngine extends PrismComponent {
    * Backtrack to a particular step within the current path.
    * Time point should be >=0 and <= the total path size.
    * (Not applicable for on-the-fly paths)
+   *
    * @param step The step to backtrack to.
    */
   public void backtrackTo(int step) throws PrismException {
@@ -379,6 +392,7 @@ public class SimulatorEngine extends PrismComponent {
    * Backtrack to a particular (continuous) time point within the current path.
    * Time point should be >=0 and <= the total path time.
    * (Not applicable for on-the-fly paths)
+   *
    * @param time The amount of time to backtrack.
    */
   public void backtrackTo(double time) throws PrismException {
@@ -408,6 +422,7 @@ public class SimulatorEngine extends PrismComponent {
    * Remove the prefix of the current path up to the given path step.
    * Index step should be >=0 and <= the total path size.
    * (Not applicable for on-the-fly paths)
+   *
    * @param step The step before which state will be removed.
    */
   public void removePrecedingStates(int step) throws PrismException {
@@ -474,13 +489,14 @@ public class SimulatorEngine extends PrismComponent {
    * Construct a path through a model to match a supplied path,
    * specified as a PathFullInfo object.
    * Note: All constants in the model must have already been defined.
+   *
    * @param modulesFile Model for simulation
    * @param newPath     Path to match
    */
   public void loadPath(ModulesFile modulesFile, PathFullInfo newPath) throws PrismException {
-    int     i, j, numSteps, numTrans;
+    int i, j, numSteps, numTrans;
     boolean found;
-    State   state, nextState;
+    State state, nextState;
     createNewPath(modulesFile);
     long numStepsLong = newPath.size();
     if (numStepsLong > Integer.MAX_VALUE)
@@ -594,6 +610,7 @@ public class SimulatorEngine extends PrismComponent {
   /**
    * Get the value, at the specified path step, of a previously added label (specified by its index).
    * (Not applicable for on-the-fly paths)
+   *
    * @param step The index of the step to check for
    */
   public boolean queryLabel(int index, int step) throws PrismLangException {
@@ -610,6 +627,7 @@ public class SimulatorEngine extends PrismComponent {
 
   /**
    * Check whether a particular step in the current path is an initial state.
+   *
    * @param step The index of the step to check for
    *             (Not applicable for on-the-fly paths)
    */
@@ -628,6 +646,7 @@ public class SimulatorEngine extends PrismComponent {
   /**
    * Check whether a particular step in the current path is a deadlock.
    * (Not applicable for on-the-fly paths)
+   *
    * @param step The index of the step to check for
    */
   public boolean queryIsDeadlock(int step) throws PrismException {
@@ -638,6 +657,7 @@ public class SimulatorEngine extends PrismComponent {
   /**
    * Check the value for a particular property in the current path.
    * If the value is not known yet, the result will be null.
+   *
    * @param index The index of the property to check
    */
   public Object queryProperty(int index) {
@@ -655,6 +675,7 @@ public class SimulatorEngine extends PrismComponent {
 
   /**
    * Loads a new PRISM model into the simulator.
+   *
    * @param modulesFile The parsed PRISM model
    */
   private void loadModulesFile(ModulesFile modulesFile) throws PrismException {
@@ -696,6 +717,7 @@ public class SimulatorEngine extends PrismComponent {
    * Transition is specified by index of its choice and offset within it. If known, its index
    * (within the whole list) can optionally be specified (since this may be needed for storage
    * in the path). If this is -1, it will be computed automatically if needed.
+   *
    * @param i      Index of choice containing transition to execute
    * @param offset Index within choice of transition to execute
    * @param index  (Optionally) index of transition within whole list (-1 if unknown)
@@ -733,6 +755,7 @@ public class SimulatorEngine extends PrismComponent {
    * in the path). If this is -1, it will be computed automatically if needed.
    * In addition, the amount of time to be spent in the current state before this transition occurs should be specified.
    * [continuous-time models only]
+   *
    * @param i      Index of choice containing transition to execute
    * @param offset Index within choice of transition to execute
    * @param time   Time for transition
@@ -810,7 +833,7 @@ public class SimulatorEngine extends PrismComponent {
   private void initialiseStrategy() {
     if (strategy != null) {
       State state = getCurrentState();
-      int   s     = reachableStates.indexOf(state);
+      int s = reachableStates.indexOf(state);
       strategy.initialise(s);
     }
   }
@@ -820,8 +843,8 @@ public class SimulatorEngine extends PrismComponent {
    */
   private void updateStrategy() {
     if (strategy != null) {
-      State  state  = getCurrentState();
-      int    s      = reachableStates.indexOf(state);
+      State state = getCurrentState();
+      int s = reachableStates.indexOf(state);
       Object action = path.getPreviousModuleOrAction();
       strategy.update(action, s);
     }
@@ -967,7 +990,7 @@ public class SimulatorEngine extends PrismComponent {
    */
   public String getTransitionAction(int i, int offset) throws PrismException {
     TransitionList transitions = getTransitionList();
-    int            a           = transitions.getTransitionModuleOrActionIndex(transitions.getTotalIndexOfTransition(i, offset));
+    int a = transitions.getTransitionModuleOrActionIndex(transitions.getTotalIndexOfTransition(i, offset));
     return a < 0 ? null : modulesFile.getSynch(a - 1);
   }
 
@@ -1083,6 +1106,7 @@ public class SimulatorEngine extends PrismComponent {
   /**
    * Get the total reward accumulated so far
    * (includes reward for previous transition but no state reward for current (final) state).
+   *
    * @param rsi Reward structure index
    */
   public double getTotalCumulativeRewardForPath(int rsi) {
@@ -1105,6 +1129,7 @@ public class SimulatorEngine extends PrismComponent {
   /**
    * Get the value of a variable at a given step of the path.
    * (Not applicable for on-the-fly paths)
+   *
    * @param step     Step index (0 = initial state/step of path)
    * @param varIndex The index of the variable to look up
    */
@@ -1115,6 +1140,7 @@ public class SimulatorEngine extends PrismComponent {
   /**
    * Get the state at a given step of the path.
    * (Not applicable for on-the-fly paths)
+   *
    * @param step Step index (0 = initial state/step of path)
    */
   public State getStateOfPathStep(int step) {
@@ -1124,6 +1150,7 @@ public class SimulatorEngine extends PrismComponent {
   /**
    * Get a state reward for the state at a given step of the path.
    * (Not applicable for on-the-fly paths)
+   *
    * @param step Step index (0 = initial state/step of path)
    * @param rsi  Reward structure index
    */
@@ -1134,6 +1161,7 @@ public class SimulatorEngine extends PrismComponent {
   /**
    * Get the total time spent up until entering a given step of the path.
    * (Not applicable for on-the-fly paths)
+   *
    * @param step Step index (0 = initial state/step of path)
    */
   public double getCumulativeTimeUpToPathStep(int step) {
@@ -1143,6 +1171,7 @@ public class SimulatorEngine extends PrismComponent {
   /**
    * Get the total (state and transition) reward accumulated up until entering a given step of the path.
    * (Not applicable for on-the-fly paths)
+   *
    * @param step Step index (0 = initial state/step of path)
    * @param rsi  Reward structure index
    */
@@ -1153,6 +1182,7 @@ public class SimulatorEngine extends PrismComponent {
   /**
    * Get the time spent in a state at a given step of the path.
    * (Not applicable for on-the-fly paths)
+   *
    * @param step Step index (0 = initial state/step of path)
    */
   public double getTimeSpentInPathStep(int step) {
@@ -1162,6 +1192,7 @@ public class SimulatorEngine extends PrismComponent {
   /**
    * Get the index of the choice taken for a given step.
    * (Not applicable for on-the-fly paths)
+   *
    * @param step Step index (0 = initial state/step of path)
    */
   public int getChoiceOfPathStep(int step) {
@@ -1173,6 +1204,7 @@ public class SimulatorEngine extends PrismComponent {
    * If i>0, then i-1 is the index of an action label (0-indexed)
    * If i<0, then -i-1 is the index of a module (0-indexed)
    * (Not applicable for on-the-fly paths)
+   *
    * @param step Step index (0 = initial state/step of path)
    */
   public int getModuleOrActionIndexOfPathStep(int step) {
@@ -1182,6 +1214,7 @@ public class SimulatorEngine extends PrismComponent {
   /**
    * Get a string describing the action/module of a given step.
    * (Not applicable for on-the-fly paths)
+   *
    * @param step Step index (0 = initial state/step of path)
    */
   public String getModuleOrActionOfPathStep(int step) {
@@ -1190,6 +1223,7 @@ public class SimulatorEngine extends PrismComponent {
 
   /**
    * Get a transition reward associated with a given step.
+   *
    * @param step Step index (0 = initial state/step of path)
    * @param rsi  Reward structure index
    */
@@ -1221,6 +1255,7 @@ public class SimulatorEngine extends PrismComponent {
   /**
    * Export the current path to a file in a simple space separated format.
    * (Not applicable for on-the-fly paths)
+   *
    * @param file File to which the path should be exported to (mainLog if null).
    */
   public void exportPath(File file) throws PrismException {
@@ -1230,6 +1265,7 @@ public class SimulatorEngine extends PrismComponent {
   /**
    * Export the current path to a file in a simple space separated format.
    * (Not applicable for on-the-fly paths)
+   *
    * @param file        File to which the path should be exported to (mainLog if null).
    * @param showRewards Export reward information with the path
    */
@@ -1240,6 +1276,7 @@ public class SimulatorEngine extends PrismComponent {
   /**
    * Export the current path to a file.
    * (Not applicable for on-the-fly paths)
+   *
    * @param file      File to which the path should be exported to (mainLog if null).
    * @param timeCumul Show time in cumulative form?
    * @param colSep    String used to separate columns in display
@@ -1252,6 +1289,7 @@ public class SimulatorEngine extends PrismComponent {
   /**
    * Export the current path to a file.
    * (Not applicable for on-the-fly paths)
+   *
    * @param file        File to which the path should be exported to (mainLog if null).
    * @param timeCumul   Show time in cumulative form?
    * @param showRewards Export reward information with the path
@@ -1285,6 +1323,7 @@ public class SimulatorEngine extends PrismComponent {
 
   /**
    * Plot the current path on a Graph.
+   *
    * @param graphModel Graph on which to plot path
    */
   public void plotPath(Graph graphModel) throws PrismException {
@@ -1354,6 +1393,7 @@ public class SimulatorEngine extends PrismComponent {
    * initial state is used, selecting randomly (each time) if there are more than one.
    * Returns a Result object, except in case of error, where an Exception is thrown.
    * Note: All constants in the model/property files must have already been defined.
+   *
    * @param modulesFile    Model for simulation, constants defined
    * @param propertiesFile Properties file containing property to check, constants defined
    * @param expr           The property to check
@@ -1364,7 +1404,7 @@ public class SimulatorEngine extends PrismComponent {
   public Object modelCheckSingleProperty(ModulesFile modulesFile, PropertiesFile propertiesFile, Expression expr, State initialState, long maxPathLength,
                                          SimulationMethod simMethod) throws PrismException {
     ArrayList<Expression> exprs;
-    Object                res[];
+    Object res[];
 
     // Just do this via the 'multiple properties' method
     exprs = new ArrayList<Expression>();
@@ -1384,6 +1424,7 @@ public class SimulatorEngine extends PrismComponent {
    * Returns an array of results, some of which may be Exception objects if there were errors.
    * In the case of an error which affects all properties, an exception is thrown.
    * Note: All constants in the model/property files must have already been defined.
+   *
    * @param modulesFile    Model for simulation, constants defined
    * @param propertiesFile Properties file containing property to check, constants defined
    * @param exprs          The properties to check
@@ -1406,9 +1447,9 @@ public class SimulatorEngine extends PrismComponent {
     mainLog.println("Simulation parameters: max path length=" + maxPathLength);
 
     // Add the properties to the simulator (after a check that they are valid)
-    Object[] results         = new Object[exprs.size()];
-    int[]    indices         = new int[exprs.size()];
-    int      validPropsCount = 0;
+    Object[] results = new Object[exprs.size()];
+    int[] indices = new int[exprs.size()];
+    int validPropsCount = 0;
     for (int i = 0; i < exprs.size(); i++) {
       try {
         checkPropertyForSimulation(exprs.get(i));
@@ -1500,6 +1541,7 @@ public class SimulatorEngine extends PrismComponent {
    * some of which may be Exception objects if there were errors.
    * In the case of an error which affects all properties, an exception is thrown.
    * Note: All constants in the model file must have already been defined.
+   *
    * @param modulesFile        Model for simulation, constants defined
    * @param propertiesFile     Properties file containing property to check, constants defined
    * @param undefinedConstants Details of constant ranges defining the experiment
@@ -1513,7 +1555,7 @@ public class SimulatorEngine extends PrismComponent {
    */
   public void modelCheckExperiment(ModulesFile modulesFile, PropertiesFile propertiesFile, UndefinedConstants undefinedConstants,
                                    ResultsCollection resultsCollection, Expression expr, State initialState, long maxPathLength, SimulationMethod simMethod) throws PrismException,
-                                                                                                                                                                    InterruptedException {
+      InterruptedException {
     // Load model into simulator
     createNewOnTheFlyPath(modulesFile);
 
@@ -1527,11 +1569,11 @@ public class SimulatorEngine extends PrismComponent {
     mainLog.println("Simulation parameters: max path length=" + maxPathLength);
 
     // Add the properties to the simulator (after a check that they are valid)
-    int      n                  = undefinedConstants.getNumPropertyIterations();
-    Values   definedPFConstants = new Values();
-    Object[] results            = new Object[n];
-    Values[] pfcs               = new Values[n];
-    int[]    indices            = new int[n];
+    int n = undefinedConstants.getNumPropertyIterations();
+    Values definedPFConstants = new Values();
+    Object[] results = new Object[n];
+    Values[] pfcs = new Values[n];
+    int[] indices = new int[n];
 
     int validPropsCount = 0;
     for (int i = 0; i < n; i++) {
@@ -1610,27 +1652,28 @@ public class SimulatorEngine extends PrismComponent {
    * Sample paths are from the specified initial state and maximum length.
    * Termination of the sampling process occurs when the SimulationMethod object
    * for all properties indicate that it is finished.
+   *
    * @param initialState  Initial state (if null, is selected randomly)
    * @param maxPathLength The maximum path length for sampling
    */
   private void doSampling(State initialState, long maxPathLength) throws PrismException {
-    int  iters;
+    int iters;
     long i;
     // Flags
-    boolean stoppedEarly          = false;
-    boolean deadlocksFound        = false;
-    boolean allDone               = false;
-    boolean allKnown              = false;
+    boolean stoppedEarly = false;
+    boolean deadlocksFound = false;
+    boolean allDone = false;
+    boolean allKnown = false;
     boolean someUnknownButBounded = false;
-    boolean shouldStopSampling    = false;
+    boolean shouldStopSampling = false;
     // Path stats
     double avgPathLength = 0;
-    long   minPathFound  = 0, maxPathFound = 0;
+    long minPathFound = 0, maxPathFound = 0;
     // Progress info
     int lastPercentageDone = 0;
-    int percentageDone     = 0;
+    int percentageDone = 0;
     // Timing info
-    long   start, stop;
+    long start, stop;
     double time_taken;
 
     // Start
@@ -1642,10 +1685,6 @@ public class SimulatorEngine extends PrismComponent {
     iters = 0;
     while (!shouldStopSampling) {
 
-      // === DOWN ==============================================================================================================================================
-      // TODO: If we are doing stratification or antithetic then `allDone` check should only be performed after all strata are taken into account
-      // TODO: Implement the actual stratification or antithetic sampling in `automaticTransition` function.
-      // ===  UP  ==============================================================================================================================================
       // See if all properties are done; if so, stop sampling
       allDone = true;
       for (Sampler sampler : propertySamplers) {
@@ -1724,7 +1763,7 @@ public class SimulatorEngine extends PrismComponent {
       mainLog.print("\nSampling complete: ");
       mainLog.print(iters + " iterations in " + time_taken + " seconds (average " + PrismUtils.formatDouble(2, time_taken / iters) + ")\n");
       mainLog.print("Path length statistics: average " + PrismUtils.formatDouble(2, avgPathLength) + ", min " + minPathFound + ", max " + maxPathFound
-                    + "\n");
+          + "\n");
     } else {
       mainLog.print(" ...\n\nSampling terminated early after " + iters + " iterations.\n");
     }
@@ -1742,7 +1781,7 @@ public class SimulatorEngine extends PrismComponent {
 
     if (stoppedEarly) {
       throw new PrismException(
-      "One or more of the properties being sampled could not be checked on a sample. Consider increasing the maximum path length");
+          "One or more of the properties being sampled could not be checked on a sample. Consider increasing the maximum path length");
     }
   }
 
