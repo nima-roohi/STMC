@@ -7,20 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="846f6b2c-a6fb-4a48-9b7d-a1527616ac99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/edu/stmc/SimulatorEngineStratified.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/simulator/method/SimulationMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/prism/Prism.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/prism/Prism.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/simulator/GenerateSimulationPath.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/simulator/GenerateSimulationPath.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/userinterface/simulator/GUISimLabelList.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/userinterface/simulator/GUISimLabelList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/userinterface/simulator/GUISimPathFormulaeList.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/userinterface/simulator/GUISimPathFormulaeList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/userinterface/simulator/GUISimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/userinterface/simulator/GUISimulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/userinterface/simulator/GUISimulatorPathTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/userinterface/simulator/GUISimulatorPathTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/userinterface/simulator/SimPathPlotThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/userinterface/simulator/SimPathPlotThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/userinterface/simulator/networking/GUISimulatorDistributionDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/prism-src/src/userinterface/simulator/networking/GUISimulatorDistributionDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/HypTestGLRT.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/HypTestGLRT.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulator/SimulatorEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulator/SimulatorEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/stmc/SimulatorEngineStratified.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/SimulatorEngineStratified.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,11 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/stmc/SimulatorEngineStratified.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="31" column="72" selection-start-line="31" selection-start-column="72" selection-end-line="31" selection-end-column="72" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state relative-caret-position="255">
+              <caret line="17" column="94" selection-start-line="17" selection-start-column="94" selection-end-line="17" selection-end-column="94" />
             </state>
           </provider>
         </entry>
@@ -188,8 +173,8 @@
     </order>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="149" />
-    <option name="y" value="27" />
+    <option name="x" value="782" />
+    <option name="y" value="344" />
     <option name="width" value="1771" />
     <option name="height" value="1020" />
   </component>
@@ -198,7 +183,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -210,19 +194,6 @@
               <item name="STMC" type="b2602c69:ProjectViewProjectNode" />
               <item name="STMC" type="462c0819:PsiDirectoryNode" />
               <item name="prism-src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="STMC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="STMC" type="462c0819:PsiDirectoryNode" />
-              <item name="prism-src" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="STMC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="STMC" type="462c0819:PsiDirectoryNode" />
-              <item name="prism-src" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="simulator" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="STMC" type="b2602c69:ProjectViewProjectNode" />
@@ -270,6 +241,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -278,7 +250,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.excludes" />
+    <property name="settings.editor.selected.configurable" value="template.copyright.formatting" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -465,9 +437,9 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="149" y="27" width="1771" height="1020" extended-state="0" />
+    <frame x="782" y="344" width="1771" height="1020" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18086956" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18068887" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -725,16 +697,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/stmc/SimulatorEngineStratified.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/stmc/SimulatorEngineStratified.java" />
     <entry file="file://$PROJECT_DIR$/src/edu/stmc/STMCConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -816,11 +779,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/edu/stmc/SimulatorEngineStratified.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="31" column="72" selection-start-line="31" selection-start-column="72" selection-end-line="31" selection-end-column="72" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="255">
+          <caret line="17" column="94" selection-start-line="17" selection-start-column="94" selection-end-line="17" selection-end-column="94" />
         </state>
       </provider>
     </entry>

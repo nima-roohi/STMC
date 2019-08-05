@@ -14,6 +14,7 @@
       <option name="lenBefore" value="100" />
       <option name="lenAfter" value="100" />
       <option name="box" value="true" />
+      <option name="filler" value="+" />
     </LanguageOptions>
   </settings>
 </component>
