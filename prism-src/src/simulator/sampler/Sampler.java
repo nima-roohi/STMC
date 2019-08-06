@@ -166,7 +166,7 @@ public abstract class Sampler
 		return sampler;
 	}
 
-	private static simulator.sampler.SamplerBoolean createSamplerForProbPathPropertySimple(Expression expr, ModulesFile mf) throws PrismException
+	private static SamplerBoolean createSamplerForProbPathPropertySimple(Expression expr, ModulesFile mf) throws PrismException
 	{
 		// Negation/parentheses
 		if (expr instanceof ExpressionUnaryOp) {

@@ -30,11 +30,11 @@ package userinterface.simulator;
 import java.awt.*;
 import javax.swing.*;
 
-import edu.stmc.SimulatorEngineStratified;
 import parser.ast.*;
 import prism.PrismException;
 import prism.PrismLangException;
 import userinterface.properties.*;
+import simulator.*;
 
 /**
  * List of labels in the simulator GUI.
@@ -47,7 +47,7 @@ public class GUISimLabelList extends JList
 	private static final Color background = new Color(202, 225, 255);
 	// Pointers to simulator and GUI
 	private GUISimulator sim;
-	private SimulatorEngineStratified engine;
+	private SimulatorEngine engine;
 	// The list of labels
 	private DefaultListModel listModel;
 

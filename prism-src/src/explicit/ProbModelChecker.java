@@ -50,6 +50,7 @@ import parser.type.TypePathBool;
 import parser.type.TypePathDouble;
 import prism.IntegerBound;
 import prism.OpRelOpBound;
+import prism.Prism;
 import prism.PrismComponent;
 import prism.PrismException;
 import prism.PrismLog;

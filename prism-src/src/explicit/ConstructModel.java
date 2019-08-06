@@ -38,6 +38,7 @@ import parser.Values;
 import parser.VarList;
 import prism.ModelGenerator;
 import prism.ModelType;
+import prism.Prism;
 import prism.PrismComponent;
 import prism.PrismException;
 import prism.PrismLog;

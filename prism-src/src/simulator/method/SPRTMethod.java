@@ -161,7 +161,7 @@ public final class SPRTMethod extends SimulationMethod
 	@Override
 	public void computeMissingParameterAfterSim()
 	{
-		// Nothing to do (this is done in isCompleted)
+		// Nothing to do (this is done in shouldStopNow)
 	}
 
 	@Override

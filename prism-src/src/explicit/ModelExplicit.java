@@ -39,6 +39,7 @@ import parser.State;
 import parser.Values;
 import parser.VarList;
 import prism.ModelType;
+import prism.Prism;
 import prism.PrismException;
 import prism.PrismFileLog;
 import prism.PrismLog;

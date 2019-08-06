@@ -71,7 +71,7 @@ import prism.PrismSettingsListener;
 import prism.PrismUtils;
 import prism.UndefinedConstants;
 import simulator.PathFullInfo;
-import edu.stmc.SimulatorEngineStratified;
+import simulator.SimulatorEngine;
 import simulator.networking.SimulatorNetworkHandler;
 import userinterface.GUIConstantsPicker;
 import userinterface.GUIPlugin;
@@ -99,7 +99,7 @@ public class GUISimulator extends GUIPlugin implements MouseListener, ListSelect
 	private GUIMultiModel guiMultiModel;
 
 	/** Underlying simulator */
-	private SimulatorEngineStratified engine;
+	private SimulatorEngine engine;
 
 	// GUI components
 	private UpdateTableModel updateTableModel;

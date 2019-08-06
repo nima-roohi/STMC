@@ -30,6 +30,7 @@ import java.io.FileNotFoundException;
 import java.util.List;
 
 import prism.Model;
+import prism.Prism;
 import prism.PrismException;
 import prism.PrismLog;
 import dv.IntegerVector;

@@ -29,6 +29,7 @@ package parser;
 import java.util.ArrayList;
 import java.io.*;
 
+import prism.Prism;
 import prism.PrismLangException;
 
 public class PrismSyntaxHighlighter

@@ -43,6 +43,7 @@ import parser.ast.DeclarationIntUnbounded;
 import parser.ast.Expression;
 import prism.ModelType;
 import prism.OptionsIntervalIteration;
+import prism.Prism;
 import prism.PrismComponent;
 import prism.PrismException;
 import prism.PrismFileLog;

@@ -93,6 +93,7 @@ import parser.type.Type;
 import parser.type.TypeDouble;
 import parser.type.TypeInt;
 import parser.type.TypeInterval;
+import prism.Prism;
 import prism.PrismException;
 import prism.PrismSettings;
 import prism.PrismSettingsListener;

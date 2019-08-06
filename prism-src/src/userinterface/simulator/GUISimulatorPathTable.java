@@ -34,7 +34,7 @@ import java.awt.*;
 import java.awt.geom.*;
 import java.awt.font.*;
 
-import edu.stmc.SimulatorEngineStratified;
+import simulator.*;
 import userinterface.util.*;
 import userinterface.simulator.SimulationView.*;
 
@@ -51,7 +51,7 @@ public class GUISimulatorPathTable extends GUIGroupedTable
 	private LoopIndicatorListModel loopIndicatorModel;
 
 	/** Creates a new instance of GUISimulatorPathTable */
-	public GUISimulatorPathTable(GUISimulator simulator, GUISimulatorPathTableModel ptm, SimulatorEngineStratified engine)
+	public GUISimulatorPathTable(GUISimulator simulator, GUISimulatorPathTableModel ptm, SimulatorEngine engine)
 	{
 		super(ptm);
 		this.ptm = ptm;

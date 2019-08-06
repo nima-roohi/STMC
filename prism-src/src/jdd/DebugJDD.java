@@ -37,6 +37,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 
+import prism.Prism;
 import prism.PrismException;
 import prism.PrismFileLog;
 import prism.PrismLog;

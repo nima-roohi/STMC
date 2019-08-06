@@ -24,7 +24,7 @@ import java.util.Arrays;
 /** Supported hypothesis tests (not all of them might be supported in every scenario) */
 public enum NameHypTest {
   SPRT,
-  GSPRT,
+  GLRT,
   TSPRT;
 
   /** @return String representation of all possible values of this type */

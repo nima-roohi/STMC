@@ -2366,13 +2366,13 @@ public class PrismCL implements PrismModelListener {
           if (STMCConfig.minIters != null)
             mainLog.printWarning("Option -miniter is not used for the SPRT method and is being ignored");
           return new HypTestSPRT();
-        case GSPRT:
-          // if (STMCConfig.minIters == null) throw new PrismException("Parameter minIters is not specified for GSPRT");
-          // hyp = new GSPRT(threshold, alpha, beta, STMCConfig.minIters);
+        case GLRT:
+          // if (STMCConfig.minIters == null) throw new PrismException("Parameter minIters is not specified for GLRT");
+          // hyp = new GLRT(threshold, alpha, beta, STMCConfig.minIters);
           // if (STMCConfig.gamma != null)
-          //   mainLog.printWarning("Option -gamma is not used for the GSPRT method and is being ignored");
+          //   mainLog.printWarning("Option -gamma is not used for the GLRT method and is being ignored");
           // if (STMCConfig.delta != null)
-          //   mainLog.printWarning("Option -delta is not used for the GSPRT method and is being ignored");
+          //   mainLog.printWarning("Option -delta is not used for the GLRT method and is being ignored");
           break;
         case TSPRT:
           // if (STMCConfig.gamma == null) throw new PrismException("Parameter gamma is not specified for TSPRT");
@@ -2490,7 +2490,7 @@ public class PrismCL implements PrismModelListener {
                     "                                 (otherwise, PRISM will complain and terminate immediately).");
     mainLog.println("-smp_method (or -sm) <name> .... Simulation method. One of " + NameSmplMethod.valuesToString() + ".");
     mainLog.println("-hyp_test_method (or -htm) <name>Hypothesis testing method to use. One of " + NameHypTest.valuesToString() + ".");
-    mainLog.println("-min_iter <n> .................. Minimum number of iterations (when GSPRT is used).");
+    mainLog.println("-min_iter <n> .................. Minimum number of iterations (when GLRT is used).");
     mainLog.println("-strata_size (or -ss) <list> ... Size of strata (when stratification is used). Comma separated non-empty list of positive\n" +
                     "                                 integers. Length specifies how many steps each stratum determines. Multiplication of values\n" +
                     "                                 specifies number of strata. Individual values define number of strata at each step. As an\n" +

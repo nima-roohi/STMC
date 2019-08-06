@@ -30,17 +30,17 @@ package userinterface.simulator;
 import java.awt.*;
 import javax.swing.*;
 
-import edu.stmc.SimulatorEngineStratified;
 import parser.ast.*;
 import prism.PrismException;
 import userinterface.properties.*;
+import simulator.*;
 
 @SuppressWarnings("serial")
 public class GUISimPathFormulaeList extends JList<GUISimPathFormulaeList.SimPathFormula>
 {
 
 	private GUISimulator guiSim;
-	private SimulatorEngineStratified engine;
+	private SimulatorEngine engine;
 	private DefaultListModel<SimPathFormula> listModel;
 
 	/** Creates a new instance of GUISimPathFormulaeList */

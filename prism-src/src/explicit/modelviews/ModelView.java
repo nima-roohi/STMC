@@ -41,6 +41,7 @@ import explicit.PredecessorRelation;
 import explicit.StateValues;
 import parser.State;
 import parser.VarList;
+import prism.Prism;
 import prism.PrismComponent;
 import prism.PrismException;
 import prism.PrismFileLog;

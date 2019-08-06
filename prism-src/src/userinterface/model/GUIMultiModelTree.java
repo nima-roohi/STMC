@@ -76,6 +76,7 @@ import parser.type.TypeClock;
 import parser.type.TypeDouble;
 import parser.type.TypeInt;
 import prism.ModelType;
+import prism.Prism;
 import prism.PrismException;
 import userinterface.GUIPrism;
 

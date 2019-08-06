@@ -33,6 +33,7 @@ import java.util.*;
 import parser.State;
 import parser.ast.*;
 import prism.ModelType;
+import prism.Prism;
 import prism.PrismComponent;
 import prism.PrismException;
 import prism.PrismLog;

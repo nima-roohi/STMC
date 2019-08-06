@@ -4,6 +4,7 @@
  + Copyright (C) 2019                                                                             +
  + Authors:                                                                                       +
  +   Nima Roohi <nroohi@ucsd.edu> (University of California San Diego)                            +
+ +   Yu Wang <yu.wang094@duke.edu> (Duke University)                                              +
  +                                                                                                +
  + This program is free software: you can redistribute it and/or modify it under the terms        +
  + of the GNU General Public License as published by the Free Software Foundation, either         +
@@ -132,7 +133,7 @@ final class HypTestGLRT() extends HypTest {
     n = 0
   }
 
-  override def getName: String = "GSPRT"
+  override def getName: String = "GLRT"
   override def getFullName: String = "Generalized Sequential Probability Ratio Test"
   override def getParametersString: String =
     s"threshold: $threshold, alpha: $alpha, beta: $beta, minSamples: $minSamples, LB: $LB, logL: $logL, logU: $logU, logP0: $logP0, logP1: $logP1"

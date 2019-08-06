@@ -64,8 +64,10 @@ import javax.swing.plaf.FontUIResource;
 import javax.swing.plaf.metal.MetalLookAndFeel;
 import javax.swing.plaf.metal.MetalTheme;
 
+import prism.Prism;
 //Prism Packages
 import prism.PrismException;
+import prism.PrismFileLog;
 import prism.PrismLog;
 import userinterface.util.GUIComputationEvent;
 import userinterface.util.GUIEvent;

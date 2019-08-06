@@ -44,7 +44,7 @@ class HypTestGLRTTest extends FlatSpec {
 
   private val r1000 = (1 to 1000).par
 
-  "GSPRT" should "returns SMALLER (ie rejects) very few times when lower-bound (θ) is strictly smaller than the actual probability" in {
+  "GLRT" should "returns SMALLER (ie rejects) very few times when lower-bound (θ) is strictly smaller than the actual probability" in {
     assert(50 > r1000.count(_ => test(0.40, 0.01, 0.01, LB = true) == CompResult.Binary.SMALLER))
     assert(50 > r1000.count(_ => test(0.40, 0.01, 0.20, LB = true) == CompResult.Binary.SMALLER))
     assert(50 > r1000.count(_ => test(0.40, 0.01, 0.45, LB = true) == CompResult.Binary.SMALLER))

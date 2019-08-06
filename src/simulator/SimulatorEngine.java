@@ -84,7 +84,10 @@ import java.util.List;
 public class SimulatorEngine extends PrismComponent {
   // The current parsed model + info
   private ModulesFile modulesFile;
-  private ModelType modelType;
+  // === DOWN ==================================================================================================================================================
+  // private ModelType modelType;
+  protected ModelType modelType;
+  // ===  UP  ==================================================================================================================================================
   // Variable info
   private VarList varList;
   private int numVars;
@@ -127,7 +130,10 @@ public class SimulatorEngine extends PrismComponent {
   // Updater object for model
   protected Updater updater;
   // Random number generator
-  private RandomNumberGenerator rng;
+  // === DOWN ==================================================================================================================================================
+  // private RandomNumberGenerator rng;
+  protected RandomNumberGenerator rng;
+  // ===  UP  ==================================================================================================================================================
 
   // ------------------------------------------------------------------------------
   // Basic setup
@@ -722,7 +728,11 @@ public class SimulatorEngine extends PrismComponent {
    * @param offset Index within choice of transition to execute
    * @param index  (Optionally) index of transition within whole list (-1 if unknown)
    */
-  private void executeTransition(int i, int offset, int index) throws PrismException {
+  // === DOWN ==================================================================================================================================================
+  // private
+  protected
+  // ===  UP  ==================================================================================================================================================
+  void executeTransition(int i, int offset, int index) throws PrismException {
     TransitionList transitions = getTransitionList();
     // Get corresponding choice and, if required (for full paths), calculate transition index
     Choice choice = transitions.getChoice(i);
@@ -761,7 +771,11 @@ public class SimulatorEngine extends PrismComponent {
    * @param time   Time for transition
    * @param index  (Optionally) index of transition within whole list (-1 if unknown)
    */
-  private void executeTimedTransition(int i, int offset, double time, int index) throws PrismException {
+  // === DOWN ==================================================================================================================================================
+  // private
+  protected
+  // ===  UP  ==================================================================================================================================================
+  void executeTimedTransition(int i, int offset, double time, int index) throws PrismException {
     TransitionList transitions = getTransitionList();
     // Get corresponding choice and, if required (for full paths), calculate transition index
     Choice choice = transitions.getChoice(i);
@@ -1656,7 +1670,11 @@ public class SimulatorEngine extends PrismComponent {
    * @param initialState  Initial state (if null, is selected randomly)
    * @param maxPathLength The maximum path length for sampling
    */
-  private void doSampling(State initialState, long maxPathLength) throws PrismException {
+  // === DOWN ==================================================================================================================================================
+  // private
+  protected
+  // ===  UP  ==================================================================================================================================================
+  void doSampling(State initialState, long maxPathLength) throws PrismException {
     int iters;
     long i;
     // Flags

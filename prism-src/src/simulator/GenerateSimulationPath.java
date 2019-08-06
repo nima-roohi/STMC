@@ -30,7 +30,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.stmc.SimulatorEngineStratified;
 import parser.State;
 import parser.VarList;
 import parser.ast.ModulesFile;
@@ -42,7 +41,7 @@ import userinterface.graph.Graph;
 public class GenerateSimulationPath
 {
 	// The simulator engine and a log for output
-	private SimulatorEngineStratified engine;
+	private SimulatorEngine engine;
 	private PrismLog mainLog;
 
 	// Store warnings
@@ -93,7 +92,7 @@ public class GenerateSimulationPath
 		warnings.add(msg);
 	}
 
-	public GenerateSimulationPath(SimulatorEngineStratified engine, PrismLog mainLog)
+	public GenerateSimulationPath(SimulatorEngine engine, PrismLog mainLog)
 	{
 		this.engine = engine;
 		this.mainLog = mainLog;

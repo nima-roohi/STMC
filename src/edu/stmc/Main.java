@@ -68,6 +68,7 @@ public class Main {
     "-sim",
     "-stmc",
     "-htm", "SPRT",
+    "-sm", "antithetic",
     "-alpha", "0.01",
     "-beta", "0.01",
     "-delta", "0.05",

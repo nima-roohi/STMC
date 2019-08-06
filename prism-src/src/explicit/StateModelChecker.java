@@ -69,6 +69,7 @@ import prism.Filter;
 import prism.ModelGenerator;
 import prism.ModelInfo;
 import prism.ModelType;
+import prism.Prism;
 import prism.PrismComponent;
 import prism.PrismException;
 import prism.PrismLangException;
