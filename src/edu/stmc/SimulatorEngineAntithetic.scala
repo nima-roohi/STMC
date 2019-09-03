@@ -26,7 +26,11 @@ import simulator.{Choice, SimulatorEngine}
 
 import scala.collection.{JavaConverters, mutable}
 
+/** Simulator engine for antithetic sampling */
 class SimulatorEngineAntithetic(parent: PrismComponent) extends SimulatorEngine(parent) {
+
+  require(STMCConfig.enabled)
+  require(STMCConfig.samplingMethod == NameSmplMethod.ANTITHETIC)
 
   @throws[PrismException]
   protected override def doSampling(initialState: State, maxPathLength: Long): Unit = {
@@ -113,7 +117,7 @@ class SimulatorEngineAntithetic(parent: PrismComponent) extends SimulatorEngine(
               }
             }
             // Stop when all answers are known or we have reached max path length
-            // (but don't stop yet if there are "bounded" samplers with unkown values)
+            // (but don't stop yet if there are "bounded" samplers with unknown values)
             if ((allKnown || i >= maxPathLength) && !someUnknownButBounded)
               break
             // Make a random transition

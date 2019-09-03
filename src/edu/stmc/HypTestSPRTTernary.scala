@@ -37,9 +37,9 @@ import simulator.sampler.Sampler
   *   1. Method [[init]] must be called before this test can be actually performed.
   *   1. Probabilistic guarantees in this class ignore numerical errors caused by floating point arithmetic.
   *   1. See [[HypTestSPRT]] for a comment on actual error probabilities. */
-final class HypTestTSPRT private(private[this] var lb: HypTestSPRT,
-                                 private[this] var ub: HypTestSPRT,
-                                 private[this] var LB: Boolean) extends HypTest {
+final class HypTestSPRTTernary private(private[this] var lb: HypTestSPRT,
+                                       private[this] var ub: HypTestSPRT,
+                                       private[this] var LB: Boolean) extends HypTest {
 
   /** Create an uninitialized instance of this method. */
   def this() = this(new HypTestSPRT, new HypTestSPRT, false)
@@ -62,7 +62,7 @@ final class HypTestTSPRT private(private[this] var lb: HypTestSPRT,
     *   - δ < θ
     *   - δ < 1 - θ
     * @see [[status(lb*]], [[too_close]], [[rejected]], [[failed_to_reject]] */
-  def init(threshold: Double, alpha: Double, beta: Double, gamma: Double, delta: Double, LB: Boolean = true): HypTestTSPRT = {
+  def init(threshold: Double, alpha: Double, beta: Double, gamma: Double, delta: Double, LB: Boolean = true): HypTestSPRTTernary = {
     val half_delta = delta / 2
     this.LB = LB
     if (LB) {
@@ -84,14 +84,14 @@ final class HypTestTSPRT private(private[this] var lb: HypTestSPRT,
     ub.reset()
   }
 
-  override def getName: String = "TSPRT"
+  override def getName: String = "TernarySPRT"
   override def getFullName: String = "Ternary Sequential Probability Ratio Test"
   override def getParametersString: String = s"lower-bound (${lb.getParametersString}), upper-bound (${ub.getParametersString})"
 
   override def getResultExplanation(sampler: Sampler): String =
     s"lower-bound (${lb.getResultExplanation(sampler)}), upper-bound (${ub.getResultExplanation(sampler)})"
 
-  override def clone: HypTestTSPRT = new HypTestTSPRT(lb.clone, ub.clone, LB)
+  override def clone: HypTestSPRTTernary = new HypTestSPRTTernary(lb.clone, ub.clone, LB)
 
   override def setExpression(expr: Expression): Unit =
     if (!expr.isInstanceOf[ExpressionProb])

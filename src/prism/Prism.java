@@ -32,6 +32,7 @@ package prism;
 import dv.DoubleVector;
 import edu.stmc.STMCConfig;
 import edu.stmc.SimulatorEngineAntithetic;
+import edu.stmc.SimulatorEngineStratified;
 import explicit.*;
 import hybrid.PrismHybrid;
 import jdd.JDD;
@@ -969,6 +970,11 @@ public class Prism extends PrismComponent implements PrismSettingsListener {
           case ANTITHETIC:
             theSimulator = new SimulatorEngineAntithetic(this);
             break;
+          case STRATIFIED:
+            theSimulator = new SimulatorEngineStratified(this);
+            break;
+          default:
+            throw new IllegalStateException(STMCConfig.samplingMethod + " sampling method is not handled");
         }
       else
         theSimulator = new SimulatorEngine(this);

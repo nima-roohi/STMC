@@ -83,22 +83,34 @@ import java.util.List;
  */
 public class SimulatorEngine extends PrismComponent {
   // The current parsed model + info
-  private ModulesFile modulesFile;
   // === DOWN ==================================================================================================================================================
+  // private ModulesFile modulesFile;
   // private ModelType modelType;
+  // // Variable info
+  // private VarList varList;
+  // private int numVars;
+  // // Constant definitions from model file
+  // private Values mfConstants;
+  protected ModulesFile modulesFile;
   protected ModelType modelType;
-  // ===  UP  ==================================================================================================================================================
   // Variable info
-  private VarList varList;
-  private int numVars;
+  protected VarList varList;
+  protected int numVars;
   // Constant definitions from model file
-  private Values mfConstants;
+  protected Values mfConstants;
+  // ===  UP  ==================================================================================================================================================
 
   // Objects from model checking
   // Reachable states
-  private List<State> reachableStates;
+  // === DOWN ==================================================================================================================================================
+  // private List<State> reachableStates;
+  protected List<State> reachableStates;
+  // ===  UP  ==================================================================================================================================================
   // Strategy
-  private Strategy strategy;
+  // === DOWN ==================================================================================================================================================
+  // private Strategy strategy;
+  protected Strategy strategy;
+  // ===  UP  ==================================================================================================================================================
 
   // Labels + properties info
   protected List<Expression> labels;
@@ -106,7 +118,7 @@ public class SimulatorEngine extends PrismComponent {
   // private List<Expression> properties;
   // private List<Sampler> propertySamplers;
   protected List<Expression> properties;
-  protected List<Sampler> propertySamplers;
+  public List<Sampler> propertySamplers;
   // ===  UP  ==================================================================================================================================================
 
   // Current path info
@@ -1369,7 +1381,11 @@ public class SimulatorEngine extends PrismComponent {
    * Check whether a property is suitable for approximate model checking using the simulator.
    * If yes, return null; if not, return an explanatory error message.
    */
-  private String isPropertyOKForSimulationString(Expression expr) {
+  // === DOWN ==================================================================================================================================================
+  // private
+  protected
+  // ===  UP  ==================================================================================================================================================
+  String isPropertyOKForSimulationString(Expression expr) {
     // Simulator can only be applied to P or R properties (without filters)
     if (!(expr instanceof ExpressionProb || expr instanceof ExpressionReward)) {
       if (expr instanceof ExpressionFilter) {

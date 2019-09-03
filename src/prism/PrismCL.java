@@ -1078,7 +1078,7 @@ public class PrismCL implements PrismModelListener {
   private int[] parseIntArray(final String[] args, final int i, final String sw, final Integer min /*inclusive*/, final Integer max/*inclusive*/) {
     if (i >= args.length)
       errorAndExit("Missing value for -" + sw + " switch");
-    String[] parts = sw.split(",");
+    String[] parts = args[i].split(",");
     int[]    res   = new int[parts.length];
     for (int j = 0; j < parts.length; j++) {
       try {
@@ -2358,6 +2358,8 @@ public class PrismCL implements PrismModelListener {
         throw new PrismException("Parameter hyp_test_method (htm) is not specified");
       if (STMCConfig.alpha == null) throw new PrismException("Parameter alpha is not specified for SPRT");
       if (STMCConfig.beta == null) throw new PrismException("Parameter beta is not specified for SPRT");
+      if(STMCConfig.samplingMethod == NameSmplMethod.STRATIFIED && STMCConfig.strataSizes == null)
+        throw new PrismException("Option strata_size (ss) has to be specified when stratification is used");
       switch (STMCConfig.hypTestMethod) {
         case SPRT:
           if (STMCConfig.delta == null) throw new PrismException("Parameter delta is not specified for SPRT");

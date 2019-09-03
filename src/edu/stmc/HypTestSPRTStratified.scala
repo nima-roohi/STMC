@@ -37,7 +37,7 @@ import simulator.sampler.Sampler
   * values of parameters as defined by the book] provides at least the same protection against wrong decisions as the test corresponding to [the theoretical
   * values of parameters].'' The section continues with a nice and very accessible discussion on number of samples required for the test.
   * @constructor Create an uninitialized instance of this method. */
-final class HypTestSPRT() extends HypTest {
+final class HypTestSPRTStratified extends HypTest {
 
   // Input parameters
   private[this] var threshold: Double = _
@@ -71,7 +71,7 @@ final class HypTestSPRT() extends HypTest {
     *   - δ < θ
     *   - δ < 1 - θ
     * @see [[status(logT*]], [[rejected]], [[failed_to_reject]]*/
-  def init(threshold: Double, alpha: Double, beta: Double, delta: Double, LB: Boolean = true): HypTestSPRT = {
+  def init(threshold: Double, alpha: Double, beta: Double, delta: Double, LB: Boolean = true): HypTestSPRTStratified = {
     require(0 < threshold && threshold < 1, s"Invalid threshold $threshold")
     require(0 < alpha && alpha < 0.5, s"Invalid type I error $alpha")
     require(0 < beta && beta < 0.5, s"Invalid type II error $beta")
@@ -103,7 +103,7 @@ final class HypTestSPRT() extends HypTest {
     q1 = Math.log(ub / lb)
     assert(java.lang.Double.isFinite(q0), s"q0 ($q0) is not a finite number")
     assert(java.lang.Double.isFinite(q1), s"q1 ($q1) is not a finite number")
-    assert(logL + q0 > logL, s"logL ($logL) is too much smaller than q0 ($q0)")
+    assert(logL - q0 > logL, s"logL ($logL) is too much smaller than q0 ($q0)")
     assert(logU - q1 < logU, s"logU ($logU) is too much bigger than q1 ($q1)")
 
     this
@@ -113,7 +113,7 @@ final class HypTestSPRT() extends HypTest {
                     alpha: Double, beta: Double, delta: Double,
                     LB: Boolean,
                     q0: Double, q1: Double,
-                    logL: Double, logU: Double, logT: Double): HypTestSPRT = {
+                    logL: Double, logU: Double, logT: Double): HypTestSPRTStratified = {
     this.threshold = threshold
     this.alpha = alpha
     this.beta = beta
@@ -132,14 +132,14 @@ final class HypTestSPRT() extends HypTest {
   // SimulationMethod Methods
 
   override def reset(): Unit = logT = 0
-  override def getName: String = "SPRT"
-  override def getFullName: String = "Sequential Probability Ratio Test"
+  override def getName: String = "SSPRT"
+  override def getFullName: String = "Stratified Sequential Probability Ratio Test"
   override def getParametersString: String =
     s"threshold: $threshold, alpha: $alpha, beta: $beta, delta: $delta, LB: $LB, q0: $q0, q1: $q1, logL: $logL, logU: $logU"
 
   override def getResultExplanation(sampler: Sampler): String = s"$getParametersString, logT: $logT"
 
-  override def clone: HypTestSPRT = new HypTestSPRT().reset(threshold, alpha, beta, delta, LB, q0, q1, logL, logU, logT)
+  override def clone: HypTestSPRTStratified = new HypTestSPRTStratified().reset(threshold, alpha, beta, delta, LB, q0, q1, logL, logU, logT)
 
   override def setExpression(expr: Expression): Unit =
     if (!expr.isInstanceOf[ExpressionProb])
