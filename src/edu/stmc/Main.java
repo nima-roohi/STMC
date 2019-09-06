@@ -23,15 +23,74 @@ import prism.PrismCL;
 import prism.PrismException;
 
 import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class Main {
   private static int repeat       = 1;
   private static int processCount = 1;
+
+  private static double timeAvg    = 0;
+  private static double timeM2     = 0;
+  private static double samplesAvg = 0;
+  private static double samplesM2  = 0;
+  private static int    iters      = 0;
+
+  private static void actualUpdateTotal(final double time, final double samples) {
+    iters++;
+    {
+      double delta = time - timeAvg;
+      timeAvg += delta / iters;
+      double delta2 = time - timeAvg;
+      timeM2 += delta * delta2;
+    }
+    {
+      double delta = samples - samplesAvg;
+      samplesAvg += delta / iters;
+      double delta2 = samples - samplesAvg;
+      samplesM2 += delta * delta2;
+    }
+  }
+  private static final int port = 56437;
+  private static Thread updater = new Thread(() -> {
+    try {
+      try (ServerSocket ss = new ServerSocket(port)) {
+        while(true) {
+          Socket          s       = ss.accept();
+          DataInputStream in      = new DataInputStream(s.getInputStream());
+          double          time    = in.readDouble();
+          double          samples = in.readDouble();
+          s.close();
+          actualUpdateTotal(time, samples);
+        }
+      }
+    } catch (IOException e) {
+      // silent
+    }
+  });
+  static {
+    updater.setDaemon(true);
+    updater.start();
+  }
+
+  public static void updateTotal(final double time, final double samples) {
+    try {
+      Socket           s   = new Socket("localhost", port);
+      DataOutputStream out = new DataOutputStream(s.getOutputStream());
+      out.writeDouble(time);
+      out.writeDouble(samples);
+      out.flush();
+      out.close();
+    } catch (IOException e) {
+      throw new Error(e);
+    }
+  }
 
   /**
    * Remove the first character of the input string if it is equal to '-'. If the first character is removed then
@@ -54,28 +113,40 @@ public class Main {
     }
     return null;
   }
-
   public static void main(String[] args) throws PrismException, IOException, InterruptedException {
-    args = new String[]{
-    // "/opt/prism-4.5/prism-examples/dice/dice.pm",
-    // "-pf", "P>0.1 [ F s=7 & d=1 ]",
-    "/Users/nima/Dropbox/Research/Yu/codes/prism-4.4/examples/egl/egl.pm",
-    "-const", "L=8",
-    "-const", "N=12",
-    "-pf", "P<0.51[F<100!kA&kB]",
-    // "-mt", "8",
-    // "-repeat", "40",
-    "-sim",
-    "-stmc",
-    "-htm", "SPRT",
-    "-sm", "stratified",
-    "-ss", "2,2",
-    "-alpha", "0.01",
-    "-beta", "0.01",
-    "-delta", "0.05",
-    // "-gamma", "0.1",
-    // "-miniter", "10",
-    };
+    // args = new String[]{
+    // // "/opt/prism-4.5/prism-examples/dice/dice.pm",
+    // // "-pf", "P=? [ F s=7 & d=1 ]", // actual probability: 0.16666650772094727
+    //
+    // // "/Users/nima/Dropbox/Research/Yu/codes/prism-4.4/examples/egl/egl.pm",
+    // // "-const", "L=8",
+    // // "-const", "N=12",
+    // // "-pf", "P=?[F<100!kA&kB]",
+    //
+    // "/Users/nima/Dropbox/Research/Yu/codes/prism-4.4/examples/brp/brp.pm",
+    // "-const", "MAX=15",
+    // "-const", "N=4096",
+    // "-pf", "P<0.39[F<100s=3]", // actual probability: 0.38371680610076186
+    // // "-mtbdd",
+    //
+    // "-sim",
+    // "-repeat", "10",
+    // // "-mt", "6",
+    //
+    // // "-simmethod","sprt",
+    // // "-simconf","0.001",
+    // // "-simwidth","0.001",
+    //
+    // "-stmc",
+    // "-htm", "SSPRT",
+    // "-sm", "antithetic",
+    // "-ss", "4096",
+    // "-alpha", "0.001",
+    // "-beta", "0.001",
+    // "-delta", "0.001",
+    // "-min_iter", "5",
+    // "-gamma", "0.001",
+    // };
 
     /* We support two hidden arguments:
      * 1. -repeat <n> can be used to repeat the test multiple times. It is useful for testing statistical verification
@@ -154,7 +225,7 @@ public class Main {
         "-Djava.library.path=/opt/prism-4.5/lib " +
         "-Dfile.encoding=UTF-8 " +
         "-classpath " +
-        "/Users/nima/Git/Codes/Java/stmc/out/production/stmc:/opt/java/scala-2.12.8/lib/scala-library.jar:/opt/java/scala-2.12.8/lib/scala-swing_2.12-2.0.3.jar:/opt/java/scala-2.12.8/lib/scala-reflect.jar:/opt/java/scala-2.12.8/lib/scala-parser-combinators_2.12-1.0.7.jar:/opt/java/scala-2.12.8/lib/scala-xml_2.12-1.0.6.jar:/opt/prism-4.5/lib/prism.jar:/opt/prism-4.5/lib/colt.jar:/opt/prism-4.5/lib/epsgraphics.jar:/opt/prism-4.5/lib/jas.jar:/opt/prism-4.5/lib/jcommon.jar:/opt/prism-4.5/lib/jfreechart.jar:/opt/prism-4.5/lib/log4j.jar:/opt/prism-4.5/lib/lpsolve55j.jar:/opt/prism-4.5/lib/nailgun-server.jar:/opt/prism-4.5/lib/jhoafparser.jar:/opt/java/libs/scalatest_2.12-3.0.5.jar:/opt/java/libs/scalactic_2.12-3.0.5.jar " +
+        "/Users/nima/Git/Codes/STMC/out/production/stmc:/opt/java/scala-2.12.8/lib/scala-library.jar:/opt/java/scala-2.12.8/lib/scala-swing_2.12-2.0.3.jar:/opt/java/scala-2.12.8/lib/scala-reflect.jar:/opt/java/scala-2.12.8/lib/scala-parser-combinators_2.12-1.0.7.jar:/opt/java/scala-2.12.8/lib/scala-xml_2.12-1.0.6.jar:/opt/prism-4.5/lib/prism.jar:/opt/prism-4.5/lib/colt.jar:/opt/prism-4.5/lib/epsgraphics.jar:/opt/prism-4.5/lib/jas.jar:/opt/prism-4.5/lib/jcommon.jar:/opt/prism-4.5/lib/jfreechart.jar:/opt/prism-4.5/lib/log4j.jar:/opt/prism-4.5/lib/lpsolve55j.jar:/opt/prism-4.5/lib/nailgun-server.jar:/opt/prism-4.5/lib/jhoafparser.jar:/opt/java/libs/scalatest_2.12-3.0.5.jar:/opt/java/libs/scalactic_2.12-3.0.5.jar " +
         "prism.PrismCL";
       final String[] prismCmds = prismCmd.split("\\s+");
       for (int i = 0; i < prismCmds.length; i++)
@@ -203,6 +274,13 @@ public class Main {
         });
       }
       pool.shutdown();
+      pool.awaitTermination(10000, TimeUnit.DAYS);
     }
+
+    if (repeat > 1) {
+      System.out.print("Time: average=" + timeAvg + ", standard-error=" + Math.sqrt(timeM2 / (iters - 1)) / repeat);
+      System.out.println("\nSamples: average=" + samplesAvg + ", standard-error=" + Math.sqrt(samplesM2 / (iters - 1)) / repeat);
+    }
+
   }
 }

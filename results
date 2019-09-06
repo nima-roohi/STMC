@@ -1,0 +1,13 @@
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+java.lang.UnsatisfiedLinkError: /opt/prism-4.5/lib/libprismsparse.dylib: dlopen(/opt/prism-4.5/lib/libprismsparse.dylib, 1): Library not loaded: ../../lib/libodd.dylib
+
+java.lang.UnsatisfiedLinkError: /opt/prism-4.5/lib/libprismsparse.dylib: dlopen(/opt/prism-4.5/lib/libprismsparse.dylib, 1): Library not loaded: ../../lib/libodd.dylib
+
+java.lang.UnsatisfiedLinkError: /opt/prism-4.5/lib/libprismsparse.dylib: dlopen(/opt/prism-4.5/lib/libprismsparse.dylib, 1): Library not loaded: ../../lib/libodd.dylib
+
+java.lang.UnsatisfiedLinkError: /opt/prism-4.5/lib/libprismsparse.dylib: dlopen(/opt/prism-4.5/lib/libprismsparse.dylib, 1): Library not loaded: ../../lib/libodd.dylib
+
+java.lang.UnsatisfiedLinkError: /opt/prism-4.5/lib/libprismsparse.dylib: dlopen(/opt/prism-4.5/lib/libprismsparse.dylib, 1): Library not loaded: ../../lib/libodd.dylib
+
+
+

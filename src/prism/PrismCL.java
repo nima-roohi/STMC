@@ -37,10 +37,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 import common.StackTraceHelper;
-import edu.stmc.HypTestSPRT;
-import edu.stmc.NameHypTest;
-import edu.stmc.NameSmplMethod;
-import edu.stmc.STMCConfig;
+import edu.stmc.*;
 import parser.Values;
 import parser.ast.*;
 import prism.Prism.StrategyExportType;
@@ -1159,8 +1156,16 @@ public class PrismCL implements PrismModelListener {
         else if (STMCConfig.enabled && "beta".equals(sw)) STMCConfig.beta = parseDouble(args, ++i, sw, 0.0, 0.5);
         else if (STMCConfig.enabled && "gamma".equals(sw)) STMCConfig.gamma = parseDouble(args, ++i, sw, 0.0, 0.5);
         else if (STMCConfig.enabled && "delta".equals(sw)) STMCConfig.delta = parseDouble(args, ++i, sw, 0.0, 0.5);
-        else if (STMCConfig.enabled && ("ss".equals(sw) || "strata_size".equals(sw)))
+        else if (STMCConfig.enabled && ("ss".equals(sw) || "strata_size".equals(sw))) {
           STMCConfig.strataSizes = parseIntArray(args, ++i, sw, 1, null);
+          STMCConfig.strataTotalSize = 1;
+          for(int size : STMCConfig.strataSizes) {
+            if(STMCConfig.strataTotalSize * (long)size > Integer.MAX_VALUE)
+              throw new PrismException("Strata size is too big");
+            STMCConfig.strataTotalSize *= size;
+          }
+
+        }
         else if (STMCConfig.enabled && ("sm".equals(sw) || "smp_method".equals(sw)))
           STMCConfig.samplingMethod = parseSamplingMethod(args, ++i, sw);
         else if (STMCConfig.enabled && ("htm".equals(sw) || "hyp_test_method".equals(sw)))
@@ -2356,33 +2361,31 @@ public class PrismCL implements PrismModelListener {
       }
       if (STMCConfig.hypTestMethod == null)
         throw new PrismException("Parameter hyp_test_method (htm) is not specified");
-      if (STMCConfig.alpha == null) throw new PrismException("Parameter alpha is not specified for SPRT");
-      if (STMCConfig.beta == null) throw new PrismException("Parameter beta is not specified for SPRT");
+      if (STMCConfig.alpha == null) throw new PrismException("Parameter alpha is not specified for " + STMCConfig.hypTestMethod);
+      if (STMCConfig.beta == null) throw new PrismException("Parameter beta is not specified for " + STMCConfig.hypTestMethod);
       if(STMCConfig.samplingMethod == NameSmplMethod.STRATIFIED && STMCConfig.strataSizes == null)
         throw new PrismException("Option strata_size (ss) has to be specified when stratification is used");
       switch (STMCConfig.hypTestMethod) {
         case SPRT:
           if (STMCConfig.delta == null) throw new PrismException("Parameter delta is not specified for SPRT");
-          if (STMCConfig.gamma != null)
-            mainLog.printWarning("Option -gamma is not used for the SPRT method and is being ignored");
-          if (STMCConfig.minIters != null)
-            mainLog.printWarning("Option -miniter is not used for the SPRT method and is being ignored");
+          if (STMCConfig.gamma    != null) mainLog.printWarning("Option -gamma is not used for the SPRT method and is being ignored");
+          if (STMCConfig.minIters != null) mainLog.printWarning("Option -min_iter is not used for the SPRT method and is being ignored");
           return new HypTestSPRT();
-        case GLRT:
-          // if (STMCConfig.minIters == null) throw new PrismException("Parameter minIters is not specified for GLRT");
-          // hyp = new GLRT(threshold, alpha, beta, STMCConfig.minIters);
-          // if (STMCConfig.gamma != null)
-          //   mainLog.printWarning("Option -gamma is not used for the GLRT method and is being ignored");
-          // if (STMCConfig.delta != null)
-          //   mainLog.printWarning("Option -delta is not used for the GLRT method and is being ignored");
-          break;
         case TSPRT:
-          // if (STMCConfig.gamma == null) throw new PrismException("Parameter gamma is not specified for TSPRT");
-          // if (STMCConfig.delta == null) throw new PrismException("Parameter delta is not specified for TSPRT");
-          // hyp = new TSPRT(threshold, alpha, beta, STMCConfig.gamma, STMCConfig.delta);
-          // if (STMCConfig.minIters != null)
-          //   mainLog.printWarning("Option -minIters is not used for the TSPRT method and is being ignored");
-          break;
+          if (STMCConfig.delta == null) throw new PrismException("Parameter delta is not specified for TSPRT");
+          if (STMCConfig.gamma == null) throw new PrismException("Parameter gamma is not specified for TSPRT");
+          if (STMCConfig.minIters != null) mainLog.printWarning("Option -min_iter is not used for the TSPRT method and is being ignored");
+          return new HypTestSPRTTernary();
+        case GLRT:
+          if (STMCConfig.minIters == null) throw new PrismException("Parameter min_iter is not specified for GLRT");
+          if (STMCConfig.gamma    != null) mainLog.printWarning("Option -gamma is not used for the GLRT method and is being ignored");
+          if (STMCConfig.delta    != null) mainLog.printWarning("Option -delta is not used for the GLRT method and is being ignored");
+          return new HypTestGLRT();
+        case SSPRT:
+          if (STMCConfig.minIters == null) throw new PrismException("Parameter min_iter is not specified for SSPRT");
+          if (STMCConfig.delta    == null) throw new PrismException("Parameter delta is not specified for SSPRT");
+          if (STMCConfig.gamma    != null) mainLog.printWarning("Option -gamma is not used for the SSPRT method and is being ignored");
+          return new HypTestSPRTStratified();
       }
       throw new Error("Must be unreachable");
     }

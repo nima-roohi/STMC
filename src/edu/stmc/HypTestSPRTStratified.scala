@@ -23,20 +23,13 @@ import parser.ast.{Expression, ExpressionProb}
 import prism.PrismException
 import simulator.sampler.Sampler
 
-/** Sequential Probability Ratio Test
+/** Stratified Sequential Probability Ratio Test
   *
   * @note
-  *   1. See ''Sequential Analysis, by Abraham Wald'' ([[https://isbnsearch.org/isbn/9780486615790 ISBN 9780486615790]] or
-  * [[https://isbnsearch.org/isbn/9780486439129 ISBN 9780486439129]]) for a reference to this method.
+  *   1. See ''Statistical verification of PCTL using antithetic and stratified samples''
+  *   ([[https://doi.org/10.1007/s10703-019-00339-8 DOI: 10.1007/s10703-019-00339-8]]) for a reference to this method.
   *   1. Method [[init]] must be called before this test can be actually performed.
-  *   1. Probabilistic guarantees in this class ignore numerical errors caused by floating point arithmetic.
-  *   1. Strictly speaking, the error guarantees in this implementation are incorrect. They are exactly as defined in ''Section 3.3 - Determination of
-  * Constants A and B in Practice'' of the reference book. Let α' and β' be the actual error probabilities. According to the Wald, ''... the amount by which α'
-  * may exceed α', or β' may exceed β is very small and can be neglected for all practical purposes. Moreover, ... shows that at least one of the inequalities
-  * α' ≤ α or β' ≤ β must hold exactly.'' The author then continues ''In other words, for all practical purposes the test corresponding to [the practical
-  * values of parameters as defined by the book] provides at least the same protection against wrong decisions as the test corresponding to [the theoretical
-  * values of parameters].'' The section continues with a nice and very accessible discussion on number of samples required for the test.
-  * @constructor Create an uninitialized instance of this method. */
+  *   1. Probabilistic guarantees in this class ignore numerical errors caused by floating point arithmetic. */
 final class HypTestSPRTStratified extends HypTest {
 
   // Input parameters
@@ -47,13 +40,16 @@ final class HypTestSPRTStratified extends HypTest {
   private[this] var LB: Boolean = _
 
   // Computed initially based on the input parameters
-  private[this] var q0: Double = _
-  private[this] var q1: Double = _
   private[this] var logL: Double = _
   private[this] var logU: Double = _
 
   // Test statistic
-  private[this] var logT = 0.0
+  // https://en.wikipedia.org/wiki/Algorithms_for_calculating_variance
+  private[this] var mean: Double = _ // mean accumulates the mean of the entire data set
+  private[this] var M2: Double = _ // M2 aggregates the squared distance from the mean
+  private[this] var iter: Int = _
+  @inline
+  private[this] def variance = M2 / (iter-1) // sample variance (iter must be at least 2)
 
   /** Initialize or reset this to a hypothesis test in which the null hypothesis is `p = θ - δ` and the alternative hypothesis is `p = θ + δ`, where `p` is
     * the actual probability, `θ` is the input threshold, and `δ` is the half of the size of indifference region.
@@ -76,10 +72,8 @@ final class HypTestSPRTStratified extends HypTest {
     require(0 < alpha && alpha < 0.5, s"Invalid type I error $alpha")
     require(0 < beta && beta < 0.5, s"Invalid type II error $beta")
     require(0 < delta && delta < 0.5, s"Invalid indifference parameter $delta")
-    val lb = threshold - delta
-    val ub = threshold + delta
-    require(0 < lb, s"Invalid threshold ($threshold) and/or indifference parameter ($delta)")
-    require(ub < 1, s"Invalid threshold ($threshold) and/or indifference parameter ($delta)")
+    require(0 < threshold - delta, s"Invalid threshold ($threshold) and/or indifference parameter ($delta)")
+    require(1 > threshold + delta, s"Invalid threshold ($threshold) and/or indifference parameter ($delta)")
     this.threshold = threshold
     this.delta = delta
 
@@ -93,18 +87,12 @@ final class HypTestSPRTStratified extends HypTest {
     }
 
     // Lower and upper bounds after which the null hypothesis won't/will be rejected
-    logL = Math.log(this.beta / (1 - this.alpha))
-    logU = Math.log((1 - this.beta) / this.alpha)
+    logL = -Math.log((1 - this.alpha) / this.beta) / (2 * delta)
+    logU = +Math.log((1 - this.beta) / this.alpha) / (2 * delta)
     assert(logL < 0, s"Lower-bound log is not negative " + logL)
     assert(logU > 0, s"Upper-bound log is not positive " + logU)
 
-    // Step sizes for negative/positive samples
-    q0 = Math.log((1 - ub) / (1 - lb))
-    q1 = Math.log(ub / lb)
-    assert(java.lang.Double.isFinite(q0), s"q0 ($q0) is not a finite number")
-    assert(java.lang.Double.isFinite(q1), s"q1 ($q1) is not a finite number")
-    assert(logL - q0 > logL, s"logL ($logL) is too much smaller than q0 ($q0)")
-    assert(logU - q1 < logU, s"logU ($logU) is too much bigger than q1 ($q1)")
+    iter = 0
 
     this
   }
@@ -112,18 +100,18 @@ final class HypTestSPRTStratified extends HypTest {
   private def reset(threshold: Double,
                     alpha: Double, beta: Double, delta: Double,
                     LB: Boolean,
-                    q0: Double, q1: Double,
-                    logL: Double, logU: Double, logT: Double): HypTestSPRTStratified = {
+                    logL: Double, logU: Double,
+                    mean: Double, M2: Double, iter: Int): HypTestSPRTStratified = {
     this.threshold = threshold
     this.alpha = alpha
     this.beta = beta
     this.delta = delta
     this.LB = LB
-    this.q0 = q0
-    this.q1 = q1
     this.logL = logL
     this.logU = logU
-    this.logT = logT
+    this.mean = mean
+    this.M2 = M2
+    this.iter = iter
     this
   }
 
@@ -131,15 +119,19 @@ final class HypTestSPRTStratified extends HypTest {
 
   // SimulationMethod Methods
 
-  override def reset(): Unit = logT = 0
-  override def getName: String = "SSPRT"
+  override def reset(): Unit = {
+    mean = 0
+    M2 = 0
+    iter = 0
+  }
+  override def getName: String = "StratifiedSPRT"
   override def getFullName: String = "Stratified Sequential Probability Ratio Test"
   override def getParametersString: String =
-    s"threshold: $threshold, alpha: $alpha, beta: $beta, delta: $delta, LB: $LB, q0: $q0, q1: $q1, logL: $logL, logU: $logU"
+    s"threshold: $threshold, alpha: $alpha, beta: $beta, delta: $delta, LB: $LB, logL: $logL, logU: $logU, strata-sizes: ${STMCConfig.strataSizes.mkString("[", ",", "]")}, strata-size: ${STMCConfig.strataTotalSize}"
 
-  override def getResultExplanation(sampler: Sampler): String = s"$getParametersString, logT: $logT"
+  override def getResultExplanation(sampler: Sampler): String = s"$getParametersString, mean: $mean, M2: $M2, iter: $iter"
 
-  override def clone: HypTestSPRTStratified = new HypTestSPRTStratified().reset(threshold, alpha, beta, delta, LB, q0, q1, logL, logU, logT)
+  override def clone: HypTestSPRTStratified = new HypTestSPRTStratified().reset(threshold, alpha, beta, delta, LB, logL, logU, mean, M2, iter)
 
   override def setExpression(expr: Expression): Unit =
     if (!expr.isInstanceOf[ExpressionProb])
@@ -151,10 +143,7 @@ final class HypTestSPRTStratified extends HypTest {
       init(threshold, STMCConfig.alpha, STMCConfig.beta, STMCConfig.delta, op.isLowerBound)
     }
 
-  override def shouldStopNow(iters: Int, sampler: Sampler): Boolean = {
-    update(sampler.getCurrentValue.asInstanceOf[Boolean])
-    completed
-  }
+  override def shouldStopNow(iters: Int, sampler: Sampler): Boolean = iters >= STMCConfig.minIters && completed
 
   override def getMissingParameter: java.lang.Integer =
   // `SimulationMethod` requires the return type to be either an Integer or a Double object.
@@ -169,25 +158,51 @@ final class HypTestSPRTStratified extends HypTest {
   // HypTest Methods
 
   /** @note No restriction on total number of samples. */
-  override def update(positive: Boolean): Unit = if (positive) logT += q1 else logT += q0
+  override def update(positive: Boolean): Unit = update(1, 0)
 
+  val v = Array.ofDim[Int](STMCConfig.strataTotalSize + 1)
   /** @note
-    *   1. Requires `positive >= 0` and `negative >= 0`.
-    *   1. No restriction on total number of samples */
-  override def update(positive: Int, negative: Int): Unit = logT += positive * q1 + negative * q0
+    *   1. Requires `positive >= 0`.
+    *   1. No restriction on total number of samples
+    *   1. Value of `negative` is ignored (it is assumed to be [[STMCConfig.strataTotalSize]] - `positive`) */
+  override def update(positive: Int, negative: Int): Unit = {
+    // See https://en.wikipedia.org/wiki/Algorithms_for_calculating_variance
+    iter += 1
+
+    val m = positive / STMCConfig.strataTotalSize.toDouble
+    val delta = m - mean
+    mean += delta / iter
+    val delta2 = m - mean
+    M2 += delta * delta2
+
+//    val Y = positive
+//    val r = iter
+//    val blockSize = STMCConfig.strataTotalSize.toDouble
+//    v(Y) += 1
+//    var mu = 0.0
+//    var sig2 = 0.0
+//    for (i <- v.indices) mu += i * v(i) / iter.toDouble / blockSize
+//    for (i <- v.indices) sig2 += (i * i) / (blockSize * blockSize) * v(i) / iter
+//    sig2 -= mu * mu
+//    sig2 /= r
+//    mean = mu
+//    M2 = sig2*(iter-1)
+  }
 
   /** @note The following probabilistic guarantees are made (if [[LB]] is `true` then swap `α` and `β`):
     *   1. If the actual probability is at most  `θ - δ` then the probability of returning [[CompResult.Binary.LARGER]]  is at most `α`.
     *   1. If the actual probability is at least `θ + δ` then the probability of returning [[CompResult.Binary.SMALLER]] is at most `β`.
     * @see [[init]] where all the parameters are set */
-  def status(logT: Double): CompResult.Binary =
-    if (logT <= logL) CompResult.Binary.SMALLER
-    else if (logT >= logU) CompResult.Binary.LARGER
+  def status(mean: Double, M2: Double, iter: Int): CompResult.Binary = {
+//    println((variance * logL / iter) + "   " + (variance * logU / iter))
+    if (mean - threshold < variance * logL / iter) CompResult.Binary.SMALLER
+    else if (mean - threshold > variance * logU / iter) CompResult.Binary.LARGER
     else CompResult.Binary.UNDECIDED
+  }
 
   /** Same as [[status(logT*]], but input parameter is taken from the current instance */
   @inline
-  def status: CompResult.Binary = status(logT)
+  def status: CompResult.Binary = status(mean, M2, iter)
 
   override def completed: Boolean = status ne CompResult.Binary.UNDECIDED
 

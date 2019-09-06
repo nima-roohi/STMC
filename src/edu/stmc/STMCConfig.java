@@ -29,8 +29,9 @@ public class STMCConfig {
   public static Double gamma = null;
   public static Double delta = null;
 
-  public static int[]   strataSizes = null;
   public static Integer minIters    = null;
+  public static int[]   strataSizes = null;
+  public static int     strataTotalSize = 0;
 
   public static NameSmplMethod samplingMethod = null;
   public static NameHypTest    hypTestMethod  = null;

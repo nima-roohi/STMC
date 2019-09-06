@@ -103,7 +103,7 @@ final class HypTestSPRT() extends HypTest {
     q1 = Math.log(ub / lb)
     assert(java.lang.Double.isFinite(q0), s"q0 ($q0) is not a finite number")
     assert(java.lang.Double.isFinite(q1), s"q1 ($q1) is not a finite number")
-    assert(logL + q0 > logL, s"logL ($logL) is too much smaller than q0 ($q0)")
+    assert(logL + q0 < logL, s"logL ($logL) is too much smaller than q0 ($q0)")
     assert(logU - q1 < logU, s"logU ($logU) is too much bigger than q1 ($q1)")
 
     this

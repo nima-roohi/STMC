@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="stmc">
+    <output-path>$PROJECT_DIR$/out/artifacts/stmc</output-path>
+    <root id="archive" name="stmc.jar">
+      <element id="module-output" name="STMC" />
+      <element id="extracted-dir" path="/opt/java/scala-2.12.8/lib/scala-library.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="/opt/java/scala-2.12.8/lib/scala-reflect.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="/opt/java/scala-2.12.8/lib/scala-parser-combinators_2.12-1.0.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="/opt/java/scala-2.12.8/lib/scala-xml_2.12-1.0.6.jar" path-in-jar="/" />
+      <element id="library" level="application" name="scala-sdk-2.12.8" />
+    </root>
+  </artifact>
+</component>

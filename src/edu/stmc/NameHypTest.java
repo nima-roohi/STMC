@@ -25,7 +25,8 @@ import java.util.Arrays;
 public enum NameHypTest {
   SPRT,
   GLRT,
-  TSPRT;
+  TSPRT,
+  SSPRT;
 
   /** @return String representation of all possible values of this type */
   public static String valuesToString() {

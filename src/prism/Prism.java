@@ -30,9 +30,7 @@
 package prism;
 
 import dv.DoubleVector;
-import edu.stmc.STMCConfig;
-import edu.stmc.SimulatorEngineAntithetic;
-import edu.stmc.SimulatorEngineStratified;
+import edu.stmc.*;
 import explicit.*;
 import hybrid.PrismHybrid;
 import jdd.JDD;
@@ -968,7 +966,9 @@ public class Prism extends PrismComponent implements PrismSettingsListener {
             theSimulator = new SimulatorEngine(this);
             break;
           case ANTITHETIC:
-            theSimulator = new SimulatorEngineAntithetic(this);
+            STMCConfig.strataSizes = new int[]{2};
+            STMCConfig.strataTotalSize = 2;
+            theSimulator = new SimulatorEngineStratified(this);
             break;
           case STRATIFIED:
             theSimulator = new SimulatorEngineStratified(this);

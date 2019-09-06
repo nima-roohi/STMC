@@ -103,20 +103,44 @@
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="edu">edu</a></dd></dl></div>
     </li><li class="current-entities indented2">
                         <span class="separator"></span>
-                        <a class="class" href="HypTest.html" title="Same as SimulationMethod, with a few default implementations and a few more functions that help testing the class without using Sampler or Expression."></a>
-                        <a href="HypTest.html" title="Same as SimulationMethod, with a few default implementations and a few more functions that help testing the class without using Sampler or Expression.">HypTest</a>
+                        <a class="class" href="HypTest.html" title="Same as SimulationMethod from PRISM, with a few default implementations and a few more functions that help testing the class without using Sampler or Expression."></a>
+                        <a href="HypTest.html" title="Same as SimulationMethod from PRISM, with a few default implementations and a few more functions that help testing the class without using Sampler or Expression.">HypTest</a>
                       </li><li class="current-entities indented2">
                         <span class="separator"></span>
                         <a class="class" href="" title="Generalized Likelihood Ratio Tests"></a>
                         <a href="" title="Generalized Likelihood Ratio Tests">HypTestGLRT</a>
                       </li><li class="current-entities indented2">
                         <span class="separator"></span>
+                        <a class="class" href="HypTestGLRTTest.html" title=""></a>
+                        <a href="HypTestGLRTTest.html" title="">HypTestGLRTTest</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
                         <a class="class" href="HypTestSPRT.html" title="Sequential Probability Ratio Test"></a>
                         <a href="HypTestSPRT.html" title="Sequential Probability Ratio Test">HypTestSPRT</a>
                       </li><li class="current-entities indented2">
                         <span class="separator"></span>
-                        <a class="class" href="HypTestTSPRT.html" title="Ternary Sequential Probability Ratio Test"></a>
-                        <a href="HypTestTSPRT.html" title="Ternary Sequential Probability Ratio Test">HypTestTSPRT</a>
+                        <a class="class" href="HypTestSPRTStratified.html" title="Stratified Sequential Probability Ratio Test"></a>
+                        <a href="HypTestSPRTStratified.html" title="Stratified Sequential Probability Ratio Test">HypTestSPRTStratified</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="class" href="HypTestSPRTTernary.html" title="Ternary Sequential Probability Ratio Test"></a>
+                        <a href="HypTestSPRTTernary.html" title="Ternary Sequential Probability Ratio Test">HypTestSPRTTernary</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="class" href="HypTestSPRTTest.html" title=""></a>
+                        <a href="HypTestSPRTTest.html" title="">HypTestSPRTTest</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="class" href="HypTestTSPRTTest.html" title=""></a>
+                        <a href="HypTestTSPRTTest.html" title="">HypTestTSPRTTest</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="class" href="SimulatorEngineAntithetic.html" title="Simulator engine for antithetic sampling"></a>
+                        <a href="SimulatorEngineAntithetic.html" title="Simulator engine for antithetic sampling">SimulatorEngineAntithetic</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="class" href="SimulatorEngineStratified.html" title="Simulator engine for stratified sampling"></a>
+                        <a href="SimulatorEngineStratified.html" title="Simulator engine for stratified sampling">SimulatorEngineStratified</a>
                       </li>
               </ul>
             </div>
@@ -348,8 +372,8 @@ parameter is for example 10<sup><sup>-7</sup></sup>.</li></ol></span></dd></dl><
         <span class="name">computeMissingParameterAfterSim</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       
-      <p class="shortcomment cmt">Compute the missing parameter (typically there are multiple parameters, one of which can be left free) *after* simulation (sometimes the parameter
-cannot be determined before simulation).</p><div class="fullcomment"><div class="comment cmt"><p>Compute the missing parameter (typically there are multiple parameters, one of which can be left free) *after* simulation (sometimes the parameter
+      <p class="shortcomment cmt">Compute the missing parameter (typically there are multiple parameters, one of which can be left free) <i>after</i> simulation (sometimes the parameter
+cannot be determined before simulation).</p><div class="fullcomment"><div class="comment cmt"><p>Compute the missing parameter (typically there are multiple parameters, one of which can be left free) <i>after</i> simulation (sometimes the parameter
 cannot be determined before simulation). This method may get called multiple times.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="HypTest.html" class="extype" name="edu.stmc.HypTest">HypTest</a> → SimulationMethod</dd><dt>Note</dt><dd><span class="cmt"><p>Default implementation is added in STMC and it does nothing.</p></span></dd></dl></div>
     </li><li name="edu.stmc.HypTest#computeMissingParameterBeforeSim" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -367,7 +391,7 @@ cannot be determined before simulation). This method may get called multiple tim
         <span class="name">computeMissingParameterBeforeSim</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       
-      <p class="shortcomment cmt">Compute the missing parameter (typically there are multiple parameters, one of which can be left free) *before* simulation.</p><div class="fullcomment"><div class="comment cmt"><p>Compute the missing parameter (typically there are multiple parameters, one of which can be left free) *before* simulation. This is not always
+      <p class="shortcomment cmt">Compute the missing parameter (typically there are multiple parameters, one of which can be left free) <i>before</i> simulation.</p><div class="fullcomment"><div class="comment cmt"><p>Compute the missing parameter (typically there are multiple parameters, one of which can be left free) <i>before</i> simulation. This is not always
 possible - sometimes the parameter cannot be determined until afterwards. This method may get called multiple times.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="HypTest.html" class="extype" name="edu.stmc.HypTest">HypTest</a> → SimulationMethod</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
@@ -376,6 +400,22 @@ possible - sometimes the parameter cannot be determined until afterwards. This m
     </span>)</span>
               
         </dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><span class="extype" name="PrismException"><code>PrismException</code></span> if the parameters set so far are invalid.</p></span></dd><dt>Note</dt><dd><span class="cmt"><p>Default implementation is added in STMC and it does nothing.</p></span></dd></dl></div>
+    </li><li name="simulator.method.SimulationMethod#copy" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="copy():simulator.method.SimulationMethod"></a><a id="copy():SimulationMethod"></a>
+      <span class="permalink">
+      <a href="../../edu/stmc/HypTestGLRT.html#copy():simulator.method.SimulationMethod" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">copy</span><span class="params">()</span><span class="result">: <span class="extype" name="simulator.method.SimulationMethod">SimulationMethod</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>SimulationMethod</dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
       <span class="permalink">
@@ -476,8 +516,8 @@ possible - sometimes the parameter cannot be determined until afterwards. This m
         <span class="name">getMissingParameter</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Integer">Integer</span></span>
       </span>
       
-      <p class="shortcomment cmt">Get the missing (computed) parameter.</p><div class="fullcomment"><div class="comment cmt"><p>Get the missing (computed) parameter. If it has not already been computed and this can be done *before* simulation, calling this method will trigger
-its computation. If it can only be done *after*, an exception is thrown.
+      <p class="shortcomment cmt">Get the missing (computed) parameter.</p><div class="fullcomment"><div class="comment cmt"><p>Get the missing (computed) parameter. If it has not already been computed and this can be done <i>before</i> simulation, calling this method will trigger
+its computation. If it can only be done <i>after</i>, an exception is thrown.
 </p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the computed missing parameter (as an Integer or Double object)</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTestGLRT">HypTestGLRT</a> → <a href="HypTest.html" class="extype" name="edu.stmc.HypTest">HypTest</a> → SimulationMethod</dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><span class="extype" name="PrismException"><code>PrismException</code></span> if missing parameter is not and cannot be computed yet or if the parameters set so far are invalid.</p></span></dd></dl></div>
     </li><li name="edu.stmc.HypTestGLRT#getName" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getName():String"></a>
@@ -527,9 +567,9 @@ its computation. If it can only be done *after*, an exception is thrown.
       </span>
       
       <p class="shortcomment cmt">Get an indication of progress so far for simulation, i.e.</p><div class="fullcomment"><div class="comment cmt"><p>Get an indication of progress so far for simulation, i.e. an approximate value for the percentage of work (samples) done. The value is a multiple of 10
-in the range [0,100]. This estimate may not be linear (e.g. for CI/ACI where 'iterations' is computed). It is assumed that this method is called *after*
+in the range [0,100]. This estimate may not be linear (e.g. for CI/ACI where 'iterations' is computed). It is assumed that this method is called <i>after</i>
 the call to isCompleted(...).
-</p></div><dl class="paramcmts block"><dt class="param">iters</dt><dd class="cmt"><p>The number of iterations (samples) done so far</p></dd><dt class="param">sampler</dt><dd class="cmt"><p>The Sampler object for this simulation</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="HypTest.html" class="extype" name="edu.stmc.HypTest">HypTest</a> → SimulationMethod</dd><dt>Note</dt><dd><span class="cmt"><p></p><ol class="decimal"><li>The iteration count may exceed that dictated by this method, e.g. if multiple properties are being simulated simultaneously.</li><li>Default implementation is added in STMC and it returns 0.</li></ol></span></dd></dl></div>
+</p></div><dl class="paramcmts block"><dt class="param">iters</dt><dd class="cmt"><p>The number of iterations (samples) done so far</p></dd><dt class="param">sampler</dt><dd class="cmt"><p>The <span class="extype" name="Sampler">Sampler</span> object for this simulation</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="HypTest.html" class="extype" name="edu.stmc.HypTest">HypTest</a> → SimulationMethod</dd><dt>Note</dt><dd><span class="cmt"><p></p><ol class="decimal"><li>The iteration count may exceed that dictated by this method, e.g. if multiple properties are being simulated simultaneously.</li><li>Default implementation is added in STMC and it returns 0.</li></ol></span></dd></dl></div>
     </li><li name="edu.stmc.HypTest#getResult" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getResult(sampler:simulator.sampler.Sampler):AnyRef"></a><a id="getResult(Sampler):AnyRef"></a>
       <span class="permalink">
@@ -570,7 +610,7 @@ properties, respectively.
       </span>
       
       <p class="shortcomment cmt">Get an explanation for the result of the simulation as a string.</p><div class="fullcomment"><div class="comment cmt"><p>Get an explanation for the result of the simulation as a string.
-</p></div><dl class="paramcmts block"><dt class="param">sampler</dt><dd class="cmt"><p>The Sampler object for this simulation (e.g. to get mean)</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTestGLRT">HypTestGLRT</a> → <a href="HypTest.html" class="extype" name="edu.stmc.HypTest">HypTest</a> → SimulationMethod</dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><span class="extype" name="PrismException"><code>PrismException</code></span> if we can't get a result for some reason.</p></span></dd></dl></div>
+</p></div><dl class="paramcmts block"><dt class="param">sampler</dt><dd class="cmt"><p>The <span class="extype" name="Sampler">Sampler</span> object for this simulation (e.g. to get mean)</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTestGLRT">HypTestGLRT</a> → <a href="HypTest.html" class="extype" name="edu.stmc.HypTest">HypTest</a> → SimulationMethod</dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><span class="extype" name="PrismException"><code>PrismException</code></span> if we can't get a result for some reason.</p></span></dd></dl></div>
     </li><li name="scala.AnyRef#hashCode" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
       <span class="permalink">
@@ -733,7 +773,8 @@ another run of approximate verification.</p></div><dl class="attributes block"> 
         <span class="name">setExpression</span><span class="params">(<span name="expr">expr: <span class="extype" name="parser.ast.Expression">Expression</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       
-      <p class="shortcomment cmt">Set the Expression (property) that simulation is going to be used to approximate.</p><div class="fullcomment"><div class="comment cmt"><p>Set the Expression (property) that simulation is going to be used to approximate. It will be either an ExpressionProb or ExpressionReward object.
+      <p class="shortcomment cmt">Set the Expression (property) that simulation is going to be used to approximate.</p><div class="fullcomment"><div class="comment cmt"><p>Set the Expression (property) that simulation is going to be used to approximate. It will be either an <span class="extype" name="parser.ast.ExpressionProb">parser.ast.ExpressionProb</span> or
+<span class="extype" name="parser.ast.ExpressionReward">parser.ast.ExpressionReward</span> object.
 All constants should have already been defined and replaced.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTestGLRT">HypTestGLRT</a> → <a href="HypTest.html" class="extype" name="edu.stmc.HypTest">HypTest</a> → SimulationMethod</dd><dt>Exceptions thrown</dt><dd><span class="cmt"><p><span class="extype" name="PrismException"><code>PrismException</code></span> if property is inappropriate somehow for this method.</p></span></dd></dl></div>
     </li><li name="edu.stmc.HypTestGLRT#shouldStopNow" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -752,9 +793,9 @@ All constants should have already been defined and replaced.
       </span>
       
       <p class="shortcomment cmt">Determine whether or not simulation should stop now, based on the stopping criteria of this method, and the current state of simulation (the number of
-iterations so far and the corresponding Sampler object).</p><div class="fullcomment"><div class="comment cmt"><p>Determine whether or not simulation should stop now, based on the stopping criteria of this method, and the current state of simulation (the number of
-iterations so far and the corresponding Sampler object).
-</p></div><dl class="paramcmts block"><dt class="param">iters</dt><dd class="cmt"><p>The number of iterations (samples) done so far</p></dd><dt class="param">sampler</dt><dd class="cmt"><p>The Sampler object for this simulation</p></dd><dt>returns</dt><dd class="cmt"><p>true if the simulation should stop, false otherwise</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTestGLRT">HypTestGLRT</a> → <a href="HypTest.html" class="extype" name="edu.stmc.HypTest">HypTest</a> → SimulationMethod</dd><dt>Note</dt><dd><span class="cmt"><p>This method may continue being called after <code>true</code> is returned, e.g. if multiple properties are being simulated simultaneously.</p></span></dd></dl></div>
+iterations so far and the corresponding <span class="extype" name="Sampler">Sampler</span> object).</p><div class="fullcomment"><div class="comment cmt"><p>Determine whether or not simulation should stop now, based on the stopping criteria of this method, and the current state of simulation (the number of
+iterations so far and the corresponding <span class="extype" name="Sampler">Sampler</span> object).
+</p></div><dl class="paramcmts block"><dt class="param">iters</dt><dd class="cmt"><p>The number of iterations (samples) done so far</p></dd><dt class="param">sampler</dt><dd class="cmt"><p>The <span class="extype" name="Sampler">Sampler</span> object for this simulation</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the simulation should stop, <code>false</code> otherwise</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTestGLRT">HypTestGLRT</a> → <a href="HypTest.html" class="extype" name="edu.stmc.HypTest">HypTest</a> → SimulationMethod</dd><dt>Note</dt><dd><span class="cmt"><p>This method may continue being called after <code>true</code> is returned, e.g. if multiple properties are being simulated simultaneously.</p></span></dd></dl></div>
     </li><li name="edu.stmc.HypTestGLRT#status" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="status:edu.stmc.CompResult.Binary"></a><a id="status:Binary"></a>
       <span class="permalink">
