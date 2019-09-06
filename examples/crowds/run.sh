@@ -10,17 +10,17 @@ run_example()
 {
   repeat=2
   echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
-  timeout 30m $PRISM $1 -pf $2 -simwidth $3 -simconf $4 -mtbdd    | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model checking" ; echo
-  timeout 30m $PRISM $1 -pf $2 -simwidth $3 -simconf $4 -sparse   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model checking" ; echo
-  timeout 30m $PRISM $1 -pf $2 -simwidth $3 -simconf $4 -hybrid   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model checking" ; echo
-  timeout 30m $PRISM $1 -pf $2 -simwidth $3 -simconf $4 -explicit | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model checking" ; echo
-  timeout 30m $PRISM $1 -pf $2 -simwidth $3 -simconf $4 -exact    | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model checking" ; echo
+  timeout 30m $PRISM $1 -pf $2 -simwidth $3 -simconf $4 -mtbdd    | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+  timeout 30m $PRISM $1 -pf $2 -simwidth $3 -simconf $4 -sparse   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+  timeout 30m $PRISM $1 -pf $2 -simwidth $3 -simconf $4 -hybrid   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+  timeout 30m $PRISM $1 -pf $2 -simwidth $3 -simconf $4 -explicit | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+  timeout 30m $PRISM $1 -pf $2 -simwidth $3 -simconf $4 -exact    | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
 
   echo 'PRISM SPRT'
   $PRISM $1 -pf $2 -sim -simmethod sprt -simconf $3 -simwidth $4 -repeat $repeat            -mt 1                                                                                 | grep -E 'Result:|seconds|Time: average|Samples: average'
 
   echo
-  echo 'independent'
+  echo 'STMC SPRT'
   $PRISM $1 -pf $2 -sim -stmc -smp_method independent -hyp_test_method SPRT -repeat $repeat -mt 1                 -alpha $3 -beta $3 -delta $4                                    | grep -E 'Result:|seconds|Time: average|Samples: average'
 
   echo
