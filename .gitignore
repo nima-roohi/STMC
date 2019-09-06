@@ -9,3 +9,6 @@ hs_err_pid*
 
 # PRISM Source Files
 /prism-src
+
+# Artifact, so they can run it without compiling it
+!/out/artifacts
