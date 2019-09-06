@@ -12,43 +12,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="846f6b2c-a6fb-4a48-9b7d-a1527616ac99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/stmc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/nima.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/nima.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/STMC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/STMC.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/bib/bib2json.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/bib/pubs.bib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/bib/pubs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/bib/roohi_StatisticalVerificationToyota_2017" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/bib/wang_MoriZwanzigMITLBased_2015" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/bib/wang_StabilityAnalysisSwitched_2017" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/bib/wang_StabilityLinearAutonomous_2014" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/bib/wang_StatisticalVerificationDynamical_2015" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/bib/wang_StatisticalVerificationPCTL_2018" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/bib/wang_VerifyingContinuoustimeStochastic_2016" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-scala/edu/stmc/HypTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/edu/stmc/HypTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-scala/edu/stmc/HypTestGLRT.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/edu/stmc/HypTestGLRT.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-scala/edu/stmc/HypTestSPRT.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/edu/stmc/HypTestSPRT.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-scala/edu/stmc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/edu/stmc/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-scala/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs-scala/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/prism/Prism.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/prism/PrismCL.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/simulator/SimulatorEngine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/prism-src/src/simulator/method/SimulationMethod.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/HypTestSPRT.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/HypTestSPRT.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/HypTestSPRTAntithetic.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/HypTestSPRTStratified.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/HypTestSPRTStratified.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/NameHypTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/NameHypTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/STMCConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/STMCConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/SimulatorEngineAntithetic.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/SimulatorEngineStratified.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/prism/Prism.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/prism/Prism.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/prism/PrismCL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/prism/PrismCL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulator/SimulatorEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulator/SimulatorEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/crowds/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/examples/crowds/run.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/egl/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/examples/egl/run.sh" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

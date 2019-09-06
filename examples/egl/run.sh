@@ -7,7 +7,7 @@ export LD_LIBRARY_PATH=/opt/prism-4.5/lib
 PRISM="java -Xmx1g -Xss4M -Djava.library.path=/opt/prism-4.5/lib -classpath ./out/production/stmc:./out/artifacts/stmc/stmc.jar:/opt/prism-4.5/lib/prism.jar:/opt/prism-4.5/classes:/opt/prism-4.5:/opt/prism-4.5/lib/pepa.zip:/opt/prism-4.5/lib/* edu.stmc.Main"
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-  TIMEOUT=timout
+  TIMEOUT=timeout
 elif [[ "$OSTYPE" == "darwin"* ]]; then
   TIMEOUT=gtimout
 else
