@@ -225,7 +225,7 @@ public class Main {
         "-Djava.library.path=/opt/prism-4.5/lib " +
         "-Dfile.encoding=UTF-8 " +
         "-classpath " +
-        "/Users/nima/Git/Codes/STMC/out/production/stmc:/opt/java/scala-2.12.8/lib/scala-library.jar:/opt/java/scala-2.12.8/lib/scala-swing_2.12-2.0.3.jar:/opt/java/scala-2.12.8/lib/scala-reflect.jar:/opt/java/scala-2.12.8/lib/scala-parser-combinators_2.12-1.0.7.jar:/opt/java/scala-2.12.8/lib/scala-xml_2.12-1.0.6.jar:/opt/prism-4.5/lib/prism.jar:/opt/prism-4.5/lib/colt.jar:/opt/prism-4.5/lib/epsgraphics.jar:/opt/prism-4.5/lib/jas.jar:/opt/prism-4.5/lib/jcommon.jar:/opt/prism-4.5/lib/jfreechart.jar:/opt/prism-4.5/lib/log4j.jar:/opt/prism-4.5/lib/lpsolve55j.jar:/opt/prism-4.5/lib/nailgun-server.jar:/opt/prism-4.5/lib/jhoafparser.jar:/opt/java/libs/scalatest_2.12-3.0.5.jar:/opt/java/libs/scalactic_2.12-3.0.5.jar " +
+        "./out/production/stmc:./out/artifacts/stmc/stmc.jar:/opt/java/scala-2.12.8/lib/scala-library.jar:/opt/java/scala-2.12.8/lib/scala-swing_2.12-2.0.3.jar:/opt/java/scala-2.12.8/lib/scala-reflect.jar:/opt/java/scala-2.12.8/lib/scala-parser-combinators_2.12-1.0.7.jar:/opt/java/scala-2.12.8/lib/scala-xml_2.12-1.0.6.jar:/opt/prism-4.5/lib/prism.jar:/opt/prism-4.5/lib/colt.jar:/opt/prism-4.5/lib/epsgraphics.jar:/opt/prism-4.5/lib/jas.jar:/opt/prism-4.5/lib/jcommon.jar:/opt/prism-4.5/lib/jfreechart.jar:/opt/prism-4.5/lib/log4j.jar:/opt/prism-4.5/lib/lpsolve55j.jar:/opt/prism-4.5/lib/nailgun-server.jar:/opt/prism-4.5/lib/jhoafparser.jar:/opt/java/libs/scalatest_2.12-3.0.5.jar:/opt/java/libs/scalactic_2.12-3.0.5.jar " +
         "prism.PrismCL";
       final String[] prismCmds = prismCmd.split("\\s+");
       for (int i = 0; i < prismCmds.length; i++)
