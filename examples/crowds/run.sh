@@ -8,7 +8,7 @@ PRISM="java -Xmx1g -Xss4M -Djava.library.path=/opt/prism-4.5/lib -classpath ./ou
 
 run_example()
 {
-  repeat=2
+  repeat=50
   echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
   timeout 30m $PRISM $1 -pf $2 -simwidth $3 -simconf $4 -mtbdd    | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
   timeout 30m $PRISM $1 -pf $2 -simwidth $3 -simconf $4 -sparse   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
