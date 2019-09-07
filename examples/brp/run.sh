@@ -1,5 +1,5 @@
 # Run this file using the following command from terminal:
-# nohup ./examples/brp/run.sh > ./examples/brp/res &
+# ./examples/brp/run.sh > ./examples/brp/res
 
 if [[ -z "${PRISM_HOME}" ]]; then
   PRISM_HOME="/opt/prism-4.5"
