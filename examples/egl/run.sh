@@ -1,5 +1,5 @@
 # Run this file using the following command from terminal:
-# ./examples/egl/run.sh > ./examples/egl/res
+# ./examples/egl/run.sh > ./examples/egl/res 2>&1
 
 if [[ -z "${PRISM_HOME}" ]]; then
   PRISM_HOME="/opt/prism-4.5"

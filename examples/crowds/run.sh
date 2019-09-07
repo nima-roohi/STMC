@@ -1,5 +1,5 @@
 # Run this file using the following command from terminal:
-# ./examples/crowds/run.sh > ./examples/crowds/res
+# ./examples/crowds/run.sh > ./examples/crowds/res 2>&1
 
 if [[ -z "${PRISM_HOME}" ]]; then
   PRISM_HOME="/opt/prism-4.5"
