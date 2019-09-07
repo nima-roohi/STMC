@@ -169,24 +169,24 @@ final class HypTestSPRTStratified extends HypTest {
     // See https://en.wikipedia.org/wiki/Algorithms_for_calculating_variance
     iter += 1
 
-    val m = positive / STMCConfig.strataTotalSize.toDouble
-    val delta = m - mean
-    mean += delta / iter
-    val delta2 = m - mean
-    M2 += delta * delta2
+//    val m = positive / STMCConfig.strataTotalSize.toDouble
+//    val delta = m - mean
+//    mean += delta / iter
+//    val delta2 = m - mean
+//    M2 += delta * delta2
 
-//    val Y = positive
-//    val r = iter
-//    val blockSize = STMCConfig.strataTotalSize.toDouble
-//    v(Y) += 1
-//    var mu = 0.0
-//    var sig2 = 0.0
-//    for (i <- v.indices) mu += i * v(i) / iter.toDouble / blockSize
-//    for (i <- v.indices) sig2 += (i * i) / (blockSize * blockSize) * v(i) / iter
-//    sig2 -= mu * mu
-//    sig2 /= r
-//    mean = mu
-//    M2 = sig2*(iter-1)
+    val Y = positive
+    val r = iter
+    val blockSize = STMCConfig.strataTotalSize.toDouble
+    v(Y) += 1
+    var mu = 0.0
+    var sig2 = 0.0
+    for (i <- v.indices) mu += i * v(i) / iter.toDouble / blockSize
+    for (i <- v.indices) sig2 += (i * i) / (blockSize * blockSize) * v(i) / iter
+    sig2 -= mu * mu
+    sig2 /= r
+    mean = mu
+    M2 = sig2*(iter-1)
   }
 
   /** @note The following probabilistic guarantees are made (if [[LB]] is `true` then swap `α` and `β`):
