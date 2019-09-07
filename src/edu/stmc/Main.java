@@ -23,6 +23,7 @@ import prism.PrismCL;
 import prism.PrismException;
 
 import java.io.*;
+import java.net.ConnectException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -33,6 +34,12 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
+  static {
+    Runtime.Version v = Runtime.version();
+    if (v.feature() < 11)
+      throw new Error("Java version is " + v + " (its feature value is " + v.feature() + "). However, it must be at least 11.");
+  }
+
   private static int repeat       = 1;
   private static int processCount = 1;
 
@@ -57,11 +64,13 @@ public class Main {
       samplesM2 += delta * delta2;
     }
   }
-  private static final int port = 56437;
-  private static Thread updater = new Thread(() -> {
+
+  // When multiple instances are running, we use socket to synchronize
+  private static final int    port    = 56437;
+  private static       Thread updater = new Thread(() -> {
     try {
       try (ServerSocket ss = new ServerSocket(port)) {
-        while(true) {
+        while (true) {
           Socket          s       = ss.accept();
           DataInputStream in      = new DataInputStream(s.getInputStream());
           double          time    = in.readDouble();
@@ -74,10 +83,6 @@ public class Main {
       // silent
     }
   });
-  static {
-    updater.setDaemon(true);
-    updater.start();
-  }
 
   public static void updateTotal(final double time, final double samples) {
     try {
@@ -87,6 +92,9 @@ public class Main {
       out.writeDouble(samples);
       out.flush();
       out.close();
+    } catch (ConnectException e) {
+      // Socket is not ready, so it is likely that we are dealing with multi-thread
+      actualUpdateTotal(time, samples);
     } catch (IOException e) {
       throw new Error(e);
     }
@@ -140,12 +148,12 @@ public class Main {
     // "-stmc",
     // "-htm", "SSPRT",
     // "-sm", "antithetic",
-    // "-ss", "4096",
+    // "-ss", "2",
     // "-alpha", "0.001",
     // "-beta", "0.001",
     // "-delta", "0.001",
-    // "-min_iter", "5",
-    // "-gamma", "0.001",
+    // "-min_iter", "256",
+    // // "-gamma", "0.001",
     // };
 
     /* We support two hidden arguments:
@@ -214,6 +222,13 @@ public class Main {
         PrismCL.main(params.toArray(new String[0]));
       }
     else {
+      updater.setDaemon(true);
+      updater.start();
+      String PRISM_HOME = System.getenv().getOrDefault("PRISM_HOME", "/opt/prism-4.5");
+      String JAVA_HOME  = System.getenv().get("JAVA_HOME");
+      String JAVA_CMD   = "java";
+      if (JAVA_HOME != null)
+        JAVA_CMD = new File(JAVA_HOME + File.separator + "bin" + File.separator + "java").getAbsolutePath();
 
       String prismCmd = System.getenv("PRIM_JAVA_COMMAND");
       // In development, this parameter is barely set. So we set it to exactly what my IDE use. Dear Hackers,
@@ -221,11 +236,11 @@ public class Main {
       // screw up with my system at all).
       if (prismCmd == null)
         prismCmd =
-        "/opt/java/jdk-11.0.2/bin/java " +
-        "-Djava.library.path=/opt/prism-4.5/lib " +
+        JAVA_CMD + " " +
+        "-Djava.library.path=" + PRISM_HOME + "/lib " +
         "-Dfile.encoding=UTF-8 " +
         "-classpath " +
-        "./out/production/stmc:./out/artifacts/stmc/stmc.jar:/opt/java/scala-2.12.8/lib/scala-library.jar:/opt/java/scala-2.12.8/lib/scala-swing_2.12-2.0.3.jar:/opt/java/scala-2.12.8/lib/scala-reflect.jar:/opt/java/scala-2.12.8/lib/scala-parser-combinators_2.12-1.0.7.jar:/opt/java/scala-2.12.8/lib/scala-xml_2.12-1.0.6.jar:/opt/prism-4.5/lib/prism.jar:/opt/prism-4.5/lib/colt.jar:/opt/prism-4.5/lib/epsgraphics.jar:/opt/prism-4.5/lib/jas.jar:/opt/prism-4.5/lib/jcommon.jar:/opt/prism-4.5/lib/jfreechart.jar:/opt/prism-4.5/lib/log4j.jar:/opt/prism-4.5/lib/lpsolve55j.jar:/opt/prism-4.5/lib/nailgun-server.jar:/opt/prism-4.5/lib/jhoafparser.jar:/opt/java/libs/scalatest_2.12-3.0.5.jar:/opt/java/libs/scalactic_2.12-3.0.5.jar " +
+        "./out/production/stmc:./out/artifacts/stmc/stmc.jar:" + PRISM_HOME + "/lib/prism.jar:" + PRISM_HOME + "/lib/colt.jar:" + PRISM_HOME + "/lib/epsgraphics.jar:" + PRISM_HOME + "/lib/jas.jar:" + PRISM_HOME + "/lib/jcommon.jar:" + PRISM_HOME + "/lib/jfreechart.jar:" + PRISM_HOME + "/lib/log4j.jar:" + PRISM_HOME + "/lib/lpsolve55j.jar:" + PRISM_HOME + "/lib/nailgun-server.jar:" + PRISM_HOME + "/lib/jhoafparser.jar:/opt/java/libs/scalatest_2.12-3.0.5.jar:/opt/java/libs/scalactic_2.12-3.0.5.jar " +
         "prism.PrismCL";
       final String[] prismCmds = prismCmd.split("\\s+");
       for (int i = 0; i < prismCmds.length; i++)

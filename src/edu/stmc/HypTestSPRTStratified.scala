@@ -48,8 +48,6 @@ final class HypTestSPRTStratified extends HypTest {
   private[this] var mean: Double = _ // mean accumulates the mean of the entire data set
   private[this] var M2: Double = _ // M2 aggregates the squared distance from the mean
   private[this] var iter: Int = _
-  @inline
-  private[this] def variance = M2 / (iter-1) // sample variance (iter must be at least 2)
 
   /** Initialize or reset this to a hypothesis test in which the null hypothesis is `p = θ - δ` and the alternative hypothesis is `p = θ + δ`, where `p` is
     * the actual probability, `θ` is the input threshold, and `δ` is the half of the size of indifference region.
@@ -160,7 +158,6 @@ final class HypTestSPRTStratified extends HypTest {
   /** @note No restriction on total number of samples. */
   override def update(positive: Boolean): Unit = update(1, 0)
 
-  val v = Array.ofDim[Int](STMCConfig.strataTotalSize + 1)
   /** @note
     *   1. Requires `positive >= 0`.
     *   1. No restriction on total number of samples
@@ -169,32 +166,35 @@ final class HypTestSPRTStratified extends HypTest {
     // See https://en.wikipedia.org/wiki/Algorithms_for_calculating_variance
     iter += 1
 
-//    val m = positive / STMCConfig.strataTotalSize.toDouble
-//    val delta = m - mean
-//    mean += delta / iter
-//    val delta2 = m - mean
-//    M2 += delta * delta2
+    val m = positive / STMCConfig.strataTotalSize.toDouble
+    val delta = m - mean
+    mean += delta / iter
+    val delta2 = m - mean
+    M2 += delta * delta2
 
-    val Y = positive
-    val r = iter
-    val blockSize = STMCConfig.strataTotalSize.toDouble
-    v(Y) += 1
-    var mu = 0.0
-    var sig2 = 0.0
-    for (i <- v.indices) mu += i * v(i) / iter.toDouble / blockSize
-    for (i <- v.indices) sig2 += (i * i) / (blockSize * blockSize) * v(i) / iter
-    sig2 -= mu * mu
-    sig2 /= r
-    mean = mu
-    M2 = sig2*(iter-1)
+//    val Y = positive
+//    val blockSize = STMCConfig.strataTotalSize.toDouble
+//    v(Y) += 1
+//    var mu = 0.0
+//    var sig2 = 0.0
+//    for (i <- v.indices) mu += i * v(i) / iter.toDouble / blockSize
+//    for (i <- v.indices) sig2 += (i * i) / (blockSize * blockSize) * v(i) / iter
+//    sig2 -= mu * mu
+//    mean = mu
+//    M2 = sig2 * (iter-1)
+//    print(s"\n$iter: pos:$positive, v:${v.mkString("[", ",", "]")}, mean=$mean, var=$variance")
   }
+//  val v = Array.ofDim[Int](STMCConfig.strataTotalSize + 1)
+
+  @inline
+  private[this] def variance = M2 / (iter-1) // sample variance (iter must be at least 2)
+
 
   /** @note The following probabilistic guarantees are made (if [[LB]] is `true` then swap `α` and `β`):
     *   1. If the actual probability is at most  `θ - δ` then the probability of returning [[CompResult.Binary.LARGER]]  is at most `α`.
     *   1. If the actual probability is at least `θ + δ` then the probability of returning [[CompResult.Binary.SMALLER]] is at most `β`.
     * @see [[init]] where all the parameters are set */
   def status(mean: Double, M2: Double, iter: Int): CompResult.Binary = {
-//    println((variance * logL / iter) + "   " + (variance * logU / iter))
     if (mean - threshold < variance * logL / iter) CompResult.Binary.SMALLER
     else if (mean - threshold > variance * logU / iter) CompResult.Binary.LARGER
     else CompResult.Binary.UNDECIDED

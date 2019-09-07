@@ -1,27 +1,33 @@
 # Run this file using the following command from terminal:
 # nohup ./examples/brp/run.sh > ./examples/brp/res &
 
-export DYLD_LIBRARY_PATH=/opt/prism-4.5/lib
-export LD_LIBRARY_PATH=/opt/prism-4.5/lib
+if [[ -z "${PRISM_HOME}" ]]; then
+  PRISM_HOME="/opt/prism-4.5"
+fi
 
-PRISM="java -Xmx1g -Xss4M -Djava.library.path=/opt/prism-4.5/lib -classpath ./out/production/stmc:./out/artifacts/stmc/stmc.jar:/opt/prism-4.5/lib/prism.jar:/opt/prism-4.5/classes:/opt/prism-4.5:/opt/prism-4.5/lib/pepa.zip:/opt/prism-4.5/lib/* edu.stmc.Main"
+if [[ -z "${JAVA_HOME}" ]]; then
+  JAVA_CMD="java"
+else
+  JAVA_CMD="${JAVA_HOME}/bin/java"
+fi
+
+export DYLD_LIBRARY_PATH=${PRISM_HOME}/lib
+export LD_LIBRARY_PATH=${PRISM_HOME}/lib
+
+PRISM="${JAVA_CMD} -Xmx1g -Xss4M -Djava.library.path=${PRISM_HOME}/lib -classpath ./out/production/stmc:./out/artifacts/stmc/stmc.jar:${PRISM_HOME}/lib/prism.jar:${PRISM_HOME}/classes:${PRISM_HOME}:${PRISM_HOME}/lib/pepa.zip:${PRISM_HOME}/lib/* edu.stmc.Main"
 
 run_example()
 {
   repeat=50
   echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
-  timeout 30m $PRISM $1 -pf $2 -simwidth $3 -simconf $4 -mtbdd    | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
-  timeout 30m $PRISM $1 -pf $2 -simwidth $3 -simconf $4 -sparse   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
-  timeout 30m $PRISM $1 -pf $2 -simwidth $3 -simconf $4 -hybrid   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
-  timeout 30m $PRISM $1 -pf $2 -simwidth $3 -simconf $4 -explicit | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
-  timeout 30m $PRISM $1 -pf $2 -simwidth $3 -simconf $4 -exact    | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+  time timeout 30m $PRISM $1 -pf $2 -simwidth $3 -simconf $4 -mtbdd    | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+  time timeout 30m $PRISM $1 -pf $2 -simwidth $3 -simconf $4 -sparse   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+  time timeout 30m $PRISM $1 -pf $2 -simwidth $3 -simconf $4 -hybrid   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+  time timeout 30m $PRISM $1 -pf $2 -simwidth $3 -simconf $4 -explicit | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+  time timeout 30m $PRISM $1 -pf $2 -simwidth $3 -simconf $4 -exact    | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
 
   echo 'PRISM SPRT'
-  $PRISM $1 -pf $2 -sim -simmethod sprt -simconf $3 -simwidth $4 -repeat $repeat            -mt 1                                                                                 | grep -E 'Result:|seconds|Time: average|Samples: average'
-
-  echo
-  echo 'STMC SPRT'
-  $PRISM $1 -pf $2 -sim -stmc -smp_method independent -hyp_test_method SPRT -repeat $repeat -mt 1                 -alpha $3 -beta $3 -delta $4                                    | grep -E 'Result:|seconds|Time: average|Samples: average'
+  $PRISM $1 -pf $2 -sim -simmethod sprt                                     -repeat $repeat -mt 1                 -simconf $3 -simwidth $4                                        | grep -E 'Result:|seconds|Time: average|Samples: average'
 
   echo
   echo 'GLRT'
