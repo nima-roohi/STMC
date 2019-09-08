@@ -140,3 +140,9 @@ Follow the next steps:
    1. Assign environment variable `STMC_PORT` to a free port of your choice. You 
       should also use this step when `56437` is taken by some other processes and 
       you want to have multi-processes feature anyway.
+
+
+Running a Single Example
+------------------------      
+
+In this section we explain how to run a single example and different options/switches involved. 
