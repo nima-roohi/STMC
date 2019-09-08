@@ -12,8 +12,8 @@ our benchmarks.
 Here we explain how to install and run examples and benchmarks.
 
 
-Prerequisites:
---------------
+Prerequisites
+-------------
 
 1. Install Java (version 11 or higher), and 
     set the `JAVA_HOME` environment variable to installation folder.
@@ -40,8 +40,8 @@ Prerequisites:
     ~$ 
     ``` 
 
-Compiling the Source Code (Optional):
--------------------------------------
+Compiling the Source Code (Optional)
+------------------------------------
 
 This repository already contains the binary version.
 It only has Java bytecode which means no compilation is required to run 
