@@ -97,15 +97,36 @@ Open a terminal and enter a folder that you can write into.
 For the rest of this section, we assume you are in your home folder and use `~` to denote that folder.
 Follow the next steps:
 
-1. Clone the source code on your local computer.
-    You can do this by executing `git clone https://github.com/nima-roohi/STMC` in your terminal
+1. Clone the source code on your local computer
     (if you don't have `git`, you can download it using your browser as well).
+    ``` 
+    ~$ git clone https://github.com/nima-roohi/STMC
+    Cloning into 'STMC'...
+    remote: Enumerating objects: 118, done.
+    remote: Counting objects: 100% (118/118), done.
+    remote: Compressing objects: 100% (71/71), done.
+    remote: Total 2853 (delta 61), reused 88 (delta 36), pack-reused 2735
+    Receiving objects: 100% (2853/2853), 33.16 MiB | 7.33 MiB/s, done.
+    Resolving deltas: 100% (1358/1358), done.
+    ~$ 
+    ```
 1. Enter STMC folder.
+    ``` 
+    ~$ cd ./STMC/
+    ~/STMC$
+    ```
 1. Look at list of available examples and select one. For example, we choose `brp`.
+    ```
+    ~/STMC$ ls ./examples/
+    brp	crowds	egl
+    ~/STMC$ 
+    ```
 1. Run the benchmark.
-
+    ```
+    ~/STMC$ ./examples/brp/run.sh 
+    ```
    This will run 68 statistical tests and attempts to run 20 symbolic tests
-   (not all of the symbolic ones are going to survive the state space explosion).
+   (some of the symbolic ones might not survive the state space explosion).
    Furthermore, each of the statistical tests will be repeated 20 times using at 
    most 4 processes, so we can gather average times and number of samples.
    Therefore, be ready to give it quite a few hours before it finishes.
@@ -118,4 +139,4 @@ Follow the next steps:
       For this method, simply remove all `-mt 4` from `~/STMC/examples/brp/run.sh`.
    1. Assign environment variable `STMC_PORT` to a free port of your choice. You 
       should also use this step when `56437` is taken by some other processes and 
-      you want to have multi-processes feature anyway.      
+      you want to have multi-processes feature anyway.
