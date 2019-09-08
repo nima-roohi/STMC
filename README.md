@@ -52,12 +52,12 @@ the examples or benchmarks.
 However, if one wishes to change the code then they must carry the compilation step as well.
 
 **_Note:_**
-_If you want to compile the source, you are expected to have some experience working with IDEs and Java._
+_If you want to compile the source code, you are expected to have some experience working with IDEs and Java._
 _Furthermore, most of STMC is written in Scala. So you need to know a little bit about this language as well._   
 
 We use [IntelliJ IDEA (Community Edition)](https://www.jetbrains.com/idea/download/#section=mac)
 for our project. 
-Follow the following steps to compile and run the source code:
+Follow the next steps to compile and run the source code:
 
 1. Clone the source code on your local computer.
     You can do this by executing `git clone https://github.com/nima-roohi/STMC` in your terminal.
@@ -70,11 +70,11 @@ Follow the following steps to compile and run the source code:
 1. Build the project.
     This can be done, for example, by selecting `Build Project` from the `Build` menu.
 1. Rebuild the `stmc` artifact.
-    This can be done, for example, by selecting `Build Artifacts...` and then `stmc>rebuild`
+    This can be done, for example, by selecting `Build Artifacts...` and then `stmc > rebuild`
     from the `Build` menu.
     After this step, a Jar file called `stmc.jar` will be overwritten.
 1. If you don't want to rebuild the artifact and just want to run the tool within the IDE, 
-    so that you can debug you code, instead of the previous step, run 
+    so that you can debug your code, instead of the previous step, run 
     `src/edu/stmc/Main.scala` file by, for example, right-clicking on the file in the Navigation Pane
     and selecting `Run 'Main.Main()'`.
     
@@ -98,8 +98,8 @@ For the rest of this section, we assume you are in your home folder and use `~` 
 Follow the next steps:
 
 1. Clone the source code on your local computer
-    (if you don't have `git`, you can download it using your browser as well).
-    ``` 
+    (if you don't have `git`, you can download the source code using your browser as well).
+    ```console
     ~$ git clone https://github.com/nima-roohi/STMC
     Cloning into 'STMC'...
     remote: Enumerating objects: 118, done.
