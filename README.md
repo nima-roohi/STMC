@@ -24,7 +24,7 @@ Prerequisites
     successfully print the current java version.
     
     For example:
-    ```
+    ```sh
     ~$ ${JAVA_HOME}/bin/java -version
     java version "11.0.2" 2019-01-15 LTS
     Java(TM) SE Runtime Environment 18.9 (build 11.0.2+9-LTS)
