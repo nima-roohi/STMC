@@ -77,6 +77,8 @@ Follow the following steps to compile and run the source code:
     1. Enter `-Djava.library.path=/opt/prism-4.5/lib` for `VM options`.         
     1. If you are on Linux, enter `LD_LIBRARY_PATH=/opt/prism-4.5/lib` for `Environment variables`.
     1. If you are on Mac, enter `DYLD_LIBRARY_PATH=/opt/prism-4.5/lib` for `Environment variables`.
+    
+    We are now ready to run the source code, which is already explained at the beginning of this step.
 
 
 STMC does not uses 
