@@ -19,6 +19,7 @@ Prerequisites:
     set the `JAVA_HOME` environment variable to installation folder.
     After this step, entering `${JAVA_HOME}/bin/java -version` on terminal should 
     successfully print the current java version.
+    
     For example:
     ```
    ~$ ${JAVA_HOME}/bin/java -version
