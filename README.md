@@ -22,15 +22,64 @@ Prerequisites:
     
     For example:
     ```
-   ~$ ${JAVA_HOME}/bin/java -version
-   java version "11.0.2" 2019-01-15 LTS
-   Java(TM) SE Runtime Environment 18.9 (build 11.0.2+9-LTS)
-   Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.2+9-LTS, mixed mode)
-   ~$ 
-   ``` 
-1. Install PRISM (version 4.5).
+    ~$ ${JAVA_HOME}/bin/java -version
+    java version "11.0.2" 2019-01-15 LTS
+    Java(TM) SE Runtime Environment 18.9 (build 11.0.2+9-LTS)
+    Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.2+9-LTS, mixed mode)
+    ~$ 
+    ``` 
+1. Install PRISM (version 4.5), and 
+    set the `PRISM_HOME` environment variable to installation folder.
+    After this step, entering `${PRISM_HOME}/bin/prism -version` on terminal should 
+    successfully print the current version of prism.
+    
+    For example:
+    ```
+    ~$ ${PRISM_HOME}/bin/prism -version
+    PRISM version 4.5
+    ~$ 
+    ``` 
+
+Compiling the Source Code (Optional):
+-------------------------------------
+
+This repository already contains the binary version.
+It only has Java bytecode which means no compilation is required to run 
+the examples or benchmarks.
+However, if one wishes to change the code then they must carry the compilation step as well.  
+
+We use [IntelliJ IDEA (Community Edition)](https://www.jetbrains.com/idea/download/#section=mac)
+for our project. 
+Follow the following steps to compile the source code:
+
+1. Install the IDE and open/import STMC project folder in it.
+1. Make sure your JDK is set properly (version 11 or above).
+1. Make sure your Scala library is set property. 
+    If don't have it already, IntelliJ can download it for you.
+    It also has a great plugin for coding in Scala which you should install as well.
+1. Change whatever you like in the source code.
+1. Build the project.
+    This can be done, for example, by selecting `Build Project` from the `Build` menu.
+1. Rebuild the `stmc` artifact.
+    This can be done, for example, by selecting `Build Artifacts...` and then `stmc>rebuild`
+    from the `Build` menu.
+    After this step, the Jar file called `stmc.jar` will be overwritten.
+1. If you don't want to rebuild the artifact and just want to run the tool within the IDE 
+    so that you can debug you code, instead of the previous step, run 
+    `src/edu/stmc/Main.scala` file by, for example, right-clicking on the file in the Navigation Pane
+    and selecting `Run 'Main.Main()'`.
+    
+    Since STMC uses PRISM and since PRISM uses native libraries, our first attempt to run the code
+    will most likely end up with `UnsatisfiedLinkError`. However, we now have a lunch configuration 
+    that we edit, by for example selecting `Edit Configurations...` from the `Run` menu, to fix this 
+    problem as well.
+    1. Enter `-Djava.library.path=/opt/prism-4.5/lib` for `VM options`. 
+        Make sure to replace `/opt/prism-4.5` with the folder you installed PRISM in.
+    1. If you are on Linux, enter `LD_LIBRARY_PATH=/opt/prism-4.5/lib` for `Environment variables`.
+    1. If you are on Mac, enter `DYLD_LIBRARY_PATH=/opt/prism-4.5/lib` for `Environment variables`.
 
 
+STMC does not uses 
 
 
 1. If you want to compile the code then install Scala 2.12.8.
