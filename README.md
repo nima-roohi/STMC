@@ -48,8 +48,8 @@ It only has Java bytecode which means no compilation is required to run
 the examples or benchmarks.
 However, if one wishes to change the code then they must carry the compilation step as well.
 
-__Note:__ 
-_If you want to compile the source, you are expected to have some experience working with IDEs and JDK._
+**_Note:_**
+_If you want to compile the source, you are expected to have some experience working with IDEs and Java._
 _Furthermore, most of STMC is written in Scala. So you need to know a little bit about this language as well._   
 
 We use [IntelliJ IDEA (Community Edition)](https://www.jetbrains.com/idea/download/#section=mac)
