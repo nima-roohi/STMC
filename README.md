@@ -1,4 +1,5 @@
-#STMC - Statistical Model Checker
+STMC - Statistical Model Checker
+-------------------------------
 
 STMC is a statistical model checker that uses _stratified_ or _antithetic_ sampling techniques to 
 reduce sample variance and hence required number of samples to make a statistical decision.
