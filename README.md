@@ -37,7 +37,7 @@ Prerequisites
     successfully print the current version of PRISM.
     
     For example:
-    ```
+    ```sh
     ~$ ${PRISM_HOME}/bin/prism -version
     PRISM version 4.5
     ~$ 
@@ -99,7 +99,7 @@ Follow the next steps:
 
 1. Clone the source code on your local computer
     (if you don't have `git`, you can download the source code using your browser as well).
-    ```console
+    ```sh
     ~$ git clone https://github.com/nima-roohi/STMC
     Cloning into 'STMC'...
     remote: Enumerating objects: 118, done.
@@ -111,18 +111,18 @@ Follow the next steps:
     ~$ 
     ```
 1. Enter STMC folder.
-    ``` 
+    ```sh
     ~$ cd ./STMC/
     ~/STMC$
     ```
 1. Look at list of available examples and select one. For example, we choose `brp`.
-    ```
+    ```sh
     ~/STMC$ ls ./examples/
     brp	crowds	egl
     ~/STMC$ 
     ```
 1. Run the benchmark.
-    ```
+    ```sh
     ~/STMC$ ./examples/brp/run.sh 
     ```
    This will run 68 statistical tests and attempts to run 20 symbolic tests
