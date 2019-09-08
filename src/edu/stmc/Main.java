@@ -66,7 +66,14 @@ public class Main {
   }
 
   // When multiple instances are running, we use socket to synchronize
-  private static final int    port    = 56437;
+  private static int getPortNumber() {
+    try {
+      return Integer.parseInt(System.getenv().getOrDefault("STMC_PORT", "56437"));
+    } catch (Exception e) {
+      return 56437;
+    }
+  }
+  private static final int    port    = getPortNumber();
   private static       Thread updater = new Thread(() -> {
     try {
       try (ServerSocket ss = new ServerSocket(port)) {

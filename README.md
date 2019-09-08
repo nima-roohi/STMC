@@ -11,6 +11,9 @@ a list of related publications, and
 our benchmarks. 
 Here we explain how to install and run examples and benchmarks.
 
+**_Note:_**
+_The following steps are only tested on MacOS and Ubuntu._   
+
 
 Prerequisites
 -------------
@@ -56,6 +59,8 @@ We use [IntelliJ IDEA (Community Edition)](https://www.jetbrains.com/idea/downlo
 for our project. 
 Follow the following steps to compile and run the source code:
 
+1. Clone the source code on your local computer.
+    You can do this by executing `git clone https://github.com/nima-roohi/STMC` in your terminal.
 1. Install the IDE and open/import STMC project folder in it.
 1. Make sure your JDK is set properly (version 11 or above).
 1. Make sure your Scala library is set property. 
@@ -84,9 +89,33 @@ Follow the following steps to compile and run the source code:
     
     We are now ready to run the source code, which is already explained at the beginning of this step.
 
+Running the Benchmarks
+----------------------
 
-STMC does not uses 
+Running the benchmarks is fairly straightforward.
+Open a terminal and enter a folder that you can write into.
+For the rest of this section, we assume you are in your home folder and use `~` to denote that folder.
+Follow the next steps:
 
+1. Clone the source code on your local computer.
+    You can do this by executing `git clone https://github.com/nima-roohi/STMC` in your terminal
+    (if you don't have `git`, you can download it using your browser as well).
+1. Enter STMC folder.
+1. Look at list of available examples and select one. For example, we choose `brp`.
+1. Run the benchmark.
 
-1. If you want to compile the code then install Scala 2.12.8.
-
+   This will run 68 statistical tests and attempts to run 20 symbolic tests
+   (not all of the symbolic ones are going to survive the state space explosion).
+   Furthermore, each of the statistical tests will be repeated 20 times using at 
+   most 4 processes, so we can gather average times and number of samples.
+   Therefore, be ready to give it quite a few hours before it finishes.
+   
+   The synchronization between different processes is carried out through ports.
+   It is assumed port number `56437` is free. As a consequence, you cannot run 
+   multiple benchmarks at the same time. There are two method for changing this 
+   behavior.
+   1. Disable multi-processes in the benchmark.
+      For this method, simply remove all `-mt 4` from `~/STMC/examples/brp/run.sh`.
+   1. Assign environment variable `STMC_PORT` to a free port of your choice. You 
+      should also use this step when `56437` is taken by some other processes and 
+      you want to have multi-processes feature anyway.      
