@@ -133,7 +133,7 @@ Follow the next steps:
    
    The synchronization between different processes is carried out through ports.
    It is assumed port number `56437` is free. As a consequence, you cannot run 
-   multiple benchmarks at the same time. There are two method for changing this 
+   multiple benchmarks at the same time. There are two methods for changing this 
    behavior.
    1. Disable multi-processes in the benchmark.
       For this method, simply remove all `-mt 4` from `~/STMC/examples/brp/run.sh`.
@@ -145,4 +145,4 @@ Follow the next steps:
 Running a Single Example
 ------------------------      
 
-In this section we explain how to run a single example and different options/switches involved. 
+In this section we explain how to run a single example and different options/switches involved in it. 
