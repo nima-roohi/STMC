@@ -12,3 +12,5 @@ export DYLD_LIBRARY_PATH=${PRISM_HOME}/lib
 export LD_LIBRARY_PATH=${PRISM_HOME}/lib
 
 PRISM="${JAVA_CMD} -Xmx1g -Xss4M -Djava.library.path=${PRISM_HOME}/lib -classpath ./out/production/stmc:./out/artifacts/stmc/stmc.jar:${PRISM_HOME}/lib/prism.jar:${PRISM_HOME}/classes:${PRISM_HOME}:${PRISM_HOME}/lib/pepa.zip:${PRISM_HOME}/lib/* edu.stmc.Main"
+
+$PRISM "$@"

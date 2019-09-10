@@ -148,3 +148,6 @@ Running a Single Example
 ------------------------      
 
 In this section we explain how to run a single example and different options/switches involved in it. 
+It involves three steps. The first two are exactly same as the first two steps of 
+[Running the Benchmarks](#Running-the-Benchmarks) 
+(clone the code from the repository and enter STMC folder).
