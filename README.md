@@ -209,4 +209,4 @@ We next explain STMC options and give a few examples for them.
     Maximum number of processes to use for repeating the experiment.
     If no argument is given then number of available processes will be used as a default value.
    
-#Examples:
+### Examples:
