@@ -20,11 +20,11 @@ run_example()
 {
   repeat=20
   echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
-#  time timeout 30m $PRISM $1 -pf $2 -simwidth $3 -simconf $4 -mtbdd    | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
-#  time timeout 30m $PRISM $1 -pf $2 -simwidth $3 -simconf $4 -sparse   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
-#  time timeout 30m $PRISM $1 -pf $2 -simwidth $3 -simconf $4 -hybrid   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
-#  time timeout 30m $PRISM $1 -pf $2 -simwidth $3 -simconf $4 -explicit | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
-#  time timeout 30m $PRISM $1 -pf $2 -simwidth $3 -simconf $4 -exact    | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+#  time timeout 30m $PRISM $1 -pf $2 -mtbdd    | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+#  time timeout 30m $PRISM $1 -pf $2 -sparse   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+#  time timeout 30m $PRISM $1 -pf $2 -hybrid   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+#  time timeout 30m $PRISM $1 -pf $2 -explicit | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+#  time timeout 30m $PRISM $1 -pf $2 -exact    | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
 
   echo 'PRISM SPRT'
   $PRISM $1 -pf $2 -sim -simmethod sprt                                     -repeat $repeat -mt 4                 -simconf $3 -simwidth $4                                        | grep -E 'Result:|seconds|Time: average|Samples: average'
@@ -69,9 +69,9 @@ run_example()
   echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
 }
 
-#run_example "./examples/crowds/crowds.pm -const CrowdSize=20 -const TotalRuns=6"  "P<0.15[F<100observe0>1]" 0.0004 0.0001
-#run_example "./examples/crowds/crowds.pm -const CrowdSize=20 -const TotalRuns=11" "P<0.15[F<100observe0>1]" 0.0004 0.0001
-#run_example "./examples/crowds/crowds.pm -const CrowdSize=20 -const TotalRuns=16" "P<0.15[F<100observe0>1]" 0.0004 0.0001
-run_example "./examples/crowds/crowds.pm -const CrowdSize=20 -const TotalRuns=20" "P<0.15[F<100observe0>1]" 0.0004 0.0001
+#run_example "./examples/crowds/crowds.pm -const CrowdSize=20 -const TotalRuns=6"  "P<0.15[F<100observe0>1]" 0.0001 0.0004
+#run_example "./examples/crowds/crowds.pm -const CrowdSize=20 -const TotalRuns=11" "P<0.15[F<100observe0>1]" 0.0001 0.0004
+#run_example "./examples/crowds/crowds.pm -const CrowdSize=20 -const TotalRuns=16" "P<0.15[F<100observe0>1]" 0.0001 0.0004
+run_example "./examples/crowds/crowds.pm -const CrowdSize=20 -const TotalRuns=20" "P<0.15[F<100observe0>1]" 0.0001 0.0004
 
 
