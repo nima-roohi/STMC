@@ -216,7 +216,7 @@ file `./examples/brp/brp.pm` against temporal property `'P<0.6[F<100s=3]'`
 (the intuitive meaning of this property is irrelevant to our discussion).
 Below we give different examples of how this can be done using STMC.
 Note that our model has two parameters that should be initialized before it can be simulated.
-We use prism switch `-const` for that purpose. 
+We use PRISM's switch `-const` for that purpose. 
 
 1.  Use stratification with strata-size `16`. 
     Type I and Type II error probabilities are `0.05`, 
