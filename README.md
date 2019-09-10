@@ -148,9 +148,9 @@ Running a Single Example
 ------------------------      
 
 In this section we explain how to run a single example and different options/switches involved in it. 
-It involves three steps. The first two are exactly same as the first two steps in 
+There are three steps. The first two are exactly same as the first two steps in 
 [Running the Benchmarks](#Running-the-Benchmarks) section
-(clone the code from the repository and enter STMC folder).
+(clone the code from its repository and enter STMC folder).
 The last step is running the tool which is achieved by entering command
 `./stmc.sh <options>` in terminal.
 We next explain STMC options and give a few examples for them.
@@ -167,7 +167,7 @@ We next explain STMC options and give a few examples for them.
 1. `-stmc`: 
     Enables STMC tool. Without this option, everything will be passed directly to PRISM, 
     pretty much like STMC was not there in the first place.
-1. `-sim`:  
+1. `-sim`:
     Enables statistical verification. 
     Whenever `-stmc` is given, `-sim` must be given as well.
     However, when `-stmc` is not present, `-sim` is optional (statistical vs. symbolic verification).    
