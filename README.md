@@ -159,7 +159,7 @@ We next explain STMC options and give a few examples for them.
 1. `<model-file>`: There is no switch for model file. Just enter the path to it. 
     For example, `./examples/brp/brp.pm`.
 1. `-pf <property>`: Specifies the property that should be verified.
-    For example, `-pf 'P<0.51[F<100!kA&kB]'`.
+    For example, `-pf 'P<0.39[F<100s=3]'`.
     STMC supports any property that PRISM can evaluate it on a single path using its simulation engine.
 1. `-stmc`: Enables STMC tool. Without this option, everything will be passed directly to PRISM, 
     pretty much like STMC was not there in the first place.
@@ -212,11 +212,21 @@ We next explain STMC options and give a few examples for them.
 ### Examples:
 
 Suppose we would like to statistically verify the model specified in 
-file `./examples/brp/brp.pm` against temporal property `'P<0.51[F<100!kA&kB]'`.
+file `./examples/brp/brp.pm` against temporal property `'P<0.6[F<100s=3]'`
+(the intuitive meaning of this property is irrelevant to our discussion).
 Below we give different examples of how this can be done using STMC.
+Note that our model has two parameters that should be initialized before it can be simulated.
+We use prism switch `-const` for that purpose. 
 
-1.
+1.  Use stratification with strata-size `16`. 
+    Type I and Type II error probabilities are `0.05`, 
+    indifference region is `0.02`, and 
+    minimum number of iterations is `10`. 
 ```sh
-./stmc.sh ./examples/brp/brp.pm -pf 'P<0.51[F<100!kA&kB]' -stmc -sim \
-          -alpha 0.05 -beta 0.05 -delta 0.01
+./stmc.sh ./examples/brp/brp.pm -const MAX=256 -const N=65536 -pf 'P<0.6[F<100s=3]' -stmc -sim -alpha 0.05 -beta 0.05 -delta 0.01 -smp_method stratified -hyp_test_method SSPRT -strata_size 16 -min_iter 5
+```
+
+1.  Same as the previous example, except that `16` strata should be divided into two steps. 
+```sh
+./stmc.sh ./examples/brp/brp.pm -const MAX=256 -const N=65536 -pf 'P<0.6[F<100s=3]' -stmc -sim -alpha 0.05 -beta 0.05 -delta 0.01 -smp_method stratified -hyp_test_method SSPRT -strata_size 4,4 -min_iter 5
 ```
