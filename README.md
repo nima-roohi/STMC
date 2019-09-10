@@ -155,25 +155,41 @@ The last step is running the tool which is achieved by entering command
 `./stmc.sh <options>` in terminal.
 We next explain STMC options and give a few examples for them.
 
-1. `-help`: Print the list of switches in both STMC and PRISM with a short description for each of them.
-1. `<model-file>`: There is no switch for model file. Just enter the path to it. 
+1. `-help`: 
+    Print the list of switches in both STMC and PRISM with a short description for each of them.
+1. `<model-file>`: 
+    There is no switch for model file. Just enter the path to it. 
     For example, `./examples/brp/brp.pm`.
-1. `-stmc`: Enables STMC tool. Without this option, everything will be passed directly to PRISM, 
+1. `-pf <property>`: 
+    Specifies the property that should be verified.
+    For example, `-pf 'P<0.51[F<100!kA&kB]'`.
+    STMC supports any property that PRISM can evaluate it on a single path using its simulation engine.
+1. `-stmc`: 
+    Enables STMC tool. Without this option, everything will be passed directly to PRISM, 
     pretty much like STMC was not there in the first place.
-1. `-sim`:  Enables statistical verification. 
+1. `-sim`:  
+    Enables statistical verification. 
     Whenever `-stmc` is given, `-sim` must be given as well.
     However, when `-stmc` is not present, `-sim` is optional (statistical vs. symbolic verification).    
-1. `-alpha <value>`: Specifies Type I  error probability (the probability of incorrectly rejecting the null hypothesis).
-1. `-beta <value>`:  Specifies Type II error probability (the probability of incorrectly not rejecting the null hypothesis).
-1. `-gamma <value>`: Specifies Type III error probability (the probability of incorrectly calling it too close to make a decision).
-   As in PRISM itself, not all options are used by every algorithm.
-   Please look at Scala documentation for class `HypTestSPRTTernary` (can be found in `docs-scala` folder).
 1. `-delta <value>`: Specifies half of the width of indifference region.         
-1. `-min_iter <integer>`: Minimum number of iterations before making a decision.
-   Note that we define iteration independently of strata-size. 
-   For example, if strata size is 4096 then even iteration will take exactly 4096 samples.
+1. `-alpha <value>`: Specifies Type I   error probability (the probability of incorrectly rejecting the null hypothesis).
+1. `-beta <value>`:  Specifies Type II  error probability (the probability of incorrectly not rejecting the null hypothesis).
+1. `-gamma <value>`: Specifies Type III error probability (the probability of incorrectly calling it too close to make a decision).
+    As in PRISM, not all options are used by every algorithm.
+    Please look at Scala documentation for class `HypTestSPRTTernary` 
+    (can be found in `docs-scala` folder) for further explanation of this parameter.
+1. `-min_iter <integer>`: 
+    Minimum number of iterations before making a decision.
+    Note that we define iteration independently of strata-size. 
+    For example, if strata size is 4096 then every iteration takes exactly 4096 samples.
 1. `-strata_size <list>`: Specifies size of strata. 
    It is a comma separated list of positive integers.
    For example, `4,4,4,4,4,4` specifies strata-size 4 for 6 consecutive steps (4096 total),
-   `4096` specifies strata-size 4096 for every single step.
+   or `4096` specifies strata-size 4096 for every single step.
+1. `-smp_method`: Specifies the sampling method. 
+1. `-hyp_test_method`: Specifies the hypothesis testing method.   
+1. `-repeat <integer>` (experimental): Specifies number of times the test should be repeated.
+    This is useful in the case of evaluating a statistical algorithm experimentally.
+1. `-mt <integer>` (experimental - argument is optional):
+    Maximum number of processes to use for repeating the experiment.          
    
