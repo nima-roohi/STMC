@@ -228,7 +228,7 @@ We use prism switch `-const` for that purpose.
     -min_iter 10
     ```
 
-1.  Same as the previous example, except that `16` strata should be divided into two steps. 
+1.  Same as the previous example, except that `16` strata should be divided into two steps each of size `4`. 
     ```sh
     ./stmc.sh ./examples/brp/brp.pm -const MAX=256 -const N=65536 -pf 'P<0.6[F<100s=3]' -stmc -sim    \
     -alpha 0.05 -beta 0.05 -delta 0.01 -smp_method stratified -hyp_test_method SSPRT -strata_size 4,4 \
@@ -242,6 +242,30 @@ We use prism switch `-const` for that purpose.
     ```sh
     ./stmc.sh ./examples/brp/brp.pm -const MAX=256 -const N=65536 -pf 'P<0.6[F<100s=3]' -stmc -sim  \
     -alpha 0.05 -beta 0.05 -delta 0.01 -smp_method antithetic -hyp_test_method SSPRT -min_iter 10
+    ```
+    
+1.  Use independent sampling with GLRT. 
+    Type I and Type II error probabilities are `0.05`, and 
+    minimum number of iterations is `10`. 
+    ```sh
+    ./stmc.sh ./examples/brp/brp.pm -const MAX=256 -const N=65536 -pf 'P<0.6[F<100s=3]' -stmc -sim  \
+    -alpha 0.05 -beta 0.05 -delta 0.01 -smp_method independent -hyp_test_method GLRT -min_iter 10
+    ```
+    
+1.  Use stratified sampling with GLRT. 
+    Type I and Type II error probabilities are `0.05`, and 
+    minimum number of iterations is `10`. 
+    ```sh
+    ./stmc.sh ./examples/brp/brp.pm -const MAX=256 -const N=65536 -pf 'P<0.6[F<100s=3]' -stmc -sim  \
+    -alpha 0.05 -beta 0.05 -delta 0.01 -smp_method stratified -hyp_test_method SSPRT -min_iter 10
+    ```
+    
+1.  Use independent sampling with TernarySPRT. 
+    Type I and Type II error probabilities are `0.05`, and 
+    minimum number of iterations is `10`. 
+    ```sh
+    ./stmc.sh ./examples/brp/brp.pm -const MAX=256 -const N=65536 -pf 'P<0.6[F<100s=3]' -stmc -sim  \
+    -alpha 0.05 -beta 0.05 -gamma 0.02 -delta 0.01 -smp_method independent -hyp_test_method TSPRT
     ```
 
 1.  Repeat the first example `10` times. 
