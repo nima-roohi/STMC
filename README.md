@@ -131,7 +131,7 @@ Follow the next steps:
    most 4 processes, so we can gather average times and number of samples.
    Therefore, be ready to give it quite a few hours before it finishes.
    
-   The synchronization between different processes is carried out through ports.
+   The synchronization between different processes is carried out through sockets.
    It is assumed port number `56437` is free. As a consequence, you cannot run 
    multiple benchmarks at the same time. There are two methods for changing this 
    behavior.
@@ -186,10 +186,10 @@ We next explain STMC options and give a few examples for them.
 1. `-hyp_test_method`: Specifies the hypothesis testing method.   
    Possible values are: 
    1. `SPRT`: Sequential Probability Ratio Test. This algorithm is also implemented in PRISM and 
-              in our experience have a very similar performance as our implementation. 
+              in our experience have a very similar performance to our implementation. 
               We use our implementation for the next option.
    1. `TSPRT`: Ternary SPRT.
-               SPRT assumes that the actual error probability is not in the `delta`-neighborhood
+               SPRT assumes that the actual probability is not within the `delta`-neighborhood
                of the input threshold. If this assumption is not satisfied then the algorithm 
                does not guarantee any error probability.
                Ternary SPRT solves this problem by introducing a third possible answer:
