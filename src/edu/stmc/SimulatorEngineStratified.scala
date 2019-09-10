@@ -73,15 +73,21 @@ final class SimulatorEngineStratified(parent: PrismComponent) extends SimulatorE
   private[this] def shuffleOffsets(): Unit = shuffleOffsets(offsets)
   private[this] def shuffleOffsets2(): Unit = shuffleOffsets(offsets2)
   private[this] def shuffleOffsets(offsets: Array[Array[Int]]): Unit =
-    if (offsets != null) {
-      val rnd = rng;
+    if (offsets != null)
       for (arr <- offsets)
         for (i <- arr.indices) {
-          val j = i + rnd.randomUnifInt(arr.length - i)
+          val j = i + rng.randomUnifInt(arr.length - i)
           val tmp = arr(i)
           arr(i) = arr(j)
           arr(j) = tmp
         }
+
+  private[this] def shuffleStuff(): Unit =
+    for (i <- stuff.indices) {
+      val j = i + rng.randomUnifInt(stuff.length - i)
+      val tmp = stuff(i)
+      stuff(i) = stuff(j)
+      stuff(j) = tmp
     }
 
   //------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -143,8 +149,9 @@ final class SimulatorEngineStratified(parent: PrismComponent) extends SimulatorE
         while (needMore) {
           len += counter.length
           needMore = false
-          shuffleOffsets()
-          shuffleOffsets2()
+          shuffleStuff()
+//          shuffleOffsets()
+//          shuffleOffsets2()
           maxPathLengthError = len > maxPathLength
           if (maxPathLengthError)
             break
