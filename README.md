@@ -222,11 +222,35 @@ We use prism switch `-const` for that purpose.
     Type I and Type II error probabilities are `0.05`, 
     indifference region is `0.02`, and 
     minimum number of iterations is `10`. 
-```sh
-./stmc.sh ./examples/brp/brp.pm -const MAX=256 -const N=65536 -pf 'P<0.6[F<100s=3]' -stmc -sim -alpha 0.05 -beta 0.05 -delta 0.01 -smp_method stratified -hyp_test_method SSPRT -strata_size 16 -min_iter 5
-```
+    ```sh
+    ./stmc.sh ./examples/brp/brp.pm -const MAX=256 -const N=65536 -pf 'P<0.6[F<100s=3]' -stmc -sim -alpha 0.05 -beta 0.05 -delta 0.01 -smp_method stratified -hyp_test_method SSPRT -strata_size 16 -min_iter 5
+    ```
 
 1.  Same as the previous example, except that `16` strata should be divided into two steps. 
-```sh
-./stmc.sh ./examples/brp/brp.pm -const MAX=256 -const N=65536 -pf 'P<0.6[F<100s=3]' -stmc -sim -alpha 0.05 -beta 0.05 -delta 0.01 -smp_method stratified -hyp_test_method SSPRT -strata_size 4,4 -min_iter 5
-```
+    ```sh
+    ./stmc.sh ./examples/brp/brp.pm -const MAX=256 -const N=65536 -pf 'P<0.6[F<100s=3]' -stmc -sim -alpha 0.05 -beta 0.05 -delta 0.01 -smp_method stratified -hyp_test_method SSPRT -strata_size 4,4 -min_iter 5
+    ```
+    
+1.  Use antithetic sampling. 
+    Type I and Type II error probabilities are `0.05`, 
+    indifference region is `0.02`, and 
+    minimum number of iterations is `10`. 
+    ```sh
+    ./stmc.sh ./examples/brp/brp.pm -const MAX=256 -const N=65536 -pf 'P<0.6[F<100s=3]' -stmc -sim -alpha 0.05 -beta 0.05 -delta 0.01 -smp_method antithetic -hyp_test_method SSPRT -min_iter 5
+    ```
+
+1.  Repeat the first example `10` times. 
+    ```sh
+    ./stmc.sh ./examples/brp/brp.pm -const MAX=256 -const N=65536 -pf 'P<0.6[F<100s=3]' -stmc -sim -alpha 0.05 -beta 0.05 -delta 0.01 -smp_method stratified -hyp_test_method SSPRT -strata_size 16 -min_iter 5 -repeat 10
+    ```
+    
+1.  Repeat the first example `10` times using `2` processes. 
+    ```sh
+    ./stmc.sh ./examples/brp/brp.pm -const MAX=256 -const N=65536 -pf 'P<0.6[F<100s=3]' -stmc -sim -alpha 0.05 -beta 0.05 -delta 0.01 -smp_method stratified -hyp_test_method SSPRT -strata_size 16 -min_iter 5 -repeat 10 -mt 2
+    ```
+
+1.  Repeat the first example `10` times using as many processes as available. 
+    ```sh
+    ./stmc.sh ./examples/brp/brp.pm -const MAX=256 -const N=65536 -pf 'P<0.6[F<100s=3]' -stmc -sim -alpha 0.05 -beta 0.05 -delta 0.01 -smp_method stratified -hyp_test_method SSPRT -strata_size 16 -min_iter 5 -repeat 10 -mt
+    ```
+    
