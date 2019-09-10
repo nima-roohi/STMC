@@ -69,9 +69,9 @@ run_example()
   echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
 }
 
-run_example "./examples/crowds/crowds.pm -const CrowdSize=20 -const TotalRuns=6"  "P<0.15[F<100observe0>1]" 0.0004 0.0001
-run_example "./examples/crowds/crowds.pm -const CrowdSize=20 -const TotalRuns=11" "P<0.15[F<100observe0>1]" 0.0004 0.0001
-run_example "./examples/crowds/crowds.pm -const CrowdSize=20 -const TotalRuns=16" "P<0.15[F<100observe0>1]" 0.0004 0.0001
+#run_example "./examples/crowds/crowds.pm -const CrowdSize=20 -const TotalRuns=6"  "P<0.15[F<100observe0>1]" 0.0004 0.0001
+#run_example "./examples/crowds/crowds.pm -const CrowdSize=20 -const TotalRuns=11" "P<0.15[F<100observe0>1]" 0.0004 0.0001
+#run_example "./examples/crowds/crowds.pm -const CrowdSize=20 -const TotalRuns=16" "P<0.15[F<100observe0>1]" 0.0004 0.0001
 run_example "./examples/crowds/crowds.pm -const CrowdSize=20 -const TotalRuns=20" "P<0.15[F<100observe0>1]" 0.0004 0.0001
 
 
