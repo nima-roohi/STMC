@@ -210,3 +210,13 @@ We next explain STMC options and give a few examples for them.
     If no argument is given then number of available processes will be used as a default value.
    
 ### Examples:
+
+Suppose we would like to statistically verify the model specified in 
+file `./examples/brp/brp.pm` against temporal property `'P<0.51[F<100!kA&kB]'`.
+Below we give different examples of how this can be done using STMC.
+
+1.
+```sh
+./stmc.sh ./examples/brp/brp.pm -pf 'P<0.51[F<100!kA&kB]' -stmc -sim \
+          -alpha 0.05 -beta 0.05 -delta 0.01
+```
