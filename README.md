@@ -180,11 +180,32 @@ We next explain STMC options and give a few examples for them.
 1. `-strata_size <list>`: Specifies size of strata. 
    It is a comma separated list of positive integers.
    For example, `4,4,4,4,4,4` specifies strata-size 4 for 6 consecutive steps (4096 total),
-   or `4096` specifies strata-size 4096 for every single step.
-1. `-smp_method`: Specifies the sampling method. 
+   and `4096` specifies strata-size 4096 for every single step.
+1. `-smp_method`: Specifies the sampling method.
+   Possible values are: `independent`, `antithetic`, and `stratified`.
 1. `-hyp_test_method`: Specifies the hypothesis testing method.   
+   Possible values are: 
+   1. `SPRT`: Sequential Probability Ratio Test. This algorithm is also implemented in PRISM and 
+              in our experience have a very similar performance as our implementation. 
+              We use our implementation for the next option.
+   1. `TSPRT`: Ternary SPRT.
+               SPRT assumes that the actual error probability is not in the `delta`-neighborhood
+               of the input threshold. If this assumption is not satisfied then the algorithm 
+               does not guarantee any error probability.
+               Ternary SPRT solves this problem by introducing a third possible answer:
+               `TOO_CLOSE`.
+               Please look at Scala documentation for class `HypTestSPRTTernary` 
+               (can be found in `docs-scala` folder) for further explanation of this algorithm
+               and a reference paper.
+   1. `GLRT`:  General Likelihood Ratio Test.
+               Please look at Scala documentation for class `HypTestGLRT` 
+               (can be found in `docs-scala` folder) for further explanation of this algorithm
+               and a reference paper.
+   1. `SSPRT`: Stratified SPRT. 
+               This is the main method for both stratification and antithetic sampling.
 1. `-repeat <integer>` (experimental): Specifies number of times the test should be repeated.
     This is useful in the case of evaluating a statistical algorithm experimentally.
 1. `-mt <integer>` (experimental - argument is optional):
-    Maximum number of processes to use for repeating the experiment.          
+    Maximum number of processes to use for repeating the experiment.
+    If no argument is given then number of available processes will be used as a default value.
    
