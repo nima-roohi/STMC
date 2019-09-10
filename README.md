@@ -148,6 +148,32 @@ Running a Single Example
 ------------------------      
 
 In this section we explain how to run a single example and different options/switches involved in it. 
-It involves three steps. The first two are exactly same as the first two steps of 
-[Running the Benchmarks](#Running-the-Benchmarks) 
+It involves three steps. The first two are exactly same as the first two steps in 
+[Running the Benchmarks](#Running-the-Benchmarks) section
 (clone the code from the repository and enter STMC folder).
+The last step is running the tool which is achieved by entering command
+`./stmc.sh <options>` in terminal.
+We next explain STMC options and give a few examples for them.
+
+1. `-help`: Print the list of switches in both STMC and PRISM with a short description for each of them.
+1. `<model-file>`: There is no switch for model file. Just enter the path to it. 
+    For example, `./examples/brp/brp.pm`.
+1. `-stmc`: Enables STMC tool. Without this option, everything will be passed directly to PRISM, 
+    pretty much like STMC was not there in the first place.
+1. `-sim`:  Enables statistical verification. 
+    Whenever `-stmc` is given, `-sim` must be given as well.
+    However, when `-stmc` is not present, `-sim` is optional (statistical vs. symbolic verification).    
+1. `-alpha <value>`: Specifies Type I  error probability (the probability of incorrectly rejecting the null hypothesis).
+1. `-beta <value>`:  Specifies Type II error probability (the probability of incorrectly not rejecting the null hypothesis).
+1. `-gamma <value>`: Specifies Type III error probability (the probability of incorrectly calling it too close to make a decision).
+   As in PRISM itself, not all options are used by every algorithm.
+   Please look at Scala documentation for class `HypTestSPRTTernary` (can be found in `docs-scala` folder).
+1. `-delta <value>`: Specifies half of the width of indifference region.         
+1. `-min_iter <integer>`: Minimum number of iterations before making a decision.
+   Note that we define iteration independently of strata-size. 
+   For example, if strata size is 4096 then even iteration will take exactly 4096 samples.
+1. `-strata_size <list>`: Specifies size of strata. 
+   It is a comma separated list of positive integers.
+   For example, `4,4,4,4,4,4` specifies strata-size 4 for 6 consecutive steps (4096 total),
+   `4096` specifies strata-size 4096 for every single step.
+   
