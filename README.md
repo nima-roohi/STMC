@@ -155,20 +155,15 @@ The last step is running the tool which is achieved by entering command
 `./stmc.sh <options>` in terminal.
 We next explain STMC options and give a few examples for them.
 
-1. `-help`: 
-    Print the list of switches in both STMC and PRISM with a short description for each of them.
-1. `<model-file>`: 
-    There is no switch for model file. Just enter the path to it. 
+1. `-help`: Print the list of switches in both STMC and PRISM with a short description for each of them.
+1. `<model-file>`: There is no switch for model file. Just enter the path to it. 
     For example, `./examples/brp/brp.pm`.
-1. `-pf <property>`: 
-    Specifies the property that should be verified.
+1. `-pf <property>`: Specifies the property that should be verified.
     For example, `-pf 'P<0.51[F<100!kA&kB]'`.
     STMC supports any property that PRISM can evaluate it on a single path using its simulation engine.
-1. `-stmc`: 
-    Enables STMC tool. Without this option, everything will be passed directly to PRISM, 
+1. `-stmc`: Enables STMC tool. Without this option, everything will be passed directly to PRISM, 
     pretty much like STMC was not there in the first place.
-1. `-sim`:
-    Enables statistical verification. 
+1. `-sim`: Enables statistical verification. 
     Whenever `-stmc` is given, `-sim` must be given as well.
     However, when `-stmc` is not present, `-sim` is optional (statistical vs. symbolic verification).    
 1. `-delta <value>`: Specifies half of the width of indifference region.         
