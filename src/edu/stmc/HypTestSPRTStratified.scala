@@ -122,8 +122,9 @@ final class HypTestSPRTStratified extends HypTest {
     M2 = 0
     iter = 0
   }
-  override def getName: String = "StratifiedSPRT"
-  override def getFullName: String = "Stratified Sequential Probability Ratio Test"
+  private[this] val name = if(STMCConfig.samplingMethod == NameSmplMethod.ANTITHETIC) "Antithetic" else "Stratified"
+  override def getName: String = s"${name}SPRT"
+  override def getFullName: String = s"$name Sequential Probability Ratio Test"
   override def getParametersString: String =
     s"threshold: $threshold, alpha: $alpha, beta: $beta, delta: $delta, LB: $LB, logL: $logL, logU: $logU, strata-sizes: ${STMCConfig.strataSizes.mkString("[", ",", "]")}, strata-size: ${STMCConfig.strataTotalSize}"
 

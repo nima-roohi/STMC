@@ -134,7 +134,7 @@ final class HypTestGLRT() extends HypTest {
   }
 
   override def getName: String = "GLRT"
-  override def getFullName: String = "Generalized Sequential Probability Ratio Test"
+  override def getFullName: String = "Generalized Likelihood Ratio Test"
   override def getParametersString: String =
     s"threshold: $threshold, alpha: $alpha, beta: $beta, minSamples: $minSamples, LB: $LB, logL: $logL, logU: $logU, logP0: $logP0, logP1: $logP1"
 

@@ -253,11 +253,13 @@ We use PRISM's switch `-const` for that purpose.
     ```
     
 1.  Use stratified sampling with GLRT. 
-    Type I and Type II error probabilities are `0.05`, and 
+    Type I and Type II error probabilities are `0.05`, 
+    strata-size is `2,4`, and 
     minimum number of iterations is `10`. 
     ```sh
-    ./stmc.sh ./examples/brp/brp.pm -const MAX=256 -const N=65536 -pf 'P<0.6[F<100s=3]' -stmc -sim  \
-    -alpha 0.05 -beta 0.05 -delta 0.01 -smp_method stratified -hyp_test_method SSPRT -min_iter 10
+    ./stmc.sh ./examples/brp/brp.pm -const MAX=256 -const N=65536 -pf 'P<0.6[F<100s=3]' -stmc -sim    \
+    -alpha 0.05 -beta 0.05 -delta 0.01 -smp_method stratified -hyp_test_method SSPRT -strata_size 4,4 \
+    -min_iter 10
     ```
     
 1.  Use independent sampling with TernarySPRT. 
