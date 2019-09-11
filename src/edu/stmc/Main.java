@@ -129,7 +129,7 @@ public class Main {
     return null;
   }
   public static void main(String[] args) throws PrismException, IOException, InterruptedException {
-    args = new String[]{
+    // args = new String[]{
     // "/opt/prism-4.5/prism-examples/dice/dice.pm",
     // "-pf", "P=? [ F s=7 & d=1 ]", // actual probability: 0.16666650772094727
 
@@ -167,7 +167,7 @@ public class Main {
     // "-delta", "0.001",
     // "-min_iter", "256",
     // "-gamma", "0.001",
-    };
+    // };
 
     /* We support two hidden arguments:
      * 1. -repeat <n> can be used to repeat the test multiple times. It is useful for testing statistical verification
