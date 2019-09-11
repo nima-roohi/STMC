@@ -133,33 +133,39 @@ public class Main {
     // // "/opt/prism-4.5/prism-examples/dice/dice.pm",
     // // "-pf", "P=? [ F s=7 & d=1 ]", // actual probability: 0.16666650772094727
     //
-    // // "/Users/nima/Dropbox/Research/Yu/codes/prism-4.4/examples/egl/egl.pm",
+    // // "./examples/egl/egl.pm",
     // // "-const", "L=8",
     // // "-const", "N=12",
     // // "-pf", "P=?[F<100!kA&kB]",
     //
-    // "/Users/nima/Dropbox/Research/Yu/codes/prism-4.4/examples/brp/brp.pm",
-    // "-const", "MAX=15",
-    // "-const", "N=4096",
-    // "-pf", "P<0.39[F<100s=3]", // actual probability: 0.38371680610076186
+    // "./examples/crowds/crowds.pm",
+    // "-const", "CrowdSize=20",
+    // "-const", "TotalRuns=11",
+    // "-pf", "P<0.15[F<100observe0>1]",
+    // "-sparse",
+    //
+    // // "./examples/brp/brp.pm",
+    // // "-const", "MAX=15",
+    // // "-const", "N=4096",
+    // // "-pf", "P<0.39[F<100s=3]", // actual probability: 0.38371680610076186
     // // "-mtbdd",
     //
-    // "-sim",
-    // "-repeat", "10",
+    // // "-sim",
+    // // "-repeat", "10",
     // // "-mt", "6",
     //
     // // "-simmethod","sprt",
     // // "-simconf","0.001",
     // // "-simwidth","0.001",
     //
-    // "-stmc",
-    // "-htm", "SSPRT",
-    // "-sm", "antithetic",
-    // "-ss", "2",
-    // "-alpha", "0.001",
-    // "-beta", "0.001",
-    // "-delta", "0.001",
-    // "-min_iter", "256",
+    // // "-stmc",
+    // // "-htm", "SSPRT",
+    // // "-sm", "antithetic",
+    // // "-ss", "2",
+    // // "-alpha", "0.001",
+    // // "-beta", "0.001",
+    // // "-delta", "0.001",
+    // // "-min_iter", "256",
     // // "-gamma", "0.001",
     // };
 
