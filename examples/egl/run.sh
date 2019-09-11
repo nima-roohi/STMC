@@ -69,9 +69,9 @@ run_example()
   echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
 }
 
-run_example "./examples/egl/egl.pm -const L=8  -const N=8"  "P<0.51[F<100!kA&kB]" 0.001 0.001
-run_example "./examples/egl/egl.pm -const L=8  -const N=10" "P<0.51[F<100!kA&kB]" 0.001 0.001
-run_example "./examples/egl/egl.pm -const L=8  -const N=12" "P<0.51[F<100!kA&kB]" 0.001 0.001
+run_example "./examples/egl/egl.pm -const L=2  -const N=10" "P<0.51[F<100!kA&kB]" 0.001 0.001
+run_example "./examples/egl/egl.pm -const L=2  -const N=13" "P<0.51[F<100!kA&kB]" 0.001 0.001
+run_example "./examples/egl/egl.pm -const L=2  -const N=16" "P<0.51[F<100!kA&kB]" 0.001 0.001
 run_example "./examples/egl/egl.pm -const L=2  -const N=20" "P<0.51[F<100!kA&kB]" 0.001 0.001
 
 
