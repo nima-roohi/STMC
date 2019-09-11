@@ -61,7 +61,7 @@ final class HypTestSPRTTernary private(private[this] var lb: HypTestSPRT,
     *   - 0 < δ < 0.5
     *   - δ < θ
     *   - δ < 1 - θ
-    * @see [[status(lb*]], [[too_close]], [[rejected]], [[failed_to_reject]] */
+    * @see [[status(lb*]], [[too_close]], [[rejected]], [[failed_to_reject]]*/
   def init(threshold: Double, alpha: Double, beta: Double, gamma: Double, delta: Double, LB: Boolean = true): HypTestSPRTTernary = {
     val half_delta = delta / 2
     this.LB = LB
@@ -116,6 +116,9 @@ final class HypTestSPRTTernary private(private[this] var lb: HypTestSPRT,
     case CompResult.Ternary.LARGER    => Int.box(+1)
     case CompResult.Ternary.UNDECIDED => throw new PrismException("Missing parameter not computed yet")
     }
+
+  @throws[PrismException]
+  override def getResult(sampler: Sampler): AnyRef = if (LB) getMissingParameter else Int.box(-getMissingParameter)
 
   //------------------------------------------------------------------------------------------------------------------------------------------------------------
 
