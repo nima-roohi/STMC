@@ -130,34 +130,39 @@ public class Main {
   }
   public static void main(String[] args) throws PrismException, IOException, InterruptedException {
     // args = new String[]{
-    // "/opt/prism-4.5/prism-examples/dice/dice.pm",
-    // "-pf", "P=? [ F s=7 & d=1 ]", // actual probability: 0.16666650772094727
-
-    // "./examples/egl/egl.pm",
-    // "-const", "L=8",
-    // "-const", "N=12",
-    // "-pf", "P=?[F<100!kA&kB]",
-
-    // "./examples/crowds/crowds.pm",
-    // "-const", "CrowdSize=20",
-    // "-const", "TotalRuns=11",
-    // "-pf", "P<0.15[F<100observe0>1]",
-    // "-sparse",
-
-    // "./examples/brp/brp.pm",
-    // "-const", "MAX=15",
-    // "-const", "N=4096",
-    // "-pf", "P<0.39[F<100s=3]", // actual probability: 0.38371680610076186
-    // "-mtbdd",
-
+    // // "/opt/prism-4.5/prism-examples/dice/dice.pm",
+    // // "-pf", "P=? [ F s=7 & d=1 ]", // actual probability: 0.16666650772094727
+    //
+    // // "./examples/egl/egl.pm",
+    // // "-const", "L=8",
+    // // "-const", "N=12",
+    // // "-pf", "P=?[F<100!kA&kB]",
+    //
+    // // "./examples/crowds/crowds.pm",
+    // // "-const", "CrowdSize=20",
+    // // "-const", "TotalRuns=11",
+    // // "-pf", "P<0.15[F<100observe0>1]",
+    // // "-sparse",
+    //
+    // // "./examples/brp/brp.pm",
+    // // "-const", "MAX=15",
+    // // "-const", "N=4096",
+    // // "-pf", "P<0.39[F<100s=3]", // actual probability: 0.38371680610076186
+    // // "-mtbdd",
+    //
+    // "./examples/tandem/tandem.sm",
+    // "-const", "c=10",
+    // "-pf", "P>0.0015[F<=100.0sc=c&sm=c&ph=2]",
+    // // "-mtbdd",
+    //
     // "-sim",
-    // "-repeat", "10",
-    // "-mt", "6",
-
-    // "-simmethod","sprt",
-    // "-simconf","0.001",
-    // "-simwidth","0.001",
-
+    // // "-repeat", "10",
+    // // "-mt", "6",
+    //
+    // // "-simmethod","sprt",
+    // // "-simconf","0.001",
+    // // "-simwidth","0.001",
+    //
     // "-stmc",
     // "-htm", "SSPRT",
     // "-sm", "antithetic",
@@ -166,7 +171,7 @@ public class Main {
     // "-beta", "0.001",
     // "-delta", "0.001",
     // "-min_iter", "256",
-    // "-gamma", "0.001",
+    // // "-gamma", "0.001",
     // };
 
     /* We support two hidden arguments:

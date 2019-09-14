@@ -106,16 +106,21 @@ final class SimulatorEngineStratified(parent: PrismComponent) extends SimulatorE
                                             initialState: State,
                                             maxPathLength: Long,
                                             simMethod: SimulationMethod): Array[AnyRef] = {
-    loadModulesFile(modulesFile)
-    if (modelType != ModelType.DTMC)
-      offsets2 = offsets.clone()
-    initialize(exprs, modulesFile)
+//    loadModulesFile(modulesFile)
+//    if (modelType != ModelType.DTMC)
+//      offsets2 = offsets.clone()
+//    initialize(exprs, modulesFile)
 
     super.modelCheckMultipleProperties(modulesFile, propertiesFile, exprs, initialState, maxPathLength, simMethod)
   }
 
   @throws[PrismException]
   override protected def doSampling(initialState: State, maxPathLength: Long): Unit = {
+    if (modelType != ModelType.DTMC)
+      offsets2 = offsets.clone()
+    initialize(properties, modulesFile)
+
+
     mainLog.print("\nSampling progress: [")
     mainLog.flush()
     val start = System.currentTimeMillis()
@@ -224,8 +229,6 @@ final class SimulatorEngineStratified(parent: PrismComponent) extends SimulatorE
       var samplers: List[Sampler] = Nil
       for (expr <- JavaConverters.asScalaBuffer(exprs)) {
         val sampler = Sampler.createSampler(expr, mf)
-        // sampler.reset()
-        // sampler.update(stuff(i).path, getTransitionList(i))
         samplers = sampler :: samplers
       }
       stuff(i).samplers = samplers
@@ -239,10 +242,15 @@ final class SimulatorEngineStratified(parent: PrismComponent) extends SimulatorE
     else
       throw new PrismException("Random choice of multiple initial states not yet supported")
     // Initialise stored path
+    updater.calculateStateRewards(stuff(id).currentState, tmpStateRewards)
     stuff(id).path.initialise(stuff(id).currentState, tmpStateRewards)
     // Reset transition list
     stuff(id).transitionListBuilt = false
     stuff(id).transitionListState = null
+    for(sampler <- stuff(id).samplers) {
+      sampler.reset()
+      sampler.update(stuff(id).path, getTransitionList(id))
+    }
   }
 
 

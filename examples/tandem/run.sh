@@ -35,7 +35,7 @@ run_example()
 
   echo
   echo 'antithetic'
-  $PRISM $1 -pf $2 -sim -stmc -smp_method antithetic -hyp_test_method SSPRT -repeat $repeat -mt 1 -min_iter 50   -alpha $3 -beta $3 -delta $4                                     | grep -E 'Result:|seconds|Time: average|Samples: average'
+  $PRISM $1 -pf $2 -sim -stmc -smp_method antithetic -hyp_test_method SSPRT -repeat $repeat -mt 1 -min_iter 200   -alpha $3 -beta $3 -delta $4                                     | grep -E 'Result:|seconds|Time: average|Samples: average'
 
   echo
   echo 'strata-size 1'
@@ -43,7 +43,7 @@ run_example()
 
   echo
   echo 'strata-size 2'
-  $PRISM $1 -pf $2 -sim -stmc -smp_method stratified -hyp_test_method SSPRT -repeat $repeat -mt 1 -min_iter 50  -alpha $3 -beta $3 -delta $4 -strata_size 2                       | grep -E 'Result:|seconds|Time: average|Samples: average'
+  $PRISM $1 -pf $2 -sim -stmc -smp_method stratified -hyp_test_method SSPRT -repeat $repeat -mt 1 -min_iter 200  -alpha $3 -beta $3 -delta $4 -strata_size 2                       | grep -E 'Result:|seconds|Time: average|Samples: average'
 
   echo
   echo 'strata-size 16'
@@ -69,9 +69,9 @@ run_example()
   echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
 }
 
-run_example "./examples/brp/brp.pm -const MAX=15  -const N=4096"  "P<0.39[F<100s=3]" 0.001 0.001
-run_example "./examples/brp/brp.pm -const MAX=20  -const N=8192"  "P<0.39[F<100s=3]" 0.001 0.001
-run_example "./examples/brp/brp.pm -const MAX=64  -const N=16384" "P<0.39[F<100s=3]" 0.001 0.001
-run_example "./examples/brp/brp.pm -const MAX=256 -const N=65536" "P<0.39[F<100s=3]" 0.001 0.001
+run_example "./examples/tandem/tandem.sm -const c=100"    "P>0.0015[F<=100.0sc=c&sm=c&ph=2]" 0.001 0.001
+run_example "./examples/tandem/tandem.sm -const c=1000"   "P>0.0015[F<=100.0sc=c&sm=c&ph=2]" 0.001 0.001
+run_example "./examples/tandem/tandem.sm -const c=10000"  "P>0.0015[F<=100.0sc=c&sm=c&ph=2]" 0.001 0.001
+run_example "./examples/tandem/tandem.sm -const c=100000" "P>0.0015[F<=100.0sc=c&sm=c&ph=2]" 0.001 0.001
 
 

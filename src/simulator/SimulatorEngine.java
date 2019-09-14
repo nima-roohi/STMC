@@ -122,7 +122,10 @@ public class SimulatorEngine extends PrismComponent
 
 	// Labels + properties info
 	protected List<Expression> labels;
-	private List<Expression> properties;
+  // === DOWN ==================================================================================================================================================
+  // private List<Expression> properties;
+  protected List<Expression> properties;
+  // ===  UP  ==================================================================================================================================================
 	private List<Sampler> propertySamplers;
 	// === DOWN ==================================================================================================================================================
 	public scala.collection.mutable.Buffer<Sampler> scalaPropertySamplers;
