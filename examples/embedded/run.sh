@@ -18,13 +18,13 @@ PRISM="${JAVA_CMD} -Xmx1g -Xss4M -Djava.library.path=${PRISM_HOME}/lib -classpat
 
 run_example()
 {
-  repeat=20
+  repeat=4
   echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
-  time timeout 30m $PRISM $1 -pf $2 -mtbdd    | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
-  time timeout 30m $PRISM $1 -pf $2 -sparse   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
-  time timeout 30m $PRISM $1 -pf $2 -hybrid   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
-  time timeout 30m $PRISM $1 -pf $2 -explicit | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
-  time timeout 30m $PRISM $1 -pf $2 -exact    | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+#  time timeout 30m $PRISM $1 -pf $2 -mtbdd    | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+#  time timeout 30m $PRISM $1 -pf $2 -sparse   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+#  time timeout 30m $PRISM $1 -pf $2 -hybrid   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+#  time timeout 30m $PRISM $1 -pf $2 -explicit | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+#  time timeout 30m $PRISM $1 -pf $2 -exact    | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
 
   echo 'PRISM SPRT'
   $PRISM $1 -pf $2 -sim -simmethod sprt                                     -repeat $repeat -mt 4                 -simconf $3 -simwidth $4                                        | grep -E 'Result:|seconds|Time: average|Samples: average'
@@ -53,10 +53,10 @@ run_example()
 
   echo
   echo 'strata-size 256'
-  $PRISM $1 -pf $2 -sim -stmc -smp_method stratified -hyp_test_method SSPRT -repeat $repeat -mt 2 -min_iter 5 -alpha $3 -beta $3 -delta $4 -strata_size 2,2,2,2,2,2,2,2           | grep -E 'Result:|seconds|Time: average|Samples: average'
-  $PRISM $1 -pf $2 -sim -stmc -smp_method stratified -hyp_test_method SSPRT -repeat $repeat -mt 2 -min_iter 5 -alpha $3 -beta $3 -delta $4 -strata_size 4,4,4,4                   | grep -E 'Result:|seconds|Time: average|Samples: average'
-  $PRISM $1 -pf $2 -sim -stmc -smp_method stratified -hyp_test_method SSPRT -repeat $repeat -mt 2 -min_iter 5 -alpha $3 -beta $3 -delta $4 -strata_size 16,16                     | grep -E 'Result:|seconds|Time: average|Samples: average'
-  $PRISM $1 -pf $2 -sim -stmc -smp_method stratified -hyp_test_method SSPRT -repeat $repeat -mt 2 -min_iter 5 -alpha $3 -beta $3 -delta $4 -strata_size 256                       | grep -E 'Result:|seconds|Time: average|Samples: average'
+  $PRISM $1 -pf $2 -sim -stmc -smp_method stratified -hyp_test_method SSPRT -repeat $repeat -mt 4 -min_iter 2 -alpha $3 -beta $3 -delta $4 -strata_size 2,2,2,2,2,2,2,2           | grep -E 'Result:|seconds|Time: average|Samples: average'
+  $PRISM $1 -pf $2 -sim -stmc -smp_method stratified -hyp_test_method SSPRT -repeat $repeat -mt 4 -min_iter 2 -alpha $3 -beta $3 -delta $4 -strata_size 4,4,4,4                   | grep -E 'Result:|seconds|Time: average|Samples: average'
+  $PRISM $1 -pf $2 -sim -stmc -smp_method stratified -hyp_test_method SSPRT -repeat $repeat -mt 4 -min_iter 2 -alpha $3 -beta $3 -delta $4 -strata_size 16,16                     | grep -E 'Result:|seconds|Time: average|Samples: average'
+  $PRISM $1 -pf $2 -sim -stmc -smp_method stratified -hyp_test_method SSPRT -repeat $repeat -mt 4 -min_iter 2 -alpha $3 -beta $3 -delta $4 -strata_size 256                       | grep -E 'Result:|seconds|Time: average|Samples: average'
 
   echo
   echo 'strata-size 4096'
