@@ -69,9 +69,10 @@ run_example()
   echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
 }
 
-run_example "./examples/embedded/embedded.sm -const MAX_COUNT=100"    "P<0.1[F<=3600!down&(i=1|o=1)]" 0.0001 0.0001
-run_example "./examples/embedded/embedded.sm -const MAX_COUNT=1000"   "P<0.1[F<=3600!down&(i=1|o=1)]" 0.0001 0.0001
-run_example "./examples/embedded/embedded.sm -const MAX_COUNT=10000"  "P<0.1[F<=3600!down&(i=1|o=1)]" 0.0001 0.0001
-run_example "./examples/embedded/embedded.sm -const MAX_COUNT=100000" "P<0.1[F<=3600!down&(i=1|o=1)]" 0.0001 0.0001
+#run_example "./examples/embedded/embedded.sm -const MAX_COUNT=100"     "P<0.1[F<=3600!down&(i=1|o=1)]" 0.0001 0.0001
+#run_example "./examples/embedded/embedded.sm -const MAX_COUNT=1000"    "P<0.1[F<=3600!down&(i=1|o=1)]" 0.0001 0.0001
+#run_example "./examples/embedded/embedded.sm -const MAX_COUNT=10000"   "P<0.1[F<=3600!down&(i=1|o=1)]" 0.0001 0.0001
+#run_example "./examples/embedded/embedded.sm -const MAX_COUNT=100000"  "P<0.1[F<=3600!down&(i=1|o=1)]" 0.0001 0.0001
+run_example "./examples/embedded/embedded.sm -const MAX_COUNT=1000000" "P<0.1[F<=3600!down&(i=1|o=1)]" 0.0001 0.0001
 
 
