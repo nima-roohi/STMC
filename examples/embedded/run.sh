@@ -35,7 +35,7 @@ run_example()
 
   echo
   echo 'antithetic'
-  $PRISM $1 -pf $2 -sim -stmc -smp_method antithetic -hyp_test_method SSPRT -repeat $repeat -mt 4 -min_iter 50   -alpha $3 -beta $3 -delta $4                                    | grep -E 'Result:|seconds|Time: average|Samples: average'
+  $PRISM $1 -pf $2 -sim -stmc -smp_method antithetic -hyp_test_method SSPRT -repeat $repeat -mt 4 -min_iter 50   -alpha $3 -beta $3 -delta $4                                     | grep -E 'Result:|seconds|Time: average|Samples: average'
 
   echo
   echo 'strata-size 1'
@@ -43,20 +43,20 @@ run_example()
 
   echo
   echo 'strata-size 2'
-  $PRISM $1 -pf $2 -sim -stmc -smp_method stratified -hyp_test_method SSPRT -repeat $repeat -mt 4 -min_iter 50  -alpha $3 -beta $3 -delta $4 -strata_size 2                      | grep -E 'Result:|seconds|Time: average|Samples: average'
+  $PRISM $1 -pf $2 -sim -stmc -smp_method stratified -hyp_test_method SSPRT -repeat $repeat -mt 4 -min_iter 50  -alpha $3 -beta $3 -delta $4 -strata_size 2                       | grep -E 'Result:|seconds|Time: average|Samples: average'
 
   echo
   echo 'strata-size 16'
-  $PRISM $1 -pf $2 -sim -stmc -smp_method stratified -hyp_test_method SSPRT -repeat $repeat -mt 4 -min_iter 6  -alpha $3 -beta $3 -delta $4 -strata_size 2,2,2,2                 | grep -E 'Result:|seconds|Time: average|Samples: average'
-  $PRISM $1 -pf $2 -sim -stmc -smp_method stratified -hyp_test_method SSPRT -repeat $repeat -mt 4 -min_iter 6  -alpha $3 -beta $3 -delta $4 -strata_size 4,4                     | grep -E 'Result:|seconds|Time: average|Samples: average'
-  $PRISM $1 -pf $2 -sim -stmc -smp_method stratified -hyp_test_method SSPRT -repeat $repeat -mt 4 -min_iter 6  -alpha $3 -beta $3 -delta $4 -strata_size 16                      | grep -E 'Result:|seconds|Time: average|Samples: average'
+  $PRISM $1 -pf $2 -sim -stmc -smp_method stratified -hyp_test_method SSPRT -repeat $repeat -mt 4 -min_iter 6  -alpha $3 -beta $3 -delta $4 -strata_size 2,2,2,2                  | grep -E 'Result:|seconds|Time: average|Samples: average'
+  $PRISM $1 -pf $2 -sim -stmc -smp_method stratified -hyp_test_method SSPRT -repeat $repeat -mt 4 -min_iter 6  -alpha $3 -beta $3 -delta $4 -strata_size 4,4                      | grep -E 'Result:|seconds|Time: average|Samples: average'
+  $PRISM $1 -pf $2 -sim -stmc -smp_method stratified -hyp_test_method SSPRT -repeat $repeat -mt 4 -min_iter 6  -alpha $3 -beta $3 -delta $4 -strata_size 16                       | grep -E 'Result:|seconds|Time: average|Samples: average'
 
   echo
   echo 'strata-size 256'
-  $PRISM $1 -pf $2 -sim -stmc -smp_method stratified -hyp_test_method SSPRT -repeat $repeat -mt 2 -min_iter 5 -alpha $3 -beta $3 -delta $4 -strata_size 2,2,2,2,2,2,2,2          | grep -E 'Result:|seconds|Time: average|Samples: average'
-  $PRISM $1 -pf $2 -sim -stmc -smp_method stratified -hyp_test_method SSPRT -repeat $repeat -mt 2 -min_iter 5 -alpha $3 -beta $3 -delta $4 -strata_size 4,4,4,4                  | grep -E 'Result:|seconds|Time: average|Samples: average'
-  $PRISM $1 -pf $2 -sim -stmc -smp_method stratified -hyp_test_method SSPRT -repeat $repeat -mt 2 -min_iter 5 -alpha $3 -beta $3 -delta $4 -strata_size 16,16                    | grep -E 'Result:|seconds|Time: average|Samples: average'
-  $PRISM $1 -pf $2 -sim -stmc -smp_method stratified -hyp_test_method SSPRT -repeat $repeat -mt 2 -min_iter 5 -alpha $3 -beta $3 -delta $4 -strata_size 256                      | grep -E 'Result:|seconds|Time: average|Samples: average'
+  $PRISM $1 -pf $2 -sim -stmc -smp_method stratified -hyp_test_method SSPRT -repeat $repeat -mt 2 -min_iter 5 -alpha $3 -beta $3 -delta $4 -strata_size 2,2,2,2,2,2,2,2           | grep -E 'Result:|seconds|Time: average|Samples: average'
+  $PRISM $1 -pf $2 -sim -stmc -smp_method stratified -hyp_test_method SSPRT -repeat $repeat -mt 2 -min_iter 5 -alpha $3 -beta $3 -delta $4 -strata_size 4,4,4,4                   | grep -E 'Result:|seconds|Time: average|Samples: average'
+  $PRISM $1 -pf $2 -sim -stmc -smp_method stratified -hyp_test_method SSPRT -repeat $repeat -mt 2 -min_iter 5 -alpha $3 -beta $3 -delta $4 -strata_size 16,16                     | grep -E 'Result:|seconds|Time: average|Samples: average'
+  $PRISM $1 -pf $2 -sim -stmc -smp_method stratified -hyp_test_method SSPRT -repeat $repeat -mt 2 -min_iter 5 -alpha $3 -beta $3 -delta $4 -strata_size 256                       | grep -E 'Result:|seconds|Time: average|Samples: average'
 
   echo
   echo 'strata-size 4096'
@@ -69,9 +69,9 @@ run_example()
   echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
 }
 
-run_example "./examples/embedded/embedded.sm -const MAX_COUNT=100"    "P<0.1[F<=360000down]" 0.0001 0.001
-run_example "./examples/embedded/embedded.sm -const MAX_COUNT=1000"   "P<0.1[F<=360000down]" 0.0001 0.001
-run_example "./examples/embedded/embedded.sm -const MAX_COUNT=10000"  "P<0.1[F<=360000down]" 0.0001 0.001
-run_example "./examples/embedded/embedded.sm -const MAX_COUNT=100000" "P<0.1[F<=360000down]" 0.0001 0.001
+run_example "./examples/embedded/embedded.sm -const MAX_COUNT=100"    "P=?[F<=3600!down & (i=1 | o=1)]" 0.0001 0.001
+run_example "./examples/embedded/embedded.sm -const MAX_COUNT=1000"   "P=?[F<=3600!down & (i=1 | o=1)]" 0.0001 0.001
+run_example "./examples/embedded/embedded.sm -const MAX_COUNT=10000"  "P=?[F<=3600!down & (i=1 | o=1)]" 0.0001 0.001
+run_example "./examples/embedded/embedded.sm -const MAX_COUNT=100000" "P=?[F<=3600!down & (i=1 | o=1)]" 0.0001 0.001
 
 
