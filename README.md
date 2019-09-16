@@ -273,9 +273,8 @@ We use PRISM's switch `-const` for that purpose.
     ```
     
 1.  Use independent sampling with TernarySPRT. 
-    Type I and Type II error probabilities are `0.05`,  
-    Type III error probabilities is `0.02`, and 
-    minimum number of iterations is `10`. 
+    Type I and Type II error probabilities are `0.05`, and
+    Type III error probabilities is `0.02`. 
     ```sh
     ./stmc.sh ./examples/brp/brp.pm -const MAX=256 -const N=65536 -pf 'P<0.6[F<100s=3]' -stmc -sim  \
     -alpha 0.05 -beta 0.05 -gamma 0.02 -delta 0.01 -smp_method independent -hyp_test_method TSPRT
