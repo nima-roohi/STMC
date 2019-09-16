@@ -155,7 +155,7 @@ Running a Single Example
 In this section we explain how to run a single example and different options/switches involved in it. 
 There are three steps. The first two are exactly same as the first two steps in 
 [Running the Benchmarks](#Running-the-Benchmarks) section
-(clone the code from its repository and enter STMC folder).
+(clone the code from its repository and enter into STMC folder).
 The last step is running the tool which is achieved by entering command
 `./stmc.sh <options>` in terminal.
 We next explain STMC options and give a few examples for them.
@@ -165,7 +165,7 @@ We next explain STMC options and give a few examples for them.
     For example, `./examples/brp/brp.pm`.
 1. `-pf <property>`: Specifies the property that should be verified.
     For example, `-pf 'P<0.39[F<100s=3]'`.
-    STMC supports any property that PRISM can evaluate it on a single path using its simulation engine.
+    STMC supports any property that PRISM can evaluate on a single path using its simulation engine.
 1. `-stmc`: Enables STMC tool. Without this option, everything will be passed directly to PRISM, 
     pretty much like STMC was not there in the first place.
 1. `-sim`: Enables statistical verification. 
@@ -199,7 +199,7 @@ We next explain STMC options and give a few examples for them.
                does not guarantee any error probability.
                Ternary SPRT solves this problem by introducing a third possible answer:
                `TOO_CLOSE`.
-               Note that PRISM requires that result of a test to be either a boolean value of 
+               Note that PRISM requires that result of a test to be either a boolean value or 
                an integer. Therefore, whenever this option is used, 
                `-1` means false, 
                `1` means, and 
@@ -217,7 +217,7 @@ We next explain STMC options and give a few examples for them.
     This is useful in the case of evaluating a statistical algorithm experimentally.
 1. `-mt <integer>` (experimental - argument is optional):
     Maximum number of processes to use for repeating the experiment.
-    If no argument is given then number of available processes will be used as a default value.
+    If no argument is given then the number of available processes will be used as a default value.
    
 ### Examples:
 
@@ -268,12 +268,13 @@ We use PRISM's switch `-const` for that purpose.
     minimum number of iterations is `10`. 
     ```sh
     ./stmc.sh ./examples/brp/brp.pm -const MAX=256 -const N=65536 -pf 'P<0.6[F<100s=3]' -stmc -sim    \
-    -alpha 0.05 -beta 0.05 -delta 0.01 -smp_method stratified -hyp_test_method SSPRT -strata_size 4,4 \
+    -alpha 0.05 -beta 0.05 -delta 0.01 -smp_method stratified -hyp_test_method SSPRT -strata_size 2,4 \
     -min_iter 10
     ```
     
 1.  Use independent sampling with TernarySPRT. 
-    Type I and Type II error probabilities are `0.05`, and 
+    Type I and Type II error probabilities are `0.05`,  
+    Type III error probabilities is `0.02`, and 
     minimum number of iterations is `10`. 
     ```sh
     ./stmc.sh ./examples/brp/brp.pm -const MAX=256 -const N=65536 -pf 'P<0.6[F<100s=3]' -stmc -sim  \
