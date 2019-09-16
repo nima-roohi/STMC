@@ -125,7 +125,7 @@ Follow the next steps:
     ```sh
     ~/STMC$ ./examples/brp/run.sh 
     ```
-   This will run 68 statistical tests and attempts to run 20 symbolic tests
+   This runs 68 statistical tests and attempts to run 20 symbolic tests
    (some of the symbolic ones might not survive the state space explosion).
    Furthermore, each of the statistical tests will be repeated 20 times, so 
    we can gather average times and number of samples. Therefore, be ready to 
@@ -144,7 +144,9 @@ Follow the next steps:
    run multiple benchmarks at the same time. The solution is to assign environment 
    variable `STMC_PORT` to a free port of your choice. You should also use this 
    step when `56437` is taken by some other processes and you want to have 
-   multi-processes feature anyway.
+   multi-processes feature anyway. Failure to set the port properly when there are
+   multiple processes involved, only causes STMC not to find statistical info about
+   multiple runs of a statistical test. 
 
 
 Running a Single Example
