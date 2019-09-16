@@ -18,20 +18,20 @@ PRISM="${JAVA_CMD} -Xmx1g -Xss4M -Djava.library.path=${PRISM_HOME}/lib -classpat
 
 run_example()
 {
-  repeat=5
+  repeat=1
   echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
-#  time timeout 30m $PRISM $1 -pf $2 -mtbdd    | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
-#  time timeout 30m $PRISM $1 -pf $2 -sparse   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
-#  time timeout 30m $PRISM $1 -pf $2 -hybrid   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
-#  time timeout 30m $PRISM $1 -pf $2 -explicit | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
-#  time timeout 30m $PRISM $1 -pf $2 -exact    | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
-#
-#  echo 'PRISM SPRT'
-#  $PRISM $1 -pf $2 -sim -simmethod sprt                                     -repeat $repeat -mt 4                 -simconf $3 -simwidth $4                                        | grep -E 'Result:|seconds|Time: average|Samples: average'
-#
-#  echo
-#  echo 'GLRT'
-#  $PRISM $1 -pf $2 -sim -stmc -smp_method independent -hyp_test_method SPRT -repeat $repeat -mt 4 -min_iter 100   -alpha $3 -beta $3 -delta $4                                    | grep -E 'Result:|seconds|Time: average|Samples: average'
+  time timeout 30m $PRISM $1 -pf $2 -mtbdd    | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+  time timeout 30m $PRISM $1 -pf $2 -sparse   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+  time timeout 30m $PRISM $1 -pf $2 -hybrid   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+  time timeout 30m $PRISM $1 -pf $2 -explicit | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+  time timeout 30m $PRISM $1 -pf $2 -exact    | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+
+  echo 'PRISM SPRT'
+  $PRISM $1 -pf $2 -sim -simmethod sprt                                     -repeat $repeat -mt 4                 -simconf $3 -simwidth $4                                        #| grep -E 'Result:|seconds|Time: average|Samples: average'
+
+  echo
+  echo 'GLRT'
+  $PRISM $1 -pf $2 -sim -stmc -smp_method independent -hyp_test_method SPRT -repeat $repeat -mt 4 -min_iter 100   -alpha $3 -beta $3 -delta $4                                    | grep -E 'Result:|seconds|Time: average|Samples: average'
 
   echo
   echo 'antithetic'
@@ -69,9 +69,9 @@ run_example()
   echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
 }
 
-run_example "./examples/tandem/tandem.sm -const c=100"    "P>0.002[F<=100.0sc=c&sm=c&ph=2]" 0.001 0.001
-run_example "./examples/tandem/tandem.sm -const c=1000"   "P>0.002[F<=100.0sc=c&sm=c&ph=2]" 0.001 0.001
-run_example "./examples/tandem/tandem.sm -const c=10000"  "P>0.002[F<=100.0sc=c&sm=c&ph=2]" 0.001 0.001
-run_example "./examples/tandem/tandem.sm -const c=100000" "P>0.002[F<=100.0sc=c&sm=c&ph=2]" 0.001 0.001
+run_example "./examples/tandem/tandem.sm -const c=511"  "P>0.55[F<=0.25sc=c]" 0.0001 0.0004
+run_example "./examples/tandem/tandem.sm -const c=1023" "P>0.55[F<=0.25sc=c]" 0.0001 0.0004
+run_example "./examples/tandem/tandem.sm -const c=2047" "P>0.55[F<=0.25sc=c]" 0.0001 0.0004
+run_example "./examples/tandem/tandem.sm -const c=4095" "P>0.55[F<=0.25sc=c]" 0.0001 0.0004
 
 
