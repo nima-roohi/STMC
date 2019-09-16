@@ -27,11 +27,11 @@ run_example()
   time timeout 30m $PRISM $1 -pf $2 -exact    | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
 
   echo 'PRISM SPRT'
-  $PRISM $1 -pf $2 -sim -simmethod sprt                                     -repeat $repeat -mt 4                 -simconf $3 -simwidth $4                                        #| grep -E 'Result:|seconds|Time: average|Samples: average'
+  $PRISM $1 -pf $2 -sim -simmethod sprt                                     -repeat $repeat -mt 4                 -simconf $3 -simwidth $4                                       | grep -E 'Result:|seconds|Time: average|Samples: average'
 
   echo
   echo 'GLRT'
-  $PRISM $1 -pf $2 -sim -stmc -smp_method independent -hyp_test_method SPRT -repeat $repeat -mt 4 -min_iter 100   -alpha $3 -beta $3 -delta $4                                    | grep -E 'Result:|seconds|Time: average|Samples: average'
+  $PRISM $1 -pf $2 -sim -stmc -smp_method independent -hyp_test_method SPRT -repeat $repeat -mt 4 -min_iter 100   -alpha $3 -beta $3 -delta $4                                   | grep -E 'Result:|seconds|Time: average|Samples: average'
 
   echo
   echo 'antithetic'
@@ -39,7 +39,7 @@ run_example()
 
   echo
   echo 'strata-size 1'
-  $PRISM $1 -pf $2 -sim -stmc -smp_method stratified -hyp_test_method SSPRT -repeat $repeat -mt 4 -min_iter 100  -alpha $3 -beta $3 -delta $4 -strata_size 1                      | grep -E 'Result:|seconds|Time: average|Samples: average'
+  $PRISM $1 -pf $2 -sim -stmc -smp_method stratified -hyp_test_method SSPRT -repeat $repeat -mt 4 -min_iter 100  -alpha $3 -beta $3 -delta $4 -strata_size 1                     | grep -E 'Result:|seconds|Time: average|Samples: average'
 
   echo
   echo 'strata-size 2'
