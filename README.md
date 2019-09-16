@@ -12,7 +12,7 @@ our benchmarks.
 Here we explain how to install and run benchmarks as well as examples.
 
 **_Note:_**
-_The following steps are only tested on MacOS and Ubuntu._   
+_The following steps are tested on MacOS and Ubuntu._   
 
 
 Prerequisites
@@ -72,7 +72,7 @@ Follow the next steps to compile and run the source code:
 1. Rebuild the `stmc` artifact.
     This can be done, for example, by selecting `Build Artifacts...` and then `stmc > rebuild`
     from the `Build` menu.
-    After this step, a Jar file called `stmc.jar` will be overwritten.
+    After this step, a Jar file called `stmc.jar` will be overwritten in `./out/artifacts/stmc`.
 1. If you don't want to rebuild the artifact and just want to run the tool within the IDE, 
     so that you can debug your code, instead of the previous step, run 
     `src/edu/stmc/Main.scala` file by, for example, right-clicking on the file in the Navigation Pane
@@ -127,21 +127,24 @@ Follow the next steps:
     ```
    This will run 68 statistical tests and attempts to run 20 symbolic tests
    (some of the symbolic ones might not survive the state space explosion).
-   Furthermore, each of the statistical tests will be repeated 20 times using at 
-   most 4 processes, so we can gather average times and number of samples.
-   Therefore, be ready to give it quite a few hours before it finishes.
+   Furthermore, each of the statistical tests will be repeated 20 times, so 
+   we can gather average times and number of samples. Therefore, be ready to 
+   give it quite a few hours before it finishes.
    
-   The synchronization between different processes is carried out through sockets.
-   It is assumed port number `56437` is free. As a consequence, you cannot run 
-   multiple benchmarks at the same time. There are two methods for changing this 
-   behavior.
-   1. Disable multi-processes in the benchmark.
-      For this method, simply remove all `-mt 4` from `~/STMC/examples/brp/run.sh`.
-      Note that simultaneously running four processes is likely to make them slightly 
-      slower compared to one process at a time. 
-   1. Assign environment variable `STMC_PORT` to a free port of your choice. You 
-      should also use this step when `56437` is taken by some other processes and 
-      you want to have multi-processes feature anyway.
+   You can reduce this time by changing all occurrences of `-mt 1` in file 
+   `./examples/brp/run.sh` by `-mt 4` or `-mt`. The first option instructs
+   STMC to use at most 4 processors for repeating statistical tests. The 
+   second option causes STMC to use all the available processes. Note that 
+   these are processes and not threads. Therefore, there will be slightly
+   more overhead. 
+   
+   When there are more than one processes, the synchronization between them is 
+   carried out through sockets. It is assumed port number `56437` is free. As a 
+   consequence, if you use more than one process (ie. change `-mt 1`) you cannot 
+   run multiple benchmarks at the same time. The solution is to assign environment 
+   variable `STMC_PORT` to a free port of your choice. You should also use this 
+   step when `56437` is taken by some other processes and you want to have 
+   multi-processes feature anyway.
 
 
 Running a Single Example
