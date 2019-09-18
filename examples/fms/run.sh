@@ -69,9 +69,9 @@ run_example()
   echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
 }
 
-run_example "./examples/polling/poll10.sm" "P>0.04[!(s=2&a=1)U<1(s=1&a=1)]" 0.001 0.001
-run_example "./examples/polling/poll13.sm" "P>0.04[!(s=2&a=1)U<1(s=1&a=1)]" 0.001 0.001
-run_example "./examples/polling/poll17.sm" "P>0.04[!(s=2&a=1)U<1(s=1&a=1)]" 0.001 0.001
-run_example "./examples/polling/poll20.sm" "P>0.04[!(s=2&a=1)U<1(s=1&a=1)]" 0.001 0.001
+run_example "./examples/fms/fms.sm -const n=7"  "P<0.5[F<4P1=0&P2=0&P3=0]" 0.0001 0.0001
+run_example "./examples/fms/fms.sm -const n=10" "P<0.5[F<4P1=0&P2=0&P3=0]" 0.0001 0.0001
+run_example "./examples/fms/fms.sm -const n=14" "P<0.5[F<4P1=0&P2=0&P3=0]" 0.0001 0.0001
+run_example "./examples/fms/fms.sm -const n=20" "P<0.5[F<4P1=0&P2=0&P3=0]" 0.0001 0.0001
 
 
