@@ -1,0 +1,60 @@
+{
+  "papers": [
+    {
+      "name": "Statistical verification of PCTL using antithetic and stratified samples",
+      "authors": "Yu Wang, Nima Roohi, Matthew West, Mahesh Viswanathan and Geir E. Dullerud",
+      "address": "Formal Methods in System Design pp. 1-19 (2019)",
+      "bibtex": "/bibliographies/wang_StatisticalVerificationPCTL_2019.bib",
+      "doi": "10.1007/s10703-019-00339-8"
+    },
+    {
+      "name": "Statistical Verification of PCTL Using Stratified Samples",
+      "authors": "Yu Wang, Nima Roohi, Matthew West, Mahesh Viswanathan and Geir E. Dullerud",
+      "address": "IFAC-PapersOnLine, vol. 51, no. 16, pp. 85-90 (2018)",
+      "bibtex": "/bibliographies/wang_StatisticalVerificationPCTL_2018.bib",
+      "doi": "10.1016/j.ifacol.2018.08.015"
+    },
+    {
+      "name": "Statistical Verification of the Toyota Powertrain Control Verification Benchmark",
+      "authors": "Nima Roohi, Yu Wang, Matthew West, Geir E. Dullerud and Mahesh Viswanathan",
+      "address": "Proceedings of the 20th International Conference on Hybrid Systems: Computation and Control, pp. 65--70 (2017)",
+      "bibtex": "/bibliographies/roohi_StatisticalVerificationToyota_2017.bib",
+      "doi": "10.1145/3049797.3049804"
+    },
+    {
+      "name": "Stability Analysis of Switched Linear Systems Defined by Regular Languages",
+      "authors": "Yu Wang, Nima Roohi, Geir E. Dullerud and Mahesh Viswanathan",
+      "address": "IEEE Transactions on Automatic Control, vol. 62, no. 5, pp. 2568-2575 (2017)",
+      "bibtex": "/bibliographies/wang_StabilityAnalysisSwitched_2017.bib",
+      "doi": "10.1109/TAC.2016.2599930"
+    },
+    {
+      "name": "Verifying Continuous-Time Stochastic Hybrid Systems via Mori-Zwanzig Model Reduction",
+      "authors": "Yu Wang, Nima Roohi, Matthew West, Mahesh Viswanathan and Geir E. Dullerud",
+      "address": "Proceedings of the 55th Conference on Decision and Control (CDC), pp. 3012-3017 (2016)",
+      "bibtex": "/bibliographies/wang_VerifyingContinuoustimeStochastic_2016.bib",
+      "doi": "10.1109/CDC.2016.7798719"
+    },
+    {
+      "name": "A Mori-Zwanzig and MITL Based Approach to Statistical Verification of Continuous-Time Dynamical Systems",
+      "authors": "Yu Wang, Nima Roohi, Matthew West, Mahesh Viswanathan and Geir E. Dullerud",
+      "address": "IFAC-PapersOnLine, vol. 48, no. 27, pp. 267-273 (2015)",
+      "bibtex": "/bibliographies/wang_MoriZwanzigMITLBased_2015.bib",
+      "doi": "10.1016/j.ifacol.2015.11.186"
+    },
+    {
+      "name": "Statistical Verification of Dynamical Systems Using Set Oriented Methods",
+      "authors": "Yu Wang, Nima Roohi, Matthew West, Mahesh Viswanathan and Geir E. Dullerud",
+      "address": "Proceedings of the 18th International Conference on Hybrid Systems: Computation and Control, pp. 169--178 (2015)",
+      "bibtex": "/bibliographies/wang_StatisticalVerificationDynamical_2015.bib",
+      "doi": "10.1145/2728606.2728627"
+    },
+    {
+      "name": "Stability of Linear Autonomous Systems under Regular Switching Sequences",
+      "authors": "Yu Wang, Nima Roohi, Geir E. Dullerud and Mahesh Viswanathan",
+      "address": "Proceedings of the 53rd IEEE Conference on Decision and Control, pp. 5445-5450 (2014)",
+      "bibtex": "/bibliographies/wang_StabilityLinearAutonomous_2014.bib",
+      "doi": "10.1109/CDC.2014.7040240"
+    }
+  ]
+}

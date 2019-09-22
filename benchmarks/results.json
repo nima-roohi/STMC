@@ -1,0 +1,85 @@
+{
+  "files": [
+    {
+      "file": {
+        "name": "Bounded Retransmission Protocol",
+        "type": "DTMC",
+        "address": "/benchmarks/dtmc-ltl-brp.json",
+        "link": "https://www.prismmodelchecker.org/casestudies/brp.php",
+        "link_name": "Taken from PRISM Case Studies"
+      }
+    },
+    {
+      "file": {
+        "name": "Crowds Protocol",
+        "type": "DTMC",
+        "address": "/benchmarks/dtmc-ltl-crowds.json",
+        "link": "https://www.prismmodelchecker.org/casestudies/crowds.php",
+        "link_name": "Taken from PRISM Case Studies"
+      }
+    },
+    {
+      "file": {
+        "name": "Probabilistic Contract Signing Protocol",
+        "type": "DTMC",
+        "address": "/benchmarks/dtmc-ltl-egl.json",
+        "link": "http://www.prismmodelchecker.org/casestudies/contract_egl.php",
+        "link_name": "Taken from PRISM Case Studies"
+      }
+    },
+    {
+      "file": {
+        "name": "NAND Multiplexing",
+        "type": "DTMC",
+        "address": "/benchmarks/dtmc-ltl-nand.json",
+        "link": "https://www.prismmodelchecker.org/casestudies/nand.php",
+        "link_name": "Taken from PRISM Case Studies"
+      }
+    },
+    {
+      "file": {
+        "name": "Embedded Control System",
+        "type": "CTMC",
+        "address": "/benchmarks/ctmc-ltl-embedded.json",
+        "link": "https://www.prismmodelchecker.org/casestudies/embedded.php",
+        "link_name": "Taken from PRISM Case Studies"
+      }
+    },
+    {
+      "file": {
+        "name": "Tandem Queueing Network",
+        "type": "CTMC",
+        "address": "/benchmarks/ctmc-ltl-tandem.json",
+        "link": "https://www.prismmodelchecker.org/casestudies/tandem.php",
+        "link_name": "Taken from PRISM Case Studies"
+      }
+    },
+    {
+      "file": {
+        "name": "Flexible Manufacturing System",
+        "type": "CTMC",
+        "address": "/benchmarks/ctmc-ltl-fms.json",
+        "link": "https://www.prismmodelchecker.org/casestudies/fms.php",
+        "link_name": "Taken from PRISM Case Studies"
+      }
+    },
+    {
+      "file": {
+        "name": "Simple Peer-To-Peer Protocol",
+        "type": "CTMC",
+        "address": "/benchmarks/ctmc-ltl-peer2peer.json",
+        "link": "https://www.prismmodelchecker.org/casestudies/peer2peer.php",
+        "link_name": "Taken from PRISM Case Studies"
+      }
+    },
+    {
+      "file": {
+        "name": "Cyclic Server Polling System",
+        "type": "CTMC",
+        "address": "/benchmarks/ctmc-ltl-polling.json",
+        "link": "https://www.prismmodelchecker.org/casestudies/polling.php",
+        "link_name": "Taken from PRISM Case Studies"
+      }
+    }
+  ]
+}

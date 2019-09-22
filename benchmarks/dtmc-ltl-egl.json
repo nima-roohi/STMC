@@ -1,0 +1,257 @@
+{
+  "types": [
+    "times",
+    "samples"
+  ],
+  "description": "Consider several parties on a computer network who wish to exchange some items of value but do not trust each other to behave honestly. Fair exchange is the problem of exchanging data in a way that guarantees that either all participants obtain what they want, or none do. Contract signing is a particular form of fair exchange, in which the parties exchange commitments to a contract (typically, a text string spelling out the terms of the deal). Commitment is often identified with the party's digital signature on the contract. In commercial transactions conducted in a distributed environment such as the Internet, it is sometimes difficult to assess a counter-party's trustworthiness. Contract signing protocols are, therefore, an essential piece of the e-commerce infrastructure.<p/>These examples show that both stratification and antithetic sampling are sometimes capable of reducing the variance to zero, in which case the algorithm terminates immediately after minimum number of samples was taken. This can dramatically lower number of samples (for instance, antithetic sampling used 5 orders of magnitude less samples than SPRT). Note that in the current version of our algorithm, it is user's responsibility to set minimum number of iteration high enough such that if variance was zero at the end of those iterations then the algorithm can terminate while satisfying its probabilistic guarantees (PRISM uses option \"-simvar &lt;n&gt;\" for the same purpose). Finally, these examples also show that over-stratification can be harmful as it increases the minimum number of samples in our algorithm. For example, when 2 strata is capable of reducing variance to zero, using 4096 strata is an over-kill.<p/>On all of these examples, we set &#x3B1;=&#x3B2;=&#x3B4;=0.001. What you see here is the average of 20 runs with 95% confidence interval. All experiments were run on Ubuntu 18.04 with i7-8700 CPU 3.2GHz and 16GB memory.",
+  "results": [
+    {
+      "params": {
+        "L": "2",
+        "N": "10"
+      },
+      "size" : {
+        "States":      "66060286",
+        "Transitions": "67108861"
+      },
+      "times": {
+        "initScaleBar":0.01,
+        "MTBDD"   : 1.687,
+        "Sparse"  : 173.292,
+        "Hybrid"  : 127.102,
+        "Explicit": "Out Of Memory Error",
+        "SPRT"      : [45.53915, 1.9919635608522455],
+        "GLRT"      : [49.19415, 1.8855588593235917],
+        "Antithetic": [0.21130000000000002, 0.005535578703166215],
+
+        "S-1^1"   : [48.32699999999999, 2.435930465259414],
+        "S-2^1"   : [0.17415, 0.004127746294733267],
+
+        "S-2^4"   : [0.3445, 0.012151997886420941],
+        "S-4^2"   : [0.35419999999999996, 0.008673795988038068],
+        "S-16^1"  : [0.4066000000000001, 0.07220043009056912],
+
+        "S-2^8"   : [1.3265000000000002, 0.03044265532370484],
+        "S-4^4"   : [1.2855999999999999, 0.020902329258268133],
+        "S-16^2"  : [1.3079, 0.017474929410293386],
+        "S-256^1" : [1.9596, 0.03139027673793608],
+
+        "S-2^12"  : [7.084250000000001, 0.041524430031894335],
+        "S-4^6"   : [6.7040500000000005, 0.04389050220959571],
+        "S-16^3"  : [6.60815, 0.03674150635825489],
+        "S-64^2"  : [6.816700000000001, 0.03715685811883397],
+        "S-4096^1": [7.742000000000001, 0.05064593296915154]
+      },
+      "samples": {
+        "initScaleBar":0.0001,
+        "SPRT"      : [84279.85, 3752.523708873521],
+        "GLRT"      : [90842.05, 3328.6585289722943],
+        "Antithetic": [40.0, 0.0],
+
+        "S-1^1"   : [93970.65, 4858.024393383645],
+        "S-2^1"   : [20.0, 0.0],
+
+        "S-2^4"   : [80.0, 0.0],
+        "S-4^2"   : [80.0, 0.0],
+        "S-16^1"  : [166.40000000000003, 59.46455821924961],
+
+        "S-2^8"   : [768.0, 0.0],
+        "S-4^4"   : [768.0, 0.0],
+        "S-16^2"  : [768.0, 0.0],
+        "S-256^1" : [768.0, 0.0],
+
+        "S-2^12"  : [8192.0, 0.0],
+        "S-4^6"   : [8192.0, 0.0],
+        "S-16^3"  : [8192.0, 0.0],
+        "S-64^2"  : [8192.0, 0.0],
+        "S-4096^1": [8192.0, 0.0]
+      }
+    },
+    {
+      "params": {
+        "L": "2",
+        "N": "13"
+      },
+      "size" : {
+        "States":      "5435817982",
+        "Transitions": "5502926845"
+      },
+      "times": {
+        "initScaleBar":0.01,
+        "MTBDD"   : 1.817,
+        "Sparse"  : "Too Many States (> 2^31 - 1)",
+        "Hybrid"  : "Too Many States (> 2^31 - 1)",
+        "Explicit": "Out Of Memory Error",
+        "SPRT"      : [52.8453, 1.9443973211850452],
+        "GLRT"      : [52.64330000000001, 1.530383192640258],
+        "Antithetic": [0.20935, 0.007608262475410325],
+
+        "S-1^1"   : [51.44345, 1.7544126434657927],
+        "S-2^1"   : [0.18619999999999998, 0.003695374064108286],
+
+        "S-2^4"   : [0.3157, 0.010164981166006315],
+        "S-4^2"   : [0.29824999999999996, 0.007389492896211338],
+        "S-16^1"  : [0.31075, 0.011231270959620784],
+
+        "S-2^8"   : [1.1925499999999998, 0.016425986311810605],
+        "S-4^4"   : [1.19485, 0.014161711723777195],
+        "S-16^2"  : [1.2099999999999997, 0.013342058548656912],
+        "S-256^1" : [1.6911, 0.024251630438949224],
+
+        "S-2^12"  : [7.41985, 0.04685280843124283],
+        "S-4^6"   : [6.929749999999999, 0.02952767435189535],
+        "S-16^3"  : [6.890749999999999, 0.04391054752802028],
+        "S-64^2"  : [6.97825, 0.03719138800993131],
+        "S-4096^1": [7.9293, 0.05053915105612367]
+      },
+      "samples": {
+        "initScaleBar":0.0001,
+        "SPRT"      : [87829.25, 3446.07912353415],
+        "GLRT"      : [86630.29999999999, 2421.0139471108514],
+        "Antithetic": [40.0, 0.0],
+
+        "S-1^1"   : [88797.29999999999, 2872.866430386576],
+        "S-2^1"   : [20.0, 0.0],
+
+        "S-2^4"   : [80.0, 0.0],
+        "S-4^2"   : [80.0, 0.0],
+        "S-16^1"  : [80.0, 0.0],
+
+        "S-2^8"   : [768.0, 0.0],
+        "S-4^4"   : [768.0, 0.0],
+        "S-16^2"  : [768.0, 0.0],
+        "S-256^1" : [768.0, 0.0],
+
+        "S-2^12"  : [8192.0, 0.0],
+        "S-4^6"   : [8192.0, 0.0],
+        "S-16^3"  : [8192.0, 0.0],
+        "S-64^2"  : [8192.0, 0.0],
+        "S-4096^1": [8192.0, 0.0]
+      }
+    },
+    {
+      "params": {
+        "L": "2",
+        "N": "16"
+      },
+      "size" : {
+        "States":      "425201762302",
+        "Transitions": "429496729597"
+      },
+      "times": {
+        "initScaleBar":0.01,
+        "MTBDD"   : 2.752,
+        "Sparse"  : "Too Many States (> 2^31 - 1)",
+        "Hybrid"  : "Too Many States (> 2^31 - 1)",
+        "Explicit": "Out Of Memory Error",
+        "SPRT"      : [57.9065, 1.77142838662684],
+        "GLRT"      : [60.1299, 1.6003104532690229],
+        "Antithetic": [0.22499999999999998, 0.006152021490620187],
+
+        "S-1^1"   : [54.171350000000004, 2.200508898408203],
+        "S-2^1"   : [0.18894999999999998, 0.004492962333062205],
+
+        "S-2^4"   : [0.33594999999999997, 0.007347923086438135],
+        "S-4^2"   : [0.3205, 0.008944713228317724],
+        "S-16^1"  : [0.32745, 0.006946970183960924],
+
+        "S-2^8"   : [1.2229999999999999, 0.010469253228282063],
+        "S-4^4"   : [1.1765999999999999, 0.015837065118857963],
+        "S-16^2"  : [1.2115999999999998, 0.019349200989895374],
+        "S-256^1" : [1.6243500000000002, 0.060287917747387766],
+
+        "S-2^12"  : [7.616849999999999, 0.03076449380287878],
+        "S-4^6"   : [7.055700000000001, 0.041099628631950096],
+        "S-16^3"  : [6.9255, 0.04197759427423908],
+        "S-64^2"  : [7.09215, 0.028746008876290786],
+        "S-4096^1": [8.0491, 0.048708472190758495]
+      },
+      "samples": {
+        "initScaleBar":0.0001,
+        "SPRT"      : [87325.39999999998, 2856.1992572021495],
+        "GLRT"      : [92012.84999999998, 2571.233227844897],
+        "Antithetic": [40.0, 0.0],
+
+        "S-1^1"   : [85060.2, 3484.251190866214],
+        "S-2^1"   : [20.0, 0.0],
+
+        "S-2^4"   : [80.0, 0.0],
+        "S-4^2"   : [80.0, 0.0],
+        "S-16^1"  : [80.0, 0.0],
+
+        "S-2^8"   : [768.0, 0.0],
+        "S-4^4"   : [768.0, 0.0],
+        "S-16^2"  : [768.0, 0.0],
+        "S-256^1" : [768.0, 0.0],
+
+        "S-2^12"  : [8192.0, 0.0],
+        "S-4^6"   : [8192.0, 0.0],
+        "S-16^3"  : [8192.0, 0.0],
+        "S-64^2"  : [8192.0, 0.0],
+        "S-4096^1": [8192.0, 0.0]
+      }
+    },
+    {
+      "params": {
+        "L": "2",
+        "N": "20"
+      },
+      "size" : {
+        "States":      "135239930216446",
+        "Transitions": "136339441844221"
+      },
+      "times": {
+        "initScaleBar":0.01,
+        "MTBDD"   : 3.957,
+        "Sparse"  : "Too Many States (> 2^31 - 1)",
+        "Hybrid"  : "Too Many States (> 2^31 - 1)",
+        "Explicit": "Out Of Memory Error",
+        "SPRT"      : [63.9418, 2.018058208956531],
+        "GLRT"      : [64.23100000000001, 2.852331751576705],
+        "Antithetic": [0.22439999999999996, 0.005744745883253487],
+
+        "S-1^1"   : [65.06370000000001, 2.3216877845540225],
+        "S-2^1"   : [0.1873, 0.005111957087374452],
+
+        "S-2^4"   : [0.33730000000000004, 0.005764272903433975],
+        "S-4^2"   : [0.32725, 0.00879768958904911],
+        "S-16^1"  : [0.32625, 0.005833151626242616],
+
+        "S-2^8"   : [1.2575, 0.010364031932348368],
+        "S-4^4"   : [1.1886500000000002, 0.01585498012413899],
+        "S-16^2"  : [1.2298499999999999, 0.015047341957967192],
+        "S-256^1" : [1.6213, 0.028229706264668673],
+
+        "S-2^12"  : [7.732849999999999, 0.04930529356655542],
+        "S-4^6"   : [7.300649999999999, 0.042497571138025964],
+        "S-16^3"  : [7.2120999999999995, 0.055987023872548],
+        "S-64^2"  : [7.32335, 0.04804878414585261],
+        "S-4096^1": [8.339550000000001, 0.056740242611209815]
+      },
+      "samples": {
+        "initScaleBar":0.0001,
+        "SPRT"      : [85307.0, 2608.2280464148953],
+        "GLRT"      : [85896.09999999999, 3905.668798379041],
+        "Antithetic": [40.0, 0.0],
+
+        "S-1^1"   : [90284.45, 3142.0889686179353],
+        "S-2^1"   : [20.0, 0.0],
+
+        "S-2^4"   : [80.0, 0.0],
+        "S-4^2"   : [80.0, 0.0],
+        "S-16^1"  : [80.0, 0.0],
+
+        "S-2^8"   : [768.0, 0.0],
+        "S-4^4"   : [768.0, 0.0],
+        "S-16^2"  : [768.0, 0.0],
+        "S-256^1" : [768.0, 0.0],
+
+        "S-2^12"  : [8192.0, 0.0],
+        "S-4^6"   : [8192.0, 0.0],
+        "S-16^3"  : [8192.0, 0.0],
+        "S-64^2"  : [8192.0, 0.0],
+        "S-4096^1": [8192.0, 0.0]
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "papers": [
+    {
+      "name": "Statistical verification of PCTL using antithetic and stratified samples",
+      "authors": "Yu Wang, Nima Roohi, Matthew West, Mahesh Viswanathan and Geir E. Dullerud",
+      "address": "Formal Methods in System Design pp. 1-19 (2019)",
+      "bibtex": "/bibliographies/wang_StatisticalVerificationPCTL_2019.bib",
+      "doi": "10.1007/s10703-019-00339-8"
+    },
+    {
+      "name": "Statistical Verification of PCTL Using Stratified Samples",
+      "authors": "Yu Wang, Nima Roohi, Matthew West, Mahesh Viswanathan and Geir E. Dullerud",
+      "address": "IFAC-PapersOnLine, vol. 51, no. 16, pp. 85-90 (2018)",
+      "bibtex": "/bibliographies/wang_StatisticalVerificationPCTL_2018.bib",
+      "doi": "10.1016/j.ifacol.2018.08.015"
+    }
+  ]
+}
