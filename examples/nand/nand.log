@@ -1,0 +1,3120 @@
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Time for model construction: 7.003 seconds.
+States:      9420422 (1 initial)
+Transitions: 14899892
+Engine: MTBDD
+Time for model checking: 135.053 seconds.
+Result: true (property satisfied in the initial state)
+
+real	2m23.890s
+user	2m21.869s
+sys	0m1.456s
+
+Time for model construction: 6.654 seconds.
+States:      9420422 (1 initial)
+Transitions: 14899892
+Engine: Sparse
+Time for model checking: 6.662 seconds.
+Result: true (property satisfied in the initial state)
+
+real	0m14.827s
+user	0m14.509s
+sys	0m0.439s
+
+Time for model construction: 6.842 seconds.
+States:      9420422 (1 initial)
+Transitions: 14899892
+Engine: Hybrid
+Time for model checking: 12.773 seconds.
+Result: true (property satisfied in the initial state)
+
+real	0m30.157s
+user	0m20.856s
+sys	0m0.518s
+
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at explicit.DTMCSimple.addStates(DTMCSimple.java:128)
+	at explicit.DTMCSimple.addState(DTMCSimple.java:120)
+	at explicit.ConstructModel.constructModel(ConstructModel.java:260)
+	at explicit.ConstructModel.constructModel(ConstructModel.java:149)
+	at prism.Prism.doBuildModel(Prism.java:1855)
+	at prism.Prism.buildModelIfRequired(Prism.java:1815)
+	at prism.Prism.modelCheck(Prism.java:2767)
+	at prism.PrismCL.run(PrismCL.java:382)
+	at prism.PrismCL.go(PrismCL.java:209)
+	at prism.PrismCL.main(PrismCL.java:2742)
+	at edu.stmc.Main.main(Main.java:240)
+
+real	0m32.971s
+user	2m48.250s
+sys	0m1.997s
+
+PRISM SPRT
+Sampling complete: 206083 iterations in 15.937 seconds (average 7.7e-05)
+Result: true
+Sampling complete: 211496 iterations in 16.527 seconds (average 7.8e-05)
+Result: true
+Sampling complete: 217240 iterations in 17.576 seconds (average 8.1e-05)
+Result: true
+Sampling complete: 217850 iterations in 17.458 seconds (average 8e-05)
+Result: true
+Sampling complete: 209316 iterations in 16.374 seconds (average 7.8e-05)
+Result: true
+Sampling complete: 206486 iterations in 15.446 seconds (average 7.5e-05)
+Result: true
+Sampling complete: 212566 iterations in 16.639 seconds (average 7.8e-05)
+Result: true
+Sampling complete: 215823 iterations in 17.139 seconds (average 7.9e-05)
+Result: true
+Sampling complete: 212483 iterations in 17.251 seconds (average 8.1e-05)
+Result: true
+Sampling complete: 209110 iterations in 16.099 seconds (average 7.7e-05)
+Result: true
+Sampling complete: 214836 iterations in 16.342 seconds (average 7.6e-05)
+Result: true
+Sampling complete: 221870 iterations in 17.414 seconds (average 7.8e-05)
+Result: true
+Sampling complete: 209913 iterations in 16.088 seconds (average 7.7e-05)
+Result: true
+Sampling complete: 210776 iterations in 15.765 seconds (average 7.5e-05)
+Result: true
+Sampling complete: 216050 iterations in 16.504 seconds (average 7.6e-05)
+Result: true
+Sampling complete: 209380 iterations in 16.463 seconds (average 7.9e-05)
+Result: true
+Sampling complete: 205243 iterations in 16.277 seconds (average 7.9e-05)
+Result: true
+Sampling complete: 211426 iterations in 16.254 seconds (average 7.7e-05)
+Result: true
+Sampling complete: 209826 iterations in 16.534 seconds (average 7.9e-05)
+Result: true
+Sampling complete: 210216 iterations in 15.149 seconds (average 7.2e-05)
+Result: true
+Time: average=16.4618, standard-error=0.14646362221240794
+Samples: average=211899.44999999995, standard-error=954.694526716323
+
+GLRT
+Sampling complete: 210719 iterations in 16.268 seconds (average 7.7e-05)
+Result: true
+Sampling complete: 216895 iterations in 16.619 seconds (average 7.7e-05)
+Result: true
+Sampling complete: 207985 iterations in 16.811 seconds (average 8.1e-05)
+Result: true
+Sampling complete: 219712 iterations in 16.783 seconds (average 7.6e-05)
+Result: true
+Sampling complete: 211305 iterations in 16.242 seconds (average 7.7e-05)
+Result: true
+Sampling complete: 209745 iterations in 15.617 seconds (average 7.4e-05)
+Result: true
+Sampling complete: 217472 iterations in 16.44 seconds (average 7.6e-05)
+Result: true
+Sampling complete: 220539 iterations in 17.435 seconds (average 7.9e-05)
+Result: true
+Sampling complete: 207432 iterations in 16.447 seconds (average 7.9e-05)
+Result: true
+Sampling complete: 207609 iterations in 16.425 seconds (average 7.9e-05)
+Result: true
+Sampling complete: 209059 iterations in 15.613 seconds (average 7.5e-05)
+Result: true
+Sampling complete: 210489 iterations in 16.239 seconds (average 7.7e-05)
+Result: true
+Sampling complete: 212319 iterations in 15.921 seconds (average 7.5e-05)
+Result: true
+Sampling complete: 214352 iterations in 15.588 seconds (average 7.3e-05)
+Result: true
+Sampling complete: 216839 iterations in 16.433 seconds (average 7.6e-05)
+Result: true
+Sampling complete: 219572 iterations in 17.074 seconds (average 7.8e-05)
+Result: true
+Sampling complete: 217835 iterations in 16.225 seconds (average 7.4e-05)
+Result: true
+Sampling complete: 214699 iterations in 16.266 seconds (average 7.6e-05)
+Result: true
+Sampling complete: 206445 iterations in 14.11 seconds (average 6.8e-05)
+Result: true
+Sampling complete: 221779 iterations in 16.489 seconds (average 7.4e-05)
+Result: true
+Time: average=16.25225, standard-error=0.15345278504100912
+Samples: average=213640.05000000002, standard-error=1101.566825445035
+
+antithetic
+Sampling complete: 91081 iterations (182162 samples) in 19.074 seconds (average 0.0001)
+Result: true
+Sampling complete: 88070 iterations (176140 samples) in 19.059 seconds (average 0.00011)
+Result: true
+Sampling complete: 91378 iterations (182756 samples) in 19.298 seconds (average 0.00011)
+Result: true
+Sampling complete: 93980 iterations (187960 samples) in 21.85 seconds (average 0.00012)
+Result: true
+Sampling complete: 92836 iterations (185672 samples) in 19.763 seconds (average 0.00011)
+Result: true
+Sampling complete: 94991 iterations (189982 samples) in 19.935 seconds (average 0.0001)
+Result: true
+Sampling complete: 96783 iterations (193566 samples) in 20.579 seconds (average 0.00011)
+Result: true
+Sampling complete: 91616 iterations (183232 samples) in 18.039 seconds (average 9.8e-05)
+Result: true
+Sampling complete: 93108 iterations (186216 samples) in 18.551 seconds (average 0.0001)
+Result: true
+Sampling complete: 88380 iterations (176760 samples) in 18.399 seconds (average 0.0001)
+Result: true
+Sampling complete: 89613 iterations (179226 samples) in 17.507 seconds (average 9.8e-05)
+Result: true
+Sampling complete: 91181 iterations (182362 samples) in 19.6 seconds (average 0.00011)
+Result: true
+Sampling complete: 87929 iterations (175858 samples) in 17.111 seconds (average 9.7e-05)
+Result: true
+Sampling complete: 90331 iterations (180662 samples) in 18.608 seconds (average 0.0001)
+Result: true
+Sampling complete: 92420 iterations (184840 samples) in 16.989 seconds (average 9.2e-05)
+Result: true
+Sampling complete: 92886 iterations (185772 samples) in 21.067 seconds (average 0.00011)
+Result: true
+Sampling complete: 89162 iterations (178324 samples) in 17.97 seconds (average 0.0001)
+Result: true
+Sampling complete: 91017 iterations (182034 samples) in 16.593 seconds (average 9.1e-05)
+Result: true
+Sampling complete: 91785 iterations (183570 samples) in 17.685 seconds (average 9.6e-05)
+Result: true
+Sampling complete: 93877 iterations (187754 samples) in 17.127 seconds (average 9.1e-05)
+Result: true
+Time: average=18.740199999999994, standard-error=0.3204677715958014
+Samples: average=183242.40000000002, standard-error=1046.3317235893571
+
+strata-size 1
+Sampling complete: 187087 iterations (187087 samples) in 14.453 seconds (average 7.7e-05)
+Result: true
+Sampling complete: 189707 iterations (189707 samples) in 14.705 seconds (average 7.8e-05)
+Result: true
+Sampling complete: 192861 iterations (192861 samples) in 14.794 seconds (average 7.7e-05)
+Result: true
+Sampling complete: 195892 iterations (195892 samples) in 15.518 seconds (average 7.9e-05)
+Result: true
+Sampling complete: 185222 iterations (185222 samples) in 14.791 seconds (average 8e-05)
+Result: true
+Sampling complete: 193417 iterations (193417 samples) in 15.756 seconds (average 8.1e-05)
+Result: true
+Sampling complete: 197233 iterations (197233 samples) in 16.198 seconds (average 8.2e-05)
+Result: true
+Sampling complete: 199473 iterations (199473 samples) in 17.148 seconds (average 8.6e-05)
+Result: true
+Sampling complete: 189789 iterations (189789 samples) in 15.133 seconds (average 8e-05)
+Result: true
+Sampling complete: 196996 iterations (196996 samples) in 16.574 seconds (average 8.4e-05)
+Result: true
+Sampling complete: 192719 iterations (192719 samples) in 15.355 seconds (average 8e-05)
+Result: true
+Sampling complete: 192370 iterations (192370 samples) in 14.668 seconds (average 7.6e-05)
+Result: true
+Sampling complete: 194138 iterations (194138 samples) in 15.772 seconds (average 8.1e-05)
+Result: true
+Sampling complete: 186135 iterations (186135 samples) in 15.528 seconds (average 8.3e-05)
+Result: true
+Sampling complete: 205736 iterations (205736 samples) in 18.215 seconds (average 8.9e-05)
+Result: true
+Sampling complete: 200281 iterations (200281 samples) in 17.344 seconds (average 8.7e-05)
+Result: true
+Sampling complete: 184442 iterations (184442 samples) in 16.01 seconds (average 8.7e-05)
+Result: true
+Sampling complete: 173689 iterations (173689 samples) in 14.631 seconds (average 8.4e-05)
+Result: true
+Sampling complete: 187525 iterations (187525 samples) in 14.594 seconds (average 7.8e-05)
+Result: true
+Sampling complete: 192008 iterations (192008 samples) in 15.64 seconds (average 8.1e-05)
+Result: true
+Time: average=15.64135, standard-error=0.231142258258051
+Samples: average=191836.0, standard-error=1551.8170775272658
+
+strata-size 2
+Sampling complete: 87028 iterations (174056 samples) in 16.677 seconds (average 9.6e-05)
+Result: true
+Sampling complete: 90679 iterations (181358 samples) in 17.501 seconds (average 9.6e-05)
+Result: true
+Sampling complete: 90416 iterations (180832 samples) in 17.591 seconds (average 9.7e-05)
+Result: true
+Sampling complete: 94254 iterations (188508 samples) in 21.596 seconds (average 0.00011)
+Result: true
+Sampling complete: 87344 iterations (174688 samples) in 17.623 seconds (average 0.0001)
+Result: true
+Sampling complete: 93613 iterations (187226 samples) in 19.039 seconds (average 0.0001)
+Result: true
+Sampling complete: 95366 iterations (190732 samples) in 20.369 seconds (average 0.00011)
+Result: true
+Sampling complete: 90711 iterations (181422 samples) in 17.99 seconds (average 9.9e-05)
+Result: true
+Sampling complete: 89834 iterations (179668 samples) in 18.657 seconds (average 0.0001)
+Result: true
+Sampling complete: 91767 iterations (183534 samples) in 18.262 seconds (average 0.0001)
+Result: true
+Sampling complete: 90703 iterations (181406 samples) in 19.153 seconds (average 0.00011)
+Result: true
+Sampling complete: 94124 iterations (188248 samples) in 20.113 seconds (average 0.00011)
+Result: true
+Sampling complete: 94816 iterations (189632 samples) in 20.861 seconds (average 0.00011)
+Result: true
+Sampling complete: 93908 iterations (187816 samples) in 18.955 seconds (average 0.0001)
+Result: true
+Sampling complete: 93021 iterations (186042 samples) in 19.113 seconds (average 0.0001)
+Result: true
+Sampling complete: 92371 iterations (184742 samples) in 20.473 seconds (average 0.00011)
+Result: true
+Sampling complete: 89439 iterations (178878 samples) in 21.057 seconds (average 0.00012)
+Result: true
+Sampling complete: 91781 iterations (183562 samples) in 20.452 seconds (average 0.00011)
+Result: true
+Sampling complete: 93194 iterations (186388 samples) in 21.344 seconds (average 0.00011)
+Result: true
+Sampling complete: 91640 iterations (183280 samples) in 16.994 seconds (average 9.3e-05)
+Result: true
+Time: average=19.191, standard-error=0.3397381267047342
+Samples: average=183600.89999999997, standard-error=1038.1274891284854
+
+strata-size 16
+Sampling complete: 11293 iterations (180688 samples) in 19.355 seconds (average 0.00011)
+Result: true
+Sampling complete: 11391 iterations (182256 samples) in 19.864 seconds (average 0.00011)
+Result: true
+Sampling complete: 11723 iterations (187568 samples) in 20.075 seconds (average 0.00011)
+Result: true
+Sampling complete: 12174 iterations (194784 samples) in 21.73 seconds (average 0.00011)
+Result: true
+Sampling complete: 11726 iterations (187616 samples) in 20.84 seconds (average 0.00011)
+Result: true
+Sampling complete: 11645 iterations (186320 samples) in 20.187 seconds (average 0.00011)
+Result: true
+Sampling complete: 11869 iterations (189904 samples) in 20.375 seconds (average 0.00011)
+Result: true
+Sampling complete: 11303 iterations (180848 samples) in 18.944 seconds (average 0.0001)
+Result: true
+Sampling complete: 11550 iterations (184800 samples) in 19.818 seconds (average 0.00011)
+Result: true
+Sampling complete: 11619 iterations (185904 samples) in 19.44 seconds (average 0.0001)
+Result: true
+Sampling complete: 11591 iterations (185456 samples) in 19.594 seconds (average 0.00011)
+Result: true
+Sampling complete: 11625 iterations (186000 samples) in 21.79 seconds (average 0.00012)
+Result: true
+Sampling complete: 10981 iterations (175696 samples) in 19.062 seconds (average 0.00011)
+Result: true
+Sampling complete: 11624 iterations (185984 samples) in 20.378 seconds (average 0.00011)
+Result: true
+Sampling complete: 10996 iterations (175936 samples) in 18.332 seconds (average 0.0001)
+Result: true
+Sampling complete: 11255 iterations (180080 samples) in 20.893 seconds (average 0.00012)
+Result: true
+Sampling complete: 11029 iterations (176464 samples) in 18.605 seconds (average 0.00011)
+Result: true
+Sampling complete: 11617 iterations (185872 samples) in 20.479 seconds (average 0.00011)
+Result: true
+Sampling complete: 11399 iterations (182384 samples) in 20.462 seconds (average 0.00011)
+Result: true
+Sampling complete: 10897 iterations (174352 samples) in 18.578 seconds (average 0.00011)
+Result: true
+Time: average=19.940050000000003, standard-error=0.2181655030258596
+Samples: average=183445.6, standard-error=1169.5731439065141
+Sampling complete: 10089 iterations (161424 samples) in 18.035 seconds (average 0.00011)
+Result: true
+Sampling complete: 10240 iterations (163840 samples) in 18.117 seconds (average 0.00011)
+Result: true
+Sampling complete: 10557 iterations (168912 samples) in 18.253 seconds (average 0.00011)
+Result: true
+Sampling complete: 10305 iterations (164880 samples) in 18.418 seconds (average 0.00011)
+Result: true
+Sampling complete: 9883 iterations (158128 samples) in 17.913 seconds (average 0.00011)
+Result: true
+Sampling complete: 10016 iterations (160256 samples) in 18.354 seconds (average 0.00011)
+Result: true
+Sampling complete: 10400 iterations (166400 samples) in 18.282 seconds (average 0.00011)
+Result: true
+Sampling complete: 10196 iterations (163136 samples) in 20.43 seconds (average 0.00013)
+Result: true
+Sampling complete: 10402 iterations (166432 samples) in 17.773 seconds (average 0.00011)
+Result: true
+Sampling complete: 10327 iterations (165232 samples) in 17.989 seconds (average 0.00011)
+Result: true
+Sampling complete: 10040 iterations (160640 samples) in 19.15 seconds (average 0.00012)
+Result: true
+Sampling complete: 11060 iterations (176960 samples) in 21.051 seconds (average 0.00012)
+Result: true
+Sampling complete: 9676 iterations (154816 samples) in 17.706 seconds (average 0.00011)
+Result: true
+Sampling complete: 9765 iterations (156240 samples) in 18.436 seconds (average 0.00012)
+Result: true
+Sampling complete: 10382 iterations (166112 samples) in 19.017 seconds (average 0.00011)
+Result: true
+Sampling complete: 9938 iterations (159008 samples) in 17.98 seconds (average 0.00011)
+Result: true
+Sampling complete: 10370 iterations (165920 samples) in 18.168 seconds (average 0.00011)
+Result: true
+Sampling complete: 10565 iterations (169040 samples) in 18.484 seconds (average 0.00011)
+Result: true
+Sampling complete: 10086 iterations (161376 samples) in 17.195 seconds (average 0.00011)
+Result: true
+Sampling complete: 10013 iterations (160208 samples) in 15.627 seconds (average 9.8e-05)
+Result: true
+Time: average=18.3189, standard-error=0.24533874433868805
+Samples: average=163447.99999999997, standard-error=1137.2337259193553
+Sampling complete: 7568 iterations (121088 samples) in 15.215 seconds (average 0.00013)
+Result: true
+Sampling complete: 7767 iterations (124272 samples) in 15.514 seconds (average 0.00012)
+Result: true
+Sampling complete: 7784 iterations (124544 samples) in 15.584 seconds (average 0.00013)
+Result: true
+Sampling complete: 7728 iterations (123648 samples) in 16.125 seconds (average 0.00013)
+Result: true
+Sampling complete: 7264 iterations (116224 samples) in 13.418 seconds (average 0.00012)
+Result: true
+Sampling complete: 7777 iterations (124432 samples) in 14.977 seconds (average 0.00012)
+Result: true
+Sampling complete: 7807 iterations (124912 samples) in 16.551 seconds (average 0.00013)
+Result: true
+Sampling complete: 7656 iterations (122496 samples) in 15.421 seconds (average 0.00013)
+Result: true
+Sampling complete: 7394 iterations (118304 samples) in 14.922 seconds (average 0.00013)
+Result: true
+Sampling complete: 7651 iterations (122416 samples) in 14.337 seconds (average 0.00012)
+Result: true
+Sampling complete: 7928 iterations (126848 samples) in 14.757 seconds (average 0.00012)
+Result: true
+Sampling complete: 7727 iterations (123632 samples) in 16.957 seconds (average 0.00014)
+Result: true
+Sampling complete: 7522 iterations (120352 samples) in 17.508 seconds (average 0.00015)
+Result: true
+Sampling complete: 7798 iterations (124768 samples) in 16.495 seconds (average 0.00013)
+Result: true
+Sampling complete: 7630 iterations (122080 samples) in 16.651 seconds (average 0.00014)
+Result: true
+Sampling complete: 7898 iterations (126368 samples) in 17.366 seconds (average 0.00014)
+Result: true
+Sampling complete: 7743 iterations (123888 samples) in 15.869 seconds (average 0.00013)
+Result: true
+Sampling complete: 7240 iterations (115840 samples) in 13.143 seconds (average 0.00011)
+Result: true
+Sampling complete: 7741 iterations (123856 samples) in 13.295 seconds (average 0.00011)
+Result: true
+Sampling complete: 7882 iterations (126112 samples) in 14.105 seconds (average 0.00011)
+Result: true
+Time: average=15.410499999999999, standard-error=0.2934730732739242
+Samples: average=122803.99999999999, standard-error=691.2665416313362
+
+strata-size 256
+Sampling complete: 727 iterations (186112 samples) in 20.221 seconds (average 0.00011)
+Result: true
+Sampling complete: 767 iterations (196352 samples) in 20.853 seconds (average 0.00011)
+Result: true
+Sampling complete: 727 iterations (186112 samples) in 21.308 seconds (average 0.00011)
+Result: true
+Sampling complete: 745 iterations (190720 samples) in 21.638 seconds (average 0.00011)
+Result: true
+Sampling complete: 653 iterations (167168 samples) in 19.303 seconds (average 0.00012)
+Result: true
+Sampling complete: 681 iterations (174336 samples) in 20.211 seconds (average 0.00012)
+Result: true
+Sampling complete: 741 iterations (189696 samples) in 21.853 seconds (average 0.00012)
+Result: true
+Sampling complete: 798 iterations (204288 samples) in 23.432 seconds (average 0.00011)
+Result: true
+Sampling complete: 724 iterations (185344 samples) in 20.447 seconds (average 0.00011)
+Result: true
+Sampling complete: 687 iterations (175872 samples) in 18.702 seconds (average 0.00011)
+Result: true
+Sampling complete: 691 iterations (176896 samples) in 19.991 seconds (average 0.00011)
+Result: true
+Sampling complete: 778 iterations (199168 samples) in 23.472 seconds (average 0.00012)
+Result: true
+Sampling complete: 667 iterations (170752 samples) in 19.0 seconds (average 0.00011)
+Result: true
+Sampling complete: 734 iterations (187904 samples) in 20.506 seconds (average 0.00011)
+Result: true
+Sampling complete: 662 iterations (169472 samples) in 19.978 seconds (average 0.00012)
+Result: true
+Sampling complete: 659 iterations (168704 samples) in 19.173 seconds (average 0.00011)
+Result: true
+Sampling complete: 671 iterations (171776 samples) in 20.125 seconds (average 0.00012)
+Result: true
+Sampling complete: 718 iterations (183808 samples) in 21.62 seconds (average 0.00012)
+Result: true
+Sampling complete: 721 iterations (184576 samples) in 20.012 seconds (average 0.00011)
+Result: true
+Sampling complete: 741 iterations (189696 samples) in 20.688 seconds (average 0.00011)
+Result: true
+Time: average=20.626649999999998, standard-error=0.29042870558248157
+Samples: average=182937.6, standard-error=2390.364489273329
+Sampling complete: 537 iterations (137472 samples) in 15.35 seconds (average 0.00011)
+Result: true
+Sampling complete: 632 iterations (161792 samples) in 18.742 seconds (average 0.00012)
+Result: true
+Sampling complete: 677 iterations (173312 samples) in 20.885 seconds (average 0.00012)
+Result: true
+Sampling complete: 689 iterations (176384 samples) in 20.966 seconds (average 0.00012)
+Result: true
+Sampling complete: 605 iterations (154880 samples) in 18.94 seconds (average 0.00012)
+Result: true
+Sampling complete: 653 iterations (167168 samples) in 19.288 seconds (average 0.00012)
+Result: true
+Sampling complete: 697 iterations (178432 samples) in 22.119 seconds (average 0.00012)
+Result: true
+Sampling complete: 2 iterations (512 samples) in 0.526 seconds (average 0.001)
+Result: true
+Sampling complete: 694 iterations (177664 samples) in 21.817 seconds (average 0.00012)
+Result: true
+Sampling complete: 2 iterations (512 samples) in 0.451 seconds (average 0.00088)
+Result: true
+Sampling complete: 711 iterations (182016 samples) in 23.095 seconds (average 0.00013)
+Result: true
+Sampling complete: 634 iterations (162304 samples) in 21.133 seconds (average 0.00013)
+Result: true
+Sampling complete: 651 iterations (166656 samples) in 20.54 seconds (average 0.00012)
+Result: true
+Sampling complete: 661 iterations (169216 samples) in 20.658 seconds (average 0.00012)
+Result: true
+Sampling complete: 615 iterations (157440 samples) in 19.56 seconds (average 0.00012)
+Result: true
+Sampling complete: 634 iterations (162304 samples) in 20.559 seconds (average 0.00013)
+Result: true
+Sampling complete: 633 iterations (162048 samples) in 20.31 seconds (average 0.00013)
+Result: true
+Sampling complete: 687 iterations (175872 samples) in 21.429 seconds (average 0.00012)
+Result: true
+Sampling complete: 626 iterations (160256 samples) in 16.833 seconds (average 0.00011)
+Result: true
+Sampling complete: 671 iterations (171776 samples) in 15.728 seconds (average 9.2e-05)
+Result: true
+Time: average=17.946450000000002, standard-error=1.4085394983064812
+Samples: average=149900.8, standard-error=11646.622567485978
+Sampling complete: 445 iterations (113920 samples) in 13.645 seconds (average 0.00012)
+Result: true
+Sampling complete: 445 iterations (113920 samples) in 14.043 seconds (average 0.00012)
+Result: true
+Sampling complete: 441 iterations (112896 samples) in 14.134 seconds (average 0.00013)
+Result: true
+Sampling complete: 2 iterations (512 samples) in 0.632 seconds (average 0.0012)
+Result: true
+Sampling complete: 539 iterations (137984 samples) in 18.402 seconds (average 0.00013)
+Result: true
+Sampling complete: 445 iterations (113920 samples) in 14.265 seconds (average 0.00013)
+Result: true
+Sampling complete: 423 iterations (108288 samples) in 13.874 seconds (average 0.00013)
+Result: true
+Sampling complete: 491 iterations (125696 samples) in 16.224 seconds (average 0.00013)
+Result: true
+Sampling complete: 2 iterations (512 samples) in 0.447 seconds (average 0.00087)
+Result: true
+Sampling complete: 478 iterations (122368 samples) in 15.791 seconds (average 0.00013)
+Result: true
+Sampling complete: 465 iterations (119040 samples) in 15.578 seconds (average 0.00013)
+Result: true
+Sampling complete: 439 iterations (112384 samples) in 14.449 seconds (average 0.00013)
+Result: true
+Sampling complete: 413 iterations (105728 samples) in 13.122 seconds (average 0.00012)
+Result: true
+Sampling complete: 472 iterations (120832 samples) in 15.484 seconds (average 0.00013)
+Result: true
+Sampling complete: 463 iterations (118528 samples) in 14.634 seconds (average 0.00012)
+Result: true
+Sampling complete: 464 iterations (118784 samples) in 14.738 seconds (average 0.00012)
+Result: true
+Sampling complete: 489 iterations (125184 samples) in 14.91 seconds (average 0.00012)
+Result: true
+Sampling complete: 509 iterations (130304 samples) in 15.846 seconds (average 0.00012)
+Result: true
+Sampling complete: 460 iterations (117760 samples) in 11.834 seconds (average 0.0001)
+Result: true
+Sampling complete: 469 iterations (120064 samples) in 11.415 seconds (average 9.5e-05)
+Result: true
+Time: average=13.173350000000001, standard-error=1.0243157440714419
+Samples: average=106931.2, standard-error=8304.077525244038
+Sampling complete: 372 iterations (95232 samples) in 13.943 seconds (average 0.00015)
+Result: true
+Sampling complete: 366 iterations (93696 samples) in 14.702 seconds (average 0.00016)
+Result: true
+Sampling complete: 418 iterations (107008 samples) in 16.722 seconds (average 0.00016)
+Result: true
+Sampling complete: 422 iterations (108032 samples) in 17.628 seconds (average 0.00016)
+Result: true
+Sampling complete: 4 iterations (1024 samples) in 0.741 seconds (average 0.00072)
+Result: true
+Sampling complete: 374 iterations (95744 samples) in 15.104 seconds (average 0.00016)
+Result: true
+Sampling complete: 431 iterations (110336 samples) in 16.651 seconds (average 0.00015)
+Result: true
+Sampling complete: 439 iterations (112384 samples) in 15.494 seconds (average 0.00014)
+Result: true
+Sampling complete: 471 iterations (120576 samples) in 17.103 seconds (average 0.00014)
+Result: true
+Sampling complete: 347 iterations (88832 samples) in 12.115 seconds (average 0.00014)
+Result: true
+Sampling complete: 409 iterations (104704 samples) in 15.229 seconds (average 0.00015)
+Result: true
+Sampling complete: 380 iterations (97280 samples) in 13.481 seconds (average 0.00014)
+Result: true
+Sampling complete: 422 iterations (108032 samples) in 14.206 seconds (average 0.00013)
+Result: true
+Sampling complete: 2 iterations (512 samples) in 0.617 seconds (average 0.0012)
+Result: true
+Sampling complete: 412 iterations (105472 samples) in 15.256 seconds (average 0.00014)
+Result: true
+Sampling complete: 420 iterations (107520 samples) in 15.349 seconds (average 0.00014)
+Result: true
+Sampling complete: 391 iterations (100096 samples) in 14.72 seconds (average 0.00015)
+Result: true
+Sampling complete: 486 iterations (124416 samples) in 18.062 seconds (average 0.00015)
+Result: true
+Sampling complete: 400 iterations (102400 samples) in 12.177 seconds (average 0.00012)
+Result: true
+Sampling complete: 393 iterations (100608 samples) in 12.163 seconds (average 0.00012)
+Result: true
+Time: average=13.57315, standard-error=1.057461802906026
+Samples: average=94195.20000000001, standard-error=7399.415701540935
+
+strata-size 4096
+Sampling complete: 41 iterations (167936 samples) in 23.116 seconds (average 0.00014)
+Result: true
+Sampling complete: 52 iterations (212992 samples) in 29.564 seconds (average 0.00014)
+Result: true
+Sampling complete: 55 iterations (225280 samples) in 30.66 seconds (average 0.00014)
+Result: true
+Sampling complete: 56 iterations (229376 samples) in 30.933 seconds (average 0.00013)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.823 seconds (average 0.00022)
+Result: true
+Sampling complete: 31 iterations (126976 samples) in 17.753 seconds (average 0.00014)
+Result: true
+Sampling complete: 30 iterations (122880 samples) in 16.912 seconds (average 0.00014)
+Result: true
+Sampling complete: 33 iterations (135168 samples) in 19.951 seconds (average 0.00015)
+Result: true
+Sampling complete: 42 iterations (172032 samples) in 25.657 seconds (average 0.00015)
+Result: true
+Sampling complete: 25 iterations (102400 samples) in 17.03 seconds (average 0.00017)
+Result: true
+Sampling complete: 28 iterations (114688 samples) in 19.033 seconds (average 0.00017)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.718 seconds (average 0.00021)
+Result: true
+Sampling complete: 26 iterations (106496 samples) in 15.666 seconds (average 0.00015)
+Result: true
+Sampling complete: 3 iterations (12288 samples) in 2.721 seconds (average 0.00022)
+Result: true
+Sampling complete: 37 iterations (151552 samples) in 22.757 seconds (average 0.00015)
+Result: true
+Sampling complete: 56 iterations (229376 samples) in 35.15 seconds (average 0.00015)
+Result: true
+Sampling complete: 54 iterations (221184 samples) in 29.906 seconds (average 0.00014)
+Result: true
+Sampling complete: 51 iterations (208896 samples) in 28.508 seconds (average 0.00014)
+Result: true
+Sampling complete: 45 iterations (184320 samples) in 23.467 seconds (average 0.00013)
+Result: true
+Sampling complete: 43 iterations (176128 samples) in 19.937 seconds (average 0.00011)
+Result: true
+Time: average=20.6131, standard-error=2.16723044083554
+Samples: average=145817.6, standard-error=16154.416728039361
+Sampling complete: 2 iterations (8192 samples) in 2.712 seconds (average 0.00033)
+Result: true
+Sampling complete: 32 iterations (131072 samples) in 15.996 seconds (average 0.00012)
+Result: true
+Sampling complete: 42 iterations (172032 samples) in 22.731 seconds (average 0.00013)
+Result: true
+Sampling complete: 43 iterations (176128 samples) in 23.148 seconds (average 0.00013)
+Result: true
+Sampling complete: 44 iterations (180224 samples) in 23.785 seconds (average 0.00013)
+Result: true
+Sampling complete: 27 iterations (110592 samples) in 13.998 seconds (average 0.00013)
+Result: true
+Sampling complete: 39 iterations (159744 samples) in 20.726 seconds (average 0.00013)
+Result: true
+Sampling complete: 46 iterations (188416 samples) in 24.053 seconds (average 0.00013)
+Result: true
+Sampling complete: 51 iterations (208896 samples) in 26.211 seconds (average 0.00013)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.976 seconds (average 0.00024)
+Result: true
+Sampling complete: 51 iterations (208896 samples) in 27.714 seconds (average 0.00013)
+Result: true
+Sampling complete: 36 iterations (147456 samples) in 19.126 seconds (average 0.00013)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 2.021 seconds (average 0.00025)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.909 seconds (average 0.00023)
+Result: true
+Sampling complete: 61 iterations (249856 samples) in 33.044 seconds (average 0.00013)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.816 seconds (average 0.00022)
+Result: true
+Sampling complete: 50 iterations (204800 samples) in 28.096 seconds (average 0.00014)
+Result: true
+Sampling complete: 39 iterations (159744 samples) in 21.052 seconds (average 0.00013)
+Result: true
+Sampling complete: 53 iterations (217088 samples) in 24.809 seconds (average 0.00011)
+Result: true
+Sampling complete: 46 iterations (188416 samples) in 19.784 seconds (average 0.00011)
+Result: true
+Time: average=17.73535, standard-error=2.272185874618489
+Samples: average=137215.99999999997, standard-error=18412.827455479593
+Sampling complete: 18 iterations (73728 samples) in 12.064 seconds (average 0.00016)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.766 seconds (average 0.00022)
+Result: true
+Sampling complete: 23 iterations (94208 samples) in 15.031 seconds (average 0.00016)
+Result: true
+Sampling complete: 26 iterations (106496 samples) in 16.21 seconds (average 0.00015)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 2.178 seconds (average 0.00027)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 2.023 seconds (average 0.00025)
+Result: true
+Sampling complete: 34 iterations (139264 samples) in 22.756 seconds (average 0.00016)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.619 seconds (average 0.0002)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.58 seconds (average 0.00019)
+Result: true
+Sampling complete: 22 iterations (90112 samples) in 15.047 seconds (average 0.00017)
+Result: true
+Sampling complete: 26 iterations (106496 samples) in 16.136 seconds (average 0.00015)
+Result: true
+Sampling complete: 38 iterations (155648 samples) in 23.581 seconds (average 0.00015)
+Result: true
+Sampling complete: 24 iterations (98304 samples) in 13.991 seconds (average 0.00014)
+Result: true
+Sampling complete: 26 iterations (106496 samples) in 15.629 seconds (average 0.00015)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.761 seconds (average 0.00021)
+Result: true
+Sampling complete: 41 iterations (167936 samples) in 26.861 seconds (average 0.00016)
+Result: true
+Sampling complete: 31 iterations (126976 samples) in 20.771 seconds (average 0.00016)
+Result: true
+Sampling complete: 4 iterations (16384 samples) in 2.55 seconds (average 0.00016)
+Result: true
+Sampling complete: 40 iterations (163840 samples) in 24.953 seconds (average 0.00015)
+Result: true
+Sampling complete: 35 iterations (143360 samples) in 20.347 seconds (average 0.00014)
+Result: true
+Time: average=12.8427, standard-error=2.0212739248982765
+Samples: average=81920.0, standard-error=13368.676111284209
+Sampling complete: 2 iterations (8192 samples) in 2.676 seconds (average 0.00033)
+Result: true
+Sampling complete: 3 iterations (12288 samples) in 3.486 seconds (average 0.00028)
+Result: true
+Sampling complete: 8 iterations (32768 samples) in 7.159 seconds (average 0.00022)
+Result: true
+Sampling complete: 5 iterations (20480 samples) in 3.818 seconds (average 0.00019)
+Result: true
+Sampling complete: 18 iterations (73728 samples) in 11.699 seconds (average 0.00016)
+Result: true
+Sampling complete: 29 iterations (118784 samples) in 19.569 seconds (average 0.00016)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.765 seconds (average 0.00022)
+Result: true
+Sampling complete: 24 iterations (98304 samples) in 14.762 seconds (average 0.00015)
+Result: true
+Sampling complete: 10 iterations (40960 samples) in 6.737 seconds (average 0.00016)
+Result: true
+Sampling complete: 3 iterations (12288 samples) in 4.037 seconds (average 0.00033)
+Result: true
+Sampling complete: 35 iterations (143360 samples) in 25.207 seconds (average 0.00018)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 2.329 seconds (average 0.00028)
+Result: true
+Sampling complete: 22 iterations (90112 samples) in 15.779 seconds (average 0.00018)
+Result: true
+Sampling complete: 28 iterations (114688 samples) in 20.916 seconds (average 0.00018)
+Result: true
+Sampling complete: 36 iterations (147456 samples) in 26.891 seconds (average 0.00018)
+Result: true
+Sampling complete: 16 iterations (65536 samples) in 10.971 seconds (average 0.00017)
+Result: true
+Sampling complete: 17 iterations (69632 samples) in 11.689 seconds (average 0.00017)
+Result: true
+Sampling complete: 29 iterations (118784 samples) in 19.134 seconds (average 0.00016)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.729 seconds (average 0.00021)
+Result: true
+Sampling complete: 21 iterations (86016 samples) in 12.125 seconds (average 0.00014)
+Result: true
+Time: average=11.1239, standard-error=1.803765632605417
+Samples: average=63897.59999999999, standard-error=10944.024031983463
+Sampling complete: 2 iterations (8192 samples) in 2.924 seconds (average 0.00036)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 2.939 seconds (average 0.00036)
+Result: true
+Sampling complete: 13 iterations (53248 samples) in 14.394 seconds (average 0.00027)
+Result: true
+Sampling complete: 30 iterations (122880 samples) in 28.044 seconds (average 0.00023)
+Result: true
+Sampling complete: 37 iterations (151552 samples) in 33.873 seconds (average 0.00022)
+Result: true
+Sampling complete: 30 iterations (122880 samples) in 27.885 seconds (average 0.00023)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 3.642 seconds (average 0.00044)
+Result: true
+Sampling complete: 19 iterations (77824 samples) in 18.526 seconds (average 0.00024)
+Result: true
+Sampling complete: 39 iterations (159744 samples) in 36.265 seconds (average 0.00023)
+Result: true
+Sampling complete: 9 iterations (36864 samples) in 9.211 seconds (average 0.00025)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 2.924 seconds (average 0.00036)
+Result: true
+Sampling complete: 23 iterations (94208 samples) in 24.098 seconds (average 0.00026)
+Result: true
+Sampling complete: 12 iterations (49152 samples) in 10.147 seconds (average 0.00021)
+Result: true
+Sampling complete: 24 iterations (98304 samples) in 22.598 seconds (average 0.00023)
+Result: true
+Sampling complete: 20 iterations (81920 samples) in 18.482 seconds (average 0.00023)
+Result: true
+Sampling complete: 18 iterations (73728 samples) in 15.949 seconds (average 0.00022)
+Result: true
+Sampling complete: 3 iterations (12288 samples) in 4.699 seconds (average 0.00038)
+Result: true
+Sampling complete: 10 iterations (40960 samples) in 10.399 seconds (average 0.00025)
+Result: true
+Sampling complete: 15 iterations (61440 samples) in 12.207 seconds (average 0.0002)
+Result: true
+Sampling complete: 22 iterations (90112 samples) in 16.924 seconds (average 0.00019)
+Result: true
+Time: average=15.806499999999994, standard-error=2.3282344276296576
+Samples: average=67993.6, standard-error=10707.48318120507
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Time for model construction: 81.193 seconds.
+States:      113384792 (1 initial)
+Transitions: 180005807
+Engine: MTBDD
+Time for model checking: 723.693 seconds.
+Result: true (property satisfied in the initial state)
+
+real	13m26.608s
+user	13m17.498s
+sys	0m4.742s
+
+Time for model construction: 77.892 seconds.
+States:      113384792 (1 initial)
+Transitions: 180005807
+Engine: Sparse
+Time for model checking: 72.259 seconds.
+Result: true (property satisfied in the initial state)
+
+real	2m31.885s
+user	2m28.379s
+sys	0m2.837s
+
+Time for model construction: 75.059 seconds.
+States:      113384792 (1 initial)
+Transitions: 180005807
+Engine: Hybrid
+Time for model checking: 171.462 seconds.
+Result: true (property satisfied in the initial state)
+
+real	4m8.174s
+user	4m4.480s
+sys	0m2.456s
+
+Exception in thread "AWT-Shutdown" Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.desktop/sun.awt.AppContext.getAppContexts(AppContext.java:167)
+	at java.desktop/sun.awt.AppContext.stopEventDispatchThreads(AppContext.java:610)
+	at java.desktop/sun.awt.AWTAutoShutdown.run(AWTAutoShutdown.java:322)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3689)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:237)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:242)
+	at java.base/java.util.ArrayList.add(ArrayList.java:485)
+	at java.base/java.util.ArrayList.add(ArrayList.java:498)
+	at simulator.Updater.processUpdatesAndCreateNewChoice(Updater.java:375)
+	at simulator.Updater.calculateTransitions(Updater.java:181)
+	at simulator.ModulesFileModelGenerator.getTransitionList(ModulesFileModelGenerator.java:418)
+	at simulator.ModulesFileModelGenerator.getNumChoices(ModulesFileModelGenerator.java:271)
+	at explicit.ConstructModel.constructModel(ConstructModel.java:244)
+	at explicit.ConstructModel.constructModel(ConstructModel.java:149)
+	at prism.Prism.doBuildModel(Prism.java:1855)
+	at prism.Prism.buildModelIfRequired(Prism.java:1815)
+	at prism.Prism.modelCheck(Prism.java:2767)
+	at prism.PrismCL.run(PrismCL.java:382)
+	at prism.PrismCL.go(PrismCL.java:209)
+	at prism.PrismCL.main(PrismCL.java:2742)
+	at edu.stmc.Main.main(Main.java:240)
+
+real	0m44.494s
+user	4m12.683s
+sys	0m2.190s
+
+PRISM SPRT
+Sampling complete: 214356 iterations in 14.5 seconds (average 6.8e-05)
+Result: true
+Sampling complete: 212316 iterations in 14.62 seconds (average 6.9e-05)
+Result: true
+Sampling complete: 215146 iterations in 15.006 seconds (average 7e-05)
+Result: true
+Sampling complete: 214246 iterations in 14.944 seconds (average 7e-05)
+Result: true
+Sampling complete: 207686 iterations in 15.289 seconds (average 7.4e-05)
+Result: true
+Sampling complete: 214840 iterations in 16.524 seconds (average 7.7e-05)
+Result: true
+Sampling complete: 213963 iterations in 17.088 seconds (average 8e-05)
+Result: true
+Sampling complete: 215886 iterations in 18.277 seconds (average 8.5e-05)
+Result: true
+Sampling complete: 210686 iterations in 15.478 seconds (average 7.3e-05)
+Result: true
+Sampling complete: 213543 iterations in 15.154 seconds (average 7.1e-05)
+Result: true
+Sampling complete: 215753 iterations in 16.724 seconds (average 7.8e-05)
+Result: true
+Sampling complete: 211306 iterations in 15.37 seconds (average 7.3e-05)
+Result: true
+Sampling complete: 210236 iterations in 15.534 seconds (average 7.4e-05)
+Result: true
+Sampling complete: 212593 iterations in 15.406 seconds (average 7.2e-05)
+Result: true
+Sampling complete: 211503 iterations in 14.684 seconds (average 6.9e-05)
+Result: true
+Sampling complete: 214343 iterations in 17.092 seconds (average 8e-05)
+Result: true
+Sampling complete: 209856 iterations in 15.847 seconds (average 7.6e-05)
+Result: true
+Sampling complete: 209286 iterations in 15.731 seconds (average 7.5e-05)
+Result: true
+Sampling complete: 213446 iterations in 15.258 seconds (average 7.1e-05)
+Result: true
+Sampling complete: 212990 iterations in 15.229 seconds (average 7.2e-05)
+Result: true
+Time: average=15.687750000000001, standard-error=0.21824963827063532
+Samples: average=212699.0, standard-error=511.3413886920105
+
+GLRT
+Sampling complete: 206102 iterations in 16.135 seconds (average 7.8e-05)
+Result: true
+Sampling complete: 213385 iterations in 16.656 seconds (average 7.8e-05)
+Result: true
+Sampling complete: 213062 iterations in 17.096 seconds (average 8e-05)
+Result: true
+Sampling complete: 216795 iterations in 17.826 seconds (average 8.2e-05)
+Result: true
+Sampling complete: 204832 iterations in 16.547 seconds (average 8.1e-05)
+Result: true
+Sampling complete: 210055 iterations in 16.237 seconds (average 7.7e-05)
+Result: true
+Sampling complete: 216609 iterations in 17.35 seconds (average 8e-05)
+Result: true
+Sampling complete: 215639 iterations in 16.569 seconds (average 7.7e-05)
+Result: true
+Sampling complete: 216442 iterations in 16.606 seconds (average 7.7e-05)
+Result: true
+Sampling complete: 220375 iterations in 17.378 seconds (average 7.9e-05)
+Result: true
+Sampling complete: 207832 iterations in 15.905 seconds (average 7.7e-05)
+Result: true
+Sampling complete: 217065 iterations in 17.413 seconds (average 8e-05)
+Result: true
+Sampling complete: 209962 iterations in 16.475 seconds (average 7.8e-05)
+Result: true
+Sampling complete: 208782 iterations in 16.328 seconds (average 7.8e-05)
+Result: true
+Sampling complete: 212739 iterations in 16.187 seconds (average 7.6e-05)
+Result: true
+Sampling complete: 206495 iterations in 16.579 seconds (average 8e-05)
+Result: true
+Sampling complete: 213115 iterations in 17.624 seconds (average 8.3e-05)
+Result: true
+Sampling complete: 214822 iterations in 17.815 seconds (average 8.3e-05)
+Result: true
+Sampling complete: 209012 iterations in 16.673 seconds (average 8e-05)
+Result: true
+Sampling complete: 223159 iterations in 17.151 seconds (average 7.7e-05)
+Result: true
+Time: average=16.8275, standard-error=0.13053564748051744
+Samples: average=212813.95, standard-error=1098.012010947152
+
+antithetic
+Sampling complete: 90544 iterations (181088 samples) in 19.043 seconds (average 0.00011)
+Result: true
+Sampling complete: 90544 iterations (181088 samples) in 19.541 seconds (average 0.00011)
+Result: true
+Sampling complete: 91230 iterations (182460 samples) in 19.721 seconds (average 0.00011)
+Result: true
+Sampling complete: 92230 iterations (184460 samples) in 19.751 seconds (average 0.00011)
+Result: true
+Sampling complete: 90449 iterations (180898 samples) in 19.767 seconds (average 0.00011)
+Result: true
+Sampling complete: 95076 iterations (190152 samples) in 19.898 seconds (average 0.0001)
+Result: true
+Sampling complete: 97295 iterations (194590 samples) in 21.039 seconds (average 0.00011)
+Result: true
+Sampling complete: 94344 iterations (188688 samples) in 21.016 seconds (average 0.00011)
+Result: true
+Sampling complete: 87643 iterations (175286 samples) in 18.975 seconds (average 0.00011)
+Result: true
+Sampling complete: 88743 iterations (177486 samples) in 20.867 seconds (average 0.00012)
+Result: true
+Sampling complete: 93330 iterations (186660 samples) in 21.601 seconds (average 0.00012)
+Result: true
+Sampling complete: 92847 iterations (185694 samples) in 21.677 seconds (average 0.00012)
+Result: true
+Sampling complete: 91139 iterations (182278 samples) in 20.905 seconds (average 0.00011)
+Result: true
+Sampling complete: 90703 iterations (181406 samples) in 19.53 seconds (average 0.00011)
+Result: true
+Sampling complete: 91898 iterations (183796 samples) in 20.289 seconds (average 0.00011)
+Result: true
+Sampling complete: 91737 iterations (183474 samples) in 19.798 seconds (average 0.00011)
+Result: true
+Sampling complete: 86933 iterations (173866 samples) in 18.856 seconds (average 0.00011)
+Result: true
+Sampling complete: 92473 iterations (184946 samples) in 18.868 seconds (average 0.0001)
+Result: true
+Sampling complete: 91523 iterations (183046 samples) in 18.287 seconds (average 0.0001)
+Result: true
+Sampling complete: 90415 iterations (180830 samples) in 17.456 seconds (average 9.7e-05)
+Result: true
+Time: average=19.84425, standard-error=0.24760027075701538
+Samples: average=183109.6, standard-error=1073.7991148009805
+
+strata-size 1
+Sampling complete: 188809 iterations (188809 samples) in 16.386 seconds (average 8.7e-05)
+Result: true
+Sampling complete: 199845 iterations (199845 samples) in 16.841 seconds (average 8.4e-05)
+Result: true
+Sampling complete: 197642 iterations (197642 samples) in 17.228 seconds (average 8.7e-05)
+Result: true
+Sampling complete: 201753 iterations (201753 samples) in 17.679 seconds (average 8.8e-05)
+Result: true
+Sampling complete: 179786 iterations (179786 samples) in 15.139 seconds (average 8.4e-05)
+Result: true
+Sampling complete: 195486 iterations (195486 samples) in 16.716 seconds (average 8.6e-05)
+Result: true
+Sampling complete: 191046 iterations (191046 samples) in 15.664 seconds (average 8.2e-05)
+Result: true
+Sampling complete: 193505 iterations (193505 samples) in 17.705 seconds (average 9.1e-05)
+Result: true
+Sampling complete: 192885 iterations (192885 samples) in 17.997 seconds (average 9.3e-05)
+Result: true
+Sampling complete: 190534 iterations (190534 samples) in 17.362 seconds (average 9.1e-05)
+Result: true
+Sampling complete: 193590 iterations (193590 samples) in 17.282 seconds (average 8.9e-05)
+Result: true
+Sampling complete: 189555 iterations (189555 samples) in 17.226 seconds (average 9.1e-05)
+Result: true
+Sampling complete: 191557 iterations (191557 samples) in 17.405 seconds (average 9.1e-05)
+Result: true
+Sampling complete: 193610 iterations (193610 samples) in 17.705 seconds (average 9.1e-05)
+Result: true
+Sampling complete: 191662 iterations (191662 samples) in 16.851 seconds (average 8.8e-05)
+Result: true
+Sampling complete: 199598 iterations (199598 samples) in 18.9 seconds (average 9.5e-05)
+Result: true
+Sampling complete: 190033 iterations (190033 samples) in 17.05 seconds (average 9e-05)
+Result: true
+Sampling complete: 185066 iterations (185066 samples) in 18.633 seconds (average 0.0001)
+Result: true
+Sampling complete: 194582 iterations (194582 samples) in 18.753 seconds (average 9.6e-05)
+Result: true
+Sampling complete: 193559 iterations (193559 samples) in 15.758 seconds (average 8.1e-05)
+Result: true
+Time: average=17.214000000000006, standard-error=0.22159081540913234
+Samples: average=192705.15, standard-error=1131.3259972146332
+
+strata-size 2
+Sampling complete: 90590 iterations (181180 samples) in 20.226 seconds (average 0.00011)
+Result: true
+Sampling complete: 91197 iterations (182394 samples) in 20.854 seconds (average 0.00011)
+Result: true
+Sampling complete: 96396 iterations (192792 samples) in 22.095 seconds (average 0.00011)
+Result: true
+Sampling complete: 96308 iterations (192616 samples) in 22.577 seconds (average 0.00012)
+Result: true
+Sampling complete: 89966 iterations (179932 samples) in 19.932 seconds (average 0.00011)
+Result: true
+Sampling complete: 88621 iterations (177242 samples) in 18.159 seconds (average 0.0001)
+Result: true
+Sampling complete: 89711 iterations (179422 samples) in 18.009 seconds (average 0.0001)
+Result: true
+Sampling complete: 94216 iterations (188432 samples) in 21.547 seconds (average 0.00011)
+Result: true
+Sampling complete: 91660 iterations (183320 samples) in 19.417 seconds (average 0.00011)
+Result: true
+Sampling complete: 89892 iterations (179784 samples) in 19.818 seconds (average 0.00011)
+Result: true
+Sampling complete: 91553 iterations (183106 samples) in 20.902 seconds (average 0.00011)
+Result: true
+Sampling complete: 89124 iterations (178248 samples) in 20.903 seconds (average 0.00012)
+Result: true
+Sampling complete: 88242 iterations (176484 samples) in 21.117 seconds (average 0.00012)
+Result: true
+Sampling complete: 91314 iterations (182628 samples) in 20.773 seconds (average 0.00011)
+Result: true
+Sampling complete: 93897 iterations (187794 samples) in 19.713 seconds (average 0.0001)
+Result: true
+Sampling complete: 92430 iterations (184860 samples) in 20.528 seconds (average 0.00011)
+Result: true
+Sampling complete: 90804 iterations (181608 samples) in 21.404 seconds (average 0.00012)
+Result: true
+Sampling complete: 94128 iterations (188256 samples) in 19.81 seconds (average 0.00011)
+Result: true
+Sampling complete: 90965 iterations (181930 samples) in 19.225 seconds (average 0.00011)
+Result: true
+Sampling complete: 90343 iterations (180686 samples) in 19.867 seconds (average 0.00011)
+Result: true
+Time: average=20.3438, standard-error=0.2617330862177204
+Samples: average=183135.69999999998, standard-error=1044.631803933554
+
+strata-size 16
+Sampling complete: 11441 iterations (183056 samples) in 19.129 seconds (average 0.0001)
+Result: true
+Sampling complete: 11430 iterations (182880 samples) in 19.85 seconds (average 0.00011)
+Result: true
+Sampling complete: 11639 iterations (186224 samples) in 20.022 seconds (average 0.00011)
+Result: true
+Sampling complete: 11742 iterations (187872 samples) in 20.041 seconds (average 0.00011)
+Result: true
+Sampling complete: 11109 iterations (177744 samples) in 19.204 seconds (average 0.00011)
+Result: true
+Sampling complete: 10896 iterations (174336 samples) in 18.351 seconds (average 0.00011)
+Result: true
+Sampling complete: 11217 iterations (179472 samples) in 19.449 seconds (average 0.00011)
+Result: true
+Sampling complete: 11353 iterations (181648 samples) in 20.055 seconds (average 0.00011)
+Result: true
+Sampling complete: 11378 iterations (182048 samples) in 18.051 seconds (average 9.9e-05)
+Result: true
+Sampling complete: 11011 iterations (176176 samples) in 17.481 seconds (average 9.9e-05)
+Result: true
+Sampling complete: 11644 iterations (186304 samples) in 19.435 seconds (average 0.0001)
+Result: true
+Sampling complete: 11048 iterations (176768 samples) in 19.045 seconds (average 0.00011)
+Result: true
+Sampling complete: 11343 iterations (181488 samples) in 20.067 seconds (average 0.00011)
+Result: true
+Sampling complete: 11548 iterations (184768 samples) in 20.781 seconds (average 0.00011)
+Result: true
+Sampling complete: 10742 iterations (171872 samples) in 18.776 seconds (average 0.00011)
+Result: true
+Sampling complete: 11909 iterations (190544 samples) in 21.858 seconds (average 0.00011)
+Result: true
+Sampling complete: 11337 iterations (181392 samples) in 19.088 seconds (average 0.00011)
+Result: true
+Sampling complete: 11676 iterations (186816 samples) in 20.397 seconds (average 0.00011)
+Result: true
+Sampling complete: 11585 iterations (185360 samples) in 20.533 seconds (average 0.00011)
+Result: true
+Sampling complete: 11762 iterations (188192 samples) in 19.264 seconds (average 0.0001)
+Result: true
+Time: average=19.543849999999996, standard-error=0.22382107838981352
+Samples: average=182248.00000000003, standard-error=1115.5137216358623
+Sampling complete: 10035 iterations (160560 samples) in 17.603 seconds (average 0.00011)
+Result: true
+Sampling complete: 10239 iterations (163824 samples) in 18.305 seconds (average 0.00011)
+Result: true
+Sampling complete: 10164 iterations (162624 samples) in 18.625 seconds (average 0.00011)
+Result: true
+Sampling complete: 10096 iterations (161536 samples) in 19.733 seconds (average 0.00012)
+Result: true
+Sampling complete: 10190 iterations (163040 samples) in 18.698 seconds (average 0.00011)
+Result: true
+Sampling complete: 10343 iterations (165488 samples) in 17.741 seconds (average 0.00011)
+Result: true
+Sampling complete: 10017 iterations (160272 samples) in 19.26 seconds (average 0.00012)
+Result: true
+Sampling complete: 10264 iterations (164224 samples) in 17.634 seconds (average 0.00011)
+Result: true
+Sampling complete: 10312 iterations (164992 samples) in 17.802 seconds (average 0.00011)
+Result: true
+Sampling complete: 10248 iterations (163968 samples) in 17.693 seconds (average 0.00011)
+Result: true
+Sampling complete: 10080 iterations (161280 samples) in 17.201 seconds (average 0.00011)
+Result: true
+Sampling complete: 10355 iterations (165680 samples) in 18.977 seconds (average 0.00011)
+Result: true
+Sampling complete: 10034 iterations (160544 samples) in 17.446 seconds (average 0.00011)
+Result: true
+Sampling complete: 10026 iterations (160416 samples) in 18.91 seconds (average 0.00012)
+Result: true
+Sampling complete: 10758 iterations (172128 samples) in 21.293 seconds (average 0.00012)
+Result: true
+Sampling complete: 10348 iterations (165568 samples) in 20.384 seconds (average 0.00012)
+Result: true
+Sampling complete: 9704 iterations (155264 samples) in 17.047 seconds (average 0.00011)
+Result: true
+Sampling complete: 10388 iterations (166208 samples) in 18.144 seconds (average 0.00011)
+Result: true
+Sampling complete: 10232 iterations (163712 samples) in 15.953 seconds (average 9.7e-05)
+Result: true
+Sampling complete: 10427 iterations (166832 samples) in 17.719 seconds (average 0.00011)
+Result: true
+Time: average=18.308399999999992, standard-error=0.27436528090926693
+Samples: average=163407.99999999997, standard-error=767.2882666967661
+Sampling complete: 7618 iterations (121888 samples) in 15.025 seconds (average 0.00012)
+Result: true
+Sampling complete: 7733 iterations (123728 samples) in 15.334 seconds (average 0.00012)
+Result: true
+Sampling complete: 7508 iterations (120128 samples) in 15.555 seconds (average 0.00013)
+Result: true
+Sampling complete: 7611 iterations (121776 samples) in 15.871 seconds (average 0.00013)
+Result: true
+Sampling complete: 7235 iterations (115760 samples) in 14.436 seconds (average 0.00012)
+Result: true
+Sampling complete: 7656 iterations (122496 samples) in 14.411 seconds (average 0.00012)
+Result: true
+Sampling complete: 7955 iterations (127280 samples) in 16.169 seconds (average 0.00013)
+Result: true
+Sampling complete: 7898 iterations (126368 samples) in 14.796 seconds (average 0.00012)
+Result: true
+Sampling complete: 8025 iterations (128400 samples) in 16.987 seconds (average 0.00013)
+Result: true
+Sampling complete: 7279 iterations (116464 samples) in 14.798 seconds (average 0.00013)
+Result: true
+Sampling complete: 7844 iterations (125504 samples) in 16.078 seconds (average 0.00013)
+Result: true
+Sampling complete: 7721 iterations (123536 samples) in 14.773 seconds (average 0.00012)
+Result: true
+Sampling complete: 7444 iterations (119104 samples) in 14.239 seconds (average 0.00012)
+Result: true
+Sampling complete: 7664 iterations (122624 samples) in 14.998 seconds (average 0.00012)
+Result: true
+Sampling complete: 7441 iterations (119056 samples) in 14.357 seconds (average 0.00012)
+Result: true
+Sampling complete: 7687 iterations (122992 samples) in 15.174 seconds (average 0.00012)
+Result: true
+Sampling complete: 7357 iterations (117712 samples) in 16.26 seconds (average 0.00014)
+Result: true
+Sampling complete: 7702 iterations (123232 samples) in 15.692 seconds (average 0.00013)
+Result: true
+Sampling complete: 7708 iterations (123328 samples) in 17.05 seconds (average 0.00014)
+Result: true
+Sampling complete: 7658 iterations (122528 samples) in 17.259 seconds (average 0.00014)
+Result: true
+Time: average=15.4631, standard-error=0.208757538786028
+Samples: average=122195.2, standard-error=758.3770815990791
+
+strata-size 256
+Sampling complete: 712 iterations (182272 samples) in 21.901 seconds (average 0.00012)
+Result: true
+Sampling complete: 737 iterations (188672 samples) in 22.107 seconds (average 0.00012)
+Result: true
+Sampling complete: 715 iterations (183040 samples) in 22.182 seconds (average 0.00012)
+Result: true
+Sampling complete: 729 iterations (186624 samples) in 22.617 seconds (average 0.00012)
+Result: true
+Sampling complete: 2 iterations (512 samples) in 0.585 seconds (average 0.0011)
+Result: true
+Sampling complete: 707 iterations (180992 samples) in 21.571 seconds (average 0.00012)
+Result: true
+Sampling complete: 702 iterations (179712 samples) in 23.743 seconds (average 0.00013)
+Result: true
+Sampling complete: 771 iterations (197376 samples) in 25.454 seconds (average 0.00013)
+Result: true
+Sampling complete: 826 iterations (211456 samples) in 25.758 seconds (average 0.00012)
+Result: true
+Sampling complete: 723 iterations (185088 samples) in 23.641 seconds (average 0.00013)
+Result: true
+Sampling complete: 754 iterations (193024 samples) in 22.765 seconds (average 0.00012)
+Result: true
+Sampling complete: 758 iterations (194048 samples) in 23.857 seconds (average 0.00012)
+Result: true
+Sampling complete: 728 iterations (186368 samples) in 23.026 seconds (average 0.00012)
+Result: true
+Sampling complete: 707 iterations (180992 samples) in 23.53 seconds (average 0.00013)
+Result: true
+Sampling complete: 735 iterations (188160 samples) in 23.536 seconds (average 0.00013)
+Result: true
+Sampling complete: 718 iterations (183808 samples) in 23.294 seconds (average 0.00013)
+Result: true
+Sampling complete: 723 iterations (185088 samples) in 22.912 seconds (average 0.00012)
+Result: true
+Sampling complete: 743 iterations (190208 samples) in 19.488 seconds (average 0.0001)
+Result: true
+Sampling complete: 750 iterations (192000 samples) in 20.985 seconds (average 0.00011)
+Result: true
+Sampling complete: 703 iterations (179968 samples) in 17.83 seconds (average 9.9e-05)
+Result: true
+Time: average=21.539099999999994, standard-error=1.174037520470996
+Samples: average=178470.4, standard-error=9512.412679286608
+Sampling complete: 596 iterations (152576 samples) in 18.237 seconds (average 0.00012)
+Result: true
+Sampling complete: 595 iterations (152320 samples) in 18.802 seconds (average 0.00012)
+Result: true
+Sampling complete: 666 iterations (170496 samples) in 20.718 seconds (average 0.00012)
+Result: true
+Sampling complete: 646 iterations (165376 samples) in 20.966 seconds (average 0.00013)
+Result: true
+Sampling complete: 641 iterations (164096 samples) in 18.622 seconds (average 0.00011)
+Result: true
+Sampling complete: 535 iterations (136960 samples) in 16.2 seconds (average 0.00012)
+Result: true
+Sampling complete: 645 iterations (165120 samples) in 20.439 seconds (average 0.00012)
+Result: true
+Sampling complete: 642 iterations (164352 samples) in 21.144 seconds (average 0.00013)
+Result: true
+Sampling complete: 637 iterations (163072 samples) in 19.35 seconds (average 0.00012)
+Result: true
+Sampling complete: 606 iterations (155136 samples) in 16.921 seconds (average 0.00011)
+Result: true
+Sampling complete: 708 iterations (181248 samples) in 21.49 seconds (average 0.00012)
+Result: true
+Sampling complete: 644 iterations (164864 samples) in 18.738 seconds (average 0.00011)
+Result: true
+Sampling complete: 623 iterations (159488 samples) in 18.336 seconds (average 0.00011)
+Result: true
+Sampling complete: 637 iterations (163072 samples) in 19.95 seconds (average 0.00012)
+Result: true
+Sampling complete: 590 iterations (151040 samples) in 17.546 seconds (average 0.00012)
+Result: true
+Sampling complete: 637 iterations (163072 samples) in 20.133 seconds (average 0.00012)
+Result: true
+Sampling complete: 560 iterations (143360 samples) in 18.359 seconds (average 0.00013)
+Result: true
+Sampling complete: 651 iterations (166656 samples) in 19.495 seconds (average 0.00012)
+Result: true
+Sampling complete: 652 iterations (166912 samples) in 19.64 seconds (average 0.00012)
+Result: true
+Sampling complete: 588 iterations (150528 samples) in 16.105 seconds (average 0.00011)
+Result: true
+Time: average=19.059549999999998, standard-error=0.3513833075372099
+Samples: average=159987.19999999998, standard-error=2243.277481956396
+Sampling complete: 2 iterations (512 samples) in 0.903 seconds (average 0.0018)
+Result: true
+Sampling complete: 447 iterations (114432 samples) in 13.503 seconds (average 0.00012)
+Result: true
+Sampling complete: 447 iterations (114432 samples) in 14.069 seconds (average 0.00012)
+Result: true
+Sampling complete: 492 iterations (125952 samples) in 15.751 seconds (average 0.00013)
+Result: true
+Sampling complete: 484 iterations (123904 samples) in 14.543 seconds (average 0.00012)
+Result: true
+Sampling complete: 469 iterations (120064 samples) in 14.238 seconds (average 0.00012)
+Result: true
+Sampling complete: 480 iterations (122880 samples) in 15.014 seconds (average 0.00012)
+Result: true
+Sampling complete: 498 iterations (127488 samples) in 15.181 seconds (average 0.00012)
+Result: true
+Sampling complete: 516 iterations (132096 samples) in 15.809 seconds (average 0.00012)
+Result: true
+Sampling complete: 471 iterations (120576 samples) in 14.952 seconds (average 0.00012)
+Result: true
+Sampling complete: 428 iterations (109568 samples) in 12.739 seconds (average 0.00012)
+Result: true
+Sampling complete: 525 iterations (134400 samples) in 17.489 seconds (average 0.00013)
+Result: true
+Sampling complete: 511 iterations (130816 samples) in 15.689 seconds (average 0.00012)
+Result: true
+Sampling complete: 2 iterations (512 samples) in 0.435 seconds (average 0.00085)
+Result: true
+Sampling complete: 426 iterations (109056 samples) in 13.312 seconds (average 0.00012)
+Result: true
+Sampling complete: 452 iterations (115712 samples) in 13.951 seconds (average 0.00012)
+Result: true
+Sampling complete: 476 iterations (121856 samples) in 15.023 seconds (average 0.00012)
+Result: true
+Sampling complete: 542 iterations (138752 samples) in 15.863 seconds (average 0.00011)
+Result: true
+Sampling complete: 436 iterations (111616 samples) in 10.948 seconds (average 9.8e-05)
+Result: true
+Sampling complete: 423 iterations (108288 samples) in 9.693 seconds (average 9e-05)
+Result: true
+Time: average=12.95525, standard-error=1.017550655340662
+Samples: average=109145.6, standard-error=8531.052551337625
+Sampling complete: 419 iterations (107264 samples) in 15.952 seconds (average 0.00015)
+Result: true
+Sampling complete: 434 iterations (111104 samples) in 16.469 seconds (average 0.00015)
+Result: true
+Sampling complete: 439 iterations (112384 samples) in 16.613 seconds (average 0.00015)
+Result: true
+Sampling complete: 467 iterations (119552 samples) in 16.863 seconds (average 0.00014)
+Result: true
+Sampling complete: 2 iterations (512 samples) in 0.636 seconds (average 0.0012)
+Result: true
+Sampling complete: 320 iterations (81920 samples) in 11.453 seconds (average 0.00014)
+Result: true
+Sampling complete: 396 iterations (101376 samples) in 14.689 seconds (average 0.00014)
+Result: true
+Sampling complete: 420 iterations (107520 samples) in 14.372 seconds (average 0.00013)
+Result: true
+Sampling complete: 402 iterations (102912 samples) in 13.428 seconds (average 0.00013)
+Result: true
+Sampling complete: 456 iterations (116736 samples) in 15.448 seconds (average 0.00013)
+Result: true
+Sampling complete: 363 iterations (92928 samples) in 11.309 seconds (average 0.00012)
+Result: true
+Sampling complete: 395 iterations (101120 samples) in 12.727 seconds (average 0.00013)
+Result: true
+Sampling complete: 394 iterations (100864 samples) in 12.243 seconds (average 0.00012)
+Result: true
+Sampling complete: 2 iterations (512 samples) in 0.841 seconds (average 0.0016)
+Result: true
+Sampling complete: 395 iterations (101120 samples) in 13.919 seconds (average 0.00014)
+Result: true
+Sampling complete: 420 iterations (107520 samples) in 13.937 seconds (average 0.00013)
+Result: true
+Sampling complete: 379 iterations (97024 samples) in 11.129 seconds (average 0.00011)
+Result: true
+Sampling complete: 436 iterations (111616 samples) in 15.766 seconds (average 0.00014)
+Result: true
+Sampling complete: 404 iterations (103424 samples) in 9.874 seconds (average 9.5e-05)
+Result: true
+Sampling complete: 410 iterations (104960 samples) in 10.392 seconds (average 9.9e-05)
+Result: true
+Time: average=12.403000000000002, standard-error=1.0112071056545813
+Samples: average=94118.4, standard-error=7394.77135563401
+
+strata-size 4096
+Sampling complete: 2 iterations (8192 samples) in 3.04 seconds (average 0.00037)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.986 seconds (average 0.00024)
+Result: true
+Sampling complete: 36 iterations (147456 samples) in 20.828 seconds (average 0.00014)
+Result: true
+Sampling complete: 38 iterations (155648 samples) in 21.868 seconds (average 0.00014)
+Result: true
+Sampling complete: 40 iterations (163840 samples) in 23.29 seconds (average 0.00014)
+Result: true
+Sampling complete: 43 iterations (176128 samples) in 22.644 seconds (average 0.00013)
+Result: true
+Sampling complete: 4 iterations (16384 samples) in 2.57 seconds (average 0.00016)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.815 seconds (average 0.00022)
+Result: true
+Sampling complete: 42 iterations (172032 samples) in 23.212 seconds (average 0.00013)
+Result: true
+Sampling complete: 40 iterations (163840 samples) in 22.111 seconds (average 0.00013)
+Result: true
+Sampling complete: 44 iterations (180224 samples) in 24.697 seconds (average 0.00014)
+Result: true
+Sampling complete: 39 iterations (159744 samples) in 21.608 seconds (average 0.00014)
+Result: true
+Sampling complete: 4 iterations (16384 samples) in 2.625 seconds (average 0.00016)
+Result: true
+Sampling complete: 42 iterations (172032 samples) in 23.526 seconds (average 0.00014)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.676 seconds (average 0.0002)
+Result: true
+Sampling complete: 55 iterations (225280 samples) in 30.362 seconds (average 0.00013)
+Result: true
+Sampling complete: 66 iterations (270336 samples) in 36.376 seconds (average 0.00013)
+Result: true
+Sampling complete: 36 iterations (147456 samples) in 18.293 seconds (average 0.00012)
+Result: true
+Sampling complete: 61 iterations (249856 samples) in 32.039 seconds (average 0.00013)
+Result: true
+Sampling complete: 51 iterations (208896 samples) in 23.613 seconds (average 0.00011)
+Result: true
+Time: average=17.908950000000004, standard-error=2.516862884911963
+Samples: average=132915.2, standard-error=19667.255080677147
+Sampling complete: 2 iterations (8192 samples) in 3.316 seconds (average 0.0004)
+Result: true
+Sampling complete: 36 iterations (147456 samples) in 19.88 seconds (average 0.00013)
+Result: true
+Sampling complete: 37 iterations (151552 samples) in 20.791 seconds (average 0.00014)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 2.247 seconds (average 0.00027)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 2.198 seconds (average 0.00027)
+Result: true
+Sampling complete: 55 iterations (225280 samples) in 31.647 seconds (average 0.00014)
+Result: true
+Sampling complete: 55 iterations (225280 samples) in 30.566 seconds (average 0.00014)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.795 seconds (average 0.00022)
+Result: true
+Sampling complete: 31 iterations (126976 samples) in 18.617 seconds (average 0.00015)
+Result: true
+Sampling complete: 49 iterations (200704 samples) in 30.254 seconds (average 0.00015)
+Result: true
+Sampling complete: 46 iterations (188416 samples) in 26.811 seconds (average 0.00014)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.898 seconds (average 0.00023)
+Result: true
+Sampling complete: 35 iterations (143360 samples) in 20.638 seconds (average 0.00014)
+Result: true
+Sampling complete: 25 iterations (102400 samples) in 13.521 seconds (average 0.00013)
+Result: true
+Sampling complete: 38 iterations (155648 samples) in 21.424 seconds (average 0.00014)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 2.27 seconds (average 0.00028)
+Result: true
+Sampling complete: 48 iterations (196608 samples) in 28.729 seconds (average 0.00015)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 2.701 seconds (average 0.00033)
+Result: true
+Sampling complete: 53 iterations (217088 samples) in 30.67 seconds (average 0.00014)
+Result: true
+Sampling complete: 34 iterations (139264 samples) in 16.597 seconds (average 0.00012)
+Result: true
+Time: average=16.3285, standard-error=2.5960331768417677
+Samples: average=113868.8, standard-error=19174.21741182126
+Sampling complete: 4 iterations (16384 samples) in 4.299 seconds (average 0.00026)
+Result: true
+Sampling complete: 15 iterations (61440 samples) in 10.32 seconds (average 0.00017)
+Result: true
+Sampling complete: 18 iterations (73728 samples) in 12.098 seconds (average 0.00016)
+Result: true
+Sampling complete: 21 iterations (86016 samples) in 13.775 seconds (average 0.00016)
+Result: true
+Sampling complete: 20 iterations (81920 samples) in 11.521 seconds (average 0.00014)
+Result: true
+Sampling complete: 26 iterations (106496 samples) in 13.876 seconds (average 0.00013)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.65 seconds (average 0.0002)
+Result: true
+Sampling complete: 22 iterations (90112 samples) in 11.408 seconds (average 0.00013)
+Result: true
+Sampling complete: 28 iterations (114688 samples) in 14.589 seconds (average 0.00013)
+Result: true
+Sampling complete: 46 iterations (188416 samples) in 24.903 seconds (average 0.00013)
+Result: true
+Sampling complete: 14 iterations (57344 samples) in 7.661 seconds (average 0.00013)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.974 seconds (average 0.00024)
+Result: true
+Sampling complete: 24 iterations (98304 samples) in 13.578 seconds (average 0.00014)
+Result: true
+Sampling complete: 29 iterations (118784 samples) in 16.59 seconds (average 0.00014)
+Result: true
+Sampling complete: 19 iterations (77824 samples) in 11.184 seconds (average 0.00014)
+Result: true
+Sampling complete: 32 iterations (131072 samples) in 18.255 seconds (average 0.00014)
+Result: true
+Sampling complete: 3 iterations (12288 samples) in 2.176 seconds (average 0.00018)
+Result: true
+Sampling complete: 30 iterations (122880 samples) in 15.793 seconds (average 0.00013)
+Result: true
+Sampling complete: 33 iterations (135168 samples) in 17.669 seconds (average 0.00013)
+Result: true
+Sampling complete: 17 iterations (69632 samples) in 9.072 seconds (average 0.00013)
+Result: true
+Time: average=11.61955, standard-error=1.3388039919330197
+Samples: average=82943.99999999999, standard-error=10626.670051288285
+Sampling complete: 2 iterations (8192 samples) in 3.179 seconds (average 0.00039)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 3.228 seconds (average 0.00039)
+Result: true
+Sampling complete: 15 iterations (61440 samples) in 10.946 seconds (average 0.00018)
+Result: true
+Sampling complete: 21 iterations (86016 samples) in 12.721 seconds (average 0.00015)
+Result: true
+Sampling complete: 27 iterations (110592 samples) in 17.905 seconds (average 0.00016)
+Result: true
+Sampling complete: 18 iterations (73728 samples) in 11.231 seconds (average 0.00015)
+Result: true
+Sampling complete: 33 iterations (135168 samples) in 20.26 seconds (average 0.00015)
+Result: true
+Sampling complete: 18 iterations (73728 samples) in 11.279 seconds (average 0.00015)
+Result: true
+Sampling complete: 23 iterations (94208 samples) in 14.083 seconds (average 0.00015)
+Result: true
+Sampling complete: 16 iterations (65536 samples) in 11.06 seconds (average 0.00017)
+Result: true
+Sampling complete: 19 iterations (77824 samples) in 10.951 seconds (average 0.00014)
+Result: true
+Sampling complete: 27 iterations (110592 samples) in 16.626 seconds (average 0.00015)
+Result: true
+Sampling complete: 21 iterations (86016 samples) in 12.481 seconds (average 0.00015)
+Result: true
+Sampling complete: 44 iterations (180224 samples) in 27.812 seconds (average 0.00015)
+Result: true
+Sampling complete: 23 iterations (94208 samples) in 14.288 seconds (average 0.00015)
+Result: true
+Sampling complete: 28 iterations (114688 samples) in 17.512 seconds (average 0.00015)
+Result: true
+Sampling complete: 30 iterations (122880 samples) in 17.891 seconds (average 0.00015)
+Result: true
+Sampling complete: 28 iterations (114688 samples) in 15.868 seconds (average 0.00014)
+Result: true
+Sampling complete: 11 iterations (45056 samples) in 5.665 seconds (average 0.00013)
+Result: true
+Sampling complete: 36 iterations (147456 samples) in 18.241 seconds (average 0.00012)
+Result: true
+Time: average=13.66135, standard-error=1.3055882950548428
+Samples: average=90521.6, standard-error=9485.253203179187
+Sampling complete: 2 iterations (8192 samples) in 3.918 seconds (average 0.00048)
+Result: true
+Sampling complete: 3 iterations (12288 samples) in 4.939 seconds (average 0.0004)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 2.273 seconds (average 0.00028)
+Result: true
+Sampling complete: 6 iterations (24576 samples) in 7.373 seconds (average 0.0003)
+Result: true
+Sampling complete: 7 iterations (28672 samples) in 8.636 seconds (average 0.0003)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 5.024 seconds (average 0.00061)
+Result: true
+Sampling complete: 17 iterations (69632 samples) in 17.399 seconds (average 0.00025)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 2.94 seconds (average 0.00036)
+Result: true
+Sampling complete: 21 iterations (86016 samples) in 20.333 seconds (average 0.00024)
+Result: true
+Sampling complete: 33 iterations (135168 samples) in 31.976 seconds (average 0.00024)
+Result: true
+Sampling complete: 38 iterations (155648 samples) in 31.891 seconds (average 0.0002)
+Result: true
+Sampling complete: 3 iterations (12288 samples) in 3.344 seconds (average 0.00027)
+Result: true
+Sampling complete: 35 iterations (143360 samples) in 28.797 seconds (average 0.0002)
+Result: true
+Sampling complete: 40 iterations (163840 samples) in 33.04 seconds (average 0.0002)
+Result: true
+Sampling complete: 23 iterations (94208 samples) in 19.257 seconds (average 0.0002)
+Result: true
+Sampling complete: 39 iterations (159744 samples) in 30.753 seconds (average 0.00019)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 2.635 seconds (average 0.00032)
+Result: true
+Sampling complete: 28 iterations (114688 samples) in 21.334 seconds (average 0.00019)
+Result: true
+Sampling complete: 33 iterations (135168 samples) in 23.941 seconds (average 0.00018)
+Result: true
+Sampling complete: 21 iterations (86016 samples) in 15.278 seconds (average 0.00018)
+Result: true
+Time: average=15.754050000000001, standard-error=2.5736177909858617
+Samples: average=73113.59999999999, standard-error=13621.489320845014
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Time for model construction: 224.214 seconds.
+States:      559215602 (1 initial)
+Transitions: 889516502
+Engine: MTBDD
+
+real	30m0.380s
+user	29m51.352s
+sys	0m5.544s
+
+Time for model construction: 299.924 seconds.
+States:      559215602 (1 initial)
+Transitions: 889516502
+Engine: Sparse
+Time for model checking: 371.589 seconds.
+Result: true (property satisfied in the initial state)
+
+real	11m13.162s
+user	10m49.434s
+sys	0m19.164s
+
+Time for model construction: 285.931 seconds.
+States:      559215602 (1 initial)
+Transitions: 889516502
+Engine: Hybrid
+Time for model checking: 780.396 seconds.
+Result: true (property satisfied in the initial state)
+
+real	17m48.120s
+user	17m33.428s
+sys	0m9.501s
+
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.HashMap.newNode(HashMap.java:1797)
+	at java.base/java.util.HashMap.putVal(HashMap.java:626)
+	at java.base/java.util.HashMap.put(HashMap.java:607)
+	at explicit.Distribution.add(Distribution.java:108)
+	at explicit.DTMCSimple.addToProbability(DTMCSimple.java:194)
+	at explicit.ConstructModel.constructModel(ConstructModel.java:269)
+	at explicit.ConstructModel.constructModel(ConstructModel.java:149)
+	at prism.Prism.doBuildModel(Prism.java:1855)
+	at prism.Prism.buildModelIfRequired(Prism.java:1815)
+	at prism.Prism.modelCheck(Prism.java:2767)
+	at prism.PrismCL.run(PrismCL.java:382)
+	at prism.PrismCL.go(PrismCL.java:209)
+	at prism.PrismCL.main(PrismCL.java:2742)
+	at edu.stmc.Main.main(Main.java:240)
+
+real	0m32.903s
+user	2m46.951s
+sys	0m1.721s
+
+PRISM SPRT
+Sampling complete: 207983 iterations in 15.586 seconds (average 7.5e-05)
+Result: true
+Sampling complete: 206416 iterations in 15.739 seconds (average 7.6e-05)
+Result: true
+Sampling complete: 209456 iterations in 15.961 seconds (average 7.6e-05)
+Result: true
+Sampling complete: 211950 iterations in 17.05 seconds (average 8e-05)
+Result: true
+Sampling complete: 206766 iterations in 16.047 seconds (average 7.8e-05)
+Result: true
+Sampling complete: 208573 iterations in 15.449 seconds (average 7.4e-05)
+Result: true
+Sampling complete: 221440 iterations in 17.258 seconds (average 7.8e-05)
+Result: true
+Sampling complete: 219406 iterations in 17.344 seconds (average 7.9e-05)
+Result: true
+Sampling complete: 216366 iterations in 15.725 seconds (average 7.3e-05)
+Result: true
+Sampling complete: 212623 iterations in 15.484 seconds (average 7.3e-05)
+Result: true
+Sampling complete: 215113 iterations in 15.154 seconds (average 7e-05)
+Result: true
+Sampling complete: 211953 iterations in 17.885 seconds (average 8.4e-05)
+Result: true
+Sampling complete: 204596 iterations in 15.692 seconds (average 7.7e-05)
+Result: true
+Sampling complete: 204650 iterations in 16.477 seconds (average 8.1e-05)
+Result: true
+Sampling complete: 207973 iterations in 16.896 seconds (average 8.1e-05)
+Result: true
+Sampling complete: 217370 iterations in 17.45 seconds (average 8e-05)
+Result: true
+Sampling complete: 203573 iterations in 16.02 seconds (average 7.9e-05)
+Result: true
+Sampling complete: 206826 iterations in 15.25 seconds (average 7.4e-05)
+Result: true
+Sampling complete: 209946 iterations in 16.806 seconds (average 8e-05)
+Result: true
+Sampling complete: 222716 iterations in 17.413 seconds (average 7.8e-05)
+Result: true
+Time: average=16.3343, standard-error=0.19091713688900416
+Samples: average=211284.75, standard-error=1284.0481173862447
+
+GLRT
+Sampling complete: 214199 iterations in 16.921 seconds (average 7.9e-05)
+Result: true
+Sampling complete: 214199 iterations in 16.846 seconds (average 7.9e-05)
+Result: true
+Sampling complete: 216519 iterations in 17.43 seconds (average 8.1e-05)
+Result: true
+Sampling complete: 216419 iterations in 17.621 seconds (average 8.1e-05)
+Result: true
+Sampling complete: 215409 iterations in 16.442 seconds (average 7.6e-05)
+Result: true
+Sampling complete: 215139 iterations in 17.385 seconds (average 8.1e-05)
+Result: true
+Sampling complete: 217619 iterations in 16.554 seconds (average 7.6e-05)
+Result: true
+Sampling complete: 214239 iterations in 18.063 seconds (average 8.4e-05)
+Result: true
+Sampling complete: 211215 iterations in 16.318 seconds (average 7.7e-05)
+Result: true
+Sampling complete: 202965 iterations in 15.266 seconds (average 7.5e-05)
+Result: true
+Sampling complete: 203799 iterations in 16.06 seconds (average 7.9e-05)
+Result: true
+Sampling complete: 216312 iterations in 16.804 seconds (average 7.8e-05)
+Result: true
+Sampling complete: 210419 iterations in 15.772 seconds (average 7.5e-05)
+Result: true
+Sampling complete: 207895 iterations in 16.318 seconds (average 7.8e-05)
+Result: true
+Sampling complete: 213635 iterations in 16.545 seconds (average 7.7e-05)
+Result: true
+Sampling complete: 213622 iterations in 16.862 seconds (average 7.9e-05)
+Result: true
+Sampling complete: 211739 iterations in 15.816 seconds (average 7.5e-05)
+Result: true
+Sampling complete: 209185 iterations in 16.633 seconds (average 8e-05)
+Result: true
+Sampling complete: 213579 iterations in 16.029 seconds (average 7.5e-05)
+Result: true
+Sampling complete: 215042 iterations in 16.421 seconds (average 7.6e-05)
+Result: true
+Time: average=16.6053, standard-error=0.15114397284151193
+Samples: average=212657.45, standard-error=905.4330731028223
+
+antithetic
+Sampling complete: 95365 iterations (190730 samples) in 19.227 seconds (average 0.0001)
+Result: true
+Sampling complete: 91107 iterations (182214 samples) in 20.263 seconds (average 0.00011)
+Result: true
+Sampling complete: 92718 iterations (185436 samples) in 20.203 seconds (average 0.00011)
+Result: true
+Sampling complete: 90799 iterations (181598 samples) in 22.759 seconds (average 0.00013)
+Result: true
+Sampling complete: 93702 iterations (187404 samples) in 20.85 seconds (average 0.00011)
+Result: true
+Sampling complete: 87358 iterations (174716 samples) in 16.963 seconds (average 9.7e-05)
+Result: true
+Sampling complete: 91401 iterations (182802 samples) in 20.217 seconds (average 0.00011)
+Result: true
+Sampling complete: 93477 iterations (186954 samples) in 20.099 seconds (average 0.00011)
+Result: true
+Sampling complete: 86971 iterations (173942 samples) in 18.473 seconds (average 0.00011)
+Result: true
+Sampling complete: 89663 iterations (179326 samples) in 18.619 seconds (average 0.0001)
+Result: true
+Sampling complete: 93697 iterations (187394 samples) in 19.345 seconds (average 0.0001)
+Result: true
+Sampling complete: 91993 iterations (183986 samples) in 20.069 seconds (average 0.00011)
+Result: true
+Sampling complete: 94491 iterations (188982 samples) in 19.712 seconds (average 0.0001)
+Result: true
+Sampling complete: 94924 iterations (189848 samples) in 18.079 seconds (average 9.5e-05)
+Result: true
+Sampling complete: 90354 iterations (180708 samples) in 18.48 seconds (average 0.0001)
+Result: true
+Sampling complete: 93953 iterations (187906 samples) in 17.873 seconds (average 9.5e-05)
+Result: true
+Sampling complete: 91594 iterations (183188 samples) in 19.683 seconds (average 0.00011)
+Result: true
+Sampling complete: 93120 iterations (186240 samples) in 19.808 seconds (average 0.00011)
+Result: true
+Sampling complete: 91539 iterations (183078 samples) in 18.938 seconds (average 0.0001)
+Result: true
+Sampling complete: 90774 iterations (181548 samples) in 18.221 seconds (average 0.0001)
+Result: true
+Time: average=19.39405, standard-error=0.2841870536237855
+Samples: average=183900.0, standard-error=1021.141672731787
+
+strata-size 1
+Sampling complete: 189433 iterations (189433 samples) in 14.533 seconds (average 7.7e-05)
+Result: true
+Sampling complete: 191158 iterations (191158 samples) in 14.997 seconds (average 7.8e-05)
+Result: true
+Sampling complete: 193105 iterations (193105 samples) in 15.473 seconds (average 8e-05)
+Result: true
+Sampling complete: 190765 iterations (190765 samples) in 15.815 seconds (average 8.3e-05)
+Result: true
+Sampling complete: 187060 iterations (187060 samples) in 14.681 seconds (average 7.8e-05)
+Result: true
+Sampling complete: 181989 iterations (181989 samples) in 13.521 seconds (average 7.4e-05)
+Result: true
+Sampling complete: 188565 iterations (188565 samples) in 13.765 seconds (average 7.3e-05)
+Result: true
+Sampling complete: 197811 iterations (197811 samples) in 15.973 seconds (average 8.1e-05)
+Result: true
+Sampling complete: 191493 iterations (191493 samples) in 13.753 seconds (average 7.2e-05)
+Result: true
+Sampling complete: 198745 iterations (198745 samples) in 14.201 seconds (average 7.1e-05)
+Result: true
+Sampling complete: 183343 iterations (183343 samples) in 12.066 seconds (average 6.6e-05)
+Result: true
+Sampling complete: 197977 iterations (197977 samples) in 13.772 seconds (average 7e-05)
+Result: true
+Sampling complete: 186440 iterations (186440 samples) in 13.92 seconds (average 7.5e-05)
+Result: true
+Sampling complete: 183577 iterations (183577 samples) in 12.678 seconds (average 6.9e-05)
+Result: true
+Sampling complete: 190616 iterations (190616 samples) in 13.572 seconds (average 7.1e-05)
+Result: true
+Sampling complete: 194142 iterations (194142 samples) in 14.077 seconds (average 7.3e-05)
+Result: true
+Sampling complete: 190629 iterations (190629 samples) in 14.166 seconds (average 7.4e-05)
+Result: true
+Sampling complete: 197453 iterations (197453 samples) in 14.479 seconds (average 7.3e-05)
+Result: true
+Sampling complete: 192035 iterations (192035 samples) in 13.308 seconds (average 6.9e-05)
+Result: true
+Sampling complete: 191175 iterations (191175 samples) in 13.152 seconds (average 6.9e-05)
+Result: true
+Time: average=14.095099999999997, standard-error=0.22061063461506816
+Samples: average=190875.55, standard-error=1090.6645909116248
+
+strata-size 2
+Sampling complete: 91418 iterations (182836 samples) in 17.063 seconds (average 9.3e-05)
+Result: true
+Sampling complete: 91360 iterations (182720 samples) in 17.511 seconds (average 9.6e-05)
+Result: true
+Sampling complete: 94226 iterations (188452 samples) in 17.836 seconds (average 9.5e-05)
+Result: true
+Sampling complete: 94507 iterations (189014 samples) in 18.92 seconds (average 0.0001)
+Result: true
+Sampling complete: 89936 iterations (179872 samples) in 16.569 seconds (average 9.2e-05)
+Result: true
+Sampling complete: 91114 iterations (182228 samples) in 16.493 seconds (average 9.1e-05)
+Result: true
+Sampling complete: 94329 iterations (188658 samples) in 17.09 seconds (average 9.1e-05)
+Result: true
+Sampling complete: 94172 iterations (188344 samples) in 18.266 seconds (average 9.7e-05)
+Result: true
+Sampling complete: 90543 iterations (181086 samples) in 17.478 seconds (average 9.7e-05)
+Result: true
+Sampling complete: 93642 iterations (187284 samples) in 16.619 seconds (average 8.9e-05)
+Result: true
+Sampling complete: 93765 iterations (187530 samples) in 17.357 seconds (average 9.3e-05)
+Result: true
+Sampling complete: 91990 iterations (183980 samples) in 15.775 seconds (average 8.6e-05)
+Result: true
+Sampling complete: 90912 iterations (181824 samples) in 16.181 seconds (average 8.9e-05)
+Result: true
+Sampling complete: 94320 iterations (188640 samples) in 16.232 seconds (average 8.6e-05)
+Result: true
+Sampling complete: 92552 iterations (185104 samples) in 15.877 seconds (average 8.6e-05)
+Result: true
+Sampling complete: 91051 iterations (182102 samples) in 14.885 seconds (average 8.2e-05)
+Result: true
+Sampling complete: 91371 iterations (182742 samples) in 16.983 seconds (average 9.3e-05)
+Result: true
+Sampling complete: 87562 iterations (175124 samples) in 15.04 seconds (average 8.6e-05)
+Result: true
+Sampling complete: 89774 iterations (179548 samples) in 16.879 seconds (average 9.4e-05)
+Result: true
+Sampling complete: 93131 iterations (186262 samples) in 17.661 seconds (average 9.5e-05)
+Result: true
+Time: average=16.835749999999997, standard-error=0.22626602734740983
+Samples: average=184167.50000000003, standard-error=852.6527876666983
+
+strata-size 16
+Sampling complete: 11412 iterations (182592 samples) in 17.906 seconds (average 9.8e-05)
+Result: true
+Sampling complete: 11314 iterations (181024 samples) in 18.001 seconds (average 9.9e-05)
+Result: true
+Sampling complete: 11379 iterations (182064 samples) in 18.447 seconds (average 0.0001)
+Result: true
+Sampling complete: 11806 iterations (188896 samples) in 21.092 seconds (average 0.00011)
+Result: true
+Sampling complete: 11349 iterations (181584 samples) in 16.742 seconds (average 9.2e-05)
+Result: true
+Sampling complete: 11406 iterations (182496 samples) in 17.142 seconds (average 9.4e-05)
+Result: true
+Sampling complete: 11838 iterations (189408 samples) in 17.375 seconds (average 9.2e-05)
+Result: true
+Sampling complete: 11210 iterations (179360 samples) in 18.282 seconds (average 0.0001)
+Result: true
+Sampling complete: 11569 iterations (185104 samples) in 17.556 seconds (average 9.5e-05)
+Result: true
+Sampling complete: 11169 iterations (178704 samples) in 16.873 seconds (average 9.4e-05)
+Result: true
+Sampling complete: 11308 iterations (180928 samples) in 16.214 seconds (average 9e-05)
+Result: true
+Sampling complete: 11263 iterations (180208 samples) in 16.559 seconds (average 9.2e-05)
+Result: true
+Sampling complete: 11192 iterations (179072 samples) in 16.033 seconds (average 9e-05)
+Result: true
+Sampling complete: 11392 iterations (182272 samples) in 16.488 seconds (average 9e-05)
+Result: true
+Sampling complete: 11083 iterations (177328 samples) in 17.039 seconds (average 9.6e-05)
+Result: true
+Sampling complete: 11529 iterations (184464 samples) in 17.229 seconds (average 9.3e-05)
+Result: true
+Sampling complete: 10516 iterations (168256 samples) in 15.295 seconds (average 9.1e-05)
+Result: true
+Sampling complete: 11444 iterations (183104 samples) in 17.28 seconds (average 9.4e-05)
+Result: true
+Sampling complete: 11385 iterations (182160 samples) in 17.019 seconds (average 9.3e-05)
+Result: true
+Sampling complete: 11753 iterations (188048 samples) in 15.839 seconds (average 8.4e-05)
+Result: true
+Time: average=17.22055, standard-error=0.27280986703679105
+Samples: average=181853.60000000003, standard-error=1024.4711251742485
+Sampling complete: 9765 iterations (156240 samples) in 13.677 seconds (average 8.8e-05)
+Result: true
+Sampling complete: 10038 iterations (160608 samples) in 13.765 seconds (average 8.6e-05)
+Result: true
+Sampling complete: 9797 iterations (156752 samples) in 13.923 seconds (average 8.9e-05)
+Result: true
+Sampling complete: 10687 iterations (170992 samples) in 15.08 seconds (average 8.8e-05)
+Result: true
+Sampling complete: 10176 iterations (162816 samples) in 15.242 seconds (average 9.4e-05)
+Result: true
+Sampling complete: 10221 iterations (163536 samples) in 15.353 seconds (average 9.4e-05)
+Result: true
+Sampling complete: 10417 iterations (166672 samples) in 15.455 seconds (average 9.3e-05)
+Result: true
+Sampling complete: 10639 iterations (170224 samples) in 16.22 seconds (average 9.5e-05)
+Result: true
+Sampling complete: 10187 iterations (162992 samples) in 14.86 seconds (average 9.1e-05)
+Result: true
+Sampling complete: 10237 iterations (163792 samples) in 14.422 seconds (average 8.8e-05)
+Result: true
+Sampling complete: 10130 iterations (162080 samples) in 15.469 seconds (average 9.5e-05)
+Result: true
+Sampling complete: 10589 iterations (169424 samples) in 15.656 seconds (average 9.2e-05)
+Result: true
+Sampling complete: 9754 iterations (156064 samples) in 14.098 seconds (average 9e-05)
+Result: true
+Sampling complete: 10346 iterations (165536 samples) in 14.891 seconds (average 9e-05)
+Result: true
+Sampling complete: 10022 iterations (160352 samples) in 16.131 seconds (average 0.0001)
+Result: true
+Sampling complete: 10570 iterations (169120 samples) in 15.484 seconds (average 9.2e-05)
+Result: true
+Sampling complete: 10012 iterations (160192 samples) in 14.412 seconds (average 9e-05)
+Result: true
+Sampling complete: 10470 iterations (167520 samples) in 16.078 seconds (average 9.6e-05)
+Result: true
+Sampling complete: 10840 iterations (173440 samples) in 15.453 seconds (average 8.9e-05)
+Result: true
+Sampling complete: 9930 iterations (158880 samples) in 13.359 seconds (average 8.4e-05)
+Result: true
+Time: average=14.951400000000001, standard-error=0.19209402029105158
+Samples: average=163861.6, standard-error=1148.8015686838728
+Sampling complete: 7626 iterations (122016 samples) in 12.395 seconds (average 0.0001)
+Result: true
+Sampling complete: 7604 iterations (121664 samples) in 12.377 seconds (average 0.0001)
+Result: true
+Sampling complete: 7689 iterations (123024 samples) in 13.044 seconds (average 0.00011)
+Result: true
+Sampling complete: 7853 iterations (125648 samples) in 13.406 seconds (average 0.00011)
+Result: true
+Sampling complete: 7485 iterations (119760 samples) in 13.623 seconds (average 0.00011)
+Result: true
+Sampling complete: 7796 iterations (124736 samples) in 13.707 seconds (average 0.00011)
+Result: true
+Sampling complete: 7692 iterations (123072 samples) in 13.594 seconds (average 0.00011)
+Result: true
+Sampling complete: 7744 iterations (123904 samples) in 14.145 seconds (average 0.00011)
+Result: true
+Sampling complete: 7974 iterations (127584 samples) in 13.189 seconds (average 0.0001)
+Result: true
+Sampling complete: 7612 iterations (121792 samples) in 12.291 seconds (average 0.0001)
+Result: true
+Sampling complete: 7797 iterations (124752 samples) in 13.633 seconds (average 0.00011)
+Result: true
+Sampling complete: 7608 iterations (121728 samples) in 11.876 seconds (average 9.8e-05)
+Result: true
+Sampling complete: 7577 iterations (121232 samples) in 12.209 seconds (average 0.0001)
+Result: true
+Sampling complete: 7364 iterations (117824 samples) in 11.727 seconds (average 0.0001)
+Result: true
+Sampling complete: 7693 iterations (123088 samples) in 11.442 seconds (average 9.3e-05)
+Result: true
+Sampling complete: 7758 iterations (124128 samples) in 12.402 seconds (average 0.0001)
+Result: true
+Sampling complete: 7087 iterations (113392 samples) in 11.766 seconds (average 0.0001)
+Result: true
+Sampling complete: 7479 iterations (119664 samples) in 12.416 seconds (average 0.0001)
+Result: true
+Sampling complete: 7525 iterations (120400 samples) in 13.488 seconds (average 0.00011)
+Result: true
+Sampling complete: 8289 iterations (132624 samples) in 14.698 seconds (average 0.00011)
+Result: true
+Time: average=12.8714, standard-error=0.20105518226544056
+Samples: average=122601.6, standard-error=861.6165174588372
+
+strata-size 256
+Sampling complete: 2 iterations (512 samples) in 0.538 seconds (average 0.0011)
+Result: true
+Sampling complete: 618 iterations (158208 samples) in 16.273 seconds (average 0.0001)
+Result: true
+Sampling complete: 674 iterations (172544 samples) in 18.361 seconds (average 0.00011)
+Result: true
+Sampling complete: 714 iterations (182784 samples) in 18.807 seconds (average 0.0001)
+Result: true
+Sampling complete: 713 iterations (182528 samples) in 19.298 seconds (average 0.00011)
+Result: true
+Sampling complete: 734 iterations (187904 samples) in 19.543 seconds (average 0.0001)
+Result: true
+Sampling complete: 709 iterations (181504 samples) in 18.777 seconds (average 0.0001)
+Result: true
+Sampling complete: 715 iterations (183040 samples) in 18.627 seconds (average 0.0001)
+Result: true
+Sampling complete: 701 iterations (179456 samples) in 19.007 seconds (average 0.00011)
+Result: true
+Sampling complete: 685 iterations (175360 samples) in 17.968 seconds (average 0.0001)
+Result: true
+Sampling complete: 714 iterations (182784 samples) in 18.538 seconds (average 0.0001)
+Result: true
+Sampling complete: 734 iterations (187904 samples) in 19.382 seconds (average 0.0001)
+Result: true
+Sampling complete: 710 iterations (181760 samples) in 17.736 seconds (average 9.8e-05)
+Result: true
+Sampling complete: 693 iterations (177408 samples) in 18.681 seconds (average 0.00011)
+Result: true
+Sampling complete: 639 iterations (163584 samples) in 17.44 seconds (average 0.00011)
+Result: true
+Sampling complete: 661 iterations (169216 samples) in 17.539 seconds (average 0.0001)
+Result: true
+Sampling complete: 759 iterations (194304 samples) in 20.068 seconds (average 0.0001)
+Result: true
+Sampling complete: 687 iterations (175872 samples) in 16.774 seconds (average 9.5e-05)
+Result: true
+Sampling complete: 637 iterations (163072 samples) in 15.714 seconds (average 9.6e-05)
+Result: true
+Sampling complete: 698 iterations (178688 samples) in 15.883 seconds (average 8.9e-05)
+Result: true
+Time: average=17.2477, standard-error=0.9207979265718118
+Samples: average=168921.59999999998, standard-error=9086.932954407375
+Sampling complete: 611 iterations (156416 samples) in 15.61 seconds (average 0.0001)
+Result: true
+Sampling complete: 633 iterations (162048 samples) in 16.115 seconds (average 9.9e-05)
+Result: true
+Sampling complete: 641 iterations (164096 samples) in 16.571 seconds (average 0.0001)
+Result: true
+Sampling complete: 2 iterations (512 samples) in 0.402 seconds (average 0.00079)
+Result: true
+Sampling complete: 685 iterations (175360 samples) in 18.529 seconds (average 0.00011)
+Result: true
+Sampling complete: 595 iterations (152320 samples) in 15.417 seconds (average 0.0001)
+Result: true
+Sampling complete: 607 iterations (155392 samples) in 14.264 seconds (average 9.2e-05)
+Result: true
+Sampling complete: 596 iterations (152576 samples) in 15.326 seconds (average 0.0001)
+Result: true
+Sampling complete: 678 iterations (173568 samples) in 18.397 seconds (average 0.00011)
+Result: true
+Sampling complete: 2 iterations (512 samples) in 0.397 seconds (average 0.00078)
+Result: true
+Sampling complete: 565 iterations (144640 samples) in 13.824 seconds (average 9.6e-05)
+Result: true
+Sampling complete: 658 iterations (168448 samples) in 16.702 seconds (average 9.9e-05)
+Result: true
+Sampling complete: 681 iterations (174336 samples) in 18.059 seconds (average 0.0001)
+Result: true
+Sampling complete: 662 iterations (169472 samples) in 16.689 seconds (average 9.8e-05)
+Result: true
+Sampling complete: 641 iterations (164096 samples) in 15.211 seconds (average 9.3e-05)
+Result: true
+Sampling complete: 601 iterations (153856 samples) in 15.462 seconds (average 0.0001)
+Result: true
+Sampling complete: 639 iterations (163584 samples) in 16.546 seconds (average 0.0001)
+Result: true
+Sampling complete: 681 iterations (174336 samples) in 16.835 seconds (average 9.7e-05)
+Result: true
+Sampling complete: 608 iterations (155648 samples) in 13.736 seconds (average 8.8e-05)
+Result: true
+Sampling complete: 702 iterations (179712 samples) in 14.259 seconds (average 7.9e-05)
+Result: true
+Time: average=14.417549999999999, standard-error=1.1158133627066569
+Samples: average=147046.40000000002, standard-error=11400.488286495729
+Sampling complete: 382 iterations (97792 samples) in 10.075 seconds (average 0.0001)
+Result: true
+Sampling complete: 2 iterations (512 samples) in 0.341 seconds (average 0.00067)
+Result: true
+Sampling complete: 443 iterations (113408 samples) in 11.565 seconds (average 0.0001)
+Result: true
+Sampling complete: 451 iterations (115456 samples) in 11.717 seconds (average 0.0001)
+Result: true
+Sampling complete: 516 iterations (132096 samples) in 14.025 seconds (average 0.00011)
+Result: true
+Sampling complete: 446 iterations (114176 samples) in 12.037 seconds (average 0.00011)
+Result: true
+Sampling complete: 469 iterations (120064 samples) in 12.747 seconds (average 0.00011)
+Result: true
+Sampling complete: 481 iterations (123136 samples) in 13.668 seconds (average 0.00011)
+Result: true
+Sampling complete: 473 iterations (121088 samples) in 13.355 seconds (average 0.00011)
+Result: true
+Sampling complete: 462 iterations (118272 samples) in 12.97 seconds (average 0.00011)
+Result: true
+Sampling complete: 437 iterations (111872 samples) in 11.7 seconds (average 0.0001)
+Result: true
+Sampling complete: 472 iterations (120832 samples) in 13.959 seconds (average 0.00012)
+Result: true
+Sampling complete: 473 iterations (121088 samples) in 13.782 seconds (average 0.00011)
+Result: true
+Sampling complete: 434 iterations (111104 samples) in 12.541 seconds (average 0.00011)
+Result: true
+Sampling complete: 432 iterations (110592 samples) in 11.923 seconds (average 0.00011)
+Result: true
+Sampling complete: 485 iterations (124160 samples) in 13.632 seconds (average 0.00011)
+Result: true
+Sampling complete: 502 iterations (128512 samples) in 15.24 seconds (average 0.00012)
+Result: true
+Sampling complete: 490 iterations (125440 samples) in 13.628 seconds (average 0.00011)
+Result: true
+Sampling complete: 474 iterations (121344 samples) in 13.416 seconds (average 0.00011)
+Result: true
+Sampling complete: 495 iterations (126720 samples) in 13.2 seconds (average 0.0001)
+Result: true
+Time: average=12.27605, standard-error=0.679125945512628
+Samples: average=112883.2, standard-error=6159.684541478266
+Sampling complete: 401 iterations (102656 samples) in 12.815 seconds (average 0.00012)
+Result: true
+Sampling complete: 401 iterations (102656 samples) in 12.809 seconds (average 0.00012)
+Result: true
+Sampling complete: 420 iterations (107520 samples) in 13.17 seconds (average 0.00012)
+Result: true
+Sampling complete: 420 iterations (107520 samples) in 13.776 seconds (average 0.00013)
+Result: true
+Sampling complete: 365 iterations (93440 samples) in 10.535 seconds (average 0.00011)
+Result: true
+Sampling complete: 421 iterations (107776 samples) in 12.777 seconds (average 0.00012)
+Result: true
+Sampling complete: 460 iterations (117760 samples) in 14.121 seconds (average 0.00012)
+Result: true
+Sampling complete: 484 iterations (123904 samples) in 14.882 seconds (average 0.00012)
+Result: true
+Sampling complete: 406 iterations (103936 samples) in 12.333 seconds (average 0.00012)
+Result: true
+Sampling complete: 437 iterations (111872 samples) in 13.507 seconds (average 0.00012)
+Result: true
+Sampling complete: 420 iterations (107520 samples) in 12.032 seconds (average 0.00011)
+Result: true
+Sampling complete: 457 iterations (116992 samples) in 14.387 seconds (average 0.00012)
+Result: true
+Sampling complete: 405 iterations (103680 samples) in 12.167 seconds (average 0.00012)
+Result: true
+Sampling complete: 383 iterations (98048 samples) in 11.197 seconds (average 0.00011)
+Result: true
+Sampling complete: 435 iterations (111360 samples) in 12.805 seconds (average 0.00011)
+Result: true
+Sampling complete: 418 iterations (107008 samples) in 11.823 seconds (average 0.00011)
+Result: true
+Sampling complete: 376 iterations (96256 samples) in 10.796 seconds (average 0.00011)
+Result: true
+Sampling complete: 423 iterations (108288 samples) in 12.709 seconds (average 0.00012)
+Result: true
+Sampling complete: 397 iterations (101632 samples) in 10.488 seconds (average 0.0001)
+Result: true
+Sampling complete: 459 iterations (117504 samples) in 11.872 seconds (average 0.0001)
+Result: true
+Time: average=12.550049999999997, standard-error=0.2764093500874914
+Samples: average=107366.40000000001, standard-error=1717.7420283003717
+
+strata-size 4096
+Sampling complete: 2 iterations (8192 samples) in 1.913 seconds (average 0.00023)
+Result: true
+Sampling complete: 38 iterations (155648 samples) in 17.322 seconds (average 0.00011)
+Result: true
+Sampling complete: 45 iterations (184320 samples) in 21.197 seconds (average 0.00012)
+Result: true
+Sampling complete: 53 iterations (217088 samples) in 25.204 seconds (average 0.00012)
+Result: true
+Sampling complete: 3 iterations (12288 samples) in 1.997 seconds (average 0.00016)
+Result: true
+Sampling complete: 64 iterations (262144 samples) in 31.117 seconds (average 0.00012)
+Result: true
+Sampling complete: 30 iterations (122880 samples) in 13.677 seconds (average 0.00011)
+Result: true
+Sampling complete: 38 iterations (155648 samples) in 17.917 seconds (average 0.00012)
+Result: true
+Sampling complete: 55 iterations (225280 samples) in 26.326 seconds (average 0.00012)
+Result: true
+Sampling complete: 58 iterations (237568 samples) in 28.915 seconds (average 0.00012)
+Result: true
+Sampling complete: 38 iterations (155648 samples) in 18.158 seconds (average 0.00012)
+Result: true
+Sampling complete: 48 iterations (196608 samples) in 22.686 seconds (average 0.00012)
+Result: true
+Sampling complete: 42 iterations (172032 samples) in 20.259 seconds (average 0.00012)
+Result: true
+Sampling complete: 51 iterations (208896 samples) in 24.043 seconds (average 0.00012)
+Result: true
+Sampling complete: 34 iterations (139264 samples) in 16.424 seconds (average 0.00012)
+Result: true
+Sampling complete: 39 iterations (159744 samples) in 19.92 seconds (average 0.00012)
+Result: true
+Sampling complete: 47 iterations (192512 samples) in 23.324 seconds (average 0.00012)
+Result: true
+Sampling complete: 32 iterations (131072 samples) in 15.389 seconds (average 0.00012)
+Result: true
+Sampling complete: 42 iterations (172032 samples) in 17.22 seconds (average 0.0001)
+Result: true
+Sampling complete: 48 iterations (196608 samples) in 18.839 seconds (average 9.6e-05)
+Result: true
+Time: average=19.09235, standard-error=1.6535932235032258
+Samples: average=165273.60000000003, standard-error=14326.06452706689
+Sampling complete: 2 iterations (8192 samples) in 3.408 seconds (average 0.00042)
+Result: true
+Sampling complete: 33 iterations (135168 samples) in 17.154 seconds (average 0.00013)
+Result: true
+Sampling complete: 46 iterations (188416 samples) in 23.631 seconds (average 0.00013)
+Result: true
+Sampling complete: 52 iterations (212992 samples) in 26.246 seconds (average 0.00012)
+Result: true
+Sampling complete: 48 iterations (196608 samples) in 22.361 seconds (average 0.00011)
+Result: true
+Sampling complete: 45 iterations (184320 samples) in 21.771 seconds (average 0.00012)
+Result: true
+Sampling complete: 48 iterations (196608 samples) in 23.252 seconds (average 0.00012)
+Result: true
+Sampling complete: 43 iterations (176128 samples) in 20.012 seconds (average 0.00011)
+Result: true
+Sampling complete: 45 iterations (184320 samples) in 21.701 seconds (average 0.00012)
+Result: true
+Sampling complete: 9 iterations (36864 samples) in 4.828 seconds (average 0.00013)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.571 seconds (average 0.00019)
+Result: true
+Sampling complete: 22 iterations (90112 samples) in 11.901 seconds (average 0.00013)
+Result: true
+Sampling complete: 49 iterations (200704 samples) in 24.778 seconds (average 0.00012)
+Result: true
+Sampling complete: 33 iterations (135168 samples) in 16.971 seconds (average 0.00013)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 2.296 seconds (average 0.00028)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.664 seconds (average 0.0002)
+Result: true
+Sampling complete: 38 iterations (155648 samples) in 19.145 seconds (average 0.00012)
+Result: true
+Sampling complete: 48 iterations (196608 samples) in 23.594 seconds (average 0.00012)
+Result: true
+Sampling complete: 28 iterations (114688 samples) in 12.149 seconds (average 0.00011)
+Result: true
+Sampling complete: 45 iterations (184320 samples) in 20.291 seconds (average 0.00011)
+Result: true
+Time: average=15.9362, standard-error=1.9330287560144952
+Samples: average=131072.0, standard-error=17023.640360269288
+Sampling complete: 2 iterations (8192 samples) in 2.658 seconds (average 0.00032)
+Result: true
+Sampling complete: 3 iterations (12288 samples) in 3.28 seconds (average 0.00027)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.956 seconds (average 0.00024)
+Result: true
+Sampling complete: 29 iterations (118784 samples) in 16.446 seconds (average 0.00014)
+Result: true
+Sampling complete: 23 iterations (94208 samples) in 11.627 seconds (average 0.00012)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 2.199 seconds (average 0.00027)
+Result: true
+Sampling complete: 30 iterations (122880 samples) in 16.685 seconds (average 0.00014)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 2.296 seconds (average 0.00028)
+Result: true
+Sampling complete: 42 iterations (172032 samples) in 26.223 seconds (average 0.00015)
+Result: true
+Sampling complete: 23 iterations (94208 samples) in 13.7 seconds (average 0.00015)
+Result: true
+Sampling complete: 27 iterations (110592 samples) in 14.808 seconds (average 0.00013)
+Result: true
+Sampling complete: 23 iterations (94208 samples) in 12.73 seconds (average 0.00014)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.724 seconds (average 0.00021)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.695 seconds (average 0.00021)
+Result: true
+Sampling complete: 28 iterations (114688 samples) in 16.225 seconds (average 0.00014)
+Result: true
+Sampling complete: 24 iterations (98304 samples) in 12.593 seconds (average 0.00013)
+Result: true
+Sampling complete: 34 iterations (139264 samples) in 18.426 seconds (average 0.00013)
+Result: true
+Sampling complete: 36 iterations (147456 samples) in 19.133 seconds (average 0.00013)
+Result: true
+Sampling complete: 47 iterations (192512 samples) in 25.518 seconds (average 0.00013)
+Result: true
+Sampling complete: 38 iterations (155648 samples) in 16.423 seconds (average 0.00011)
+Result: true
+Time: average=11.817250000000001, standard-error=1.8018070036187208
+Samples: average=85811.20000000001, standard-error=14159.291072351714
+Sampling complete: 9 iterations (36864 samples) in 7.247 seconds (average 0.0002)
+Result: true
+Sampling complete: 18 iterations (73728 samples) in 12.465 seconds (average 0.00017)
+Result: true
+Sampling complete: 24 iterations (98304 samples) in 16.112 seconds (average 0.00016)
+Result: true
+Sampling complete: 13 iterations (53248 samples) in 8.363 seconds (average 0.00016)
+Result: true
+Sampling complete: 26 iterations (106496 samples) in 18.309 seconds (average 0.00017)
+Result: true
+Sampling complete: 3 iterations (12288 samples) in 3.335 seconds (average 0.00027)
+Result: true
+Sampling complete: 18 iterations (73728 samples) in 12.211 seconds (average 0.00017)
+Result: true
+Sampling complete: 31 iterations (126976 samples) in 17.306 seconds (average 0.00014)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.861 seconds (average 0.00023)
+Result: true
+Sampling complete: 37 iterations (151552 samples) in 22.273 seconds (average 0.00015)
+Result: true
+Sampling complete: 38 iterations (155648 samples) in 23.05 seconds (average 0.00015)
+Result: true
+Sampling complete: 35 iterations (143360 samples) in 20.92 seconds (average 0.00015)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.871 seconds (average 0.00023)
+Result: true
+Sampling complete: 31 iterations (126976 samples) in 18.644 seconds (average 0.00015)
+Result: true
+Sampling complete: 15 iterations (61440 samples) in 8.342 seconds (average 0.00014)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 2.247 seconds (average 0.00027)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 2.176 seconds (average 0.00027)
+Result: true
+Sampling complete: 36 iterations (147456 samples) in 22.519 seconds (average 0.00015)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.304 seconds (average 0.00016)
+Result: true
+Sampling complete: 33 iterations (135168 samples) in 20.121 seconds (average 0.00015)
+Result: true
+Time: average=12.0338, standard-error=1.8127937549249051
+Samples: average=77209.59999999999, standard-error=12681.508309428546
+Sampling complete: 2 iterations (8192 samples) in 4.648 seconds (average 0.00057)
+Result: true
+Sampling complete: 4 iterations (16384 samples) in 6.701 seconds (average 0.00041)
+Result: true
+Sampling complete: 9 iterations (36864 samples) in 7.826 seconds (average 0.00021)
+Result: true
+Sampling complete: 18 iterations (73728 samples) in 17.422 seconds (average 0.00024)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 2.318 seconds (average 0.00028)
+Result: true
+Sampling complete: 25 iterations (102400 samples) in 23.934 seconds (average 0.00023)
+Result: true
+Sampling complete: 6 iterations (24576 samples) in 4.887 seconds (average 0.0002)
+Result: true
+Sampling complete: 26 iterations (106496 samples) in 21.673 seconds (average 0.0002)
+Result: true
+Sampling complete: 43 iterations (176128 samples) in 35.577 seconds (average 0.0002)
+Result: true
+Sampling complete: 36 iterations (147456 samples) in 26.653 seconds (average 0.00018)
+Result: true
+Sampling complete: 33 iterations (135168 samples) in 24.355 seconds (average 0.00018)
+Result: true
+Sampling complete: 25 iterations (102400 samples) in 18.772 seconds (average 0.00018)
+Result: true
+Sampling complete: 10 iterations (40960 samples) in 8.993 seconds (average 0.00022)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 3.435 seconds (average 0.00042)
+Result: true
+Sampling complete: 26 iterations (106496 samples) in 22.975 seconds (average 0.00022)
+Result: true
+Sampling complete: 14 iterations (57344 samples) in 14.253 seconds (average 0.00025)
+Result: true
+Sampling complete: 27 iterations (110592 samples) in 22.368 seconds (average 0.0002)
+Result: true
+Sampling complete: 21 iterations (86016 samples) in 16.123 seconds (average 0.00019)
+Result: true
+Sampling complete: 36 iterations (147456 samples) in 29.118 seconds (average 0.0002)
+Result: true
+Sampling complete: 29 iterations (118784 samples) in 18.478 seconds (average 0.00016)
+Result: true
+Time: average=16.52545, standard-error=2.1375004493382104
+Samples: average=80691.20000000001, standard-error=11785.860951424625
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Time for model construction: 858.71 seconds.
+States:      1849234352 (1 initial)
+Transitions: 2944935077
+Engine: MTBDD
+
+real	30m0.447s
+user	29m57.178s
+sys	0m3.522s
+
+Time for model construction: 843.218 seconds.
+States:      1849234352 (1 initial)
+Transitions: 2944935077
+Engine: Sparse
+
+real	30m5.166s
+user	21m22.994s
+sys	5m15.089s
+
+Time for model construction: 834.539 seconds.
+States:      1849234352 (1 initial)
+Transitions: 2944935077
+Engine: Hybrid
+
+real	30m2.395s
+user	29m16.514s
+sys	0m40.881s
+
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space: failed reallocation of scalar replaced objects
+
+real	0m41.012s
+user	4m22.687s
+sys	0m1.246s
+
+PRISM SPRT
+Sampling complete: 207443 iterations in 12.982 seconds (average 6.3e-05)
+Result: true
+Sampling complete: 207586 iterations in 13.017 seconds (average 6.3e-05)
+Result: true
+Sampling complete: 211856 iterations in 12.989 seconds (average 6.1e-05)
+Result: true
+Sampling complete: 208693 iterations in 13.865 seconds (average 6.6e-05)
+Result: true
+Sampling complete: 210946 iterations in 13.33 seconds (average 6.3e-05)
+Result: true
+Sampling complete: 207023 iterations in 12.288 seconds (average 5.9e-05)
+Result: true
+Sampling complete: 214326 iterations in 14.044 seconds (average 6.6e-05)
+Result: true
+Sampling complete: 214563 iterations in 14.526 seconds (average 6.8e-05)
+Result: true
+Sampling complete: 207166 iterations in 12.067 seconds (average 5.8e-05)
+Result: true
+Sampling complete: 220800 iterations in 13.206 seconds (average 6e-05)
+Result: true
+Sampling complete: 214783 iterations in 13.962 seconds (average 6.5e-05)
+Result: true
+Sampling complete: 214416 iterations in 12.689 seconds (average 5.9e-05)
+Result: true
+Sampling complete: 204396 iterations in 12.552 seconds (average 6.1e-05)
+Result: true
+Sampling complete: 210406 iterations in 13.328 seconds (average 6.3e-05)
+Result: true
+Sampling complete: 214583 iterations in 14.212 seconds (average 6.6e-05)
+Result: true
+Sampling complete: 214013 iterations in 13.356 seconds (average 6.2e-05)
+Result: true
+Sampling complete: 204253 iterations in 12.583 seconds (average 6.2e-05)
+Result: true
+Sampling complete: 212016 iterations in 12.526 seconds (average 5.9e-05)
+Result: true
+Sampling complete: 214733 iterations in 12.424 seconds (average 5.8e-05)
+Result: true
+Sampling complete: 213016 iterations in 14.122 seconds (average 6.6e-05)
+Result: true
+Time: average=13.203400000000002, standard-error=0.1604620532285306
+Samples: average=211350.85000000003, standard-error=938.4093856796072
+
+GLRT
+Sampling complete: 207809 iterations in 12.456 seconds (average 6e-05)
+Result: true
+Sampling complete: 206232 iterations in 12.852 seconds (average 6.2e-05)
+Result: true
+Sampling complete: 216619 iterations in 13.213 seconds (average 6.1e-05)
+Result: true
+Sampling complete: 218729 iterations in 14.419 seconds (average 6.6e-05)
+Result: true
+Sampling complete: 210025 iterations in 13.514 seconds (average 6.4e-05)
+Result: true
+Sampling complete: 212662 iterations in 13.667 seconds (average 6.4e-05)
+Result: true
+Sampling complete: 215169 iterations in 13.878 seconds (average 6.4e-05)
+Result: true
+Sampling complete: 213515 iterations in 13.64 seconds (average 6.4e-05)
+Result: true
+Sampling complete: 212112 iterations in 13.516 seconds (average 6.4e-05)
+Result: true
+Sampling complete: 212879 iterations in 12.558 seconds (average 5.9e-05)
+Result: true
+Sampling complete: 216035 iterations in 12.769 seconds (average 5.9e-05)
+Result: true
+Sampling complete: 217512 iterations in 14.886 seconds (average 6.8e-05)
+Result: true
+Sampling complete: 216289 iterations in 13.238 seconds (average 6.1e-05)
+Result: true
+Sampling complete: 211145 iterations in 13.539 seconds (average 6.4e-05)
+Result: true
+Sampling complete: 208072 iterations in 12.358 seconds (average 5.9e-05)
+Result: true
+Sampling complete: 218592 iterations in 12.99 seconds (average 5.9e-05)
+Result: true
+Sampling complete: 215865 iterations in 13.217 seconds (average 6.1e-05)
+Result: true
+Sampling complete: 215792 iterations in 12.831 seconds (average 5.9e-05)
+Result: true
+Sampling complete: 205752 iterations in 11.997 seconds (average 5.8e-05)
+Result: true
+Sampling complete: 210939 iterations in 12.992 seconds (average 6.2e-05)
+Result: true
+Time: average=13.2265, standard-error=0.15520294862907047
+Samples: average=213087.2, standard-error=896.5209763595225
+
+antithetic
+Sampling complete: 88940 iterations (177880 samples) in 16.299 seconds (average 9.2e-05)
+Result: true
+Sampling complete: 92220 iterations (184440 samples) in 16.385 seconds (average 8.9e-05)
+Result: true
+Sampling complete: 90984 iterations (181968 samples) in 16.462 seconds (average 9e-05)
+Result: true
+Sampling complete: 94425 iterations (188850 samples) in 17.723 seconds (average 9.4e-05)
+Result: true
+Sampling complete: 91946 iterations (183892 samples) in 15.996 seconds (average 8.7e-05)
+Result: true
+Sampling complete: 91891 iterations (183782 samples) in 16.214 seconds (average 8.8e-05)
+Result: true
+Sampling complete: 92809 iterations (185618 samples) in 16.326 seconds (average 8.8e-05)
+Result: true
+Sampling complete: 92821 iterations (185642 samples) in 14.948 seconds (average 8.1e-05)
+Result: true
+Sampling complete: 84830 iterations (169660 samples) in 15.449 seconds (average 9.1e-05)
+Result: true
+Sampling complete: 88094 iterations (176188 samples) in 14.054 seconds (average 8e-05)
+Result: true
+Sampling complete: 92815 iterations (185630 samples) in 16.63 seconds (average 9e-05)
+Result: true
+Sampling complete: 90267 iterations (180534 samples) in 17.219 seconds (average 9.5e-05)
+Result: true
+Sampling complete: 88882 iterations (177764 samples) in 16.278 seconds (average 9.2e-05)
+Result: true
+Sampling complete: 92506 iterations (185012 samples) in 16.657 seconds (average 9e-05)
+Result: true
+Sampling complete: 93041 iterations (186082 samples) in 17.86 seconds (average 9.6e-05)
+Result: true
+Sampling complete: 94412 iterations (188824 samples) in 16.608 seconds (average 8.8e-05)
+Result: true
+Sampling complete: 92899 iterations (185798 samples) in 16.318 seconds (average 8.8e-05)
+Result: true
+Sampling complete: 87240 iterations (174480 samples) in 13.999 seconds (average 8e-05)
+Result: true
+Sampling complete: 96573 iterations (193146 samples) in 15.13 seconds (average 7.8e-05)
+Result: true
+Sampling complete: 93207 iterations (186414 samples) in 15.619 seconds (average 8.4e-05)
+Result: true
+Time: average=16.1087, standard-error=0.2280410754782198
+Samples: average=183080.19999999998, standard-error=1241.7545049349794
+
+strata-size 1
+Sampling complete: 191154 iterations (191154 samples) in 13.73 seconds (average 7.2e-05)
+Result: true
+Sampling complete: 196545 iterations (196545 samples) in 13.917 seconds (average 7.1e-05)
+Result: true
+Sampling complete: 196085 iterations (196085 samples) in 14.019 seconds (average 7.1e-05)
+Result: true
+Sampling complete: 199991 iterations (199991 samples) in 14.405 seconds (average 7.2e-05)
+Result: true
+Sampling complete: 186758 iterations (186758 samples) in 13.447 seconds (average 7.2e-05)
+Result: true
+Sampling complete: 192702 iterations (192702 samples) in 13.308 seconds (average 6.9e-05)
+Result: true
+Sampling complete: 194562 iterations (194562 samples) in 12.854 seconds (average 6.6e-05)
+Result: true
+Sampling complete: 186436 iterations (186436 samples) in 14.21 seconds (average 7.6e-05)
+Result: true
+Sampling complete: 189179 iterations (189179 samples) in 13.135 seconds (average 6.9e-05)
+Result: true
+Sampling complete: 185660 iterations (185660 samples) in 12.975 seconds (average 7e-05)
+Result: true
+Sampling complete: 186348 iterations (186348 samples) in 13.125 seconds (average 7e-05)
+Result: true
+Sampling complete: 190710 iterations (190710 samples) in 12.69 seconds (average 6.7e-05)
+Result: true
+Sampling complete: 195543 iterations (195543 samples) in 13.399 seconds (average 6.9e-05)
+Result: true
+Sampling complete: 195086 iterations (195086 samples) in 13.553 seconds (average 6.9e-05)
+Result: true
+Sampling complete: 191490 iterations (191490 samples) in 12.884 seconds (average 6.7e-05)
+Result: true
+Sampling complete: 184140 iterations (184140 samples) in 13.377 seconds (average 7.3e-05)
+Result: true
+Sampling complete: 192367 iterations (192367 samples) in 13.018 seconds (average 6.8e-05)
+Result: true
+Sampling complete: 193840 iterations (193840 samples) in 12.882 seconds (average 6.6e-05)
+Result: true
+Sampling complete: 197094 iterations (197094 samples) in 13.305 seconds (average 6.8e-05)
+Result: true
+Sampling complete: 200129 iterations (200129 samples) in 13.822 seconds (average 6.9e-05)
+Result: true
+Time: average=13.40275, standard-error=0.10829102783945808
+Samples: average=192290.95, standard-error=1060.2195315742767
+
+strata-size 2
+Sampling complete: 91023 iterations (182046 samples) in 15.39 seconds (average 8.5e-05)
+Result: true
+Sampling complete: 92913 iterations (185826 samples) in 15.481 seconds (average 8.3e-05)
+Result: true
+Sampling complete: 95842 iterations (191684 samples) in 15.595 seconds (average 8.1e-05)
+Result: true
+Sampling complete: 91679 iterations (183358 samples) in 16.346 seconds (average 8.9e-05)
+Result: true
+Sampling complete: 88823 iterations (177646 samples) in 14.837 seconds (average 8.4e-05)
+Result: true
+Sampling complete: 93165 iterations (186330 samples) in 15.842 seconds (average 8.5e-05)
+Result: true
+Sampling complete: 90977 iterations (181954 samples) in 14.955 seconds (average 8.2e-05)
+Result: true
+Sampling complete: 93885 iterations (187770 samples) in 16.559 seconds (average 8.8e-05)
+Result: true
+Sampling complete: 90599 iterations (181198 samples) in 14.929 seconds (average 8.2e-05)
+Result: true
+Sampling complete: 91169 iterations (182338 samples) in 15.347 seconds (average 8.4e-05)
+Result: true
+Sampling complete: 92925 iterations (185850 samples) in 17.315 seconds (average 9.3e-05)
+Result: true
+Sampling complete: 93179 iterations (186358 samples) in 15.934 seconds (average 8.6e-05)
+Result: true
+Sampling complete: 89430 iterations (178860 samples) in 15.82 seconds (average 8.8e-05)
+Result: true
+Sampling complete: 91923 iterations (183846 samples) in 15.453 seconds (average 8.4e-05)
+Result: true
+Sampling complete: 94803 iterations (189606 samples) in 17.237 seconds (average 9.1e-05)
+Result: true
+Sampling complete: 94259 iterations (188518 samples) in 18.262 seconds (average 9.7e-05)
+Result: true
+Sampling complete: 87537 iterations (175074 samples) in 14.714 seconds (average 8.4e-05)
+Result: true
+Sampling complete: 94837 iterations (189674 samples) in 16.007 seconds (average 8.4e-05)
+Result: true
+Sampling complete: 90882 iterations (181764 samples) in 14.674 seconds (average 8.1e-05)
+Result: true
+Sampling complete: 93538 iterations (187076 samples) in 13.806 seconds (average 7.4e-05)
+Result: true
+Time: average=15.72515, standard-error=0.23343882637191002
+Samples: average=184338.8, standard-error=963.4397629546463
+
+strata-size 16
+Sampling complete: 11296 iterations (180736 samples) in 15.77 seconds (average 8.7e-05)
+Result: true
+Sampling complete: 11571 iterations (185136 samples) in 16.087 seconds (average 8.7e-05)
+Result: true
+Sampling complete: 11557 iterations (184912 samples) in 16.684 seconds (average 9e-05)
+Result: true
+Sampling complete: 11936 iterations (190976 samples) in 18.646 seconds (average 9.8e-05)
+Result: true
+Sampling complete: 11363 iterations (181808 samples) in 15.686 seconds (average 8.6e-05)
+Result: true
+Sampling complete: 11241 iterations (179856 samples) in 15.951 seconds (average 8.9e-05)
+Result: true
+Sampling complete: 11368 iterations (181888 samples) in 15.139 seconds (average 8.3e-05)
+Result: true
+Sampling complete: 11748 iterations (187968 samples) in 18.298 seconds (average 9.7e-05)
+Result: true
+Sampling complete: 11595 iterations (185520 samples) in 16.754 seconds (average 9e-05)
+Result: true
+Sampling complete: 11482 iterations (183712 samples) in 16.189 seconds (average 8.8e-05)
+Result: true
+Sampling complete: 11471 iterations (183536 samples) in 17.535 seconds (average 9.6e-05)
+Result: true
+Sampling complete: 11845 iterations (189520 samples) in 18.052 seconds (average 9.5e-05)
+Result: true
+Sampling complete: 11350 iterations (181600 samples) in 15.862 seconds (average 8.7e-05)
+Result: true
+Sampling complete: 11679 iterations (186864 samples) in 16.823 seconds (average 9e-05)
+Result: true
+Sampling complete: 11263 iterations (180208 samples) in 15.613 seconds (average 8.7e-05)
+Result: true
+Sampling complete: 11354 iterations (181664 samples) in 17.308 seconds (average 9.5e-05)
+Result: true
+Sampling complete: 11115 iterations (177840 samples) in 15.409 seconds (average 8.7e-05)
+Result: true
+Sampling complete: 11227 iterations (179632 samples) in 15.398 seconds (average 8.6e-05)
+Result: true
+Sampling complete: 11668 iterations (186688 samples) in 15.262 seconds (average 8.2e-05)
+Result: true
+Sampling complete: 11501 iterations (184016 samples) in 16.143 seconds (average 8.8e-05)
+Result: true
+Time: average=16.43045, standard-error=0.23481218110382784
+Samples: average=183703.99999999997, standard-error=783.0434551361624
+Sampling complete: 9974 iterations (159584 samples) in 13.686 seconds (average 8.6e-05)
+Result: true
+Sampling complete: 9856 iterations (157696 samples) in 13.741 seconds (average 8.7e-05)
+Result: true
+Sampling complete: 10106 iterations (161696 samples) in 15.392 seconds (average 9.5e-05)
+Result: true
+Sampling complete: 10475 iterations (167600 samples) in 16.54 seconds (average 9.9e-05)
+Result: true
+Sampling complete: 9826 iterations (157216 samples) in 14.18 seconds (average 9e-05)
+Result: true
+Sampling complete: 10085 iterations (161360 samples) in 14.321 seconds (average 8.9e-05)
+Result: true
+Sampling complete: 10293 iterations (164688 samples) in 16.345 seconds (average 9.9e-05)
+Result: true
+Sampling complete: 10414 iterations (166624 samples) in 14.609 seconds (average 8.8e-05)
+Result: true
+Sampling complete: 10443 iterations (167088 samples) in 14.968 seconds (average 9e-05)
+Result: true
+Sampling complete: 10159 iterations (162544 samples) in 14.622 seconds (average 9e-05)
+Result: true
+Sampling complete: 10526 iterations (168416 samples) in 14.476 seconds (average 8.6e-05)
+Result: true
+Sampling complete: 9899 iterations (158384 samples) in 15.21 seconds (average 9.6e-05)
+Result: true
+Sampling complete: 10481 iterations (167696 samples) in 15.782 seconds (average 9.4e-05)
+Result: true
+Sampling complete: 10083 iterations (161328 samples) in 14.798 seconds (average 9.2e-05)
+Result: true
+Sampling complete: 10556 iterations (168896 samples) in 17.022 seconds (average 0.0001)
+Result: true
+Sampling complete: 10528 iterations (168448 samples) in 15.649 seconds (average 9.3e-05)
+Result: true
+Sampling complete: 9982 iterations (159712 samples) in 13.79 seconds (average 8.6e-05)
+Result: true
+Sampling complete: 10885 iterations (174160 samples) in 15.487 seconds (average 8.9e-05)
+Result: true
+Sampling complete: 10308 iterations (164928 samples) in 13.993 seconds (average 8.5e-05)
+Result: true
+Sampling complete: 10240 iterations (163840 samples) in 13.398 seconds (average 8.2e-05)
+Result: true
+Time: average=14.90045, standard-error=0.22734394850325929
+Samples: average=164095.19999999998, standard-error=1009.7298273352768
+Sampling complete: 7790 iterations (124640 samples) in 11.908 seconds (average 9.6e-05)
+Result: true
+Sampling complete: 7952 iterations (127232 samples) in 12.16 seconds (average 9.6e-05)
+Result: true
+Sampling complete: 8208 iterations (131328 samples) in 12.692 seconds (average 9.7e-05)
+Result: true
+Sampling complete: 7731 iterations (123696 samples) in 12.75 seconds (average 0.0001)
+Result: true
+Sampling complete: 7473 iterations (119568 samples) in 11.712 seconds (average 9.8e-05)
+Result: true
+Sampling complete: 7793 iterations (124688 samples) in 12.213 seconds (average 9.8e-05)
+Result: true
+Sampling complete: 7457 iterations (119312 samples) in 11.644 seconds (average 9.8e-05)
+Result: true
+Sampling complete: 7792 iterations (124672 samples) in 12.115 seconds (average 9.7e-05)
+Result: true
+Sampling complete: 7600 iterations (121600 samples) in 12.893 seconds (average 0.00011)
+Result: true
+Sampling complete: 7882 iterations (126112 samples) in 12.832 seconds (average 0.0001)
+Result: true
+Sampling complete: 7561 iterations (120976 samples) in 12.03 seconds (average 9.9e-05)
+Result: true
+Sampling complete: 8098 iterations (129568 samples) in 12.452 seconds (average 9.6e-05)
+Result: true
+Sampling complete: 7198 iterations (115168 samples) in 11.695 seconds (average 0.0001)
+Result: true
+Sampling complete: 7626 iterations (122016 samples) in 12.224 seconds (average 0.0001)
+Result: true
+Sampling complete: 8023 iterations (128368 samples) in 12.945 seconds (average 0.0001)
+Result: true
+Sampling complete: 7886 iterations (126176 samples) in 12.535 seconds (average 9.9e-05)
+Result: true
+Sampling complete: 7978 iterations (127648 samples) in 12.432 seconds (average 9.7e-05)
+Result: true
+Sampling complete: 8192 iterations (131072 samples) in 11.95 seconds (average 9.1e-05)
+Result: true
+Sampling complete: 7879 iterations (126064 samples) in 13.069 seconds (average 0.0001)
+Result: true
+Sampling complete: 7916 iterations (126656 samples) in 12.002 seconds (average 9.5e-05)
+Result: true
+Time: average=12.31265, standard-error=0.0991797749702928
+Samples: average=124827.99999999999, standard-error=923.720714228461
+
+strata-size 256
+Sampling complete: 680 iterations (174080 samples) in 15.748 seconds (average 9e-05)
+Result: true
+Sampling complete: 702 iterations (179712 samples) in 16.89 seconds (average 9.4e-05)
+Result: true
+Sampling complete: 715 iterations (183040 samples) in 18.04 seconds (average 9.9e-05)
+Result: true
+Sampling complete: 743 iterations (190208 samples) in 18.322 seconds (average 9.6e-05)
+Result: true
+Sampling complete: 714 iterations (182784 samples) in 17.441 seconds (average 9.5e-05)
+Result: true
+Sampling complete: 627 iterations (160512 samples) in 15.59 seconds (average 9.7e-05)
+Result: true
+Sampling complete: 723 iterations (185088 samples) in 17.423 seconds (average 9.4e-05)
+Result: true
+Sampling complete: 730 iterations (186880 samples) in 19.226 seconds (average 0.0001)
+Result: true
+Sampling complete: 689 iterations (176384 samples) in 15.501 seconds (average 8.8e-05)
+Result: true
+Sampling complete: 719 iterations (184064 samples) in 17.949 seconds (average 9.8e-05)
+Result: true
+Sampling complete: 680 iterations (174080 samples) in 16.857 seconds (average 9.7e-05)
+Result: true
+Sampling complete: 771 iterations (197376 samples) in 19.483 seconds (average 9.9e-05)
+Result: true
+Sampling complete: 2 iterations (512 samples) in 0.494 seconds (average 0.00096)
+Result: true
+Sampling complete: 631 iterations (161536 samples) in 15.113 seconds (average 9.4e-05)
+Result: true
+Sampling complete: 664 iterations (169984 samples) in 16.779 seconds (average 9.9e-05)
+Result: true
+Sampling complete: 682 iterations (174592 samples) in 17.279 seconds (average 9.9e-05)
+Result: true
+Sampling complete: 713 iterations (182528 samples) in 17.83 seconds (average 9.8e-05)
+Result: true
+Sampling complete: 684 iterations (175104 samples) in 14.683 seconds (average 8.4e-05)
+Result: true
+Sampling complete: 718 iterations (183808 samples) in 16.649 seconds (average 9.1e-05)
+Result: true
+Sampling complete: 757 iterations (193792 samples) in 17.015 seconds (average 8.8e-05)
+Result: true
+Time: average=16.215599999999995, standard-error=0.8751983967559643
+Samples: average=170803.2, standard-error=9206.087768885383
+Sampling complete: 550 iterations (140800 samples) in 12.986 seconds (average 9.2e-05)
+Result: true
+Sampling complete: 609 iterations (155904 samples) in 14.557 seconds (average 9.3e-05)
+Result: true
+Sampling complete: 2 iterations (512 samples) in 0.34 seconds (average 0.00066)
+Result: true
+Sampling complete: 657 iterations (168192 samples) in 16.241 seconds (average 9.7e-05)
+Result: true
+Sampling complete: 686 iterations (175616 samples) in 16.407 seconds (average 9.3e-05)
+Result: true
+Sampling complete: 625 iterations (160000 samples) in 15.579 seconds (average 9.7e-05)
+Result: true
+Sampling complete: 625 iterations (160000 samples) in 14.981 seconds (average 9.4e-05)
+Result: true
+Sampling complete: 630 iterations (161280 samples) in 15.555 seconds (average 9.6e-05)
+Result: true
+Sampling complete: 646 iterations (165376 samples) in 15.514 seconds (average 9.4e-05)
+Result: true
+Sampling complete: 636 iterations (162816 samples) in 15.492 seconds (average 9.5e-05)
+Result: true
+Sampling complete: 639 iterations (163584 samples) in 14.859 seconds (average 9.1e-05)
+Result: true
+Sampling complete: 646 iterations (165376 samples) in 14.876 seconds (average 9e-05)
+Result: true
+Sampling complete: 657 iterations (168192 samples) in 16.44 seconds (average 9.8e-05)
+Result: true
+Sampling complete: 627 iterations (160512 samples) in 14.83 seconds (average 9.2e-05)
+Result: true
+Sampling complete: 582 iterations (148992 samples) in 14.162 seconds (average 9.5e-05)
+Result: true
+Sampling complete: 679 iterations (173824 samples) in 17.012 seconds (average 9.8e-05)
+Result: true
+Sampling complete: 656 iterations (167936 samples) in 16.252 seconds (average 9.7e-05)
+Result: true
+Sampling complete: 573 iterations (146688 samples) in 13.282 seconds (average 9.1e-05)
+Result: true
+Sampling complete: 594 iterations (152064 samples) in 13.404 seconds (average 8.8e-05)
+Result: true
+Sampling complete: 621 iterations (158976 samples) in 11.874 seconds (average 7.5e-05)
+Result: true
+Time: average=14.23215, standard-error=0.7876882474250704
+Samples: average=152832.00000000003, standard-error=8250.883114456357
+Sampling complete: 450 iterations (115200 samples) in 11.551 seconds (average 0.0001)
+Result: true
+Sampling complete: 439 iterations (112384 samples) in 11.774 seconds (average 0.0001)
+Result: true
+Sampling complete: 452 iterations (115712 samples) in 12.103 seconds (average 0.0001)
+Result: true
+Sampling complete: 487 iterations (124672 samples) in 14.067 seconds (average 0.00011)
+Result: true
+Sampling complete: 2 iterations (512 samples) in 0.506 seconds (average 0.00099)
+Result: true
+Sampling complete: 433 iterations (110848 samples) in 11.316 seconds (average 0.0001)
+Result: true
+Sampling complete: 480 iterations (122880 samples) in 12.483 seconds (average 0.0001)
+Result: true
+Sampling complete: 499 iterations (127744 samples) in 12.722 seconds (average 0.0001)
+Result: true
+Sampling complete: 482 iterations (123392 samples) in 11.958 seconds (average 9.7e-05)
+Result: true
+Sampling complete: 408 iterations (104448 samples) in 9.897 seconds (average 9.5e-05)
+Result: true
+Sampling complete: 498 iterations (127488 samples) in 12.705 seconds (average 0.0001)
+Result: true
+Sampling complete: 493 iterations (126208 samples) in 12.257 seconds (average 9.7e-05)
+Result: true
+Sampling complete: 515 iterations (131840 samples) in 12.699 seconds (average 9.6e-05)
+Result: true
+Sampling complete: 2 iterations (512 samples) in 0.411 seconds (average 0.0008)
+Result: true
+Sampling complete: 446 iterations (114176 samples) in 11.351 seconds (average 9.9e-05)
+Result: true
+Sampling complete: 475 iterations (121600 samples) in 11.598 seconds (average 9.5e-05)
+Result: true
+Sampling complete: 498 iterations (127488 samples) in 12.753 seconds (average 0.0001)
+Result: true
+Sampling complete: 438 iterations (112128 samples) in 10.308 seconds (average 9.2e-05)
+Result: true
+Sampling complete: 507 iterations (129792 samples) in 11.287 seconds (average 8.7e-05)
+Result: true
+Sampling complete: 442 iterations (113152 samples) in 8.862 seconds (average 7.8e-05)
+Result: true
+Time: average=10.630399999999998, standard-error=0.8183796841127112
+Samples: average=108108.79999999999, standard-error=8395.721625233953
+Sampling complete: 2 iterations (512 samples) in 0.52 seconds (average 0.001)
+Result: true
+Sampling complete: 374 iterations (95744 samples) in 10.89 seconds (average 0.00011)
+Result: true
+Sampling complete: 394 iterations (100864 samples) in 11.285 seconds (average 0.00011)
+Result: true
+Sampling complete: 405 iterations (103680 samples) in 11.437 seconds (average 0.00011)
+Result: true
+Sampling complete: 503 iterations (128768 samples) in 15.815 seconds (average 0.00012)
+Result: true
+Sampling complete: 433 iterations (110848 samples) in 12.422 seconds (average 0.00011)
+Result: true
+Sampling complete: 433 iterations (110848 samples) in 12.636 seconds (average 0.00011)
+Result: true
+Sampling complete: 431 iterations (110336 samples) in 12.462 seconds (average 0.00011)
+Result: true
+Sampling complete: 427 iterations (109312 samples) in 12.891 seconds (average 0.00012)
+Result: true
+Sampling complete: 433 iterations (110848 samples) in 12.553 seconds (average 0.00011)
+Result: true
+Sampling complete: 435 iterations (111360 samples) in 12.815 seconds (average 0.00012)
+Result: true
+Sampling complete: 378 iterations (96768 samples) in 9.93 seconds (average 0.0001)
+Result: true
+Sampling complete: 427 iterations (109312 samples) in 12.521 seconds (average 0.00011)
+Result: true
+Sampling complete: 439 iterations (112384 samples) in 13.609 seconds (average 0.00012)
+Result: true
+Sampling complete: 361 iterations (92416 samples) in 10.687 seconds (average 0.00012)
+Result: true
+Sampling complete: 447 iterations (114432 samples) in 13.115 seconds (average 0.00011)
+Result: true
+Sampling complete: 429 iterations (109824 samples) in 13.636 seconds (average 0.00012)
+Result: true
+Sampling complete: 369 iterations (94464 samples) in 10.382 seconds (average 0.00011)
+Result: true
+Sampling complete: 419 iterations (107264 samples) in 11.795 seconds (average 0.00011)
+Result: true
+Sampling complete: 443 iterations (113408 samples) in 12.212 seconds (average 0.00011)
+Result: true
+Time: average=11.68065, standard-error=0.6577853084203723
+Samples: average=102169.59999999999, standard-error=5669.719431654816
+
+strata-size 4096
+Sampling complete: 25 iterations (102400 samples) in 11.986 seconds (average 0.00012)
+Result: true
+Sampling complete: 37 iterations (151552 samples) in 17.314 seconds (average 0.00011)
+Result: true
+Sampling complete: 43 iterations (176128 samples) in 20.4 seconds (average 0.00012)
+Result: true
+Sampling complete: 57 iterations (233472 samples) in 26.978 seconds (average 0.00012)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.451 seconds (average 0.00018)
+Result: true
+Sampling complete: 26 iterations (106496 samples) in 12.067 seconds (average 0.00011)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.521 seconds (average 0.00019)
+Result: true
+Sampling complete: 49 iterations (200704 samples) in 23.285 seconds (average 0.00012)
+Result: true
+Sampling complete: 46 iterations (188416 samples) in 22.09 seconds (average 0.00012)
+Result: true
+Sampling complete: 3 iterations (12288 samples) in 1.858 seconds (average 0.00015)
+Result: true
+Sampling complete: 43 iterations (176128 samples) in 21.31 seconds (average 0.00012)
+Result: true
+Sampling complete: 49 iterations (200704 samples) in 22.712 seconds (average 0.00011)
+Result: true
+Sampling complete: 54 iterations (221184 samples) in 25.831 seconds (average 0.00012)
+Result: true
+Sampling complete: 42 iterations (172032 samples) in 19.55 seconds (average 0.00011)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.973 seconds (average 0.00024)
+Result: true
+Sampling complete: 14 iterations (57344 samples) in 7.963 seconds (average 0.00014)
+Result: true
+Sampling complete: 58 iterations (237568 samples) in 27.151 seconds (average 0.00011)
+Result: true
+Sampling complete: 37 iterations (151552 samples) in 16.973 seconds (average 0.00011)
+Result: true
+Sampling complete: 41 iterations (167936 samples) in 18.134 seconds (average 0.00011)
+Result: true
+Sampling complete: 60 iterations (245760 samples) in 24.056 seconds (average 9.8e-05)
+Result: true
+Time: average=16.23015, standard-error=2.001438653983153
+Samples: average=141312.0, standard-error=18367.212453316457
+Sampling complete: 2 iterations (8192 samples) in 2.199 seconds (average 0.00027)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 2.157 seconds (average 0.00026)
+Result: true
+Sampling complete: 5 iterations (20480 samples) in 3.546 seconds (average 0.00017)
+Result: true
+Sampling complete: 6 iterations (24576 samples) in 3.889 seconds (average 0.00016)
+Result: true
+Sampling complete: 32 iterations (131072 samples) in 16.689 seconds (average 0.00013)
+Result: true
+Sampling complete: 32 iterations (131072 samples) in 16.898 seconds (average 0.00013)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.624 seconds (average 0.0002)
+Result: true
+Sampling complete: 25 iterations (102400 samples) in 11.806 seconds (average 0.00012)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.582 seconds (average 0.00019)
+Result: true
+Sampling complete: 17 iterations (69632 samples) in 9.351 seconds (average 0.00013)
+Result: true
+Sampling complete: 43 iterations (176128 samples) in 21.05 seconds (average 0.00012)
+Result: true
+Sampling complete: 39 iterations (159744 samples) in 18.115 seconds (average 0.00011)
+Result: true
+Sampling complete: 32 iterations (131072 samples) in 13.803 seconds (average 0.00011)
+Result: true
+Sampling complete: 15 iterations (61440 samples) in 6.892 seconds (average 0.00011)
+Result: true
+Sampling complete: 45 iterations (184320 samples) in 19.928 seconds (average 0.00011)
+Result: true
+Sampling complete: 59 iterations (241664 samples) in 26.924 seconds (average 0.00011)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.661 seconds (average 0.0002)
+Result: true
+Sampling complete: 34 iterations (139264 samples) in 15.693 seconds (average 0.00011)
+Result: true
+Sampling complete: 39 iterations (159744 samples) in 17.147 seconds (average 0.00011)
+Result: true
+Sampling complete: 47 iterations (192512 samples) in 19.22 seconds (average 0.0001)
+Result: true
+Time: average=11.508700000000001, standard-error=1.79763995297343
+Samples: average=98304.00000000001, standard-error=16984.693522791567
+Sampling complete: 4 iterations (16384 samples) in 3.108 seconds (average 0.00019)
+Result: true
+Sampling complete: 26 iterations (106496 samples) in 13.998 seconds (average 0.00013)
+Result: true
+Sampling complete: 34 iterations (139264 samples) in 17.794 seconds (average 0.00013)
+Result: true
+Sampling complete: 37 iterations (151552 samples) in 19.278 seconds (average 0.00013)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.871 seconds (average 0.00023)
+Result: true
+Sampling complete: 35 iterations (143360 samples) in 17.577 seconds (average 0.00012)
+Result: true
+Sampling complete: 19 iterations (77824 samples) in 11.161 seconds (average 0.00014)
+Result: true
+Sampling complete: 12 iterations (49152 samples) in 7.033 seconds (average 0.00014)
+Result: true
+Sampling complete: 17 iterations (69632 samples) in 8.863 seconds (average 0.00013)
+Result: true
+Sampling complete: 28 iterations (114688 samples) in 14.383 seconds (average 0.00013)
+Result: true
+Sampling complete: 50 iterations (204800 samples) in 25.472 seconds (average 0.00012)
+Result: true
+Sampling complete: 36 iterations (147456 samples) in 18.041 seconds (average 0.00012)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.53 seconds (average 0.00019)
+Result: true
+Sampling complete: 30 iterations (122880 samples) in 15.171 seconds (average 0.00012)
+Result: true
+Sampling complete: 35 iterations (143360 samples) in 18.345 seconds (average 0.00013)
+Result: true
+Sampling complete: 22 iterations (90112 samples) in 12.491 seconds (average 0.00014)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.649 seconds (average 0.0002)
+Result: true
+Sampling complete: 25 iterations (102400 samples) in 12.957 seconds (average 0.00013)
+Result: true
+Sampling complete: 23 iterations (94208 samples) in 11.8 seconds (average 0.00013)
+Result: true
+Sampling complete: 23 iterations (94208 samples) in 11.403 seconds (average 0.00012)
+Result: true
+Time: average=12.196250000000001, standard-error=1.4779460460827314
+Samples: average=94617.59999999999, standard-error=12337.841375301647
+Sampling complete: 2 iterations (8192 samples) in 3.037 seconds (average 0.00037)
+Result: true
+Sampling complete: 8 iterations (32768 samples) in 6.776 seconds (average 0.00021)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.796 seconds (average 0.00022)
+Result: true
+Sampling complete: 25 iterations (102400 samples) in 16.203 seconds (average 0.00016)
+Result: true
+Sampling complete: 32 iterations (131072 samples) in 20.048 seconds (average 0.00015)
+Result: true
+Sampling complete: 25 iterations (102400 samples) in 13.926 seconds (average 0.00014)
+Result: true
+Sampling complete: 40 iterations (163840 samples) in 23.133 seconds (average 0.00014)
+Result: true
+Sampling complete: 18 iterations (73728 samples) in 10.058 seconds (average 0.00014)
+Result: true
+Sampling complete: 6 iterations (24576 samples) in 3.869 seconds (average 0.00016)
+Result: true
+Sampling complete: 30 iterations (122880 samples) in 17.499 seconds (average 0.00014)
+Result: true
+Sampling complete: 9 iterations (36864 samples) in 6.362 seconds (average 0.00017)
+Result: true
+Sampling complete: 24 iterations (98304 samples) in 15.234 seconds (average 0.00015)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.724 seconds (average 0.00021)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.977 seconds (average 0.00024)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.681 seconds (average 0.00021)
+Result: true
+Sampling complete: 21 iterations (86016 samples) in 13.608 seconds (average 0.00016)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.833 seconds (average 0.00022)
+Result: true
+Sampling complete: 22 iterations (90112 samples) in 13.106 seconds (average 0.00015)
+Result: true
+Sampling complete: 35 iterations (143360 samples) in 20.972 seconds (average 0.00015)
+Result: true
+Sampling complete: 15 iterations (61440 samples) in 9.041 seconds (average 0.00015)
+Result: true
+Time: average=10.09415, standard-error=1.6226420954321445
+Samples: average=65945.59999999999, standard-error=11641.881932872682
+Sampling complete: 2 iterations (8192 samples) in 2.373 seconds (average 0.00029)
+Result: true
+Sampling complete: 4 iterations (16384 samples) in 4.294 seconds (average 0.00026)
+Result: true
+Sampling complete: 3 iterations (12288 samples) in 3.839 seconds (average 0.00031)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.81 seconds (average 0.00022)
+Result: true
+Sampling complete: 20 iterations (81920 samples) in 16.889 seconds (average 0.00021)
+Result: true
+Sampling complete: 25 iterations (102400 samples) in 20.645 seconds (average 0.0002)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 2.072 seconds (average 0.00025)
+Result: true
+Sampling complete: 26 iterations (106496 samples) in 19.923 seconds (average 0.00019)
+Result: true
+Sampling complete: 11 iterations (45056 samples) in 8.537 seconds (average 0.00019)
+Result: true
+Sampling complete: 20 iterations (81920 samples) in 15.222 seconds (average 0.00019)
+Result: true
+Sampling complete: 37 iterations (151552 samples) in 29.484 seconds (average 0.00019)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.988 seconds (average 0.00024)
+Result: true
+Sampling complete: 2 iterations (8192 samples) in 1.914 seconds (average 0.00023)
+Result: true
+Sampling complete: 27 iterations (110592 samples) in 20.695 seconds (average 0.00019)
+Result: true
+Sampling complete: 30 iterations (122880 samples) in 23.83 seconds (average 0.00019)
+Result: true
+Sampling complete: 24 iterations (98304 samples) in 18.671 seconds (average 0.00019)
+Result: true
+Sampling complete: 26 iterations (106496 samples) in 20.088 seconds (average 0.00019)
+Result: true
+Sampling complete: 33 iterations (135168 samples) in 25.811 seconds (average 0.00019)
+Result: true
+Sampling complete: 31 iterations (126976 samples) in 21.692 seconds (average 0.00017)
+Result: true
+Sampling complete: 25 iterations (102400 samples) in 16.956 seconds (average 0.00017)
+Result: true
+Time: average=13.836649999999999, standard-error=2.1024755211980097
+Samples: average=72089.59999999999, standard-error=11502.626806265189
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

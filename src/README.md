@@ -1,7 +1,7 @@
 Direct Modifications to PRISM's Source Code
 -------------------------------------------
 
-Anything _not_ in the `edu` folder/package is taken from PRISM's source code. We made our best to mark the changes in the following way:
+Any java code _not_ in the `edu` folder/package is taken from PRISM's source code. We made our best to mark the changes in the following way:
 - At the beginning of every change there is a single-line comment starting with `=== DOWN ===`
 - At the end       of every change there is a single-line comment starting with `===  UP  ===`
 - Original version (if there is any) is single-line commented and put right below the first line. 
