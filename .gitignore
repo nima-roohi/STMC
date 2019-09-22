@@ -10,4 +10,9 @@
 hs_err_pid*
 
 # PRISM Source Files
-/prism-src
+# /prism-src
+# I removed this one from gitignore, so when PRISM updates, the version that STMC can work with will remain available.
+# However, the following folders are already in the zip file of PRISM and I don't want duplicates on GitHub.
+/prism-src/ext
+/prism-src/images
+/prism-src/src
