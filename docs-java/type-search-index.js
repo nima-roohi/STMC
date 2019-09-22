@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"edu.stmc","l":"CompResult.Binary"},{"p":"edu.stmc","l":"CompResult"},{"p":"edu.stmc","l":"Main"},{"p":"edu.stmc","l":"NameHypTest"},{"p":"edu.stmc","l":"NameSmplMethod"},{"p":"edu.stmc","l":"STMCConfig"},{"p":"edu.stmc","l":"CompResult.Ternary"}]

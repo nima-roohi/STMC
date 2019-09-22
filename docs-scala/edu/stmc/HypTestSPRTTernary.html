@@ -135,12 +135,8 @@
                         <a href="HypTestTSPRTTest.html" title="">HypTestTSPRTTest</a>
                       </li><li class="current-entities indented2">
                         <span class="separator"></span>
-                        <a class="class" href="SimulatorEngineAntithetic.html" title="Simulator engine for antithetic sampling"></a>
-                        <a href="SimulatorEngineAntithetic.html" title="Simulator engine for antithetic sampling">SimulatorEngineAntithetic</a>
-                      </li><li class="current-entities indented2">
-                        <span class="separator"></span>
-                        <a class="class" href="SimulatorEngineStratified.html" title="Simulator engine for stratified sampling"></a>
-                        <a href="SimulatorEngineStratified.html" title="Simulator engine for stratified sampling">SimulatorEngineStratified</a>
+                        <a class="class" href="SimulatorEngineStratified.html" title=""></a>
+                        <a href="SimulatorEngineStratified.html" title="">SimulatorEngineStratified</a>
                       </li>
               </ul>
             </div>
@@ -567,7 +563,7 @@ its computation. If it can only be done <i>after</i>, an exception is thrown.
 in the range [0,100]. This estimate may not be linear (e.g. for CI/ACI where 'iterations' is computed). It is assumed that this method is called <i>after</i>
 the call to isCompleted(...).
 </p></div><dl class="paramcmts block"><dt class="param">iters</dt><dd class="cmt"><p>The number of iterations (samples) done so far</p></dd><dt class="param">sampler</dt><dd class="cmt"><p>The <span class="extype" name="Sampler">Sampler</span> object for this simulation</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="HypTest.html" class="extype" name="edu.stmc.HypTest">HypTest</a> → SimulationMethod</dd><dt>Note</dt><dd><span class="cmt"><p></p><ol class="decimal"><li>The iteration count may exceed that dictated by this method, e.g. if multiple properties are being simulated simultaneously.</li><li>Default implementation is added in STMC and it returns 0.</li></ol></span></dd></dl></div>
-    </li><li name="edu.stmc.HypTest#getResult" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="edu.stmc.HypTestSPRTTernary#getResult" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getResult(sampler:simulator.sampler.Sampler):AnyRef"></a><a id="getResult(Sampler):AnyRef"></a>
       <span class="permalink">
       <a href="../../edu/stmc/HypTestSPRTTernary.html#getResult(sampler:simulator.sampler.Sampler):AnyRef" title="Permalink">
@@ -584,7 +580,7 @@ the call to isCompleted(...).
       
       <p class="shortcomment cmt">Get the (approximate) result for the property that simulation is being used to approximate.</p><div class="fullcomment"><div class="comment cmt"><p>Get the (approximate) result for the property that simulation is being used to approximate. This should be a Boolean/Double for bounded/quantitative
 properties, respectively.
-</p></div><dl class="paramcmts block"><dt class="param">sampler</dt><dd class="cmt"><p>The Sampler object for this simulation</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="HypTest.html" class="extype" name="edu.stmc.HypTest">HypTest</a> → SimulationMethod</dd><dt>Annotations</dt><dd>
+</p></div><dl class="paramcmts block"><dt class="param">sampler</dt><dd class="cmt"><p>The Sampler object for this simulation</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="edu.stmc.HypTestSPRTTernary">HypTestSPRTTernary</a> → <a href="HypTest.html" class="extype" name="edu.stmc.HypTest">HypTest</a> → SimulationMethod</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
       <span class="defval" name="scala.this.throws.&lt;init&gt;$default$1[prism.PrismException]">...</span>
