@@ -159,8 +159,8 @@ final class SimulatorEngineStratified(parent: PrismComponent) extends SimulatorE
         while (needMore) {
           len += counter.length
           needMore = false
-//          shuffleStuff()
-          shuffleOffsets()
+          shuffleStuff()
+//          shuffleOffsets()
           shuffleOffsets2()
           maxPathLengthError = len > maxPathLength
           if (maxPathLengthError)

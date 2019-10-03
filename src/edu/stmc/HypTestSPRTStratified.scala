@@ -159,8 +159,6 @@ final class HypTestSPRTStratified extends HypTest {
   /** @note No restriction on total number of samples. */
   override def update(positive: Boolean): Unit = update(1, 0)
 
-  private[this] var cc = 0
-
   /** @note
     *   1. Requires `positive >= 0`.
     *   1. No restriction on total number of samples
@@ -175,9 +173,7 @@ final class HypTestSPRTStratified extends HypTest {
     val delta2 = m - mean
     M2 += delta * delta2
 
-    cc += 1
-    if(cc % 1000 == 0)
-    println(f"$positive%2d, ${positive/4.0}%1.7f, $mean%1.7f, ${(M2/(iter-1))}")
+//    println(f"$positive%2d, ${positive/4096.0}%1.7f, $mean%1.7f, ${(M2/(iter-1))}")
 
     //    val Y = positive
 //    val blockSize = STMCConfig.strataTotalSize.toDouble
