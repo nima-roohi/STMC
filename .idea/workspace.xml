@@ -13,12 +13,12 @@
   <component name="ChangeListManager">
     <list default="true" id="846f6b2c-a6fb-4a48-9b7d-a1527616ac99" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/fms/fms.sm" beforeDir="false" afterPath="$PROJECT_DIR$/examples/fms/fms.sm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/embedded/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/examples/embedded/run.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/examples/fms/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/examples/fms/run.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tmp.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tmp.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/HypTestSPRTStratified.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/HypTestSPRTStratified.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/stmc/SimulatorEngineStratified.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/SimulatorEngineStratified.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/nand/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/examples/nand/run.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/peer2peer/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/examples/peer2peer/run.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/polling/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/examples/polling/run.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/tandem/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/examples/tandem/run.sh" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
