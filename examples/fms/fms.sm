@@ -103,19 +103,19 @@ endmodule
 
 // throughput of machine1
 rewards "throughput_m1"
-	[t1]  true : 1;	
+	[t1]  true : 1;
 endrewards
 // throughput of machine2
 rewards "throughput_m2"
-	[t2]  true : 1;	
+	[t2]  true : 1;
 endrewards
 // throughput of machine3
 rewards "throughput_m3"
-	[t3]  true : 1;	
+	[t3]  true : 1;
 endrewards
 // throughput of machine12
 rewards "throughput_m12"
-	[t12]  true : 1;	
+	[t12]  true : 1;
 endrewards
 // productivity of the system
 rewards "productivity"

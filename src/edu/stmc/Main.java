@@ -150,9 +150,9 @@ public class Main {
     // // "-pf", "P<0.39[F<100s=3]", // actual probability: 0.38371680610076186
     // // "-mtbdd",
     //
-    // "./examples/tandem/tandem.sm",
-    // "-const", "c=10",
-    // "-pf", "P>0.0015[F<=100.0sc=c&sm=c&ph=2]",
+    // "./examples/fms/fms.sm",
+    // "-const", "n=10",
+    // "-pf", "P<0.5[F<4P1=0&P2=0&P3=0]",
     // // "-mtbdd",
     //
     // "-sim",
@@ -165,12 +165,12 @@ public class Main {
     //
     // "-stmc",
     // "-htm", "SSPRT",
-    // "-sm", "antithetic",
-    // "-ss", "2",
-    // "-alpha", "0.001",
-    // "-beta", "0.001",
-    // "-delta", "0.001",
-    // "-min_iter", "256",
+    // "-sm", "stratified",
+    // "-ss", "4",
+    // "-alpha", "0.0001",
+    // "-beta", "0.0001",
+    // "-delta", "0.0001",
+    // "-min_iter", "2",
     // // "-gamma", "0.001",
     // };
 

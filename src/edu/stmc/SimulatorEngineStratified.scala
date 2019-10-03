@@ -65,10 +65,15 @@ final class SimulatorEngineStratified(parent: PrismComponent) extends SimulatorE
 
   //------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-  private[this] val offsets = Array.ofDim[Array[Int]](STMCConfig.strataSizes.length)
+  private[this] def createOffsets() = {
+    val res = Array.ofDim[Array[Int]](STMCConfig.strataSizes.length)
+    for (i <- STMCConfig.strataSizes.indices)
+      res(i) = (0 until STMCConfig.strataSizes(i)).toArray
+    res
+  }
+
+  private[this] val offsets = createOffsets()
   private[this] var offsets2: Array[Array[Int]] = _
-  for (i <- STMCConfig.strataSizes.indices)
-    offsets(i) = (0 until STMCConfig.strataSizes(i)).toArray
 
   private[this] def shuffleOffsets(): Unit = shuffleOffsets(offsets)
   private[this] def shuffleOffsets2(): Unit = shuffleOffsets(offsets2)
@@ -117,7 +122,7 @@ final class SimulatorEngineStratified(parent: PrismComponent) extends SimulatorE
   @throws[PrismException]
   override protected def doSampling(initialState: State, maxPathLength: Long): Unit = {
     if (modelType != ModelType.DTMC)
-      offsets2 = offsets.clone()
+      offsets2 = createOffsets()
     initialize(properties, modulesFile)
 
 
@@ -154,9 +159,9 @@ final class SimulatorEngineStratified(parent: PrismComponent) extends SimulatorE
         while (needMore) {
           len += counter.length
           needMore = false
-          shuffleStuff()
-//          shuffleOffsets()
-//          shuffleOffsets2()
+//          shuffleStuff()
+          shuffleOffsets()
+          shuffleOffsets2()
           maxPathLengthError = len > maxPathLength
           if (maxPathLengthError)
             break
@@ -317,6 +322,7 @@ final class SimulatorEngineStratified(parent: PrismComponent) extends SimulatorE
       val ref = new transitions.Ref()
       transitions.getChoiceIndexByProbabilitySum(d, ref)
       // Execute
+//      executeTimedTransition(id, ref.i, ref.offset, rng.randomExpDouble(r), -1)
       executeTimedTransition(id, ref.i, ref.offset, (-Math.log(d2)) / r, -1)
     case _              =>
       throw new PrismNotSupportedException(s"$modelType not supported");

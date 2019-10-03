@@ -13,7 +13,12 @@
   <component name="ChangeListManager">
     <list default="true" id="846f6b2c-a6fb-4a48-9b7d-a1527616ac99" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/fms/fms.sm" beforeDir="false" afterPath="$PROJECT_DIR$/examples/fms/fms.sm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/fms/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/examples/fms/run.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tmp.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tmp.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/stmc/HypTestSPRTStratified.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/HypTestSPRTStratified.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/stmc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/stmc/SimulatorEngineStratified.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/SimulatorEngineStratified.scala" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,23 +61,24 @@
     <property name="settings.editor.selected.configurable" value="Scala Compiler" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="edu.stmc" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/edu/stmc" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="edu.stmc" />
+      <recent name="prism" />
+      <recent name="simulator" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/edu/stmc" />
       <recent name="$PROJECT_DIR$/prism-mod" />
       <recent name="$PROJECT_DIR$/prism-mod/src" />
       <recent name="$PROJECT_DIR$/src/edu" />
       <recent name="$PROJECT_DIR$/src" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="edu.stmc" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="edu.stmc" />
-      <recent name="prism" />
-      <recent name="simulator" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/edu/stmc" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -112,22 +118,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HypMethodSPRTTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="Tmp2" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="Tmp2" />
       <module name="STMC" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="testKind" value="Class" />
-      <option name="envs">
-        <map />
-      </option>
-      <option name="javaOptions" value="" />
-      <option name="jrePath" value="" />
-      <option name="searchTest" value="Across module dependencies" />
-      <option name="showProgressMessages" value="true" />
-      <option name="testArgs" value="" />
-      <option name="testClassPath" value="edu.stmc.HypMethodSPRTTest" />
-      <option name="useSbt" value="false" />
-      <option name="useUiWithSbt" value="false" />
-      <option name="workingDirectory" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -181,6 +174,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Tmp2" />
         <item itemvalue="Application.Tmp" />
       </list>
     </recent_temporary>
@@ -251,16 +245,6 @@
           <url>file://$PROJECT_DIR$/src/simulator/SimulatorEngine.java</url>
           <line>630</line>
           <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/edu/stmc/SimulatorEngineStratified.scala</url>
-          <line>120</line>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/edu/stmc/SimulatorEngineStratified.scala</url>
-          <line>145</line>
-          <option name="timeStamp" value="44" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

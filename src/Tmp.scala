@@ -5,7 +5,7 @@ import scala.util.matching.Regex
 object Tmp extends App {
 
 
-//  val filename = "/Users/nima/Git/Codes/STMC-webpage-dev/public/benchmarks/dtmc-ltl-egl.json"
+//  val filename = "../STMC-webpage-dev/public/benchmarks/dtmc-ltl-egl.json"
   val filename = "./examples/crowds/crowds.log"
   val source = Source.fromFile(filename)
 
