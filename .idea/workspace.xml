@@ -13,11 +13,6 @@
   <component name="ChangeListManager">
     <list default="true" id="846f6b2c-a6fb-4a48-9b7d-a1527616ac99" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/embedded/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/examples/embedded/run.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/nand/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/examples/nand/run.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/polling/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/examples/polling/run.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/tandem/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/examples/tandem/run.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/stmc/stmc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/stmc/stmc.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/stmc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/stmc/SimulatorEngineStratified.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/stmc/SimulatorEngineStratified.scala" afterDir="false" />
     </list>
@@ -242,10 +237,10 @@
           <line>1812</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/simulator/SimulatorEngine.java</url>
-          <line>630</line>
-          <option name="timeStamp" value="50" />
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/edu/stmc/SimulatorEngineStratified.scala</url>
+          <line>258</line>
+          <option name="timeStamp" value="51" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -151,13 +151,13 @@ public class Main {
     // // "-mtbdd",
     //
     // "./examples/fms/fms.sm",
-    // "-const", "n=7",
+    // "-const", "n=10",
     // "-pf", "P<0.5[F<4P1=0&P2=0&P3=0]",
     // // "-mtbdd",
     //
     // "-sim",
-    // "-repeat", "10",
-    // "-mt", "6",
+    // // "-repeat", "10",
+    // // "-mt", "6",
     //
     // // "-simmethod","sprt",
     // // "-simconf","0.001",
@@ -166,7 +166,7 @@ public class Main {
     // "-stmc",
     // "-htm", "SSPRT",
     // "-sm", "stratified",
-    // "-ss", "2,2,2,2,2,2,2,2,2,2,2,2",
+    // "-ss", "16,16,16",
     // "-alpha", "0.0001",
     // "-beta", "0.0001",
     // "-delta", "0.0001",

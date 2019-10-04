@@ -40,9 +40,9 @@ final class SimulatorEngineStratified(parent: PrismComponent) extends SimulatorE
     private[stmc] var samplers: List[Sampler] = Nil
   }
 
-  private[this] val stuf = Array.ofDim[Stuff](STMCConfig.strataTotalSize)
-  for (i <- stuf.indices)
-    stuf(i) = new Stuff()
+  private[this] val stuff = Array.ofDim[Stuff](STMCConfig.strataTotalSize)
+  for (i <- stuff.indices)
+    stuff(i) = new Stuff()
 
   //------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -65,8 +65,10 @@ final class SimulatorEngineStratified(parent: PrismComponent) extends SimulatorE
 
   //------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-  private[this] val indices = (0 until STMCConfig.strataTotalSize).toArray
+  private[this] val indices1 = (0 until STMCConfig.strataTotalSize).toArray
   private[this] var indices2: Array[Int] = _
+  private[this] var index1 = 0
+  private[this] var index2 = 0
 
   private[this] def shuffleArr(arr: Array[Int]): Unit =
     if (arr != null)
@@ -129,9 +131,9 @@ final class SimulatorEngineStratified(parent: PrismComponent) extends SimulatorE
         iters += 1
 
         // initialize all paths
-        for (i <- stuf.indices) {
+        for (i <- stuff.indices) {
           initialisePath(i)
-          for (sampler <- stuf(i).samplers)
+          for (sampler <- stuff(i).samplers)
             sampler.reset()
         }
 
@@ -141,16 +143,18 @@ final class SimulatorEngineStratified(parent: PrismComponent) extends SimulatorE
         while (needMore) {
           len += counter.length
           needMore = false
-          shuffleArr(indices)
+          shuffleArr(indices1)
           shuffleArr(indices2)
           maxPathLengthError = len > maxPathLength
           if (maxPathLengthError)
             break
-          for (i <- stuf.indices) {
+          for (i <- stuff.indices) {
+            index1 = indices1(i)
+            index2 = if (indices2 != null) indices2(i) else 0
             for (step <- counter.indices) {
               automaticTransition(i, step)
-              for (sampler <- stuf(i).samplers) {
-                sampler.update(stuf(i).path, getTransitionList(i))
+              for (sampler <- stuff(i).samplers) {
+                sampler.update(stuff(i).path, getTransitionList(i))
                 needMore |= !sampler.isCurrentValueKnown
               }
             }
@@ -167,7 +171,7 @@ final class SimulatorEngineStratified(parent: PrismComponent) extends SimulatorE
           positives(i) = 0
 
         // find how many positive samples we just took
-        for (stf <- stuf) {
+        for (stf <- stuff) {
           var sid = 0
           for (sampler <- stf.samplers) {
             if (sampler.getCurrentValue.asInstanceOf[Boolean])
@@ -208,34 +212,34 @@ final class SimulatorEngineStratified(parent: PrismComponent) extends SimulatorE
 
   @throws[PrismException]
   private[this] def initialize(exprs: java.util.List[Expression], mf: ModulesFile): Unit = {
-    for (i <- stuf.indices) {
-      stuf(i).path = new PathOnTheFly(modulesFile)
-      stuf(i).currentState = new State(numVars)
-      stuf(i).transitionList = new TransitionList()
+    for (i <- stuff.indices) {
+      stuff(i).path = new PathOnTheFly(modulesFile)
+      stuff(i).currentState = new State(numVars)
+      stuff(i).transitionList = new TransitionList()
       var samplers: List[Sampler] = Nil
       for (expr <- JavaConverters.asScalaBuffer(exprs)) {
         val sampler = Sampler.createSampler(expr, mf)
         samplers = sampler :: samplers
       }
-      stuf(i).samplers = samplers
+      stuff(i).samplers = samplers
     }
   }
 
   @throws[PrismException]
   private[this] def initialisePath(id: Int): Unit = {
     if (modulesFile.getInitialStates == null)
-      stuf(id).currentState.copy(modulesFile.getDefaultInitialState())
+      stuff(id).currentState.copy(modulesFile.getDefaultInitialState())
     else
       throw new PrismException("Random choice of multiple initial states not yet supported")
     // Initialise stored path
-    updater.calculateStateRewards(stuf(id).currentState, tmpStateRewards)
-    stuf(id).path.initialise(stuf(id).currentState, tmpStateRewards)
+    updater.calculateStateRewards(stuff(id).currentState, tmpStateRewards)
+    stuff(id).path.initialise(stuff(id).currentState, tmpStateRewards)
     // Reset transition list
-    stuf(id).transitionListBuilt = false
-    stuf(id).transitionListState = null
-    for (sampler <- stuf(id).samplers) {
+    stuff(id).transitionListBuilt = false
+    stuff(id).transitionListState = null
+    for (sampler <- stuff(id).samplers) {
       sampler.reset()
-      sampler.update(stuf(id).path, getTransitionList(id))
+      sampler.update(stuff(id).path, getTransitionList(id))
     }
   }
 
@@ -243,23 +247,25 @@ final class SimulatorEngineStratified(parent: PrismComponent) extends SimulatorE
   @throws[PrismException]
   private[this] def getTransitionList(id: Int): TransitionList = {
     // Compute the current transition list, if required
-    if (!stuf(id).transitionListBuilt) {
-      updater.calculateTransitions(stuf(id).currentState, stuf(id).transitionList)
-      stuf(id).transitionListBuilt = true
+    if (!stuff(id).transitionListBuilt) {
+      updater.calculateTransitions(stuff(id).currentState, stuff(id).transitionList)
+      stuff(id).transitionListBuilt = true
     }
-    stuf(id).transitionList
+    stuff(id).transitionList
   }
 
   @throws[PrismException]
   private[this] def automaticTransition(id: Int, step: Int): Boolean = {
     val stepStrataSize = STMCConfig.strataSizes(step)
-    val offset: Int = indices(id) * stepStrataSize / STMCConfig.strataTotalSize // values are 0,1,...,stepStrataSize-1
+    val offset: Int = index1 % stepStrataSize
+    index1 /= stepStrataSize
     if (STMCConfig.samplingMethod != NameSmplMethod.ANTITHETIC) {
       val d1 = rng.randomUnifDouble() / stepStrataSize + offset / stepStrataSize.toDouble
       if (modelType == ModelType.DTMC) automaticTransition(id, d1, 0)
       else {
-        val offset: Int = indices2(id) * stepStrataSize / STMCConfig.strataTotalSize // values are 0,1,...,stepStrataSize-1
-        val d2 = rng.randomUnifDouble() / stepStrataSize + offset / stepStrataSize.toDouble
+        val offset2: Int = index2 % stepStrataSize
+        index2 /= stepStrataSize
+        val d2 = rng.randomUnifDouble() / stepStrataSize + offset2 / stepStrataSize.toDouble
         automaticTransition(id, d1, d2)
       }
     }
@@ -307,7 +313,7 @@ final class SimulatorEngineStratified(parent: PrismComponent) extends SimulatorE
       val ref = new transitions.Ref()
       transitions.getChoiceIndexByProbabilitySum(d, ref)
       // Execute
-      //      executeTimedTransition(id, ref.i, ref.offset, rng.randomExpDouble(r), -1)
+//      executeTimedTransition(id, ref.i, ref.offset, rng.randomExpDouble(r), -1)
       executeTimedTransition(id, ref.i, ref.offset, (-Math.log(d2)) / r, -1)
     case _              =>
       throw new PrismNotSupportedException(s"$modelType not supported");
@@ -326,12 +332,12 @@ final class SimulatorEngineStratified(parent: PrismComponent) extends SimulatorE
     val p = choice.getProbability(offset)
     // Compute next state. Note use of path.getCurrentState() because currentState
     // will be overwritten during the call to computeTarget().
-    choice.computeTarget(offset, stuf(id).path.getCurrentState, stuf(id).currentState)
+    choice.computeTarget(offset, stuff(id).path.getCurrentState, stuff(id).currentState)
     // Update path
-    stuf(id).path.addStep(actualIndex, choice.getModuleOrActionIndex, p, tmpTransitionRewards, stuf(id).currentState, tmpStateRewards, transitions)
+    stuff(id).path.addStep(actualIndex, choice.getModuleOrActionIndex, p, tmpTransitionRewards, stuff(id).currentState, tmpStateRewards, transitions)
     // Reset transition list
-    stuf(id).transitionListBuilt = false
-    stuf(id).transitionListState = null
+    stuff(id).transitionListBuilt = false
+    stuff(id).transitionListState = null
   }
 
   @throws[PrismException]
@@ -344,12 +350,12 @@ final class SimulatorEngineStratified(parent: PrismComponent) extends SimulatorE
     val p = choice.getProbability(offset)
     // Compute next state. Note use of path.getCurrentState() because currentState
     // will be overwritten during the call to computeTarget().
-    choice.computeTarget(offset, stuf(id).path.getCurrentState, stuf(id).currentState)
+    choice.computeTarget(offset, stuff(id).path.getCurrentState, stuff(id).currentState)
     // Update path
-    stuf(id).path.addStep(time, actualIndex, choice.getModuleOrActionIndex, p, tmpTransitionRewards, stuf(id).currentState, tmpStateRewards, transitions)
+    stuff(id).path.addStep(time, actualIndex, choice.getModuleOrActionIndex, p, tmpTransitionRewards, stuff(id).currentState, tmpStateRewards, transitions)
     // Reset transition list
-    stuf(id).transitionListBuilt = false
-    stuf(id).transitionListState = null
+    stuff(id).transitionListBuilt = false
+    stuff(id).transitionListState = null
   }
 
 }
