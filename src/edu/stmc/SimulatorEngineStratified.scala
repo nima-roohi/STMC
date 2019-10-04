@@ -322,8 +322,8 @@ final class SimulatorEngineStratified(parent: PrismComponent) extends SimulatorE
       val ref = new transitions.Ref()
       transitions.getChoiceIndexByProbabilitySum(d, ref)
       // Execute
-//      executeTimedTransition(id, ref.i, ref.offset, rng.randomExpDouble(r), -1)
-      executeTimedTransition(id, ref.i, ref.offset, (-Math.log(d2)) / r, -1)
+      executeTimedTransition(id, ref.i, ref.offset, rng.randomExpDouble(r), -1)
+//      executeTimedTransition(id, ref.i, ref.offset, (-Math.log(d2)) / r, -1)
     case _              =>
       throw new PrismNotSupportedException(s"$modelType not supported");
     }

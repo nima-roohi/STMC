@@ -150,12 +150,13 @@ public class Main {
     // // "-pf", "P<0.39[F<100s=3]", // actual probability: 0.38371680610076186
     // // "-mtbdd",
     //
-    // "./examples/peer2peer/peer2peer5_8.sm",
-    // "-pf", "P<0.9[F<1\"done\"]",
+    // "./examples/fms/fms.sm",
+    // "-const", "n=7",
+    // "-pf", "P<0.5[F<4P1=0&P2=0&P3=0]",
     // // "-mtbdd",
     //
     // "-sim",
-    // // "-repeat", "10",
+    // "-repeat", "20",
     // // "-mt", "6",
     //
     // // "-simmethod","sprt",
@@ -165,11 +166,11 @@ public class Main {
     // "-stmc",
     // "-htm", "SSPRT",
     // "-sm", "stratified",
-    // "-ss", "64,64",
+    // "-ss", "2,2,2,2,2,2,2,2,2,2,2,2",
     // "-alpha", "0.0001",
     // "-beta", "0.0001",
     // "-delta", "0.0001",
-    // "-min_iter", "20",
+    // "-min_iter", "2",
     // // "-gamma", "0.001",
     // };
 

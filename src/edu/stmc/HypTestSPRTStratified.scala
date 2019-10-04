@@ -175,7 +175,7 @@ final class HypTestSPRTStratified extends HypTest {
 
 //    println(f"$positive%2d, ${positive/4096.0}%1.7f, $mean%1.7f, ${(M2/(iter-1))}")
 
-    //    val Y = positive
+//    val Y = positive
 //    val blockSize = STMCConfig.strataTotalSize.toDouble
 //    v(Y) += 1
 //    var mu = 0.0
