@@ -1,5 +1,5 @@
 # Run this file using the following command from terminal:
-# ./examples/brp/run.sh > ./examples/brp/res 2>&1
+# ./examples/tandem/run.sh > ./examples/tandem/res 2>&1
 
 if [[ -z "${PRISM_HOME}" ]]; then
   PRISM_HOME="/opt/prism-4.5"
