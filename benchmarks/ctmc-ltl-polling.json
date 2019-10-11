@@ -3,7 +3,7 @@
     "times",
     "samples"
   ],
-  "description": "This case study is based on a cyclic server polling system, taken from 'Stochastic Petri Net Models of Polling Systems' by O. Ibe and K. Trivedi in 1990. The model is represented as a CTMC. We use N to denote the number of stations handled by the polling server.<p/>For all of these examples, we set &#x3B1;=&#x3B2;=&#x3B4;=0.001. What you see here is the average of 20 runs with 95% confidence interval. All experiments were run on Ubuntu 18.04 with i7-8700 CPU 3.2GHz and 16GB memory.",
+  "description": "This case study is based on a cyclic server polling system, taken from 'Stochastic Petri Net Models of Polling Systems' by O. Ibe and K. Trivedi in 1990. The model is represented as a CTMC. We use N to denote the number of stations handled by the polling server.<p/>For all of these examples, we set &#x3B1;=&#x3B2;=&#x3B4;=0.001. What you see here is the average of 20 runs with a 95% confidence interval. All experiments were run on Ubuntu 18.04 with i7-8700 CPU 3.2GHz and 16GB memory.",
   "results": [
     {
       "params": {
@@ -13,7 +13,7 @@
         "States":      "15360",
         "Transitions": "89600"
       },
-      "note": "<div style='max-width:740px'>This example shows that using too many strata can unnecessarily increase number of samples. When strata size is 4096, we set the minimum number of iterations to 2. However, even such a small number means that there will be at least 8192 samples. On the other hand, when 256 strata are used, minimum number of iterations is still 2, and only about 5000 samples are taken on average.</div>",
+      "note": "<div style='max-width:740px'>This example shows that using too many strata can unnecessarily increase the number of samples. When strata size is 4096, we set the minimum number of iterations to 2. However, even such a small number means that there are going to be at least 8192 samples. On the other hand, when 256 strata are used, the minimum number of iterations is still 2, and only about 5000 samples are taken on average.</div>",
       "times": {
         "initScaleBar":0.01,
         "MTBDD"   : 16.135,

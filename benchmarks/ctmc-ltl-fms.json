@@ -3,7 +3,7 @@
     "times",
     "samples"
   ],
-  "description": "This case study is based on the flexible manufacturing system that is presented in a paper titled 'A Decomposition Approach for Stochastic Reward Net Models', authored by G. Ciardo and K. Trivedi in 1993. The model is represented as a CTMC. We use n to denote the number of tokens in the system.<p/>For all of these examples, we set &#x3B1;=&#x3B2;=&#x3B4;=0.0001. What you see here is the average of 20 runs with 95% confidence interval. All experiments were run on Ubuntu 18.04 with i7-8700 CPU 3.2GHz and 16GB memory.",
+  "description": "This case study is based on the flexible manufacturing system that is presented in a paper titled 'A Decomposition Approach for Stochastic Reward Net Models,' authored by G. Ciardo and K. Trivedi in 1993. The model is represented as a CTMC. We use n to denote the number of tokens in the system.<p/>For all of these examples, we set &#x3B1;=&#x3B2;=&#x3B4;=0.0001. What you see here is the average of 20 runs with a 95% confidence interval. All experiments were run on Ubuntu 18.04 with i7-8700 CPU 3.2GHz and 16GB memory.",
   "results": [
     {
       "params": {

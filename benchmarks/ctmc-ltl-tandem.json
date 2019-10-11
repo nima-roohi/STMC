@@ -3,7 +3,7 @@
     "times",
     "samples"
   ],
-  "description": "This case study is based on a simple tandem queueing network. The model is represented as a CTMC which consists of a M/Cox2/1-queue sequentially composed with a M/M/1-queue. We use c to denote the capacity of the queues.<p/>For all of these examples, we set &#x3B1;=&#x3B2;=0.0001 and &#x3B4;=0.0004. What you see here is the average of 20 runs with 95% confidence interval. All experiments were run on MacOS Mojave with i7 CPU 3.5GHz and 32GB memory.",
+  "description": "This case study is based on a simple tandem queueing network. The model is represented as a CTMC, which consists of an M/Cox2/1-queue sequentially composed with an M/M/1-queue. We use c to denote the capacity of the queues.<p/>For all of these examples, we set &#x3B1;=&#x3B2;=0.0001 and &#x3B4;=0.0004. What you see here is the average of 20 runs with a 95% confidence interval. All experiments were run on macOS Mojave with i7 CPU 3.5GHz and 32GB memory.",
   "results": [
     {
       "params": {

@@ -3,7 +3,7 @@
     "times",
     "samples"
   ],
-  "description": "The case study concerns NAND multiplexing, a technique for constructing reliable computation from unreliable devices. As we move from deep submicron technology to nanotechnology for device manufacture, the need for architectures to be defect-tolerant is gaining importance. This is because, at the nanoscale, devices will be prone to errors due to manufacturing defects, ageing, and transient faults. Micro-architects will be required to design their logic around defect tolerance through redundancy.<p/>For all of these examples, we set &#x3B1;=&#x3B2;=&#x3B4;=0.0001. What you see here is the average of 20 runs with 95% confidence interval. All experiments were run on MacOS Mojave with i7 CPU 3.5GHz and 32GB memory.",
+  "description": "The case study concerns NAND multiplexing, a technique for constructing reliable computation from unreliable devices. As we move from deep submicron technology to nanotechnology for device manufacture, the need for architectures to be defect-tolerant is gaining importance. This is because, at the nanoscale, devices are prone to errors due to manufacturing defects, aging, and transient faults. Micro-architects are required to design their logic around defect tolerance through redundancy.<p/>For all of these examples, we set &#x3B1;=&#x3B2;=&#x3B4;=0.0001. What you see here is the average of 20 runs with a 95% confidence interval. All experiments were run on macOS Mojave with i7 CPU 3.5GHz and 32GB memory.",
   "results": [
     {
       "params": {

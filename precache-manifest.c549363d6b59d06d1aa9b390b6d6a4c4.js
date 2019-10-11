@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9ce750fbeee9d08895e8cfc98cfe0ac2",
+    "revision": "dd426a81d6d8f0ec0480c2ac31b62209",
     "url": "/STMC/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/STMC/static/css/2.2141940c.chunk.css"
   },
   {
-    "revision": "4fc0054c251ebd47ad0c",
+    "revision": "4c287a536712bac1785b",
     "url": "/STMC/static/css/main.7ec60976.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/STMC/static/js/2.d1a01af9.chunk.js"
   },
   {
-    "revision": "4fc0054c251ebd47ad0c",
-    "url": "/STMC/static/js/main.1d2406ce.chunk.js"
+    "revision": "4c287a536712bac1785b",
+    "url": "/STMC/static/js/main.52aac2c6.chunk.js"
   },
   {
     "revision": "6ba0c8190bf1b555f8a4",

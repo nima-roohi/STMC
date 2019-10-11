@@ -3,7 +3,7 @@
     "times",
     "samples"
   ],
-  "description": "This case study describes a simple peer-to-peer protocol based on BitTorrent. The model comprises a set of clients trying to download a file that has been partitioned into K blocks. Initially, there is one client that has already obtained all of the blocks and N additional clients with no blocks. Each client can download a block from any of the others but they can only attempt four concurrent downloads for each block.<p/>For all of these examples, we set &#x3B1;=&#x3B2;=&#x3B4;=0.0001. What you see here is the average of 20 runs with 95% confidence interval. All experiments were run on MacOS Mojave with i7 CPU 3.5GHz and 32GB memory.",
+  "description": "This case study describes a simple peer-to-peer protocol based on BitTorrent. The model comprises a set of clients trying to download a file that has been partitioned into K blocks. Initially, there is one client that has already obtained all of the blocks and N additional clients with no blocks. Each client can download a block from any of the others, but they can only attempt four concurrent downloads for each block.<p/>For all of these examples, we set &#x3B1;=&#x3B2;=&#x3B4;=0.0001. What you see here is the average of 20 runs with a 95% confidence interval. All experiments were run on macOS Mojave with i7 CPU 3.5GHz and 32GB memory.",
   "results": [
     {
       "params": {

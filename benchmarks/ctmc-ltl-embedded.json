@@ -3,7 +3,7 @@
     "times",
     "samples"
   ],
-  "description": "The system comprises an input processor (I) which reads and processes data from three sensors (S1, S2, S3). It is then polled by a main processor (M) which, in turn, passes instructions to an output processor (O). This process occurs cyclically, with the length of the cycle controlled by a timer in the main processor. The output processor takes the instructions it receives and uses them to control two actuators (A1, A2). Finally, a bus connects the three processors together. A concrete example of such a system might be a gas boiler, where the sensors are thermostats and the actuators are valves.<p/>For all of these examples, we set &#x3B1;=&#x3B2;=&#x3B4;=0.0001. What you see here is the average of 20 runs with 95% confidence interval. All experiments were run on Ubuntu 18.04 with i7-8700 CPU 3.2GHz and 16GB memory.",
+  "description": "The system comprises an input processor (I) that reads and processes data from three sensors (S1, S2, S3). It is then polled by the main processor (M), which, in turn, passes instructions to an output processor (O). This process occurs cyclically, with the length of the cycle controlled by a timer in the main processor. The output processor takes the instructions it receives and uses them to control two actuators (A1, A2). Finally, a bus connects all these processors. A concrete example of such a system might be a gas boiler, where the sensors are thermostats, and the actuators are valves.<p/>For all of these examples, we set &#x3B1;=&#x3B2;=&#x3B4;=0.0001. What you see here is the average of 20 runs with a 95% confidence interval. All experiments were run on Ubuntu 18.04 with i7-8700 CPU 3.2GHz and 16GB memory.",
   "results": [
     {
       "params": {
