@@ -75,7 +75,7 @@
         "States":      "159744",
         "Transitions": "1171456"
       },
-      "note": "<div style='max-width:740px'>Look at the note for the previous graph to see why going from 256 strata to 4096 strata has increased number of samples. This is also a good example to show MTBDD is not always the most efficient symbolic algorithm, as it is more than 700 times slower than the Sparse engine. In fact Sparse engine is more efficient than MTBDD in all of examples in this set. Nevertheless, examples in this set are relatively small, and all statistical methods will eventually run faster than all symbolic methods.</div>",
+      "note": "<div style='max-width:740px'>Look at the note for the previous graph to see why going from 256 strata to 4096 strata has increased the number of samples. This is also a good example to show MTBDD is not always the most efficient symbolic algorithm, as it is more than 700 times slower than the Sparse engine. In fact Sparse engine is more efficient than MTBDD in all of examples in this set. Nevertheless, examples in this set are relatively small, and all statistical methods will eventually run faster than all symbolic methods.</div>",
       "times": {
         "initScaleBar":0.01,
         "MTBDD"   : 930.179,
