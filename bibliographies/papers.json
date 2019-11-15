@@ -1,6 +1,11 @@
 {
   "papers": [
     {
+      "name": "STMC: Statistical Model Checker with Stratified and Antithetic Sampling",
+      "authors": "Nima Roohi, Yu Wang, Matthew West, Geir E. Dullerud, and Mahesh Viswanathan",
+      "address": "submitted"
+    },
+    {
       "name": "Statistical verification of PCTL using antithetic and stratified samples",
       "authors": "Yu Wang, Nima Roohi, Matthew West, Mahesh Viswanathan and Geir E. Dullerud",
       "address": "Formal Methods in System Design pp. 1-19 (2019)",
