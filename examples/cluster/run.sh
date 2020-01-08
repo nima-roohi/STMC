@@ -20,10 +20,10 @@ run_example()
 {
   repeat=20
   echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
-#  time timeout 30m $PRISM $1 -pf $2 -mtbdd    | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
-#  time timeout 30m $PRISM $1 -pf $2 -sparse   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
-#  time timeout 30m $PRISM $1 -pf $2 -hybrid   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
-#  time timeout 30m $PRISM $1 -pf $2 -explicit | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+  time timeout 30m $PRISM $1 -pf $2 -mtbdd    | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+  time timeout 30m $PRISM $1 -pf $2 -sparse   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+  time timeout 30m $PRISM $1 -pf $2 -hybrid   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+  time timeout 30m $PRISM $1 -pf $2 -explicit | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
   #time timeout 30m $PRISM $1 -pf $2 -exact    | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
 
   echo 'PRISM SPRT'
@@ -70,9 +70,9 @@ run_example()
 }
 
 #run_example "./examples/cluster/cluster.sm -const N=16"   "P<0.15[\"minimum\"U<=200(!\"minimum\"|!\"premium\")]" 0.00001 0.00001
-run_example "./examples/cluster/cluster.sm -const N=512"   "P<0.15[\"minimum\"U<=200(!\"minimum\"|!\"premium\")]" 0.0001 0.001
-run_example "./examples/cluster/cluster.sm -const N=4096"  "P<0.10[\"minimum\"U<=200(!\"minimum\"|!\"premium\")]" 0.0001 0.001
+run_example "./examples/cluster/cluster.sm -const N=512"   "P<0.12[\"minimum\"U<=200(!\"minimum\"|!\"premium\")]" 0.0001 0.001
+run_example "./examples/cluster/cluster.sm -const N=4096"  "P<0.12[\"minimum\"U<=200(!\"minimum\"|!\"premium\")]" 0.0001 0.001
 run_example "./examples/cluster/cluster.sm -const N=16384" "P<0.12[\"minimum\"U<=200(!\"minimum\"|!\"premium\")]" 0.0001 0.001
-run_example "./examples/cluster/cluster.sm -const N=65536" "P<0.15[\"minimum\"U<=200(!\"minimum\"|!\"premium\")]" 0.0001 0.001
+run_example "./examples/cluster/cluster.sm -const N=65536" "P<0.12[\"minimum\"U<=200(!\"minimum\"|!\"premium\")]" 0.0001 0.001
 
 
