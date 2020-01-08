@@ -70,9 +70,9 @@ run_example()
 }
 
 #run_example "./examples/cluster/cluster.sm -const N=16"   "P<0.15[\"minimum\"U<=200(!\"minimum\"|!\"premium\")]" 0.00001 0.00001
-run_example "./examples/cluster/cluster.sm -const N=512"   "P<0.15[\"minimum\"U<=200(!\"minimum\"|!\"premium\")]" 0.0001 0.0001
-run_example "./examples/cluster/cluster.sm -const N=4096"  "P<0.10[\"minimum\"U<=200(!\"minimum\"|!\"premium\")]" 0.0001 0.0001
-run_example "./examples/cluster/cluster.sm -const N=16384" "P<0.12[\"minimum\"U<=200(!\"minimum\"|!\"premium\")]" 0.0001 0.0001
-run_example "./examples/cluster/cluster.sm -const N=65536" "P<0.15[\"minimum\"U<=200(!\"minimum\"|!\"premium\")]" 0.0001 0.0001
+run_example "./examples/cluster/cluster.sm -const N=512"   "P<0.15[\"minimum\"U<=200(!\"minimum\"|!\"premium\")]" 0.0002 0.0002
+run_example "./examples/cluster/cluster.sm -const N=4096"  "P<0.10[\"minimum\"U<=200(!\"minimum\"|!\"premium\")]" 0.0002 0.0002
+run_example "./examples/cluster/cluster.sm -const N=16384" "P<0.12[\"minimum\"U<=200(!\"minimum\"|!\"premium\")]" 0.0002 0.0002
+run_example "./examples/cluster/cluster.sm -const N=65536" "P<0.15[\"minimum\"U<=200(!\"minimum\"|!\"premium\")]" 0.0002 0.0002
 
 
