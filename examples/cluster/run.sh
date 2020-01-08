@@ -20,10 +20,10 @@ run_example()
 {
   repeat=20
   echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
-  time timeout 30m $PRISM $1 -pf $2 -mtbdd    | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
-  time timeout 30m $PRISM $1 -pf $2 -sparse   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
-  time timeout 30m $PRISM $1 -pf $2 -hybrid   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
-  time timeout 30m $PRISM $1 -pf $2 -explicit | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+#  time timeout 30m $PRISM $1 -pf $2 -mtbdd    | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+#  time timeout 30m $PRISM $1 -pf $2 -sparse   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+#  time timeout 30m $PRISM $1 -pf $2 -hybrid   | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
+#  time timeout 30m $PRISM $1 -pf $2 -explicit | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
   #time timeout 30m $PRISM $1 -pf $2 -exact    | grep -e Result -e Engine -e States -e Transitions -e Error -e "Time for model" ; echo
 
   echo 'PRISM SPRT'
