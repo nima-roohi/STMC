@@ -80,6 +80,15 @@
         "link": "https://www.prismmodelchecker.org/casestudies/polling.php",
         "link_name": "Taken from PRISM Case Studies"
       }
+    },
+    {
+      "file": {
+        "name": "Workstation Cluster",
+        "type": "CTMC",
+        "address": "/benchmarks/ctmc-ltl-cluster.json",
+        "link": "https://www.prismmodelchecker.org/casestudies/cluster.php",
+        "link_name": "Taken from PRISM Case Studies"
+      }
     }
   ]
 }
