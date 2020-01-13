@@ -5,8 +5,8 @@ import scala.util.matching.Regex
 object Tmp extends App {
 
 
-//  val filename = "../STMC-webpage-dev/public/benchmarks/dtmc-ltl-egl.json"
-  val filename = "./examples/crowds/crowds.log"
+  val filename = "../STMC-webpage-dev/public/benchmarks/ctmc-ltl-cluster.json"
+//  val filename = "./examples/cluster/cluster.log"
   val source = Source.fromFile(filename)
 
 //  val pattern = """.*\[([.0-9]+),\s*([.0-9]+)\].*""".r
